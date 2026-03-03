@@ -32,14 +32,14 @@ body{
   height:36px;
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:6px;
   padding:0 14px;
   background:#F3F6FB;
   border-bottom:1px solid rgba(0,0,0,.06);
 }
 .flag-img{
-  width:24px;
-  height:16px;
+  width: 26px;   /* 🔥 살짝 키움 */
+  height: auto;  /* 비율 유지 */
   display:block;
   flex:0 0 auto;
   image-rendering:auto;
@@ -438,3 +438,4 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
