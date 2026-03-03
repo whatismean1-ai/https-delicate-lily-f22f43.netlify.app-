@@ -131,8 +131,8 @@ body{
   height:8px;
 
   /* ✅ 여기서 굵기 조절 */
-  border-right:2.4px solid #000;
-  border-top:2.4px solid #000;
+  border-right:2.2px solid #000;
+  border-top:2.2px solid #000;
 
   transform:rotate(45deg) translateY(1px);
 }
@@ -441,6 +441,7 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
