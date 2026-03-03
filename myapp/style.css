@@ -4,7 +4,7 @@ html, body { height: 100%; }
 body{
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
-  background: #ffffff;
+  background: #f3f4f6;
   color: #111;
 }
 
@@ -22,26 +22,54 @@ body{
   background: #fff;
   border-radius: 14px;
   overflow: hidden;
+  box-shadow: rgba(0,0,0,.12) 0 12px 28px;
   position: relative;
-  box-shadow: rgba(0,0,0,.12) 0 10px 30px;
+  padding-bottom: 78px; /* 바텀탭 자리 확보 */
 }
 
-/* ===== Notice bar ===== */
+/* ===== Notice ===== */
 .notice{
   height: 36px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
+  gap: 10px;
   padding: 0 14px;
   background: #F3F6FB;
   border-bottom: 1px solid rgba(0,0,0,.06);
 }
-.notice .flag{ font-size: 12px; font-weight: 700; }
-.notice .notice-text{
-  margin: 0;
+.notice-left{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.notice-text{
   font-size: 12px;
   color: #333;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.notice-link{
+  font-size: 12px;
+  color: #2a5bd7;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.notice-link:hover{ text-decoration: underline; }
+
+/* 태극기 아이콘(24x16) */
+.flag-kr{
+  width: 24px;
+  height: 16px;
+  display: inline-block;
+  flex: 0 0 auto;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 24 16\"><g><path d=\"M 0 16 L 0 0 L 24 0 L 24 16 Z\" fill=\"transparent\"></path><path d=\"M 0 0 L 24 0 L 24 16 L 0 16 Z\" fill=\"rgb(255,255,255)\"></path><g transform=\"translate(8 4)\"><path d=\"M 0.672 1.781 C 1.26 0.898 2.175 0.286 3.215 0.078 C 4.256 -0.13 5.336 0.083 6.219 0.672 C 7.101 1.26 7.714 2.175 7.922 3.216 C 8.13 4.256 7.917 5.336 7.328 6.219 Z\" fill=\"rgb(208,48,60)\"></path><path d=\"M 0.672 1.781 C 0.083 2.664 -0.13 3.744 0.078 4.784 C 0.286 5.825 0.898 6.74 1.781 7.328 C 2.664 7.917 3.744 8.13 4.784 7.922 C 5.825 7.714 6.74 7.102 7.328 6.219 C 7.622 5.777 7.729 5.237 7.625 4.717 C 7.521 4.197 7.215 3.74 6.773 3.445 C 6.332 3.151 5.792 3.044 5.272 3.148 C 4.752 3.252 4.294 3.559 4 4 Z\" fill=\"rgb(19,74,157)\"></path><path d=\"M 4 4 C 4.613 3.081 4.364 1.839 3.445 1.226 C 2.526 0.614 1.285 0.862 0.672 1.781 C 0.059 2.7 0.307 3.942 1.226 4.555 C 2.145 5.167 3.387 4.919 4 4 Z\" fill=\"rgb(208,48,60)\"></path></g><g transform=\"translate(3.68 1.529)\"><path d=\"M 0 3.328 L 2.219 0 L 2.774 0.37 L 0.555 3.698 Z M 0.832 3.883 L 3.051 0.555 L 3.606 0.925 L 1.387 4.253 Z M 1.664 4.438 L 3.883 1.109 L 4.438 1.479 L 2.219 4.807 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 15.624 11.14 L 16.641 9.615 L 16.086 9.245 L 15.069 10.77 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 14.792 10.585 L 15.809 9.06 L 15.254 8.69 L 14.237 10.216 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 14.053 10.493 L 14.607 10.863 L 13.59 12.388 L 13.036 12.018 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 13.96 10.031 L 14.977 8.505 L 14.422 8.136 L 13.405 9.661 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 13.22 9.938 L 13.775 10.308 L 12.758 11.834 L 12.203 11.464 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 14.885 11.048 L 15.439 11.418 L 14.422 12.943 L 13.868 12.573 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 13.775 2.635 L 12.758 1.11 L 12.203 1.479 L 13.22 3.005 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 13.405 3.282 L 14.422 4.808 L 14.977 4.438 L 13.96 2.912 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 15.254 4.253 L 13.035 0.925 L 13.59 0.555 L 15.809 3.883 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 16.086 3.698 L 15.069 2.173 L 15.624 1.803 L 16.641 3.328 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 15.439 1.526 L 14.884 1.895 L 13.867 0.37 L 14.422 0 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 0 9.615 L 2.219 12.943 L 2.774 12.573 L 0.555 9.245 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 2.034 10.863 L 3.051 12.389 L 3.606 12.019 L 2.589 10.493 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 1.849 10.586 L 2.404 10.216 L 1.387 8.691 L 0.832 9.06 Z\" fill=\"rgb(0,0,0)\"></path><path d=\"M 1.664 8.506 L 3.883 11.834 L 4.438 11.464 L 2.219 8.136 Z\" fill=\"rgb(0,0,0)\"></path></g></g></svg>");
 }
 
 /* ===== Topbar ===== */
@@ -50,42 +78,31 @@ body{
   height: 56px;
   padding: 10px 14px 0 14px;
 }
+
+/* 정부24 로고(90x28) - 제공한 SVG */
 .brand{
   position: absolute;
   left: 15px;
   top: 16px;
+  text-decoration: none;
 }
 .brand-logo{
   width: 90px;
   height: 28px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.brand-logo .mark{
-  width: 20px;
-  height: 20px;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle at 30% 30%, #d6232a 0 35%, transparent 36%),
-    radial-gradient(circle at 70% 70%, #0047bb 0 35%, transparent 36%),
-    #fff;
-  border: 1px solid rgba(0,0,0,.08);
-}
-.brand-logo .brand-name{
-  font-weight: 800;
-  font-size: 16px;
-  letter-spacing: -0.02em;
-  color: #222;
+  display: inline-block;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 90 28\"><path d=\"M 21.511 13.366 C 19.091 11.712 15.989 12.386 14.364 14.871 C 13.003 16.948 10.951 17.206 10.157 17.206 C 7.569 17.206 5.797 15.375 5.274 13.483 C 5.269 13.464 5.264 13.449 5.261 13.428 C 5.256 13.407 5.248 13.386 5.243 13.366 C 5.036 12.575 4.984 12.198 4.984 11.359 C 4.984 6.83 9.608 1.789 16.268 1.789 C 22.929 1.789 26.994 7.007 27.997 9.905 C 27.979 9.856 27.964 9.804 27.946 9.752 C 26.01 4.079 20.657 0 14.356 0 C 6.428 0 -0.002 6.461 -0.002 14.432 C -0.002 21.555 5.108 27.654 12.201 27.654 C 17.857 27.654 21.661 24.467 23.405 20.073 C 24.359 17.671 23.684 14.848 21.508 13.366\" fill=\"rgb(0,57,99)\"></path><path d=\"M 28.088 10.183 C 27.247 7.355 23.317 1.786 16.268 1.786 C 9.605 1.786 4.984 6.827 4.984 11.356 C 4.984 12.196 5.036 12.573 5.24 13.363 C 5.155 13.017 5.108 12.671 5.108 12.334 C 5.108 7.615 9.807 4.347 14.638 4.347 C 21.179 4.347 26.481 9.674 26.481 16.246 C 26.481 21.396 23.531 25.855 19.244 28 C 24.771 25.99 28.717 20.674 28.717 14.429 C 28.717 12.95 28.518 11.647 28.085 10.181\" fill=\"rgb(237,25,58)\"></path><path d=\"M 35.525 9.198 L 35.525 7.714 L 43.499 7.714 L 43.499 9.198 L 40.104 9.198 L 43.639 13.532 L 42.441 14.533 L 39.574 10.95 L 36.756 14.77 L 35.509 13.766 L 39.046 9.198 L 35.527 9.198 Z M 46.565 18.29 C 46.565 18.76 46.47 19.2 46.278 19.613 C 46.087 20.024 45.828 20.388 45.507 20.7 C 45.186 21.012 44.803 21.261 44.363 21.443 C 43.924 21.625 43.453 21.719 42.953 21.719 C 42.454 21.719 41.998 21.628 41.551 21.443 C 41.106 21.261 40.72 21.012 40.397 20.7 C 40.076 20.388 39.82 20.024 39.626 19.613 C 39.434 19.2 39.339 18.76 39.339 18.29 C 39.339 17.819 39.434 17.38 39.626 16.969 C 39.817 16.556 40.073 16.194 40.397 15.88 C 40.718 15.568 41.106 15.318 41.551 15.136 C 41.998 14.954 42.467 14.863 42.953 14.863 C 43.44 14.863 43.921 14.954 44.363 15.136 C 44.803 15.318 45.186 15.568 45.507 15.88 C 45.828 16.194 46.087 16.556 46.278 16.969 C 46.47 17.382 46.565 17.822 46.565 18.29 Z\" fill=\"rgb(88,89,91)\"></path><path d=\"M 49.8 16.132 L 62.569 16.132 L 62.569 17.666 L 57.042 17.666 L 57.042 21.264 L 55.314 21.264 L 55.314 17.666 L 49.8 17.666 Z\" fill=\"rgb(88,89,91)\"></path><path d=\"M 72.36 14.689 C 73.16 13.893 73.657 12.786 73.657 11.567 C 73.657 9.138 71.698 7.17 69.281 7.17 C 66.864 7.17 64.906 9.138 64.906 11.567 L 64.906 11.941 L 66.546 11.941 L 66.546 11.567 C 66.546 10.048 67.77 8.819 69.281 8.819 C 70.792 8.819 72.016 10.048 72.016 11.567 C 72.016 12.328 71.708 13.017 71.211 13.514 L 64.909 19.722 L 64.909 21.464 L 73.659 21.464 L 73.659 19.938 L 66.976 19.938 L 72.363 14.689 Z\" fill=\"rgb(0,57,99)\"></path><path d=\"M 82.708 7.363 L 79.844 7.363 L 73.654 15.547 L 73.654 18.495 L 80.337 18.495 L 80.337 16.179 L 76.083 16.179 Z\" fill=\"rgb(0,57,99)\"></path><path d=\"M 86.998 16.179 L 82.659 16.179 L 82.659 18.495 L 86.998 18.495 Z\" fill=\"rgb(237,25,58)\"></path><path d=\"M 82.658 11.912 L 80.337 11.912 L 80.337 16.179 L 82.658 16.179 Z\" fill=\"rgb(245,130,31)\"></path><path d=\"M 82.658 18.495 L 80.337 18.495 L 80.337 22.78 L 82.658 22.78 Z\" fill=\"rgb(0,148,208)\"></path><path d=\"M 82.658 16.179 L 80.337 16.179 L 80.337 18.495 L 82.658 18.495 Z\" fill=\"rgb(0,57,99)\"></path></svg>");
 }
 
-/* 전체메뉴 버튼 */
+/* 전체메뉴 */
 .menu{
   position: absolute;
   right: 14px;
   top: 10px;
-  width: 46px;
-  height: 35px;
+  width: 56px;
+  height: 40px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -133,20 +150,20 @@ body{
   width: 34px;
   height: 34px;
   border-radius: 999px;
-  border: 1px solid rgba(0,0,0,.12);
-  background: #f7f8fa;
+  border: 0;
+  background: transparent;
   display: grid;
   place-items: center;
   cursor: pointer;
+  color: #111;
 }
-.search-ico{ font-size: 14px; }
 
 /* ===== Sections ===== */
 .section{ padding: 18px 14px 0 14px; }
 .section-title{
   margin: 0 0 10px 0;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
 
@@ -172,7 +189,7 @@ body{
 }
 .quick-label{
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
 .badge{
@@ -182,13 +199,12 @@ body{
   background: rgba(0,0,0,.05);
 }
 .ext{
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   display: grid;
   place-items: center;
   color: #6f7a86;
 }
-
 .more{
   margin: 12px auto 0;
   width: fit-content;
@@ -203,34 +219,34 @@ body{
 .more .plus{ font-size: 16px; line-height: 1; }
 
 /* ===== Banner ===== */
-.banner{ padding: 8px 14px 0 14px; }
-.banner-card{
+.banner-wrap{ padding: 10px 14px 0 14px; }
+.banner{
   display: block;
-  height: 110px;
-  border-radius: 12px;
-  background: linear-gradient(90deg, #3b5fa6, #7b8fb8);
   position: relative;
+  height: 92px;
+  border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
   color: #fff;
-  box-shadow: rgba(0,0,0,.12) 0 6px 14px;
-}
-.banner-card::after{
-  content:"";
-  position:absolute;
-  right:-30px; top:-30px;
-  width:160px; height:160px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.18);
+  background: #4f67a2;
+  box-shadow: rgba(0,0,0,.12) 0 8px 18px;
 }
 .banner-text{
   position: relative;
-  z-index: 1;
-  padding: 18px 16px;
+  z-index: 2;
+  padding: 14px 14px;
 }
-.banner-title{ font-weight: 900; font-size: 16px; letter-spacing: -0.02em; }
+.banner-title{ font-size: 14px; font-weight: 800; letter-spacing: -0.02em; }
 .banner-sub{ margin-top: 6px; font-size: 12px; opacity: .95; }
-.banner-date{ margin-top: 10px; font-size: 11px; opacity: .85; }
+.banner-date{ margin-top: 6px; font-size: 11px; opacity: .9; }
+.banner-bg{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 50%, rgba(255,255,255,.25) 0 34%, transparent 35%),
+    radial-gradient(circle at 95% 70%, rgba(255,255,255,.18) 0 24%, transparent 25%),
+    linear-gradient(90deg, rgba(0,0,0,.0), rgba(0,0,0,.10));
+}
 
 /* ===== Benefit cards ===== */
 .cards-grid{
@@ -243,61 +259,67 @@ body{
   height: 90px;
   border-radius: 10px;
   border: 1px solid rgba(161, 225, 255, 0.5);
-  box-shadow: rgba(0, 0, 0, .25) 0px 0px 2px 0px;
+  box-shadow: rgba(0,0,0,.16) 0 2px 10px;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
   background: #fff;
 }
-.card-content{
-  position: relative;
-  z-index: 2;
-  padding: 10px 12px;
-}
+.card-content{ position: relative; z-index: 2; padding: 10px 12px; }
 .card-title{
   font-size: 12px;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 6px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.card-sub{
-  font-size: 12px;
-  color: #222;
-  line-height: 1.35;
-}
-
-/* 우측 아이콘 */
+.card-sub{ font-size: 12px; color: #222; line-height: 1.35; }
 .card-ico{
   position: absolute;
   right: 10px;
-  top: 26px;
+  top: 28px;
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.75);
   z-index: 3;
 }
-.card-ico img{
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* 카드 배경 */
+.emo{ font-size: 22px; }
 .card-bg{
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
   z-index: 1;
+  opacity: 1;
+}
+
+/* 카드 톤 */
+.bg-pink{
+  background:
+    radial-gradient(circle at 15% 30%, rgba(255, 154, 154, .20) 0 40%, transparent 41%),
+    radial-gradient(circle at 80% 70%, rgba(255, 154, 154, .12) 0 35%, transparent 36%),
+    #fff7f7;
+}
+.bg-yellow{
+  background:
+    radial-gradient(circle at 15% 30%, rgba(255, 214, 115, .25) 0 40%, transparent 41%),
+    radial-gradient(circle at 80% 70%, rgba(255, 214, 115, .12) 0 35%, transparent 36%),
+    #fffaf0;
+}
+.bg-mint{
+  background:
+    radial-gradient(circle at 15% 30%, rgba(110, 232, 201, .25) 0 40%, transparent 41%),
+    radial-gradient(circle at 80% 70%, rgba(110, 232, 201, .12) 0 35%, transparent 36%),
+    #f3fffb;
+}
+.bg-blue{
+  background:
+    radial-gradient(circle at 15% 30%, rgba(143, 197, 255, .25) 0 40%, transparent 41%),
+    radial-gradient(circle at 80% 70%, rgba(143, 197, 255, .12) 0 35%, transparent 36%),
+    #f3f8ff;
 }
 
 /* 더 많은 혜택 보기 */
@@ -320,7 +342,7 @@ body{
   color: #6f7a86;
 }
 
-/* ===== 국민소통채널 ===== */
+/* ===== Channel ===== */
 .channel-head{
   display: flex;
   align-items: center;
@@ -335,160 +357,119 @@ body{
   cursor: pointer;
   color: #333;
 }
-
 .channel-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px 12px;
 }
-.channel-btn{
+.channel-item{
   height: 44px;
   border-radius: 10px;
-  background: #f2f3f5;
+  background: #f3f4f6;
+  border: 1px solid rgba(0,0,0,.05);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   text-decoration: none;
   color: #111;
-  font-weight: 700;
   font-size: 12px;
+  font-weight: 700;
 }
-.ch-ico{ font-size: 16px; }
+.channel-item .ico{ font-size: 14px; }
 
 /* ===== Footer ===== */
 .footer{
-  margin-top: 12px;
-  background: #f7f8fa;
-  border-top: 1px solid rgba(0,0,0,.06);
-  padding: 14px 14px 90px; /* 아래 탭바 공간 */
+  padding: 12px 14px 0 14px;
 }
-.footer-top{
+.footer-head{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-bottom: 10px;
+  gap: 8px;
+  padding: 6px 0 10px;
 }
 .footer-brand{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 900;
-}
-.footer-mark{
-  width: 22px;
-  height: 22px;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle at 30% 30%, #d6232a 0 35%, transparent 36%),
-    radial-gradient(circle at 70% 70%, #0047bb 0 35%, transparent 36%),
-    #fff;
+  width: 28px;
+  height: 18px;
+  border-radius: 6px;
+  background: radial-gradient(circle at 35% 35%, #d6232a 0 38%, transparent 39%),
+              radial-gradient(circle at 70% 70%, #0047bb 0 38%, transparent 39%),
+              #fff;
   border: 1px solid rgba(0,0,0,.08);
 }
-.footer-name{ font-size: 14px; }
-.footer-drop{ color:#666; font-weight:900; }
-
-.footer-body{ font-size: 12px; color:#222; line-height: 1.55; }
-.footer-title{ font-weight: 900; margin-top: 6px; }
-.footer-line{ color:#222; }
-.footer-gap{ height: 10px; }
+.footer-drop{
+  border: 0;
+  background: transparent;
+  font-weight: 800;
+  font-size: 12px;
+  cursor: pointer;
+  color: #111;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer-box{
+  background: #f5f6f8;
+  border-radius: 12px;
+  padding: 14px 14px 84px; /* 바텀탭 겹치지 않게 */
+  border: 1px solid rgba(0,0,0,.05);
+}
+.footer-title{
+  font-size: 12px;
+  font-weight: 900;
+  margin-top: 6px;
+}
+.footer-text{
+  font-size: 12px;
+  color: #111;
+  line-height: 1.45;
+}
 .footer-hr{
-  height: 1px;
-  background: rgba(0,0,0,.12);
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,.12);
   margin: 12px 0;
 }
 .footer-links{
   display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
+  gap: 12px;
 }
-.footer-link{ color:#0a5bff; text-decoration: none; font-weight: 800; }
-.footer-dot{ color:#888; }
-.footer-copy{ font-size: 11px; color:#444; }
+.footer-links a{
+  font-size: 12px;
+  color: #111;
+  text-decoration: none;
+  font-weight: 800;
+}
+.footer-links a:hover{ text-decoration: underline; }
+.footer-copy{
+  margin-top: 8px;
+  font-size: 11px;
+  color: #444;
+}
 
-/* ===== Bottom tabbar (고정) ===== */
-.tabbar{
+/* ===== Bottom nav ===== */
+.bottom-nav{
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 78px;
+  height: 72px;
   background: #fff;
   border-top: 1px solid rgba(0,0,0,.08);
-  border-radius: 18px 18px 0 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
-  padding: 10px 10px 12px;
+  padding: 8px 8px 10px;
 }
 .tab{
   text-decoration: none;
-  color: #111;
+  color: #444;
   display: grid;
   place-items: center;
-  gap: 6px;
+  gap: 4px;
+  font-size: 11px;
 }
-.tab-ico{ font-size: 18px; opacity: .9; }
-.tab-txt{ font-size: 11px; font-weight: 800; color:#444; }
-
-/* ===== 전체메뉴 오버레이 ===== */
-.menu-dim{
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,.08);
-  display: grid;
-  justify-items: end;
-  align-items: start;
-  padding-top: 36px; /* 상단 느낌 */
-  opacity: 0;
-  transition: opacity .18s ease;
-}
-.menu-dim.show{ opacity: 1; }
-
-.menu-panel{
-  width: 62%;
-  height: calc(100% - 36px);
-  background: #fff;
-  border-radius: 14px 0 0 14px;
-  box-shadow: rgba(0,0,0,.18) -10px 0 30px;
-  transform: translateX(16px);
-  transition: transform .18s ease;
-  padding: 14px;
-}
-.menu-dim.show .menu-panel{ transform: translateX(0); }
-
-.menu-panel-head{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 10px;
-}
-.menu-panel-title{
-  font-weight: 900;
-  font-size: 14px;
-}
-.menu-close{
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 1;
-}
-
-.menu-list{
-  display: grid;
-  gap: 10px;
-}
-.menu-item{
-  height: 44px;
-  border-radius: 10px;
-  background: #f2f3f5;
-  display: flex;
-  align-items: center;
-  padding: 0 12px;
-  text-decoration: none;
+.tab-ico{ font-size: 18px; }
+.tab.active{
   color: #111;
-  font-weight: 800;
-  font-size: 12px;
+  font-weight: 900;
 }
