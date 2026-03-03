@@ -122,15 +122,16 @@ body{
   font-size:13px;
   letter-spacing:-0.02em;
 }
+/* ✅ 공지사항 텍스트 옆 > : 글자 크기(1em)와 동일 + 더 굵게 */
 .notice-link-text::after{
-  content:"";
-  display:inline-block;
-  margin-left:6px;
-  width:7px;height:7px;
-  border-right:1.5px solid #9aa0a6;
-  border-top:1.5px solid #9aa0a6;
-  transform:rotate(45deg);
-  translate:0 .5px;
+  content: ">";
+  display: inline-block;
+  margin-left: 4px;     /* 공백 줄이기 (기존 6px보다 좁게) */
+  font-size: 1em;       /* ✅ 텍스트와 정확히 동일 크기 */
+  font-weight: 700;     /* ✅ 굵게 */
+  line-height: 1;
+  color: #9aa0a6;
+  transform: translateY(-0.5px); /* 살짝 중앙 맞춤 */
 }
 
 /* ===== Search ===== */
@@ -437,5 +438,6 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
