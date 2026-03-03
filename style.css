@@ -128,7 +128,7 @@ body{
   display: inline-block;
   margin-left: 4px;     /* 공백 줄이기 (기존 6px보다 좁게) */
   font-size: 1em;       /* ✅ 텍스트와 정확히 동일 크기 */
-  font-weight: 700;     /* ✅ 굵게 */
+  font-weight: 1000;     /* ✅ 굵게 */
   line-height: 1;
   color: #9aa0a6;
   transform: translateY(-0.5px); /* 살짝 중앙 맞춤 */
@@ -438,6 +438,7 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
