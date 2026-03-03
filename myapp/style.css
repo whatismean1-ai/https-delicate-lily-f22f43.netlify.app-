@@ -103,11 +103,8 @@ body{
 
 /* ===== Notice link (공지사항 확인하기) ===== */
 .notice-link{
-  display: flex;
-  align-items: center;
-  padding: 12px 14px;
-  text-decoration: none;
-  color: #555;
+  justify-content: flex-start !important; /* space-between 같은 거 있으면 무조건 무효 */
+  gap: 6px !important;                    /* 벨-텍스트 간격 유지 */
 }
 .bell{
   width: 14px;
@@ -120,17 +117,17 @@ body{
   font-size: 14px;
   line-height: 1;
 }
-.notice-link-text{
-  font-size: 13px;
-  letter-spacing: -0.02em;
-  margin-right: 6px;
+.notice-link .notice-link-text{
+  margin-right: 6px !important;           /* 글자 뒤 '한칸' */
 }
-.chev{
-  width: 7px;
-  height: 7px;
-  border-right: 1.5px solid #9aa0a6;
-  border-top: 1.5px solid #9aa0a6;
-  transform: rotate(45deg);
+.notice-link .chev{
+  margin-left: 0 !important;              /* ✅ auto 강제 제거 */
+  margin-right: 0 !important;
+  width: 7px !important;
+  height: 7px !important;
+  border-right: 1.5px solid #9aa0a6 !important;
+  border-top: 1.5px solid #9aa0a6 !important;
+  transform: rotate(45deg) !important;    /* translate 같은 것도 무효 */
 }
 
 /* ===== Search ===== */
@@ -509,6 +506,7 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
 
 
