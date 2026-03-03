@@ -127,10 +127,20 @@ body{
   place-items: center;
   margin-top: -1px;
 }
-.bell::before{
-  content: "🔔";
-  font-size: 14px;
-  line-height: 1;
+.bell{
+  width: 14px;
+  height: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bell svg{
+  width: 14px;
+  height: 14px;
+  stroke: #6f7a86;     /* 정부24 계열 그레이 */
+  stroke-width: 1.5;
+  fill: none;
 }
 
 /* text + ✅ 글자 옆 한칸(6px) 후 > */
@@ -493,3 +503,4 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
