@@ -105,7 +105,8 @@ body{
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 12px 14px;
+
+  padding: 12px 10px 12px 14px; /* ✅ right: 14 → 10 */
   text-decoration: none;
   color: #555;
 }
@@ -126,7 +127,7 @@ body{
 }
 .chev{
   margin-left: auto;
-  transform: translateX(-2px) rotate(45deg);
+  transform: translateX(-8px) rotate(45deg); /* ✅ -2 → -8 */
   width: 8px;
   height: 8px;
   border-right: 1.4px solid #9aa0a6;
@@ -509,6 +510,7 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
 
 
