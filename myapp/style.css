@@ -54,7 +54,7 @@ body{
 .topbar{
   position: relative;
   height: 56px;
-  padding: 10px 14px 0 14px;
+  padding: 12px 14px;
 }
 .brand{
   position: absolute;
@@ -510,5 +510,6 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
 
