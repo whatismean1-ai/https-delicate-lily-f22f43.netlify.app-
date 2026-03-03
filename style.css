@@ -28,18 +28,17 @@ body{
 }
 
 /* ===== Top notice ===== */
-.notice-top{
-  height:36px;
-  display:flex;
-  align-items:center;
-  gap:6px;
+.notice-top {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* 공백 더 줄임 */
   padding:0 14px;
   background:#F3F6FB;
   border-bottom:1px solid rgba(0,0,0,.06);
 }
-.flag-img{
-  width: 26px;   /* 🔥 살짝 키움 */
-  height: auto;  /* 비율 유지 */
+.flag-img {
+  width: 28px;      /* 🔥 더 키움 */
+  height: auto;
   display:block;
   flex:0 0 auto;
   image-rendering:auto;
@@ -438,4 +437,5 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
