@@ -127,12 +127,12 @@ body{
   letter-spacing: -0.02em;
 }
 .chev{
-  margin-left: auto;
-  transform: translateX(-8px) rotate(45deg); /* ✅ -2 → -8 */
+  margin-left: 4px;  /* 🔥 글자와 한 칸 정도 간격 */
   width: 8px;
   height: 8px;
   border-right: 1.4px solid #9aa0a6;
   border-top: 1.4px solid #9aa0a6;
+  transform: rotate(45deg);
 }
 
 /* ===== Search ===== */
@@ -511,6 +511,7 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
 
 
