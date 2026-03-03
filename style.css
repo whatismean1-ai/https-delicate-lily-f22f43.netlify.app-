@@ -29,7 +29,7 @@ body{
 
 /* ===== Top notice (정부24 스샷 스펙: 402×30) ===== */
 .notice-top{
-  height:45px;
+  height:65px;
   display:flex;
   align-items:center;
   gap:6px;
@@ -444,6 +444,7 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
