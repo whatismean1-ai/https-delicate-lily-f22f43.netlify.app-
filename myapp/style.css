@@ -105,9 +105,7 @@ body{
 .notice-link{
   display: flex;
   align-items: center;
-  gap: 6px;
-
-  padding: 12px 10px 12px 14px; /* ✅ right: 14 → 10 */
+  padding: 12px 14px;
   text-decoration: none;
   color: #555;
 }
@@ -125,13 +123,13 @@ body{
 .notice-link-text{
   font-size: 13px;
   letter-spacing: -0.02em;
+  margin-right: 6px;
 }
 .chev{
-  margin-left: 4px;  /* 🔥 글자와 한 칸 정도 간격 */
-  width: 8px;
-  height: 8px;
-  border-right: 1.4px solid #9aa0a6;
-  border-top: 1.4px solid #9aa0a6;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid #9aa0a6;
+  border-top: 1.5px solid #9aa0a6;
   transform: rotate(45deg);
 }
 
@@ -511,6 +509,7 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
 
 
