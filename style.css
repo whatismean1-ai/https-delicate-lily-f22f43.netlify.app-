@@ -1,4 +1,6 @@
-/* ===== Reset ===== */
+/* =========================
+   Reset
+========================= */
 *{ box-sizing:border-box; }
 html,body{ height:auto; }
 body{
@@ -9,7 +11,9 @@ body{
   overflow-y:auto;
 }
 
-/* ===== Center stage ===== */
+/* =========================
+   Stage / Phone
+========================= */
 .stage{
   min-height:100vh;
   display:grid;
@@ -17,43 +21,49 @@ body{
   padding:24px 12px;
 }
 
-/* ===== Phone frame ===== */
 .phone{
   width:402px;
-  max-width: 92vw;
+  max-width:92vw;
   background:#fff;
   border-radius:14px;
   overflow:hidden;
   box-shadow: rgba(0,0,0,.06) 0 10px 30px;
 }
 
-/* ===== Top notice (정부24 스샷 스펙: 402×30) ===== */
+/* =========================
+   Top notice (캡처 스펙: 402×30, bg rgb(238,242,247))
+========================= */
 .notice-top{
-  height:65px;
+  height:30px;                 /* ✅ 캡처 스펙 */
+  width:100%;
   display:flex;
   align-items:center;
-  gap:6px;
-  padding:0 12px;
-  background:rgb(238,242,247);
+  background:#EEF2F7;          /* ✅ rgb(238,242,247) */
+  padding:0 14px;              /* ✅ “글자 바깥 여백(바탕색 공간)” */
+  gap:10px;                    /* ✅ 태극기-문구 간격 */
+  border-bottom:1px solid rgba(0,0,0,.06);
 }
 
-/* 태극기: 24×16 고정 */
-.notice-top img{
-  width:24px;
+/* 태극기 이미지(HTML에서 class 안 줬으면, notice-top 안의 img에 적용) */
+.notice-top > img{
+  width:24px;                  /* HTML width/height와 동일 유지 */
   height:16px;
   display:block;
   flex:0 0 auto;
 }
 
 .notice-msg{
-  font-size:12px;
-  color:#243040;
-  padding:4px 8px;          /* ✅ 글자 바깥 여백 */
-  background:rgba(255,255,255,0.6); /* ✅ 살짝 밝은 배경 */
-  border-radius:6px;        /* ✅ 둥근 느낌 */
+  margin:0;
+  font-size:13px;              /* ✅ 캡처 스펙 */
+  letter-spacing:0.02em;       /* ✅ 캡처 스펙 */
+  color:#000;                  /* ✅ 캡처 스펙 */
+  line-height:1.2;
+  white-space:nowrap;
 }
 
-/* ===== Topbar ===== */
+/* =========================
+   Header
+========================= */
 .topbar{
   position:relative;
   height:56px;
@@ -66,25 +76,28 @@ body{
   top:16px;
 }
 .brand-logo{
-  width:90px;height:28px;
+  width:90px;
+  height:28px;
   display:block;
   object-fit:contain;
 }
 
-/* menu */
 .menu{
   position:absolute;
   right:14px;
   top:10px;
-  width:58px;height:40px;
-  border:0;background:transparent;
+  width:58px;
+  height:40px;
+  border:0;
+  background:transparent;
   cursor:pointer;
   display:grid;
   place-items:center;
   gap:4px;
 }
 .hamburger{
-  width:16px;height:11px;
+  width:16px;
+  height:11px;
   display:inline-block;
   background:
     linear-gradient(#33363D,#33363D) 0 0/100% 2px no-repeat,
@@ -98,14 +111,18 @@ body{
   color:#333;
 }
 
-/* ===== 공지사항 위 인셋 구분선 ===== */
+/* =========================
+   Separator
+========================= */
 .sep-inset{
   height:1px;
   background:#e9ecef;
   margin:0 14px;
 }
 
-/* ===== 공지사항 라인 ===== */
+/* =========================
+   Notice link line
+========================= */
 .notice-link{
   display:flex;
   align-items:center;
@@ -115,32 +132,37 @@ body{
   color:#555;
   background:#fff;
 }
+
 .bell-img{
   width:16px;
   height:16px;
   display:block;
   flex:0 0 auto;
 }
+
 .notice-link-text{
   font-size:13px;
   letter-spacing:-0.02em;
+  color:#333;
 }
-/* ✅ 공지사항 텍스트 옆 > : 글자 크기(1em)와 동일 + 더 굵게 */
+
+/* ✅ ‘>’ 더 굵고 선명하게: 문자 대신 보더 화살표(두께 제어 가능) */
 .notice-link-text::after{
   content:"";
   display:inline-block;
-  margin-left:6px;          /* 네가 맘에 든 공백 유지 */
-  width:8px;
-  height:8px;
-
-  /* ✅ 여기서 굵기 조절 */
-  border-right:1.6px solid #222;
-  border-top:1.6px solid #222;
-
-  transform:rotate(45deg) translateY(1px);
+  width:7px;
+  height:7px;
+  margin-left:6px;
+  border-right:2px solid #000; /* ✅ 더 굵게 + 검정 */
+  border-top:2px solid #000;   /* ✅ 더 굵게 + 검정 */
+  transform:rotate(45deg);
+  translate:0 1px;
+  opacity:.55;                 /* 원본 느낌(너무 진하면 0.7~1로) */
 }
 
-/* ===== Search ===== */
+/* =========================
+   Search
+========================= */
 .search-wrap{ padding:10px 14px 0 14px; }
 .search{
   height:44px;
@@ -153,22 +175,26 @@ body{
   background:#fff;
 }
 .search-input{
-  border:0; outline:none;
+  border:0;
+  outline:none;
   flex:1;
   font-size:14px;
   color:#222;
 }
 .search-input::placeholder{ color:#8a8f98; }
 .search-btn{
-  width:34px;height:34px;
+  width:34px;
+  height:34px;
   border-radius:999px;
-  border:0;background:transparent;
+  border:0;
+  background:transparent;
   display:grid;
   place-items:center;
   cursor:pointer;
 }
 .search-svg{
-  width:18px;height:18px;
+  width:18px;
+  height:18px;
   stroke:#111;
   stroke-width:2;
   fill:none;
@@ -176,7 +202,9 @@ body{
   stroke-linejoin:round;
 }
 
-/* ===== Sections ===== */
+/* =========================
+   Sections
+========================= */
 .section{ padding:18px 14px 0 14px; }
 .section-title{
   margin:0 0 10px 0;
@@ -185,13 +213,13 @@ body{
   letter-spacing:-0.02em;
 }
 
-/* ===== Quick section background ===== */
+/* Quick section background */
 .quick-section{
   background:#f6f7f9;
-  padding-bottom: 12px;
+  padding-bottom:12px;
 }
 
-/* ===== Quick grid ===== */
+/* Quick grid */
 .quick-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -237,7 +265,9 @@ body{
 }
 .more .plus{ font-size:16px; line-height:1; }
 
-/* ===== Banner ===== */
+/* =========================
+   Banner
+========================= */
 .banner{ padding:10px 14px 0 14px; background:#f6f7f9; }
 .banner-card{
   height:92px;
@@ -259,7 +289,9 @@ body{
   background:rgba(255,255,255,.22);
 }
 
-/* ===== Benefit cards ===== */
+/* =========================
+   Benefit cards
+========================= */
 .cards-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -337,7 +369,10 @@ body{
   transform:rotate(45deg);
 }
 
-/* ===== Channel ===== */
+/* =========================
+   Channel / Footer / Bottom nav
+   (필요하면 그대로 유지)
+========================= */
 .channel-head{
   display:flex;
   align-items:center;
@@ -380,7 +415,6 @@ body{
 .ico.gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
 .ico.user::before{ content:"👤"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
 
-/* ===== Footer + Bottom nav ===== */
 .footer{
   margin-top:12px;
   background:#f5f6f8;
@@ -444,20 +478,3 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
