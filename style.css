@@ -29,7 +29,7 @@ body{
 
 /* ===== Top notice (정부24 스샷 스펙: 402×30) ===== */
 .notice-top{
-  height:30px;
+  height:38px;
   display:flex;
   align-items:center;
   gap:6px;
@@ -48,7 +48,7 @@ body{
 .notice-msg{
   font-size:12px;
   color:#243040;
-  padding:10px 14px;          /* ✅ 글자 바깥 여백 */
+  padding:4px 8px;          /* ✅ 글자 바깥 여백 */
   background:rgba(255,255,255,0.6); /* ✅ 살짝 밝은 배경 */
   border-radius:6px;        /* ✅ 둥근 느낌 */
 }
@@ -444,6 +444,7 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
