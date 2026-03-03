@@ -45,17 +45,12 @@ body{
   flex:0 0 auto;
 }
 
-/* 문구: 바깥 여백/배경 없이 “바 안에서만” 정렬 */
 .notice-msg{
-  margin:0;
-  padding:0;                   /* ✅ (중요) 텍스트 주변 박스 여백 제거 */
-  background:transparent;       /* ✅ (중요) 텍스트만 보이게 */
-  border-radius:0;
   font-size:12px;
-  line-height:1;               /* ✅ 30px 바 안에서 가운데 정렬 잘 됨 */
-  color:#243040;               /* ✅ 스샷처럼 진한 네이비/그레이 톤 */
-  letter-spacing:0;
-  white-space:nowrap;
+  color:#243040;
+  padding:4px 8px;          /* ✅ 글자 바깥 여백 */
+  background:rgba(255,255,255,0.6); /* ✅ 살짝 밝은 배경 */
+  border-radius:6px;        /* ✅ 둥근 느낌 */
 }
 
 /* ===== Topbar ===== */
@@ -449,6 +444,7 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
