@@ -207,11 +207,9 @@ body {
   position: relative;
   height: 90px;
   border-radius: 10px;
-  border: 1px solid rgba(161, 225, 255, 0.5);
-  box-shadow: rgba(0, 0, 0, .25) 0px 0px 2px 0px;
+  border: 1px solid #E3E6EB;
+  box-shadow: none;
   overflow: hidden;
-  text-decoration: none;
-  color: inherit;
   background: #fff;
 }
 .card-content{
@@ -436,3 +434,4 @@ body {
   font-size: 13px;
   font-weight: 700;
 }
+
