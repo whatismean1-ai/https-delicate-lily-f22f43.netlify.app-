@@ -10,13 +10,14 @@
   <div class="stage">
     <main class="phone">
 
-      <!-- 상단 알림(태극기 + 문구) -->
+      <!-- 상단 알림 -->
       <div class="notice-top">
-        <span class="flag" aria-hidden="true"></span>
+        <!-- ✅ 레티나 태극기(48x32) → 표시 24x16 -->
+        <img class="flag-img" src="./assets/flag_48x32_retina.png" width="24" height="16" alt="" aria-hidden="true" />
         <p class="notice-msg">이 누리집은 대한민국 공식 전자정부 누리집입니다.</p>
       </div>
 
-      <!-- 헤더: 로고 + 전체메뉴 -->
+      <!-- 헤더 -->
       <header class="topbar">
         <div class="brand">
           <img class="brand-logo" src="./assets/gov24.png" alt="정부24" />
@@ -28,11 +29,17 @@
         </button>
       </header>
 
-      <!-- 공지사항(로고 아래) -->
+      <!-- 공지사항 위 인셋 구분선 -->
+      <div class="sep-inset" aria-hidden="true"></div>
+
+      <!-- 공지사항 라인 -->
       <a class="notice-link" href="#">
-        <span class="bell" aria-hidden="true"></span>
+        <!-- ✅ 노란 종 PNG (표시 16x16 / 레티나 파일이면 32x32 권장) -->
+        <span class="bell" aria-hidden="true">
+          <img src="./assets/bell_yellow.png" width="16" height="16" alt="" />
+        </span>
+
         <span class="notice-link-text">공지사항 확인하기</span>
-        <span class="chev" aria-hidden="true"></span>
       </a>
 
       <!-- 검색 -->
@@ -40,49 +47,57 @@
         <div class="search">
           <input class="search-input" type="text" placeholder="정부 서비스를 쉽게 검색하세요." />
           <button class="search-btn" type="button" aria-label="검색">
-            <span class="search-ico" aria-hidden="true"></span>
+            <svg class="ico-search" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-3.2-3.2"></path>
+            </svg>
           </button>
         </div>
       </section>
 
       <!-- 자주 찾는 서비스 -->
-      <section class="section">
+      <section class="section section-muted">
         <h2 class="section-title">자주 찾는 서비스</h2>
 
         <div class="quick-grid">
           <a class="quick-item" href="#">
             <span class="quick-label">인감증명서</span>
-            <span class="badge" aria-hidden="true"></span>
+            <!-- ✅ PC 40x40 → 표시 20x20 -->
+            <img class="qi-ico" src="./assets/pc_40x40_retina.png" width="20" height="20" alt="" aria-hidden="true" />
           </a>
+
           <a class="quick-item" href="#">
             <span class="quick-label">토지(임야)대장</span>
-            <span class="badge" aria-hidden="true"></span>
+            <!-- ✅ PDF 40x40 → 표시 20x20 -->
+            <img class="qi-ico" src="./assets/pdf_40x40_retina.png" width="20" height="20" alt="" aria-hidden="true" />
           </a>
+
           <a class="quick-item" href="#">
             <span class="quick-label">주민등록등본(초본)</span>
-            <span class="badge" aria-hidden="true"></span>
+            <img class="qi-ico" src="./assets/pdf_40x40_retina.png" width="20" height="20" alt="" aria-hidden="true" />
           </a>
+
           <a class="quick-item" href="#">
             <span class="quick-label">자동차등록원부</span>
-            <span class="badge" aria-hidden="true"></span>
+            <img class="qi-ico" src="./assets/pc_40x40_retina.png" width="20" height="20" alt="" aria-hidden="true" />
           </a>
+
           <a class="quick-item" href="#">
             <span class="quick-label">건축물대장</span>
-            <span class="badge" aria-hidden="true"></span>
+            <img class="qi-ico" src="./assets/pdf_40x40_retina.png" width="20" height="20" alt="" aria-hidden="true" />
           </a>
+
           <a class="quick-item" href="#">
             <span class="quick-label">가족관계증명서</span>
-            <span class="ext" aria-hidden="true"></span>
+            <!-- ✅ 외부링크 32x32 → 표시 16x16 -->
+            <img class="qi-ico qi-ico-sm" src="./assets/link_32x32_retina.png" width="16" height="16" alt="" aria-hidden="true" />
           </a>
         </div>
 
-        <a class="more" href="#">
-          <span>더보기</span>
-          <span class="plus" aria-hidden="true">+</span>
-        </a>
+        <a class="more" href="#"><span>더보기</span><span class="plus" aria-hidden="true">+</span></a>
       </section>
 
-      <!-- AI 배너(임시) -->
+      <!-- 배너 -->
       <section class="banner">
         <div class="banner-card">
           <div class="banner-text">
@@ -94,12 +109,12 @@
         </div>
       </section>
 
-      <!-- 혜택/보조금 -->
+      <!-- 혜택 -->
       <section class="section">
         <h2 class="section-title">지금 봐야 할 혜택/보조금</h2>
 
         <div class="cards-grid">
-          <a class="card card-pink" href="#">
+          <a class="card" href="#">
             <div class="card-content">
               <div class="card-title">유아학비</div>
               <div class="card-sub">현금(감면)<br/>지급</div>
@@ -108,7 +123,7 @@
             <div class="card-bg bg-pink" aria-hidden="true"></div>
           </a>
 
-          <a class="card card-yellow" href="#">
+          <a class="card" href="#">
             <div class="card-content">
               <div class="card-title">전세보증금반환보증 보증료</div>
               <div class="card-sub">현금<br/>지급</div>
@@ -117,7 +132,7 @@
             <div class="card-bg bg-yellow" aria-hidden="true"></div>
           </a>
 
-          <a class="card card-blue" href="#">
+          <a class="card" href="#">
             <div class="card-content">
               <div class="card-title">초중고 입학축하금 지원</div>
               <div class="card-sub">현금 및<br/>지역 바우처 제공</div>
@@ -126,7 +141,7 @@
             <div class="card-bg bg-blue" aria-hidden="true"></div>
           </a>
 
-          <a class="card card-blue2" href="#">
+          <a class="card" href="#">
             <div class="card-content">
               <div class="card-title">근로장려금</div>
               <div class="card-sub">현금<br/>지급</div>
@@ -157,7 +172,7 @@
         </div>
       </section>
 
-      <!-- 하단(푸터/바텀탭) -->
+      <!-- 풋터 -->
       <footer class="footer">
         <div class="footer-inner">
           <div class="footer-top">
@@ -191,11 +206,32 @@
           </div>
         </div>
 
+        <!-- 하단 메뉴(스크롤 포함) -->
         <nav class="bottom-nav" aria-label="하단 메뉴">
-          <a class="bn-item active" href="#"><span class="bn-ico i-user"></span><span>MyGOV</span></a>
-          <a class="bn-item" href="#"><span class="bn-ico i-search"></span><span>주제별 보기</span></a>
-          <a class="bn-item" href="#"><span class="bn-ico i-doc"></span><span>문서진위확인</span></a>
-          <a class="bn-item" href="#"><span class="bn-ico i-gift"></span><span>혜택알림</span></a>
+          <a class="bn-item active" href="#">
+            <span class="bn-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg>
+            </span>
+            <span>MyGOV</span>
+          </a>
+          <a class="bn-item" href="#">
+            <span class="bn-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="2"></rect><rect x="13" y="4" width="7" height="7" rx="2"></rect><rect x="4" y="13" width="7" height="7" rx="2"></rect><rect x="13" y="13" width="7" height="7" rx="2"></rect></svg>
+            </span>
+            <span>주제별 보기</span>
+          </a>
+          <a class="bn-item" href="#">
+            <span class="bn-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 3h7l3 3v15a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path><path d="M14 3v4a2 2 0 0 0 2 2h4"></path></svg>
+            </span>
+            <span>문서진위확인</span>
+          </a>
+          <a class="bn-item" href="#">
+            <span class="bn-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20 12v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-9"></path><path d="M12 3l8 7H4l8-7z"></path><path d="M12 10v13"></path></svg>
+            </span>
+            <span>혜택알림</span>
+          </a>
         </nav>
       </footer>
 
@@ -203,4 +239,3 @@
   </div>
 </body>
 </html>
-
