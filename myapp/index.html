@@ -3,45 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 같은 폴더(루트)에 style.css 있어야 함 -->
   <link rel="stylesheet" href="./style.css" />
   <title>정부24 클론</title>
 </head>
+
 <body>
   <div class="stage">
-    <div class="phone">
+    <main class="phone" role="main">
 
-      <!-- Notice -->
+      <!-- 상단 안내 바 -->
       <div class="notice">
         <span class="flag">KR</span>
-        <span class="notice-text">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+        <p class="notice-text">이 누리집은 대한민국 공식 전자정부 누리집입니다.</p>
       </div>
 
-      <!-- Topbar -->
+      <!-- 헤더 -->
       <header class="topbar">
-        <div class="brand">
+        <div class="brand" aria-label="정부24">
           <div class="brand-logo">
             <span class="mark" aria-hidden="true"></span>
             <span class="brand-name">정부24</span>
           </div>
         </div>
 
-        <button class="menu" id="menuBtn" type="button" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+        <button class="menu" type="button" aria-label="전체메뉴 열기" aria-expanded="false" data-menu-open>
           <span class="hamburger" aria-hidden="true"></span>
           <span class="menu-text">전체메뉴</span>
         </button>
       </header>
 
-      <!-- Search -->
-      <div class="search-wrap">
+      <!-- 검색 -->
+      <section class="search-wrap" aria-label="검색">
         <div class="search">
-          <input class="search-input" placeholder="정부 서비스를 쉽게 검색하세요." />
+          <input class="search-input" type="search" placeholder="정부 서비스를 쉽게 검색하세요." />
           <button class="search-btn" type="button" aria-label="검색">
-            🔍
+            <span class="search-ico" aria-hidden="true">🔍</span>
           </button>
         </div>
-      </div>
+      </section>
 
-      <!-- Quick -->
+      <!-- 자주 찾는 서비스 -->
       <section class="section">
         <h2 class="section-title">자주 찾는 서비스</h2>
 
@@ -50,27 +52,22 @@
             <span class="quick-label">인감증명서</span>
             <span class="badge" aria-hidden="true"></span>
           </a>
-
           <a class="quick-item" href="#">
             <span class="quick-label">토지(임야)대장</span>
             <span class="badge" aria-hidden="true"></span>
           </a>
-
           <a class="quick-item" href="#">
             <span class="quick-label">주민등록등본(초본)</span>
             <span class="badge" aria-hidden="true"></span>
           </a>
-
           <a class="quick-item" href="#">
             <span class="quick-label">자동차등록원부</span>
             <span class="badge" aria-hidden="true"></span>
           </a>
-
           <a class="quick-item" href="#">
             <span class="quick-label">건축물대장</span>
             <span class="badge" aria-hidden="true"></span>
           </a>
-
           <a class="quick-item" href="#">
             <span class="quick-label">가족관계증명서</span>
             <span class="ext" aria-hidden="true">↗</span>
@@ -78,183 +75,191 @@
         </div>
 
         <a class="more" href="#">
-          더보기 <span class="plus" aria-hidden="true">+</span>
+          <span>더보기</span>
+          <span class="plus" aria-hidden="true">+</span>
         </a>
       </section>
 
-      <!-- Benefits -->
+      <!-- 배너(스크린샷에 있는 큰 배너) -->
+      <section class="banner" aria-label="배너">
+        <a class="banner-card" href="#">
+          <div class="banner-text">
+            <div class="banner-title">AI 기반 민원 서비스</div>
+            <div class="banner-sub">주민등록 · 건강보험 · 각종 혜택</div>
+            <div class="banner-date">2026년 03월 업데이트</div>
+          </div>
+        </a>
+      </section>
+
+      <!-- 지금 봐야 할 혜택/보조금 -->
       <section class="section">
         <h2 class="section-title">지금 봐야 할 혜택/보조금</h2>
 
         <div class="cards-grid">
           <a class="card card-pink" href="#">
+            <img class="card-bg" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='180'%3E%3Crect width='360' height='180' fill='%23fff'/%3E%3Ccircle cx='60' cy='40' r='120' fill='%23fbecee'/%3E%3Ccircle cx='320' cy='170' r='160' fill='%23fdf4f5'/%3E%3C/svg%3E" />
             <div class="card-content">
               <div class="card-title">유아학비</div>
               <div class="card-sub">현금(감면)<br/>지급</div>
             </div>
-            <div class="card-ico" aria-hidden="true">
-              <!-- placeholder icon -->
-              <span class="ico ico-baby"></span>
+            <div class="card-ico">
+              <img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' rx='16' fill='%23fff'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='44'%3E%F0%9F%A7%B8%3C/text%3E%3C/svg%3E" />
             </div>
           </a>
 
           <a class="card card-yellow" href="#">
+            <img class="card-bg" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='180'%3E%3Crect width='360' height='180' fill='%23fff'/%3E%3Ccircle cx='320' cy='40' r='140' fill='%23fff3d8'/%3E%3Ccircle cx='40' cy='170' r='170' fill='%23fff8ea'/%3E%3C/svg%3E" />
             <div class="card-content">
               <div class="card-title">전세보증금반환보증 보증료</div>
               <div class="card-sub">현금<br/>지급</div>
             </div>
-            <div class="card-ico" aria-hidden="true">
-              <span class="ico ico-coin"></span>
+            <div class="card-ico">
+              <img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' rx='16' fill='%23fff'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='44'%3E%F0%9F%8F%A0%3C/text%3E%3C/svg%3E" />
             </div>
           </a>
 
           <a class="card card-blue" href="#">
+            <img class="card-bg" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='180'%3E%3Crect width='360' height='180' fill='%23fff'/%3E%3Ccircle cx='60' cy='40' r='130' fill='%23e9f6ff'/%3E%3Ccircle cx='320' cy='170' r='160' fill='%23f2fbff'/%3E%3C/svg%3E" />
             <div class="card-content">
               <div class="card-title">초중고 입학축하금 지원</div>
               <div class="card-sub">현금 및<br/>지역 바우처 제공</div>
             </div>
-            <div class="card-ico" aria-hidden="true">
-              <span class="ico ico-student"></span>
+            <div class="card-ico">
+              <img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' rx='16' fill='%23fff'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='44'%3E%F0%9F%91%A6%3C/text%3E%3C/svg%3E" />
             </div>
           </a>
 
           <a class="card card-blue2" href="#">
+            <img class="card-bg" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='180'%3E%3Crect width='360' height='180' fill='%23fff'/%3E%3Ccircle cx='320' cy='40' r='140' fill='%23eef3ff'/%3E%3Ccircle cx='40' cy='170' r='170' fill='%23f6f9ff'/%3E%3C/svg%3E" />
             <div class="card-content">
               <div class="card-title">근로장려금</div>
               <div class="card-sub">현금<br/>지급</div>
             </div>
-            <div class="card-ico" aria-hidden="true">
-              <span class="ico ico-pig"></span>
+            <div class="card-ico">
+              <img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' rx='16' fill='%23fff'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='44'%3E%F0%9F%90%B7%3C/text%3E%3C/svg%3E" />
             </div>
           </a>
         </div>
 
         <a class="benefit-more" href="#">
-          더 많은 혜택 보기 <span class="open" aria-hidden="true">↗</span>
+          <span>더 많은 혜택 보기</span>
+          <span class="open" aria-hidden="true">↗</span>
         </a>
       </section>
 
-      <!-- Channel -->
+      <!-- 국민소통채널 -->
       <section class="section">
         <div class="channel-head">
           <h2 class="section-title" style="margin:0;">국민소통채널</h2>
-          <button class="plus-btn" type="button" aria-label="추가">+</button>
+          <button class="plus-btn" type="button" aria-label="국민소통채널 더보기">+</button>
         </div>
 
         <div class="channel-grid">
-          <a class="channel-item" href="#"><span>MyGov</span></a>
-          <a class="channel-item" href="#"><span>주제별 보기</span></a>
-          <a class="channel-item" href="#"><span>문서진위확인</span></a>
-          <a class="channel-item" href="#"><span>혜택알림</span></a>
+          <a class="channel-btn" href="#">
+            <span class="ch-ico" aria-hidden="true">👤</span>
+            <span class="ch-txt">MyGov</span>
+          </a>
+          <a class="channel-btn" href="#">
+            <span class="ch-ico" aria-hidden="true">🔎</span>
+            <span class="ch-txt">주제별 보기</span>
+          </a>
+          <a class="channel-btn" href="#">
+            <span class="ch-ico" aria-hidden="true">📄</span>
+            <span class="ch-txt">문서진위확인</span>
+          </a>
+          <a class="channel-btn" href="#">
+            <span class="ch-ico" aria-hidden="true">🎁</span>
+            <span class="ch-txt">혜택알림</span>
+          </a>
         </div>
       </section>
 
-<!-- Bottom spacer to avoid tabbar overlap -->
-<div class="bottom-safe"></div>
-
-<!-- Footer (정부24 스샷 하단부) -->
-<footer class="footer2">
-  <div class="footer-head">
-    <div class="footer-brand">
-      <span class="footer-mark" aria-hidden="true"></span>
-      <span class="footer-name">정부24</span>
-      <span class="footer-chev" aria-hidden="true">▾</span>
-    </div>
-  </div>
-
-  <div class="footer-block">
-    <div class="footer-title">콜센터</div>
-    <div class="footer-text">
-      1588-2188,<br/>
-      02-721-0600 (지역번호 '02'를 확인하세요.)<br/>
-      (09:00 ~ 18:00 평일)
-    </div>
-  </div>
-
-  <div class="footer-block">
-    <div class="footer-title">정부민원안내콜센터</div>
-    <div class="footer-text">
-      국번없이 110 (무료, 휴일포함 365일 24시간)
-    </div>
-  </div>
-
-  <div class="footer-links">
-    <a href="#" class="footer-link">개인정보처리방침</a>
-    <a href="#" class="footer-link">이용약관</a>
-  </div>
-
-  <div class="footer-copy">
-    © Ministry of the Interior and Safety. All Rights Reserved.
-  </div>
-</footer>
-
-<!-- Bottom Tabbar (스샷처럼 둥근 박스) -->
-<nav class="tabbar2" aria-label="하단 탭">
-  <a class="tab2 active" href="#">
-    <span class="tab2-ico" aria-hidden="true">👤</span>
-    <span class="tab2-txt">MyGOV</span>
-  </a>
-  <a class="tab2" href="#">
-    <span class="tab2-ico" aria-hidden="true">🔎</span>
-    <span class="tab2-txt">주제별 보기</span>
-  </a>
-  <a class="tab2" href="#">
-    <span class="tab2-ico" aria-hidden="true">📄</span>
-    <span class="tab2-txt">문서진위확인</span>
-  </a>
-  <a class="tab2" href="#">
-    <span class="tab2-ico" aria-hidden="true">🎁</span>
-    <span class="tab2-txt">혜택알림</span>
-  </a>
-</nav>
-
-      <!-- Overlay + Drawer -->
-      <div class="overlay" id="overlay" hidden></div>
-
-      <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="전체메뉴" hidden>
-        <div class="drawer-top">
-          <div class="drawer-title">전체메뉴</div>
-          <button class="drawer-close" id="closeBtn" type="button" aria-label="닫기">×</button>
+      <!-- 하단(연락처/링크/저작권) -->
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <span class="footer-mark" aria-hidden="true"></span>
+            <span class="footer-name">정부24</span>
+            <span class="footer-drop" aria-hidden="true">∨</span>
+          </div>
         </div>
 
-        <div class="drawer-list">
-          <button class="drawer-item" type="button">민원서비스</button>
-          <button class="drawer-item" type="button">보조금24</button>
-          <button class="drawer-item" type="button">정책정보</button>
-          <button class="drawer-item" type="button">고객센터</button>
+        <div class="footer-body">
+          <div class="footer-title">콜센터</div>
+          <div class="footer-line">1588-2188,</div>
+          <div class="footer-line">02-721-0600 (지역번호 ‘02’를 확인하세요.)</div>
+          <div class="footer-line">(09:00 ~ 18:00 평일)</div>
+
+          <div class="footer-gap"></div>
+
+          <div class="footer-title">정부민원안내콜센터</div>
+          <div class="footer-line">국번없이 110 (무료, 휴일포함 365일 24시간)</div>
+
+          <div class="footer-hr"></div>
+
+          <div class="footer-links">
+            <a href="#" class="footer-link">개인정보처리방침</a>
+            <span class="footer-dot">|</span>
+            <a href="#" class="footer-link">이용약관</a>
+          </div>
+
+          <div class="footer-copy">© Ministry of the Interior and Safety. All Rights Reserved.</div>
+        </div>
+      </footer>
+
+      <!-- 하단 고정 탭바 -->
+      <nav class="tabbar" aria-label="하단 탭">
+        <a class="tab" href="#"><span class="tab-ico">👤</span><span class="tab-txt">MyGov</span></a>
+        <a class="tab" href="#"><span class="tab-ico">🔎</span><span class="tab-txt">주제별 보기</span></a>
+        <a class="tab" href="#"><span class="tab-ico">📄</span><span class="tab-txt">문서진위확인</span></a>
+        <a class="tab" href="#"><span class="tab-ico">🎁</span><span class="tab-txt">혜택알림</span></a>
+      </nav>
+
+      <!-- 전체메뉴(오른쪽 패널) -->
+      <aside class="menu-dim" hidden data-menu-dim>
+        <div class="menu-panel" role="dialog" aria-label="전체메뉴">
+          <div class="menu-panel-head">
+            <div class="menu-panel-title">전체메뉴</div>
+            <button class="menu-close" type="button" aria-label="닫기" data-menu-close>✕</button>
+          </div>
+
+          <div class="menu-list">
+            <a class="menu-item" href="#">민원서비스</a>
+            <a class="menu-item" href="#">보조금24</a>
+            <a class="menu-item" href="#">정책정보</a>
+            <a class="menu-item" href="#">고객센터</a>
+          </div>
         </div>
       </aside>
 
-    </div>
+    </main>
   </div>
 
   <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const closeBtn = document.getElementById("closeBtn");
-    const drawer = document.getElementById("drawer");
-    const overlay = document.getElementById("overlay");
+    // 전체메뉴 열고 닫기
+    const openBtn = document.querySelector("[data-menu-open]");
+    const dim = document.querySelector("[data-menu-dim]");
+    const closeBtn = document.querySelector("[data-menu-close]");
 
-    function openDrawer(){
-      drawer.hidden = false;
-      overlay.hidden = false;
-      menuBtn.setAttribute("aria-expanded","true");
-      document.body.classList.add("no-scroll");
+    function openMenu() {
+      dim.hidden = false;
+      requestAnimationFrame(() => dim.classList.add("show"));
+      openBtn.setAttribute("aria-expanded", "true");
     }
-    function closeDrawer(){
-      drawer.hidden = true;
-      overlay.hidden = true;
-      menuBtn.setAttribute("aria-expanded","false");
-      document.body.classList.remove("no-scroll");
+    function closeMenu() {
+      dim.classList.remove("show");
+      openBtn.setAttribute("aria-expanded", "false");
+      setTimeout(() => (dim.hidden = true), 180);
     }
 
-    menuBtn.addEventListener("click", openDrawer);
-    closeBtn.addEventListener("click", closeDrawer);
-    overlay.addEventListener("click", closeDrawer);
-
-    document.addEventListener("keydown", (e) => {
-      if(e.key === "Escape" && !drawer.hidden) closeDrawer();
+    openBtn?.addEventListener("click", openMenu);
+    closeBtn?.addEventListener("click", closeMenu);
+    dim?.addEventListener("click", (e) => {
+      if (e.target === dim) closeMenu();
+    });
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !dim.hidden) closeMenu();
     });
   </script>
 </body>
 </html>
-
