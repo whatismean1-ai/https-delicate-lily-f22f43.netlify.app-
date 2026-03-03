@@ -124,14 +124,17 @@ body{
 }
 /* ✅ 공지사항 텍스트 옆 > : 글자 크기(1em)와 동일 + 더 굵게 */
 .notice-link-text::after{
-  content: ">";
-  display: inline-block;
-  margin-left: 6px;     /* 공백 줄이기 (기존 6px보다 좁게) */
-  font-size: 1em;       /* ✅ 텍스트와 정확히 동일 크기 */
-  font-weight: 1500;     /* ✅ 굵게 */
-  line-height: 1;
-  color: #9aa0a6;
-  transform: translateY(-0.5px); /* 살짝 중앙 맞춤 */
+  content:"";
+  display:inline-block;
+  margin-left:6px;          /* 네가 맘에 든 공백 유지 */
+  width:8px;
+  height:8px;
+
+  /* ✅ 여기서 굵기 조절 */
+  border-right:2.4px solid #9aa0a6;
+  border-top:2.4px solid #9aa0a6;
+
+  transform:rotate(45deg) translateY(1px);
 }
 
 /* ===== Search ===== */
@@ -438,6 +441,7 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
