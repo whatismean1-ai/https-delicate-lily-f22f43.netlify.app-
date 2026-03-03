@@ -27,27 +27,36 @@ body{
   box-shadow: rgba(0,0,0,.06) 0 10px 30px;
 }
 
-/* ===== Top notice ===== */
-.notice-top {
-  display: flex;
-  align-items: center;
-  gap: 4px; /* 공백 더 줄임 */
-  padding:0 14px;
-  background:#F3F6FB;
-  border-bottom:1px solid rgba(0,0,0,.06);
+/* ===== Top notice (정부24 스샷 스펙: 402×30) ===== */
+.notice-top{
+  height:30px;                 /* ✅ 스샷과 동일 */
+  display:flex;
+  align-items:center;
+  gap:6px;                     /* ✅ 아이콘-텍스트 간격(과하면 4~6 사이로) */
+  padding:0 12px;              /* ✅ 좌우 여백 */
+  background:#AFC7E6;          /* ✅ 스샷 느낌의 블루톤(필요하면 여기만 미세조정) */
+  border-bottom:0;             /* ✅ 스샷은 선 거의 안 보임 */
 }
-.flag-img {
-  width: 28px;      /* 🔥 더 키움 */
-  height: auto;
+
+/* 태극기: 24×16 고정 */
+.notice-top img{
+  width:24px;
+  height:16px;
   display:block;
   flex:0 0 auto;
-  image-rendering:auto;
 }
+
+/* 문구: 바깥 여백/배경 없이 “바 안에서만” 정렬 */
 .notice-msg{
   margin:0;
+  padding:0;                   /* ✅ (중요) 텍스트 주변 박스 여백 제거 */
+  background:transparent;       /* ✅ (중요) 텍스트만 보이게 */
+  border-radius:0;
   font-size:12px;
-  color:#333;
-  letter-spacing:.02em;
+  line-height:1;               /* ✅ 30px 바 안에서 가운데 정렬 잘 됨 */
+  color:#243040;               /* ✅ 스샷처럼 진한 네이비/그레이 톤 */
+  letter-spacing:0;
+  white-space:nowrap;
 }
 
 /* ===== Topbar ===== */
@@ -441,6 +450,7 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
