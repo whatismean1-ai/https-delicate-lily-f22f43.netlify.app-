@@ -482,8 +482,7 @@ body{
 
 /* bottom nav */
 .bottom-nav{
-  position: sticky;
-  bottom: 0;
+  position: relative;
   background: #fff;
   border-top: 1px solid rgba(0,0,0,.08);
   height: 64px;
@@ -511,4 +510,5 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
