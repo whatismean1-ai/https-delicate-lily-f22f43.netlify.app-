@@ -489,3 +489,87 @@ body{
   font-weight: 900;
   font-size: 12px;
 }
+/* ===== Brand area ===== */
+.brand-area{
+  padding: 10px 14px 0 14px;
+}
+
+.brand-img{
+  width: 90px;     /* 요청한 90x28 */
+  height: 28px;
+  display: block;
+  object-fit: contain; /* 로고 깨짐 방지 */
+}
+
+/* ===== Notice row (bell + text + arrow) ===== */
+.notice-row{
+  margin-top: 6px;
+  padding: 8px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-decoration: none;
+  border-bottom: 1px solid #eaeaea; /* 구분선 */
+}
+
+.notice-left{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.notice-text{
+  font-size: 13px;
+  color: #555;
+  letter-spacing: -0.02em;
+}
+
+/* Bell icon (CSS로 만든 종 아이콘) */
+.bell{
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  position: relative;
+}
+
+/* 종 몸통 */
+.bell::before{
+  content:"";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 10px;
+  height: 9px;
+  border: 1.6px solid #7a7a7a;
+  border-bottom: 0;
+  border-radius: 10px 10px 6px 6px;
+}
+
+/* 종 아래 똑딱(방울) */
+.bell::after{
+  content:"";
+  position: absolute;
+  left: 6px;
+  bottom: 1px;
+  width: 3px;
+  height: 3px;
+  background: #7a7a7a;
+  border-radius: 999px;
+}
+
+/* Right arrow ( > ) */
+.notice-arrow{
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-right: 1.8px solid #9aa0a6;
+  border-bottom: 1.8px solid #9aa0a6;
+  transform: rotate(-45deg);
+  margin-right: 2px;
+}
+
+/* (선택) hover 효과 */
+.notice-row:hover .notice-text{
+  color: #333;
+}
