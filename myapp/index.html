@@ -28,10 +28,18 @@
           />
         </a>
 
-        <!-- ✅ 공지사항: 정부24 로고 아래로 -->
-        <a class="notice-link" href="#" role="button">
-          공지사항 확인하기
-        </a>
+<!-- 상단 로고 + 공지 -->
+<div class="brand-area">
+  <img src="./assets/gov24.png" class="brand-img" alt="정부24" />
+
+  <a class="notice-row" href="#" aria-label="공지사항 확인하기">
+    <span class="notice-left">
+      <span class="bell" aria-hidden="true"></span>
+      <span class="notice-text">공지사항 확인하기</span>
+    </span>
+    <span class="notice-arrow" aria-hidden="true"></span>
+  </a>
+</div>
 
         <button class="menu" type="button" aria-label="전체메뉴 열기" id="menuBtn">
           <span class="hamburger" aria-hidden="true"></span>
@@ -224,3 +232,4 @@
 
 </body>
 </html>
+
