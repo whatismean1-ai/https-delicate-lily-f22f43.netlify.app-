@@ -19,12 +19,10 @@ body{
 /* ===== Phone frame (전부 같이 스크롤) ===== */
 .phone{
   width: 402px;
-  height: 820px;        /* 폰 화면 높이 */
   background: #fff;
   border-radius: 14px;
-  overflow: auto;       /* ✅ 내부가 스크롤 */
+  overflow: hidden;   /* ✅ 내부 스크롤 제거 */
   box-shadow: rgba(0,0,0,.06) 0 10px 30px;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* ===== Top notice ===== */
@@ -503,4 +501,5 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
