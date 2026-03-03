@@ -18,7 +18,8 @@ body{
 
 /* ===== Phone frame ===== */
 .phone{
-  width: 402px;
+  width: 375px; /* ✅ 402 → 375 (또는 360) */
+}
   background: #fff;
   border-radius: 14px;
   overflow: hidden;
@@ -510,6 +511,7 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
 
 
