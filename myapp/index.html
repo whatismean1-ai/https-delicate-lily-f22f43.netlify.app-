@@ -28,13 +28,12 @@
         </button>
       </header>
 
-      <!-- ✅ 공지사항 위 인셋 구분선 -->
+      <!-- 공지사항 위 인셋 구분선 -->
       <div class="sep-inset" aria-hidden="true"></div>
 
-      <!-- ✅ 공지사항 라인 -->
+      <!-- 공지사항 라인 -->
       <a class="notice-link" href="#">
         <span class="bell" aria-hidden="true">
-          <!-- bell svg (outline) -->
           <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             <path d="M18 16v-5a6 6 0 10-12 0v5l-2 2h16l-2-2z"></path>
             <path d="M13.5 20a1.5 1.5 0 01-3 0"></path>
@@ -48,12 +47,15 @@
         <div class="search">
           <input class="search-input" type="text" placeholder="정부 서비스를 쉽게 검색하세요." />
           <button class="search-btn" type="button" aria-label="검색">
-            <span class="search-ico" aria-hidden="true"></span>
+            <svg class="ico-search" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-3.2-3.2"></path>
+            </svg>
           </button>
         </div>
       </section>
 
-      <!-- 자주 찾는 서비스 -->
+      <!-- 자주 찾는 서비스 (✅ 배경 적용) -->
       <section class="section section-muted">
         <h2 class="section-title">자주 찾는 서비스</h2>
 
@@ -178,12 +180,50 @@
           </div>
         </div>
 
-        <!-- 하단 메뉴(스크롤에 포함) -->
+        <!-- 하단 메뉴(스크롤 포함, ✅ SVG 아이콘) -->
         <nav class="bottom-nav" aria-label="하단 메뉴">
-          <a class="bn-item active" href="#"><span class="bn-ico i-user"></span><span>MyGOV</span></a>
-          <a class="bn-item" href="#"><span class="bn-ico i-search"></span><span>주제별 보기</span></a>
-          <a class="bn-item" href="#"><span class="bn-ico i-doc"></span><span>문서진위확인</span></a>
-          <a class="bn-item" href="#"><span class="bn-ico i-gift"></span><span>혜택알림</span></a>
+          <a class="bn-item active" href="#">
+            <span class="bn-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="4"></circle>
+                <path d="M20 21a8 8 0 0 0-16 0"></path>
+              </svg>
+            </span>
+            <span>MyGOV</span>
+          </a>
+
+          <a class="bn-item" href="#">
+            <span class="bn-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="4" y="4" width="7" height="7" rx="2"></rect>
+                <rect x="13" y="4" width="7" height="7" rx="2"></rect>
+                <rect x="4" y="13" width="7" height="7" rx="2"></rect>
+                <rect x="13" y="13" width="7" height="7" rx="2"></rect>
+              </svg>
+            </span>
+            <span>주제별 보기</span>
+          </a>
+
+          <a class="bn-item" href="#">
+            <span class="bn-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 3h7l3 3v15a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path>
+                <path d="M14 3v4a2 2 0 0 0 2 2h4"></path>
+              </svg>
+            </span>
+            <span>문서진위확인</span>
+          </a>
+
+          <a class="bn-item" href="#">
+            <span class="bn-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 12v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-9"></path>
+                <path d="M12 3l8 7H4l8-7z"></path>
+                <path d="M12 10v13"></path>
+              </svg>
+            </span>
+            <span>혜택알림</span>
+          </a>
         </nav>
       </footer>
 
@@ -191,4 +231,3 @@
   </div>
 </body>
 </html>
-
