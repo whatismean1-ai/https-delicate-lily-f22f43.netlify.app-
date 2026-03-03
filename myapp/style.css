@@ -16,14 +16,15 @@ body{
   padding: 24px 12px;
 }
 
-/* ===== Phone frame ===== */
+/* ===== Phone frame (전부 같이 스크롤) ===== */
 .phone{
-  width: 375px; /* ✅ 402 → 375 (또는 360) */
-}
+  width: 402px;
+  height: 820px;        /* 폰 화면 높이 */
   background: #fff;
   border-radius: 14px;
-  overflow: hidden;
+  overflow: auto;       /* ✅ 내부가 스크롤 */
   box-shadow: rgba(0,0,0,.06) 0 10px 30px;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ===== Top notice ===== */
@@ -66,7 +67,7 @@ body{
   width: 90px;
   height: 28px;
   display: block;
-  object-fit: contain; /* PNG 깨짐 방지 */
+  object-fit: contain;
   image-rendering: auto;
 }
 
@@ -101,33 +102,53 @@ body{
   color: #333;
 }
 
+/* ===== ✅ 공지사항 위 간격선 (인셋 14px) ===== */
+.sep-inset{
+  height: 1px;
+  background: #e9ecef;
+  margin: 0 14px;
+}
+
 /* ===== Notice link (공지사항 확인하기) ===== */
 .notice-link{
-  justify-content: flex-start !important; /* space-between 같은 거 있으면 무조건 무효 */
-  gap: 6px !important;                    /* 벨-텍스트 간격 유지 */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 14px;         /* ✅ 위/아래 균형 */
+  text-decoration: none;
+  color: #555;
 }
+
+/* bell */
 .bell{
   width: 14px;
   height: 14px;
   display: inline-grid;
   place-items: center;
+  margin-top: -1px;
 }
 .bell::before{
   content: "🔔";
   font-size: 14px;
   line-height: 1;
 }
-.notice-link .notice-link-text{
-  margin-right: 6px !important;           /* 글자 뒤 '한칸' */
+
+/* text + ✅ 글자 옆 한칸(6px) 후 > */
+.notice-link-text{
+  font-size: 13px;
+  letter-spacing: -0.02em;
+  position: relative;
 }
-.notice-link .chev{
-  margin-left: 0 !important;              /* ✅ auto 강제 제거 */
-  margin-right: 0 !important;
-  width: 7px !important;
-  height: 7px !important;
-  border-right: 1.5px solid #9aa0a6 !important;
-  border-top: 1.5px solid #9aa0a6 !important;
-  transform: rotate(45deg) !important;    /* translate 같은 것도 무효 */
+.notice-link-text::after{
+  content: "";
+  display: inline-block;
+  margin-left: 6px;            /* ✅ “한칸 공백” */
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid #9aa0a6;
+  border-top: 1.5px solid #9aa0a6;
+  transform: rotate(45deg);
+  translate: 0 0.5px;          /* ✅ 시각 중심 보정 */
 }
 
 /* ===== Search ===== */
@@ -183,9 +204,7 @@ body{
 }
 
 /* ===== Sections ===== */
-.section{
-  padding: 18px 14px 0 14px;
-}
+.section{ padding: 18px 14px 0 14px; }
 .section-title{
   margin: 0 0 10px 0;
   font-size: 14px;
@@ -250,9 +269,7 @@ body{
 .more .plus{ font-size: 16px; line-height: 1; }
 
 /* ===== Banner ===== */
-.banner{
-  padding: 10px 14px 0 14px;
-}
+.banner{ padding: 10px 14px 0 14px; }
 .banner-card{
   height: 92px;
   border-radius: 12px;
@@ -323,12 +340,7 @@ body{
   z-index: 3;
 }
 .emo{ font-size: 20px; }
-.card-bg{
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  opacity: 1;
-}
+.card-bg{ position: absolute; inset: 0; z-index: 1; opacity: 1; }
 .bg-pink{
   background:
     radial-gradient(circle at 20% 20%, rgba(255,138,160,.22) 0 45%, transparent 46%),
@@ -408,20 +420,18 @@ body{
   background: rgba(0,0,0,.08);
   position: relative;
 }
-.ico.user::before{ content:""; position:absolute; inset:0; background: none; }
 .ico.search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 12px; }
 .ico.doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 12px; }
 .ico.gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 12px; }
+.ico.user::before{ content:"👤"; position:absolute; inset:0; display:grid; place-items:center; font-size: 12px; }
 
 /* ===== Footer + Bottom nav ===== */
 .footer{
   margin-top: 12px;
   background: #f5f6f8;
-  padding-bottom: 72px; /* 바텀탭 공간 확보 */
+  padding-bottom: 12px; /* 바텀탭 고정 X */
 }
-.footer-inner{
-  padding: 12px 14px 0;
-}
+.footer-inner{ padding: 12px 14px 0; }
 .footer-top{
   display: flex;
   align-items: center;
@@ -445,38 +455,14 @@ body{
   border: 1px solid rgba(0,0,0,.04);
 }
 .f-row{ margin-bottom: 12px; }
-.f-title{
-  font-weight: 800;
-  font-size: 12px;
-  margin-bottom: 6px;
-}
-.f-text{
-  font-size: 12px;
-  color: #222;
-  line-height: 1.45;
-}
-.f-divider{
-  height: 1px;
-  background: rgba(0,0,0,.08);
-  margin: 10px 0;
-}
-.f-links{
-  display: flex;
-  gap: 12px;
-  font-size: 12px;
-}
-.f-links a{
-  color: #0a5bff;
-  text-decoration: none;
-  font-weight: 700;
-}
-.f-copy{
-  margin-top: 10px;
-  font-size: 11px;
-  color: #555;
-}
+.f-title{ font-weight: 800; font-size: 12px; margin-bottom: 6px; }
+.f-text{ font-size: 12px; color: #222; line-height: 1.45; }
+.f-divider{ height: 1px; background: rgba(0,0,0,.08); margin: 10px 0; }
+.f-links{ display: flex; gap: 12px; font-size: 12px; }
+.f-links a{ color: #0a5bff; text-decoration: none; font-weight: 700; }
+.f-copy{ margin-top: 10px; font-size: 11px; color: #555; }
 
-/* bottom nav */
+/* bottom nav (스크롤 포함) */
 .bottom-nav{
   position: relative;
   background: #fff;
@@ -484,6 +470,7 @@ body{
   height: 64px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  margin-top: 12px;
 }
 .bn-item{
   text-decoration: none;
@@ -506,14 +493,3 @@ body{
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
-
-
-
-
-
-
-
-
-
-
-
