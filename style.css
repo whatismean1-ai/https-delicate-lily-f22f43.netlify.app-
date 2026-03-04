@@ -109,7 +109,7 @@ img{ display:block; }
 .sep-inset{
   height:1px;
   background:#e9ecef;
-  margin:0 14px;
+  margin:0;          /* ✅ 끝까지 연결 */
 }
 
 /* =========================
@@ -152,7 +152,7 @@ img{ display:block; }
 .notice-divider{
   height:1px;
   background:#e6e9ee;
-  margin:0 14px;
+  margin:0;          /* ✅ 끝까지 연결 */
 }
 
 /* =========================
@@ -476,3 +476,4 @@ img{ display:block; }
 .bn-item.active .bn-ico{
   background:rgba(10,91,255,.12);
 }
+
