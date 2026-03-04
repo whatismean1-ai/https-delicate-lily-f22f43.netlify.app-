@@ -123,6 +123,7 @@ img{ display:block; }
   height:16px;
   display:block;
   flex:0 0 auto;
+  margin-right:2px; 
 }
 .notice-link-text{
   font-size:inherit;
@@ -304,5 +305,6 @@ img{ display:block; }
   border-radius:999px;
   background:rgba(255,255,255,.22);
 }
+
 
 
