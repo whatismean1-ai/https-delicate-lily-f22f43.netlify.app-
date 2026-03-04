@@ -1,220 +1,157 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>정부24 클론</title>
-
-<style>
-
-/* =========================
-   Reset
-========================= */
-
-*{
-  box-sizing:border-box;
-}
-
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,"Noto Sans KR",Arial,sans-serif;
-  background:#fff;
-}
-
-/* =========================
-   Phone Container
-========================= */
-
-.phone{
-  width:402px;
-  margin:auto;
-  background:#fff;
-}
-
-/* =========================
-   Section
-========================= */
-
-.section{
-  padding:18px 14px;
-}
-
-.section-title{
-  font-size:14px;
-  font-weight:700;
-  margin-bottom:10px;
-}
-
-/* =========================
-   Quick Service Grid
-========================= */
-
-.quick-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px 12px;
-}
-
-.quick-item{
-
-  height:46px;
-  padding:10px 12px;
-
-  border-radius:10px;
-  border:1px solid #cfe6ff;
-
-  background:#fff;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  text-decoration:none;
-  color:#111;
-}
-
-.quick-label{
-  font-size:12px;
-  font-weight:800;
-}
-
-/* =========================
-   Icon Alignment (Gov24 Final)
-========================= */
-
-.qi-ico{
-
-  display:block;
-
-  flex:0 0 auto;
-
-  width:20px;
-  height:20px;
-
-  object-fit:contain;
-  object-position:center;
-
-  vertical-align:middle;
-
-}
-
-.qi-ico-sm{
-  width:16px;
-  height:16px;
-}
-
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>정부24 클론</title>
 </head>
-
 <body>
+  <div class="stage">
+    <main class="phone">
 
-<div class="phone">
+      <!-- 상단 알림 -->
+      <div class="notice-top">
+        <img
+          src="./assets/flag_from_second_24x16.png"
+          srcset="./assets/flag_from_second_48x32@2x.png 2x"
+          width="24"
+          height="16"
+          alt=""
+          aria-hidden="true"
+        />
+        <p class="notice-msg">이 누리집은 대한민국 공식 전자정부 누리집입니다.</p>
+      </div>
 
-<section class="section">
+      <!-- 헤더 -->
+      <header class="topbar">
+        <div class="brand">
+          <img class="brand-logo" src="./assets/gov24.png" alt="정부24" />
+        </div>
 
-<h2 class="section-title">자주 찾는 서비스</h2>
+        <button class="menu" type="button" aria-label="전체메뉴">
+          <span class="hamburger" aria-hidden="true"></span>
+          <span class="menu-text">전체메뉴</span>
+        </button>
+      </header>
 
-<div class="quick-grid">
+      <!-- 공지사항 위 인셋 구분선 -->
+      <div class="sep-inset" aria-hidden="true"></div>
 
-<!-- 인감증명서 -->
+      <!-- 공지사항 -->
+      <a class="notice-link" href="#">
+        <img
+          class="bell-img"
+          src="./assets/bell_yellow_16.png"
+          srcset="./assets/bell_yellow_32x32_retina.png 2x"
+          width="16"
+          height="16"
+          alt=""
+          aria-hidden="true"
+        />
+        <span class="notice-link-text">공지사항 확인하기</span>
+      </a>
 
-<a class="quick-item" href="#">
-<span class="quick-label">인감증명서</span>
+      <!-- 검색 -->
+      <section class="search-wrap">
+        <div class="search">
+          <input class="search-input" type="text" placeholder="정부 서비스를 쉽게 검색하세요." />
+          <button class="search-btn" type="button" aria-label="검색">
+            <svg class="search-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-4.2-4.2"></path>
+            </svg>
+          </button>
+        </div>
+      </section>
 
-<img class="qi-ico"
-src="./assets/pc_20_set.png"
-srcset="./assets/pc_40_set.png 2x"
-width="20"
-height="20"
-alt=""
-aria-hidden="true">
+      <!-- 자주 찾는 서비스 -->
+      <section class="section quick-section">
+        <h2 class="section-title">자주 찾는 서비스</h2>
 
-</a>
+        <div class="quick-grid">
+          <a class="quick-item" href="#">
+            <span class="quick-label">인감증명서</span>
+            <img
+              class="qi-ico"
+              src="./assets/pc_20_set.png"
+              srcset="./assets/pc_40_set.png 2x"
+              width="20"
+              height="20"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
 
-<!-- 토지대장 -->
+          <a class="quick-item" href="#">
+            <span class="quick-label">토지(임야)대장</span>
+            <img
+              class="qi-ico"
+              src="./assets/pdf_20_set.png"
+              srcset="./assets/pdf_40_set.png 2x"
+              width="20"
+              height="20"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
 
-<a class="quick-item" href="#">
-<span class="quick-label">토지(임야)대장</span>
+          <a class="quick-item" href="#">
+            <span class="quick-label">주민등록등본(초본)</span>
+            <img
+              class="qi-ico"
+              src="./assets/pdf_20_set.png"
+              srcset="./assets/pdf_40_set.png 2x"
+              width="20"
+              height="20"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
 
-<img class="qi-ico"
-src="./assets/pdf_20_set.png"
-srcset="./assets/pdf_40_set.png 2x"
-width="20"
-height="20"
-alt=""
-aria-hidden="true">
+          <a class="quick-item" href="#">
+            <span class="quick-label">자동차등록원부</span>
+            <img
+              class="qi-ico"
+              src="./assets/pc_20_set.png"
+              srcset="./assets/pc_40_set.png 2x"
+              width="20"
+              height="20"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
 
-</a>
+          <a class="quick-item" href="#">
+            <span class="quick-label">건축물대장</span>
+            <img
+              class="qi-ico"
+              src="./assets/pdf_20_set.png"
+              srcset="./assets/pdf_40_set.png 2x"
+              width="20"
+              height="20"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
 
-<!-- 주민등록등본 -->
+          <a class="quick-item" href="#">
+            <span class="quick-label">가족관계증명서</span>
+            <img
+              class="qi-ico qi-ico-sm"
+              src="./assets/link_16_set.png"
+              srcset="./assets/link_32_set.png 2x"
+              width="16"
+              height="16"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
+        </div>
 
-<a class="quick-item" href="#">
-<span class="quick-label">주민등록등본(초본)</span>
+        <a class="more" href="#"><span>더보기</span><span class="plus" aria-hidden="true">+</span></a>
+      </section>
 
-<img class="qi-ico"
-src="./assets/pdf_20_set.png"
-srcset="./assets/pdf_40_set.png 2x"
-width="20"
-height="20"
-alt=""
-aria-hidden="true">
-
-</a>
-
-<!-- 자동차등록원부 -->
-
-<a class="quick-item" href="#">
-<span class="quick-label">자동차등록원부</span>
-
-<img class="qi-ico"
-src="./assets/pc_20_set.png"
-srcset="./assets/pc_40_set.png 2x"
-width="20"
-height="20"
-alt=""
-aria-hidden="true">
-
-</a>
-
-<!-- 건축물대장 -->
-
-<a class="quick-item" href="#">
-<span class="quick-label">건축물대장</span>
-
-<img class="qi-ico"
-src="./assets/pdf_20_set.png"
-srcset="./assets/pdf_40_set.png 2x"
-width="20"
-height="20"
-alt=""
-aria-hidden="true">
-
-</a>
-
-<!-- 가족관계증명서 -->
-
-<a class="quick-item" href="#">
-<span class="quick-label">가족관계증명서</span>
-
-<img class="qi-ico qi-ico-sm"
-src="./assets/link_16_set.png"
-srcset="./assets/link_32_set.png 2x"
-width="16"
-height="16"
-alt=""
-aria-hidden="true">
-
-</a>
-
-</div>
-
-</section>
-
-</div>
-
-</body>
-</html>
       <!-- AI 배너 -->
       <section class="banner">
         <div class="banner-card">
@@ -235,7 +172,7 @@ aria-hidden="true">
           <a class="card" href="#">
             <div class="card-content">
               <div class="card-title">유아학비</div>
-              <div class="card-sub">현금(감면)<br/>지급</div>
+              <div class="card-sub">현금(감면)<br />지급</div>
             </div>
             <div class="card-ico"><span class="emo">🧸</span></div>
             <div class="card-bg bg-pink" aria-hidden="true"></div>
@@ -244,7 +181,7 @@ aria-hidden="true">
           <a class="card" href="#">
             <div class="card-content">
               <div class="card-title">전세보증금반환보증 보증료</div>
-              <div class="card-sub">현금<br/>지급</div>
+              <div class="card-sub">현금<br />지급</div>
             </div>
             <div class="card-ico"><span class="emo">🏠</span></div>
             <div class="card-bg bg-yellow" aria-hidden="true"></div>
@@ -253,7 +190,7 @@ aria-hidden="true">
           <a class="card" href="#">
             <div class="card-content">
               <div class="card-title">초중고 입학축하금 지원</div>
-              <div class="card-sub">현금 및<br/>지역 바우처 제공</div>
+              <div class="card-sub">현금 및<br />지역 바우처 제공</div>
             </div>
             <div class="card-ico"><span class="emo">🧑‍🎓</span></div>
             <div class="card-bg bg-blue" aria-hidden="true"></div>
@@ -262,7 +199,7 @@ aria-hidden="true">
           <a class="card" href="#">
             <div class="card-content">
               <div class="card-title">근로장려금</div>
-              <div class="card-sub">현금<br/>지급</div>
+              <div class="card-sub">현금<br />지급</div>
             </div>
             <div class="card-ico"><span class="emo">🐷</span></div>
             <div class="card-bg bg-blue2" aria-hidden="true"></div>
@@ -284,7 +221,7 @@ aria-hidden="true">
 
         <div class="channel-grid">
           <a class="channel-btn" href="#"><span class="ico user" aria-hidden="true"></span>MyGov</a>
-          <a class="channel-btn" href="#"><span class="ico search" aria-hidden="true"></span>주제별 보기</a>
+          <a class="channel-btn" href="#"><span class="ico search-ico" aria-hidden="true"></span>주제별 보기</a>
           <a class="channel-btn" href="#"><span class="ico doc" aria-hidden="true"></span>문서진위확인</a>
           <a class="channel-btn" href="#"><span class="ico gift" aria-hidden="true"></span>혜택알림</a>
         </div>
@@ -302,8 +239,8 @@ aria-hidden="true">
             <div class="f-row">
               <div class="f-title">콜센터</div>
               <div class="f-text">
-                1588-2188,<br/>
-                02-721-0600 (지역번호 '02'를 확인하세요.)<br/>
+                1588-2188,<br />
+                02-721-0600 (지역번호 '02'를 확인하세요.)<br />
                 (09:00 ~ 18:00 평일)
               </div>
             </div>
@@ -337,7 +274,3 @@ aria-hidden="true">
   </div>
 </body>
 </html>
-
-
-
-
