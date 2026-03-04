@@ -2,14 +2,12 @@
    Reset
 ========================= */
 *{ box-sizing:border-box; }
-
 body{
   margin:0;
   font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans KR",Arial,sans-serif;
   background:#fff;
   color:#000;
 }
-
 img{ display:block; }
 
 /* =========================
@@ -21,7 +19,6 @@ img{ display:block; }
   place-items:start center;
   padding:24px 12px;
 }
-
 .phone{
   width:402px;
   max-width:92vw;
@@ -42,7 +39,6 @@ img{ display:block; }
   gap:6px;
   padding:0 16px;
 }
-
 .notice-top img{
   width:24px;
   height:16px;
@@ -50,7 +46,6 @@ img{ display:block; }
   object-fit:contain;
   image-rendering:auto;
 }
-
 .notice-msg{
   margin:0;
   font-size:13px;
@@ -66,13 +61,11 @@ img{ display:block; }
   position:relative;
   height:56px;
 }
-
 .brand{
   position:absolute;
   left:16px;
   top:16px;
 }
-
 .brand-logo{ width:90px; }
 
 .menu{
@@ -88,7 +81,6 @@ img{ display:block; }
   place-items:center;
   gap:4px;
 }
-
 .hamburger{
   width:16px;
   height:11px;
@@ -97,21 +89,15 @@ img{ display:block; }
     linear-gradient(#333,#333) 0 50%/100% 2px no-repeat,
     linear-gradient(#333,#333) 0 100%/100% 2px no-repeat;
 }
-
 .menu-text{
   font-size:12px;
   color:#000;
 }
 
 /* =========================
-   Separators (full width)
+   Separators
 ========================= */
-.sep-inset{
-  height:1px;
-  background:#E9ECEF;
-  margin:0;
-}
-
+.sep-inset,
 .notice-divider{
   height:1px;
   background:#E9ECEF;
@@ -130,13 +116,11 @@ img{ display:block; }
   color:#000;
   background:#fff;
 }
-
 .bell-img{
   width:16px;
   height:16px;
   flex:0 0 auto;
 }
-
 .notice-link-text{
   font-size:13px;
   line-height:1;
@@ -145,7 +129,6 @@ img{ display:block; }
   align-items:center;
   color:#000;
 }
-
 .notice-link-text::after{
   content:"›";
   margin-left:2px;
@@ -156,20 +139,18 @@ img{ display:block; }
 }
 
 /* =========================
-   Search Area (BG block)
+   Search Area
 ========================= */
 .search-area{
   background:#f6f7f9;
-  padding-top:18px;       /* 검색 위 회색 여백 */
-  padding-bottom:12px;    /* 배너 아래 여백 */
+  padding-top:18px;
+  padding-bottom:12px;
 }
 
 /* =========================
    Search
 ========================= */
-.search-wrap{
-  padding:0 16px 8px 16px;
-}
+.search-wrap{ padding:0 16px 8px 16px; }
 
 .search{
   position:relative;
@@ -195,7 +176,6 @@ img{ display:block; }
   background:transparent;
   color:#000;
 }
-
 .search-input::placeholder{
   color:rgba(0,0,0,0.4);
   letter-spacing:0.01em;
@@ -210,7 +190,6 @@ img{ display:block; }
   place-items:center;
   cursor:pointer;
 }
-
 .search-svg{
   width:20px;
   height:20px;
@@ -220,39 +199,29 @@ img{ display:block; }
   transform:translateY(-1px);
 }
 
-/* =========================
-   Search Focus dashed (LOCKED SPEC)
-   ✅ 색상만 변경 가능, 나머지 절대값 유지
-========================= */
+/* Search Focus dashed (LOCKED SPEC) */
 .search-input:focus{ outline:none; }
-
 .search:focus-within::after{
   content:"";
   position:absolute;
-
-  inset:2.2px;                 /* 🔒 */
-  border-radius:18.3px;        /* 🔒 */
-  border:2.2px dashed #0A5BFF; /* 🔒 (색상만 변경 가능) */
-
+  inset:2.2px;
+  border-radius:18.3px;
+  border:2.2px dashed #0A5BFF;
   pointer-events:none;
 }
 
 /* =========================
-   Section title
+   Quick section
 ========================= */
+.quick-section{
+  padding:12px 16px 0 16px;
+  background:transparent;
+}
 .section-title{
   margin:0 0 10px 0;
   font-size:14px;
   font-weight:700;
   color:#000;
-}
-
-/* =========================
-   Quick services (inside search-area)
-========================= */
-.quick-section{
-  padding:12px 16px 0 16px;
-  background:transparent;
 }
 
 .quick-grid{
@@ -271,34 +240,23 @@ img{ display:block; }
   color:#000;
 
   display:flex;
-  align-items:center;              /* ✅ ; 누락 해결 */
+  align-items:center;
   justify-content:space-between;
 
   transition:all .15s ease;
 }
-
-.quick-item:hover{
-  border-color:#8DBBFF;
-  box-shadow:0 2px 6px rgba(0,0,0,0.06);
-}
-
 .quick-label{
   font-size:13px;
   font-weight:700;
   letter-spacing:-0.02em;
   color:#000;
 }
-
 .qi-ico{
-  display:block;
-  flex:0 0 auto;
   width:20px;
   height:20px;
   object-fit:contain;
   object-position:center;
-  margin-top:1px;
 }
-
 .qi-ico-sm{
   width:16px;
   height:16px;
@@ -313,18 +271,17 @@ img{ display:block; }
   align-items:center;
   gap:6px;
   text-decoration:none;
-  color:rgba(0,0,0,0.8);
-  font-size:12px;
+  color:#000;
+  font-size:13px;
 }
 
 /* =========================
-   Banner (inside search-area)
+   Banner
 ========================= */
 .banner{
   padding:10px 16px 0 16px;
   background:transparent;
 }
-
 .banner-card{
   height:92px;
   border-radius:12px;
@@ -334,27 +291,13 @@ img{ display:block; }
   align-items:center;
   padding:14px;
   color:#fff;
-  box-shadow: rgba(0,0,0,.12) 0 4px 14px;
 }
-
 .banner-text .b-title{ margin:0; font-weight:800; font-size:13px; }
-.banner-text .b-sub{ margin:4px 0 0; font-size:12px; opacity:.95; }
-.banner-text .b-date{ margin:6px 0 0; font-size:11px; opacity:.85; }
-
+.banner-text .b-sub{ margin:4px 0 0; font-size:12px; }
+.banner-text .b-date{ margin:6px 0 0; font-size:11px; }
 .banner-shape{
   width:82px;
   height:82px;
   border-radius:999px;
   background:rgba(255,255,255,.22);
-}
-
-/* =========================
-   이하(혜택/푸터/하단메뉴)는 기존 그대로 두면 됨
-   (여기부터는 네 기존 CSS 이어붙여도 OK)
-========================= */
-
-/* ✅ footer-inner 닫는 괄호(}) 누락은 반드시 잡아야 함 */
-.footer-inner{
-  padding-left:16px;
-  padding-right:16px;
 }
