@@ -212,9 +212,9 @@ img{ display:block; }
   position:absolute;
 
   inset:2.5px;                 /* 🔒 실선과 점선 사이 간격 */
-  border-radius:18.5px;        /* 🔒 22px - inset 보정 */
+  border-radius:18.3px;        /* 🔒 22px - inset 보정 */
 
-  border:2.5px dashed #0A5BFF; /* 🔒 두께 / 스타일 (색상만 변경 가능) */
+  border:2.2px dashed #0A5BFF; /* 🔒 두께 / 스타일 (색상만 변경 가능) */
 
   pointer-events:none;
 }
@@ -458,6 +458,7 @@ img{ display:block; }
 .bn-item.active .bn-ico{
   background:rgba(10,91,255,.12);
 }
+
 
 
 
