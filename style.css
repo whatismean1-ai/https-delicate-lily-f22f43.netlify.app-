@@ -164,7 +164,9 @@ img{ display:block; }
   gap:8px;
   background:#fff;
   box-shadow: rgba(0,0,0,.12) 0 4px 10px;
+  position: relative; /* ::after 위치 기준 */
 }
+
 .search-input{
   border:0; outline:none;
   flex:1;
@@ -189,7 +191,20 @@ img{ display:block; }
   stroke-linecap:round;
   stroke-linejoin:round;
 }
+.search:focus-within::after{
+  content:"";
+  position:absolute;
+  inset:6px;                 /* ✅ 바깥 테두리에서 안쪽으로 들어온 거리 */
+  border:2px dashed #0A5BFF;  /* ✅ 긴 점선 */
+  border-radius:18px;        /* ✅ search(22px)보다 작게 */
+  pointer-events:none;       /* 클릭 방해 X */
+  opacity:.9;
+}
 
+/* 기본 포커스 외곽선 제거(이미 해둔 경우 유지) */
+.search-input:focus{
+  outline:none;
+}
 /* =========================
    Sections
 ========================= */
@@ -471,3 +486,4 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
