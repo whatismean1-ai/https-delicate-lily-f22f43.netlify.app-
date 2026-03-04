@@ -158,15 +158,17 @@ img{ display:block; }
 
 .search{
   position:relative;
-  height:44px;
-  border-radius:22px;
-  border:2px solid #0A5BFF;
+  height:46px;
+  border-radius:23px;
+  border:2px solid #1A5BFF;
   display:flex;
   align-items:center;
-  padding:0 10px 0 16px;
+  padding:0 12px 0 18px;
   gap:8px;
   background:#fff;
-  box-shadow: rgba(0,0,0,.18) 0 6px 14px;
+   box-shadow:
+    0 6px 14px rgba(0,0,0,0.12),
+    0 2px 4px rgba(0,0,0,0.08);
 }
 
 .search-input{
@@ -175,15 +177,16 @@ img{ display:block; }
   flex:1;
   font-size:15px;
   background:transparent;
+   color:#111;
 }
 
 .search-input::placeholder{
-  color:#9aa0a6;
+  color:#9EA4AA;
 }
 
 .search-btn{
-  width:34px;
-  height:34px;
+  width:36px;
+  height:36px;
   border:0;
   background:transparent;
   display:grid;
@@ -192,9 +195,9 @@ img{ display:block; }
 }
 
 .search-svg{
-  width:18px;
-  height:18px;
-  stroke:#111;
+  width:20px;
+  height:20px;
+  stroke:#2B2B2B;
   stroke-width:2;
   fill:none;
 }
@@ -458,6 +461,7 @@ img{ display:block; }
 .bn-item.active .bn-ico{
   background:rgba(10,91,255,.12);
 }
+
 
 
 
