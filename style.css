@@ -131,13 +131,16 @@ img{ display:block; }
 }
 .notice-link-text::after{
   content:"›";
-  margin-left:2px;
+  margin-left:4px;
   font-size:13px;
   line-height:1;
   font-weight:700;
   color:#000;
 }
-
+.notice-arrow {
+  margin-left: 4px;   /* 한칸 정도 간격 */
+  font-size: 1em;     /* 글자 크기와 동일 */
+}
 /* =========================
    Search Area
 ========================= */
@@ -301,3 +304,4 @@ img{ display:block; }
   border-radius:999px;
   background:rgba(255,255,255,.22);
 }
+
