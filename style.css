@@ -456,3 +456,109 @@ img{ display:block; }
 .bn-item.active .bn-ico{
   background:rgba(10,91,255,.12);
 }
+/* =========================
+   Gov24 Text Color Tokens
+   (원본 DevTools 기준)
+========================= */
+:root{
+  --c-text: #000000;            /* 기본 텍스트 */
+  --c-text-80: rgba(0,0,0,.8);  /* 덜 진한 텍스트(원본에서 자주 씀) */
+  --c-text-40: rgba(0,0,0,.4);  /* placeholder */
+}
+
+/* 전체 기본 텍스트 */
+body{ color: var(--c-text); }
+
+/* 상단 배너 문구 */
+.notice-msg{ color: var(--c-text); }
+
+/* 공지사항(공지사항 확인하기) */
+.notice-link{ color: var(--c-text); }
+.notice-link-text{ color: var(--c-text); }
+.notice-link-text::after{ color: var(--c-text); }
+
+/* 섹션 타이틀(자주 찾는 서비스 / 지금 봐야 할 혜택/보조금 등) */
+.section-title{ color: var(--c-text); }
+
+/* 검색 */
+.search-input{ color: var(--c-text); }
+.search-input::placeholder{ color: var(--c-text-40); }
+
+/* 자주 찾는 서비스 카드 텍스트 */
+.quick-label{ color: var(--c-text); }
+
+/* 더보기(원본은 살짝 연함) */
+.more{ color: var(--c-text-80); }
+
+/* 혜택 섹션 “더 많은 혜택 보기” 같은 링크도 원본처럼 */
+.benefit-more{ color: var(--c-text-80); }
+
+/* 푸터 기본 텍스트(너는 #555 섞여있어서 회색이 강했음) */
+.f-text{ color: var(--c-text); }
+.f-copy{ color: var(--c-text-80); }
+/* =========================
+   Gov24 Font Size System
+========================= */
+
+:root{
+  --fs-11:11px;
+  --fs-12:12px;
+  --fs-13:13px;
+  --fs-14:14px;
+  --fs-15:15px;
+}
+
+/* 상단 정부 안내 */
+.notice-msg{
+  font-size:var(--fs-13);
+}
+
+/* 공지사항 */
+.notice-link-text{
+  font-size:var(--fs-14);
+}
+
+/* 검색 */
+.search-input{
+  font-size:var(--fs-15);
+}
+
+/* 섹션 타이틀 */
+.section-title{
+  font-size:var(--fs-15);
+  font-weight:700;
+}
+
+/* 자주 찾는 서비스 카드 */
+.quick-label{
+  font-size:var(--fs-14);
+  font-weight:600;
+}
+
+/* 더보기 */
+.more{
+  font-size:var(--fs-13);
+}
+
+/* 혜택 카드 */
+.card-title{
+  font-size:var(--fs-14);
+  font-weight:700;
+}
+
+.card-sub{
+  font-size:var(--fs-13);
+}
+
+/* 푸터 */
+.f-title{
+  font-size:var(--fs-12);
+}
+
+.f-text{
+  font-size:var(--fs-12);
+}
+
+.f-copy{
+  font-size:var(--fs-11);
+}
