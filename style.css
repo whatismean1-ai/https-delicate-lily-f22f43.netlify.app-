@@ -165,7 +165,7 @@ img{ display:block; }
   padding:0 10px 0 16px;
   gap:8px;
   background:#fff;
-  box-shadow: rgba(0,0,0,.12) 0 4px 10px;
+  box-shadow: rgba(0,0,0,.18) 0 6px 14px;
 }
 
 .search-input{
@@ -505,4 +505,5 @@ img{ display:block; }
   margin:0;
   line-height:1.2;
 }
+
 
