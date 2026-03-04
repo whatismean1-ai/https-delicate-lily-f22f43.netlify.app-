@@ -209,11 +209,11 @@ img{ display:block; }
   content:"";
   position:absolute;
 
-  inset:3px;                 /* 점선을 조금 안쪽으로 이동 */
+  inset:2.5px;                 /* 점선을 조금 안쪽으로 이동 */
 
-  border-radius:19px;        /* radius 보정 */
+  border-radius:20px;        /* radius 보정 */
 
-  border:2.5px dashed #0A5BFF;
+  border:2px dashed #0A5BFF;
 
   pointer-events:none;
 }
@@ -508,6 +508,7 @@ img{ display:block; }
   margin:0;
   line-height:1.2;
 }
+
 
 
 
