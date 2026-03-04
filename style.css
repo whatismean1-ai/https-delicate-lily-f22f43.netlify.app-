@@ -41,13 +41,18 @@ img{ display:block; }
   background:#EEF2F7;
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:6px;
   padding:0 15px;
 }
 
 .notice-top img{
   width:24px;
   height:16px;
+  flex:0 0 auto;
+  object-fit:contain;
+
+  image-rendering:-webkit-optimize-contrast;
+  image-rendering:crisp-edges;
 }
 
 .notice-msg{
@@ -129,10 +134,17 @@ img{ display:block; }
   width:16px;
 }
 
+.notice-link-text{
+  font-size:13px;
+  display:inline-flex;
+  align-items:center;
+}
+
 .notice-link-text::after{
-  content:"›";
-  margin-left:4px;
-  font-weight:900;
+  content:">";
+  font-size:13px;     /* 텍스트와 동일 */
+  margin-left:3px;
+  font-weight:700;
 }
 
 /* =========================
@@ -164,7 +176,7 @@ img{ display:block; }
 }
 
 .search-input::placeholder{
-  color:#8a8f98;
+  color:#9aa0a6;
 }
 
 .search-btn{
@@ -493,3 +505,4 @@ img{ display:block; }
   margin:0;
   line-height:1.2;
 }
+
