@@ -59,9 +59,13 @@
 <div class="search-area">
 
   <!-- 검색 -->
-  <section class="search-wrap">
+  <section class="search-wrap" aria-label="검색">
     <div class="search">
-      <input class="search-input" type="text" placeholder="정부 서비스를 쉽게 검색하세요." />
+      <input
+        class="search-input"
+        type="text"
+        placeholder="정부 서비스를 쉽게 검색하세요."
+      />
       <button class="search-btn" type="button" aria-label="검색">
         <svg class="search-svg" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="11" cy="11" r="7"></circle>
@@ -72,114 +76,63 @@
   </section>
 
   <!-- 자주 찾는 서비스 -->
-  <section class="quick-section">
-    <!-- (네 quick-section 내용 그대로) -->
+  <section class="quick-section" aria-label="자주 찾는 서비스">
+    <h2 class="section-title">자주 찾는 서비스</h2>
+
+    <div class="quick-grid">
+      <a class="quick-item" href="#">
+        <span class="quick-label">인감증명서</span>
+        <img class="qi-ico" src="./assets/pc_20_set.png" srcset="./assets/pc_40_set.png 2x" width="20" height="20" alt="" aria-hidden="true" />
+      </a>
+
+      <a class="quick-item" href="#">
+        <span class="quick-label">토지(임야)대장</span>
+        <img class="qi-ico" src="./assets/pdf_20_set.png" srcset="./assets/pdf_40_set.png 2x" width="20" height="20" alt="" aria-hidden="true" />
+      </a>
+
+      <a class="quick-item" href="#">
+        <span class="quick-label">주민등록등본(초본)</span>
+        <img class="qi-ico" src="./assets/pdf_20_set.png" srcset="./assets/pdf_40_set.png 2x" width="20" height="20" alt="" aria-hidden="true" />
+      </a>
+
+      <a class="quick-item" href="#">
+        <span class="quick-label">자동차등록원부</span>
+        <img class="qi-ico" src="./assets/pc_20_set.png" srcset="./assets/pc_40_set.png 2x" width="20" height="20" alt="" aria-hidden="true" />
+      </a>
+
+      <a class="quick-item" href="#">
+        <span class="quick-label">건축물대장</span>
+        <img class="qi-ico" src="./assets/pdf_20_set.png" srcset="./assets/pdf_40_set.png 2x" width="20" height="20" alt="" aria-hidden="true" />
+      </a>
+
+      <a class="quick-item" href="#">
+        <span class="quick-label">가족관계증명서</span>
+        <img class="qi-ico qi-ico-sm" src="./assets/link_16_set.png" srcset="./assets/link_32_set.png 2x" width="16" height="16" alt="" aria-hidden="true" />
+      </a>
+    </div>
+
+    <a class="more" href="#">
+      <span>더보기</span><span class="plus" aria-hidden="true">+</span>
+    </a>
   </section>
 
   <!-- AI 배너 -->
-  <section class="banner">
-    <!-- (네 banner 내용 그대로) -->
+  <section class="banner" aria-label="AI 배너">
+    <div class="banner-card">
+      <div class="banner-text">
+        <p class="b-title">AI 기반 민원 서비스</p>
+        <p class="b-sub">주민등록 · 건강보험 · 각종 혜택</p>
+        <p class="b-date">2026년 03월 업데이트</p>
+      </div>
+      <div class="banner-shape" aria-hidden="true"></div>
+    </div>
   </section>
 
 </div>
 <!-- ✅ 회색 배경 영역 끝 -->
 
-          <div class="quick-grid">
-            <a class="quick-item" href="#">
-              <span class="quick-label">인감증명서</span>
-              <img
-                class="qi-ico"
-                src="./assets/pc_20_set.png"
-                srcset="./assets/pc_40_set.png 2x"
-                width="20"
-                height="20"
-                alt=""
-                aria-hidden="true"
-              />
-            </a>
 
-            <a class="quick-item" href="#">
-              <span class="quick-label">토지(임야)대장</span>
-              <img
-                class="qi-ico"
-                src="./assets/pdf_20_set.png"
-                srcset="./assets/pdf_40_set.png 2x"
-                width="20"
-                height="20"
-                alt=""
-                aria-hidden="true"
-              />
-            </a>
 
-            <a class="quick-item" href="#">
-              <span class="quick-label">주민등록등본(초본)</span>
-              <img
-                class="qi-ico"
-                src="./assets/pdf_20_set.png"
-                srcset="./assets/pdf_40_set.png 2x"
-                width="20"
-                height="20"
-                alt=""
-                aria-hidden="true"
-              />
-            </a>
-
-            <a class="quick-item" href="#">
-              <span class="quick-label">자동차등록원부</span>
-              <img
-                class="qi-ico"
-                src="./assets/pc_20_set.png"
-                srcset="./assets/pc_40_set.png 2x"
-                width="20"
-                height="20"
-                alt=""
-                aria-hidden="true"
-              />
-            </a>
-
-            <a class="quick-item" href="#">
-              <span class="quick-label">건축물대장</span>
-              <img
-                class="qi-ico"
-                src="./assets/pdf_20_set.png"
-                srcset="./assets/pdf_40_set.png 2x"
-                width="20"
-                height="20"
-                alt=""
-                aria-hidden="true"
-              />
-            </a>
-
-            <a class="quick-item" href="#">
-              <span class="quick-label">가족관계증명서</span>
-              <img
-                class="qi-ico qi-ico-sm"
-                src="./assets/link_16_set.png"
-                srcset="./assets/link_32_set.png 2x"
-                width="16"
-                height="16"
-                alt=""
-                aria-hidden="true"
-              />
-            </a>
-          </div>
-
-          <a class="more" href="#"><span>더보기</span><span class="plus" aria-hidden="true">+</span></a>
-        </section>
-
-        <!-- AI 배너 -->
-        <section class="banner">
-          <div class="banner-card">
-            <div class="banner-text">
-              <p class="b-title">AI 기반 민원 서비스</p>
-              <p class="b-sub">주민등록 · 건강보험 · 각종 혜택</p>
-              <p class="b-date">2026년 03월 업데이트</p>
-            </div>
-            <div class="banner-shape" aria-hidden="true"></div>
-          </div>
-        </section>
-
-      </div><!-- /.search-area -->
 
       <!-- 혜택/보조금 -->
       <section class="section">
@@ -291,4 +244,5 @@
   </div>
 </body>
 </html>
+
 
