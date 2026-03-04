@@ -201,11 +201,7 @@ img{ display:block; }
   opacity:.9;
 }
 
-/* 기본 포커스 외곽선 제거(이미 해둔 경우 유지) */
-.search-input:focus{
-  outline:2px dashed #0A5BFF;   /* 점선 포커스 */
-  outline-offset:-6px;          /* ✅ 테두리에 붙게 안쪽으로 이동 */
-}
+
 /* =========================
    Sections
 ========================= */
@@ -487,5 +483,6 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
