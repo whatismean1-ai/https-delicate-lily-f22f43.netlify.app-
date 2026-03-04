@@ -209,7 +209,15 @@ img{ display:block; }
   position:absolute;
   inset:3px;
   border-radius:19px;
+
   border:3px dashed #0A5BFF;
+
+  /* 점선 길이 느낌 개선 */
+  border-style:dashed;
+
+  /* 선명도 개선 */
+  transform:translateZ(0);
+
   pointer-events:none;
 }
 /* =========================
@@ -503,6 +511,7 @@ img{ display:block; }
   margin:0;
   line-height:1.2;
 }
+
 
 
 
