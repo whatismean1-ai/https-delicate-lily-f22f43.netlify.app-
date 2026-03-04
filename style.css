@@ -200,28 +200,25 @@ img{ display:block; }
 }
 
 /* =========================
-   Search Focus dashed (FIX)
+   Search Focus dashed
 ========================= */
-.search-input:focus{ outline:none; }
 
-/* ===== Gov24-like focus dashed (NO SVG FILE NEEDED) ===== */
-.search{ position:relative; }
 .search-input:focus{ outline:none; }
 
 .search:focus-within::after{
   content:"";
   position:absolute;
+
+  /* 점선 위치 */
+  inset:5px;
+
+  /* 둥근 정도 */
+  border-radius:17px;
+
+  /* 점선 스타일 */
+  border:3px dashed #0A5BFF;
+
   pointer-events:none;
-
-  /* 2/3번처럼 “실선과 점선 사이 여백” 크게 */
-  inset:6px;                 /* ✅ 핵심: 3px -> 6px */
-
-  /* outer radius(22) - inset(6) = 16 */
-  border-radius:16px;
-
-  background-repeat:no-repeat;
-  background-size:100% 100%;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 44' preserveAspectRatio='none'%3E%3Crect x='2' y='2' width='96' height='40' rx='18' ry='18' fill='none' stroke='%230A5BFF' stroke-width='3' stroke-linecap='butt' stroke-dasharray='10 8'/%3E%3C/svg%3E");
 }
 
 /* =========================
@@ -463,4 +460,5 @@ img{ display:block; }
 .bn-item.active .bn-ico{
   background:rgba(10,91,255,.12);
 }
+
 
