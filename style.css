@@ -207,25 +207,10 @@ img{ display:block; }
 .search:focus-within::after{
   content:"";
   position:absolute;
-  inset:3px;
-  border-radius:19px;
-
+  inset:3px;              /* 이전에 쓰던 값 */
+  border-radius:19px;     /* 22px - 3px 보정 */
   border:3px dashed #0A5BFF;
-
-  /* 점선 길이 느낌 개선 */
-  border-style:dashed;
-
-  /* 선명도 개선 */
-  transform:translateZ(0);
-
   pointer-events:none;
-}
-/* =========================
-   Sections
-========================= */
-
-.section{
-  padding:18px 14px 0 14px;
 }
 
 .section-title{
@@ -511,6 +496,7 @@ img{ display:block; }
   margin:0;
   line-height:1.2;
 }
+
 
 
 
