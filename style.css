@@ -148,12 +148,18 @@ img{ display:block; }
   text-shadow:none;
   transform:none;
 }
-
+/* 공지사항 아래 구분선 */
+.notice-divider{
+  height:1px;
+  background:#e6e9ee;
+  margin:0 14px;
+}
 /* =========================
    Search
 ========================= */
 .search-wrap{
   padding:10px 14px 0 14px;
+  background:#f6f7f9;
 }
 
 .search{
@@ -482,6 +488,7 @@ img{ display:block; }
 .bn-item.active .bn-ico{
   background:rgba(10,91,255,.12);
 }
+
 
 
 
