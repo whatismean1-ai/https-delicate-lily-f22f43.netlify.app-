@@ -230,10 +230,10 @@ img{ display:block; }
   letter-spacing:-0.02em;
 }
 
-/* ✅ 아이콘 정렬 100% 고정 */
+/* ✅ 아이콘 정렬 100% 고정 (네 파일명 기준) */
 .qi-ico{
-  display:block;           /* baseline 제거 */
-  flex:0 0 auto;           /* 눌림 방지 */
+  display:block;
+  flex:0 0 auto;
   width:20px;
   height:20px;
   object-fit:contain;
