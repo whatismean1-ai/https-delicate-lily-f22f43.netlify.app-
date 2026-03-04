@@ -132,7 +132,7 @@ img{ display:block; }
   align-items:center;
 }
 .notice-link-text::after{
-  content:"›";          /* 원본 느낌이면 › / 그냥 > 원하면 > 로 바꿔 */
+  content:">";          /* 원본 느낌이면 › / 그냥 > 원하면 > 로 바꿔 */
   margin-left:6px;
   font-size:inherit;
   line-height:inherit;
@@ -302,3 +302,4 @@ img{ display:block; }
   border-radius:999px;
   background:rgba(255,255,255,.22);
 }
+
