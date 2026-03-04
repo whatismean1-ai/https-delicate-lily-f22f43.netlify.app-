@@ -211,9 +211,9 @@ img{ display:block; }
 
   inset:1px;                 /* 기존 2px → 1px (점선 더 크게) */
 
-  border-radius:21px;        /* radius 보정 */
+  border-radius:20px;        /* radius 보정 */
 
-  border:3px dashed #0A5BFF; /* 기존 2px → 3px (점선 더 굵게) */
+  border:2px dashed #0A5BFF; /* 기존 2px → 3px (점선 더 굵게) */
 
   pointer-events:none;
 }
@@ -508,6 +508,7 @@ img{ display:block; }
   margin:0;
   line-height:1.2;
 }
+
 
 
 
