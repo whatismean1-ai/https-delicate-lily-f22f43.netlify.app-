@@ -22,7 +22,7 @@ img{ display:block; }
   padding:24px 12px;
 }
 .phone{
-  width:402px;              /* ✅ 스펙 */
+  width:402px;
   max-width:92vw;
   background:#fff;
   border-radius:14px;
@@ -32,31 +32,28 @@ img{ display:block; }
 
 /* =========================
    Top notice (402 x 30)
-   bg: rgb(238,242,247)
-   text: 13px, letter-spacing 0.02em, #000
 ========================= */
 .notice-top{
-  height:30px;              /* ✅ 스펙 */
+  height:30px;
   width:100%;
-  background:#EEF2F7;       /* ✅ rgb(238,242,247) */
+  background:#EEF2F7;
   display:flex;
   align-items:center;
-  gap:8px;                  /* ✅ 아이콘-텍스트 간격(너무 벌어지지 않게) */
-  padding:0 15px;           /* ✅ 좌우 여백 */
+  gap:8px;
+  padding:0 15px;
 }
 .notice-top img{
-  width:24px;               /* ✅ 24x16 */
+  width:24px;
   height:16px;
   flex:0 0 auto;
 }
 .notice-msg{
   margin:0;
-  font-size:13px;           /* ✅ 스펙 */
-  letter-spacing:.02em;     /* ✅ 스펙 */
-  color:#000;               /* ✅ 스펙 */
+  font-size:13px;
+  letter-spacing:.02em;
+  color:#000;
   line-height:1.2;
-  /* ✅ “글자 바깥에 약간 여백(바탕색 공간)” 느낌 */
-  padding:2px 0;            /* 세로 숨만 살짝 */
+  padding:2px 0;
 }
 
 /* =========================
@@ -135,19 +132,17 @@ img{ display:block; }
   letter-spacing:-0.02em;
   color:#333;
 }
-
-/* ✅ “>” 더 굵고 선명하게 (font-weight 한계 보완: stroke + shadow) */
 .notice-link-text::after{
-  content:"\203A";          /* › (좀 더 깔끔한 화살표 느낌) */
+  content:"\203A";
   display:inline-block;
-  margin-left:4px;          /* ✅ 공백을 ‘반 정도’로 줄임 */
-  font-size:1em;            /* ✅ 텍스트와 동일 */
-  font-weight:900;          /* ✅ 브라우저가 먹는 최대치 */
-  color:#000;               /* ✅ 검정 */
+  margin-left:4px;
+  font-size:1em;
+  font-weight:900;
+  color:#000;
   line-height:1;
   transform: translateY(-0.5px);
-  -webkit-text-stroke: 0.35px #000; /* ✅ 얇아 보이는 문제 보완 */
-  text-shadow: 0 0 0.4px #000;      /* ✅ 선명도 보완 */
+  -webkit-text-stroke: 0.35px #000;
+  text-shadow: 0 0 0.4px #000;
 }
 
 /* =========================
@@ -155,6 +150,7 @@ img{ display:block; }
 ========================= */
 .search-wrap{ padding:10px 14px 0 14px; }
 .search{
+  position:relative;
   height:44px;
   border-radius:22px;
   border:2px solid #0A5BFF;
@@ -164,15 +160,14 @@ img{ display:block; }
   gap:8px;
   background:#fff;
   box-shadow: rgba(0,0,0,.12) 0 4px 10px;
-  position: relative; /* ::after 위치 기준 */
 }
-
 .search-input{
   border:0; outline:none;
   flex:1;
   font-size:15px;
   letter-spacing:.01em;
   color:#222;
+  background:transparent;
 }
 .search-input::placeholder{ color:#8a8f98; }
 .search-btn{
@@ -191,16 +186,6 @@ img{ display:block; }
   stroke-linecap:round;
   stroke-linejoin:round;
 }
-/* 점선 포커스 */
-.search:focus-within::after{
-  content:"";
-  position:absolute;
-  inset:2px;
-  border-radius:20px;
-  border:2px dashed #0A5BFF;
-  pointer-events:none;
-}
-
 
 /* =========================
    Sections
@@ -244,17 +229,24 @@ img{ display:block; }
   font-weight:800;
   letter-spacing:-0.02em;
 }
+
+/* ✅ 아이콘 정렬 100% 고정 */
 .qi-ico{
+  display:block;           /* baseline 제거 */
+  flex:0 0 auto;           /* 눌림 방지 */
   width:20px;
   height:20px;
-  flex:0 0 auto;
   object-fit:contain;
+  object-position:center;
+  vertical-align:middle;
 }
 .qi-ico-sm{
   width:16px;
   height:16px;
   object-fit:contain;
+  object-position:center;
 }
+
 .more{
   margin:12px auto 0;
   width:fit-content;
@@ -412,7 +404,7 @@ img{ display:block; }
   background:rgba(0,0,0,.08);
   position:relative;
 }
-.ico.search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
+.ico.search-ico::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
 .ico.doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
 .ico.gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
 .ico.user::before{ content:"👤"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
@@ -483,7 +475,3 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
-
-
-
-
