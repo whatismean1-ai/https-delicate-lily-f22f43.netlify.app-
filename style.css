@@ -203,8 +203,9 @@ img{ display:block; }
 
 .search-input:focus{ outline:none; }
 }
+.search::after{ display:none; }
 
-.search:focus-within::after{
+.search:focus-within::after{ display:block; }
   content:"";
   position:absolute;
   inset:3px;              /* 이전에 쓰던 값 */
@@ -496,6 +497,7 @@ img{ display:block; }
   margin:0;
   line-height:1.2;
 }
+
 
 
 
