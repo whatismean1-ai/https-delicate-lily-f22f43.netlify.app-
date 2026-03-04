@@ -203,20 +203,19 @@ img{ display:block; }
    Search Focus dashed
 ========================= */
 
-.search-input:focus{ outline:none; }
+.search-input:focus{
+  outline:none;
+}
 
 .search:focus-within::after{
   content:"";
   position:absolute;
 
-  /* 점선 위치 */
-  inset:5px;
+  inset:2.5px;              /* 실선과 점선 사이 간격 */
 
-  /* 둥근 정도 */
-  border-radius:17px;
+  border-radius:18.5px;     /* 22px - inset 보정 */
 
-  /* 점선 스타일 */
-  border:3px dashed #0A5BFF;
+  border:2.5px dashed #0A5BFF;  /* 점선 두께 */
 
   pointer-events:none;
 }
@@ -460,5 +459,6 @@ img{ display:block; }
 .bn-item.active .bn-ico{
   background:rgba(10,91,255,.12);
 }
+
 
 
