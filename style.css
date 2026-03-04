@@ -307,9 +307,19 @@ img{ display:block; }
   color:#fff;
 }
 
-.banner-text .b-title{ margin:0; font-weight:800; font-size:13px; }
-.banner-text .b-sub{ margin:4px 0 0; font-size:12px; }
-.banner-text .b-date{ margin:6px 0 0; font-size:11px; }
+.banner-text .b-title{
+  margin:0;
+  font-weight:800;
+  font-size:13px;
+}
+.banner-text .b-sub{
+  margin:4px 0 0;
+  font-size:12px;
+}
+.banner-text .b-date{
+  margin:6px 0 0;
+  font-size:11px;
+}
 
 .banner-shape{
   width:82px;
