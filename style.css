@@ -15,7 +15,6 @@ img{ display:block; }
 /* =========================
    Stage + Phone
 ========================= */
-
 .stage{
   min-height:100vh;
   display:grid;
@@ -35,7 +34,6 @@ img{ display:block; }
 /* =========================
    Top notice
 ========================= */
-
 .notice-top{
   height:30px;
   background:#EEF2F7;
@@ -50,21 +48,19 @@ img{ display:block; }
   height:16px;
   flex:0 0 auto;
   object-fit:contain;
-
-  image-rendering:-webkit-optimize-contrast;
-  image-rendering:crisp-edges;
+  image-rendering:auto; /* ✅ 깨져보임 방지 */
 }
 
 .notice-msg{
   margin:0;
   font-size:13px;
   letter-spacing:.02em;
+  line-height:1.2;
 }
 
 /* =========================
    Header
 ========================= */
-
 .topbar{
   position:relative;
   height:56px;
@@ -110,7 +106,6 @@ img{ display:block; }
 /* =========================
    Separator
 ========================= */
-
 .sep-inset{
   height:1px;
   background:#e9ecef;
@@ -120,7 +115,6 @@ img{ display:block; }
 /* =========================
    Notice row
 ========================= */
-
 .notice-link{
   display:flex;
   align-items:center;
@@ -134,23 +128,30 @@ img{ display:block; }
   width:16px;
 }
 
+/* ✅ 패치 버전만 남김: 텍스트와 › 크기 동일 + 공백 최소 */
 .notice-link-text{
   font-size:13px;
+  line-height:1;
+  letter-spacing:-0.02em;
   display:inline-flex;
   align-items:center;
 }
 
 .notice-link-text::after{
-  content:">";
-  font-size:13px;     /* 텍스트와 동일 */
-  margin-left:3px;
+  content:"›";
+  margin-left:2px;
+  font-size:13px;
+  line-height:1;
   font-weight:700;
+  color:#000;
+  -webkit-text-stroke:0;
+  text-shadow:none;
+  transform:none;
 }
 
 /* =========================
    Search
 ========================= */
-
 .search-wrap{
   padding:10px 14px 0 14px;
 }
@@ -173,6 +174,7 @@ img{ display:block; }
   outline:none;
   flex:1;
   font-size:15px;
+  background:transparent;
 }
 
 .search-input::placeholder{
@@ -198,22 +200,22 @@ img{ display:block; }
 }
 
 /* =========================
-   Search Focus dashed
+   Search Focus dashed (FIX)
 ========================= */
-
 .search-input:focus{ outline:none; }
-}
-.search::after{ display:none; }
 
-.search:focus-within::after{ display:block; }
+.search:focus-within::after{
   content:"";
   position:absolute;
-  inset:3px;              /* 이전에 쓰던 값 */
-  border-radius:19px;     /* 22px - 3px 보정 */
-  border:3px dashed #0A5BFF;
+  inset:3px;              /* ✅ 너가 원한 간격 */
+  border-radius:19px;     /* 22 - 3 보정 */
+  border:3px dashed #0A5BFF;  /* ✅ 너가 쓰던 방식 */
   pointer-events:none;
 }
 
+/* =========================
+   Sections
+========================= */
 .section-title{
   font-size:14px;
   font-weight:700;
@@ -228,7 +230,6 @@ img{ display:block; }
 /* =========================
    Quick services
 ========================= */
-
 .quick-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -254,11 +255,13 @@ img{ display:block; }
 }
 
 /* icon alignment */
-
 .qi-ico{
+  display:block;
+  flex:0 0 auto;
   width:20px;
   height:20px;
   object-fit:contain;
+  object-position:center;
 }
 
 .qi-ico-sm{
@@ -266,6 +269,7 @@ img{ display:block; }
   height:16px;
 }
 
+/* more */
 .more{
   margin:12px auto 0;
   width:fit-content;
@@ -280,7 +284,6 @@ img{ display:block; }
 /* =========================
    Banner
 ========================= */
-
 .banner{
   padding:10px 14px 0 14px;
   background:#f6f7f9;
@@ -321,7 +324,6 @@ img{ display:block; }
 /* =========================
    Benefit cards
 ========================= */
-
 .cards-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -371,7 +373,6 @@ img{ display:block; }
 /* =========================
    Footer
 ========================= */
-
 .footer{
   margin-top:12px;
   background:#f5f6f8;
@@ -425,7 +426,6 @@ img{ display:block; }
 /* =========================
    Bottom nav
 ========================= */
-
 .bottom-nav{
   background:#fff;
   border-top:1px solid rgba(0,0,0,.08);
@@ -452,59 +452,3 @@ img{ display:block; }
 .bn-item.active .bn-ico{
   background:rgba(10,91,255,.12);
 }
-
-/* =========================
-   PATCH: 공지사항 + 상단 배너(태극기) 깨짐/공백
-========================= */
-
-/* 1) 공지사항 텍스트/화살표(>) 크기 정확히 동일 + 공백 제거 */
-.notice-link-text{
-  font-size:13px;          /* 정부24 느낌 */
-  line-height:1;           /* 화살표와 높이 맞춤 */
-  letter-spacing:-0.02em;
-  display:inline-flex;
-  align-items:center;
-}
-
-.notice-link-text::after{
-  content:"›";             /* 깔끔한 chevron */
-  margin-left:2px;         /* 공백 최소화 */
-  font-size:13px;          /* ✅ 텍스트와 동일 */
-  line-height:1;
-  font-weight:700;         /* 너무 굵으면 깨져 보일 수 있어 700 추천 */
-  color:#000;
-  -webkit-text-stroke:0;   /* ✅ 깨짐/번짐 원인 제거 */
-  text-shadow:none;        /* ✅ 깨짐/번짐 원인 제거 */
-  transform:none;          /* ✅ 미세 이동 제거 */
-}
-
-/* 2) 상단 "이 누리집..." 배너: 아이콘-텍스트 간 공백/정렬 고정 */
-.notice-top{
-  gap:6px;                 /* 과하게 벌어지면 6px이 정부24 느낌 */
-}
-
-/* 3) 태극기 아이콘 깨짐 방지 + 여백/정렬 고정 */
-.notice-top img{
-  width:24px;
-  height:16px;
-  flex:0 0 auto;
-  object-fit:contain;
-  image-rendering:auto;    /* 픽셀 깨짐 방지 (crisp-edges 사용 금지) */
-}
-
-/* 상단 배너 문구가 옆으로 밀리거나 공백 생길 때 */
-.notice-msg{
-  margin:0;
-  line-height:1.2;
-}
-
-
-
-
-
-
-
-
-
-
-
