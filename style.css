@@ -389,8 +389,10 @@ img{ display:block; }
   background:#f5f6f8;
 }
 
-.footer-inner{ padding:12px 14px; }
-
+.footer-inner{
+  padding-left:16px;
+  padding-right:16px;
+}
 .footer-top{
   display:flex;
   align-items:center;
@@ -562,3 +564,4 @@ body{ color: var(--c-text); }
 .f-copy{
   font-size:var(--fs-11);
 }
+
