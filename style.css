@@ -110,7 +110,7 @@ img{ display:block; }
 .notice-link{
   display:flex;
   align-items:center;
-  gap:6px;
+  gap:8px;
   padding:10px 16px;
   font-size:13px;
   line-height:1.2;
@@ -121,6 +121,7 @@ img{ display:block; }
 .bell-img{
   width:16px;
   height:16px;
+  display:block;
   flex:0 0 auto;
 }
 .notice-link-text{
@@ -131,19 +132,13 @@ img{ display:block; }
   align-items:center;
 }
 .notice-link-text::after{
-  content:"›";          /* 원본 느낌이면 › 가 더 비슷 */
+  content:"›";          /* 원본 느낌이면 › / 그냥 > 원하면 > 로 바꿔 */
   margin-left:6px;
-  font-size:inherit;    /* ✅ 텍스트와 완전 동일 */
+  font-size:inherit;
   line-height:inherit;
-  font-weight:400;      /* 굵게(700) 말고 얇게 */
+  font-weight:400;
 }
-.notice-arrow{
-  font-size: inherit;   /* ✅ 글자 크기 동일 */
-  line-height: inherit; /* ✅ 높이도 동일 */
-  margin-left: 4px;     /* ✅ 한 칸 정도 간격 */
-  font-weight: 400;
-  transform: translateY(-0.5px); /* 필요하면 0~1px로 미세조정 */
-}
+
 /* =========================
    Search Area
 ========================= */
@@ -307,6 +302,3 @@ img{ display:block; }
   border-radius:999px;
   background:rgba(255,255,255,.22);
 }
-
-
-
