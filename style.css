@@ -209,11 +209,8 @@ img{ display:block; }
   position:absolute;
   inset:3px;
   border-radius:19px;
+  border:3px dashed #0A5BFF;
   pointer-events:none;
-
-  background-repeat:no-repeat;
-  background-size:100% 100%;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 44' preserveAspectRatio='none'%3E%3Crect x='2' y='2' width='96' height='40' rx='20' ry='20' fill='none' stroke='%230A5BFF' stroke-width='3' stroke-dasharray='8 6'/%3E%3C/svg%3E");
 }
 /* =========================
    Sections
@@ -506,6 +503,7 @@ img{ display:block; }
   margin:0;
   line-height:1.2;
 }
+
 
 
 
