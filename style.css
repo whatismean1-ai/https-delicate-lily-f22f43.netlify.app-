@@ -293,25 +293,23 @@ img{ display:block; }
   padding:10px 16px 0 16px;
   background:transparent;
 }
+
 .banner-card{
   height:92px;
   border-radius:12px;
-  background:#6F82A8;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px;
-  color:#fff;
+
+  /* ✅ 배너 이미지 꽉 채우기 */
+  background-image:url("./assets/ai-banner.png");
+  background-size:cover;              /* 꽉 채움 (잘리더라도 카드에 맞춤) */
+  background-position:center right;   /* 캐릭터 오른쪽 유지 */
+  background-repeat:no-repeat;
+
+  /* 기존 스펙 유지 */
+  display:block;
+  overflow:hidden;  /* 라운드 밖 삐져나오는 것 방지 */
+  text-decoration:none;
 }
-.banner-text .b-title{ margin:0; font-weight:800; font-size:13px; }
-.banner-text .b-sub{ margin:4px 0 0; font-size:12px; }
-.banner-text .b-date{ margin:6px 0 0; font-size:11px; }
-.banner-shape{
-  width:82px;
-  height:82px;
-  border-radius:999px;
-  background:rgba(255,255,255,.22);
-}
+
 
 
 
