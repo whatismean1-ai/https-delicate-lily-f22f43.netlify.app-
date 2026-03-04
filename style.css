@@ -132,11 +132,13 @@ img{ display:block; }
   align-items:center;
 }
 .notice-link-text::after{
-  content:">";          /* 원본 느낌이면 › / 그냥 > 원하면 > 로 바꿔 */
+  content:">";
   margin-left:6px;
-  font-size:inherit;
-  line-height:inherit;
-  font-weight:400;
+  font-size:16px;   /* 화살표 크게 */
+  line-height:1;
+  font-weight:500;
+  position:relative;
+  top:-1px;
 }
 
 /* =========================
@@ -302,4 +304,5 @@ img{ display:block; }
   border-radius:999px;
   background:rgba(255,255,255,.22);
 }
+
 
