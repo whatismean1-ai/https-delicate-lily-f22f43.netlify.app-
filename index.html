@@ -39,23 +39,33 @@
       <div class="sep-inset" aria-hidden="true"></div>
 
       <!-- 공지사항 -->
-      <a class="notice-link" href="#">
-        <img
-          class="bell-img"
-          src="./assets/bell_yellow_16.png"
-          srcset="./assets/bell_yellow_32x32_retina.png 2x"
-          width="16"
-          height="16"
-          alt=""
-          aria-hidden="true"
-        />
-        <span class="notice-link-text">공지사항 확인하기</span>
-      </a>
 <a class="notice-link" href="#">
-  <img class="bell-img" src="./assets/bell_yellow_16.png" alt="">
+  <img
+    class="bell-img"
+    src="./assets/bell_yellow_16.png"
+    srcset="./assets/bell_yellow_32x32_retina.png 2x"
+    width="16" height="16"
+    alt=""
+    aria-hidden="true"
+  />
   <span class="notice-link-text">공지사항 확인하기</span>
 </a>
 
+<!-- ✅ 공지사항 아래 구분선(여기 추가) -->
+<div class="notice-divider" aria-hidden="true"></div>
+
+<!-- 검색 -->
+<section class="search-wrap">
+  <div class="search">
+    <input class="search-input" type="text" placeholder="정부 서비스를 쉽게 검색하세요." />
+    <button class="search-btn" type="button" aria-label="검색">
+      <svg class="search-svg" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="M20 20l-4.2-4.2"></path>
+      </svg>
+    </button>
+  </div>
+</section>
 <div class="notice-divider"></div>
       <!-- 검색 -->
       <section class="search-wrap">
@@ -279,4 +289,5 @@
   </div>
 </body>
 </html>
+
 
