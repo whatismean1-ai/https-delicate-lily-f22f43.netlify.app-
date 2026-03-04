@@ -280,10 +280,8 @@ img{ display:block; }
 }
 
 .plus{
-  font-size:15px;
-  font-weight:700;
-  position:relative;
-  top:-1px;
+  font-size:18px;
+  line-height:1;
 }
 
 /* =========================
@@ -312,6 +310,7 @@ img{ display:block; }
   border-radius:999px;
   background:rgba(255,255,255,.22);
 }
+
 
 
 
