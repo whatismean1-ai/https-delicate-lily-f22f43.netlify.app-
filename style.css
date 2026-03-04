@@ -104,12 +104,18 @@ img{ display:block; }
 }
 
 /* =========================
-   Separator
+   Separators (full width)
 ========================= */
 .sep-inset{
   height:1px;
   background:#E9ECEF;
-  margin:0;          /* ✅ 끝까지 연결 */
+  margin:0;
+}
+
+.notice-divider{
+  height:1px;
+  background:#E9ECEF;
+  margin:0;
 }
 
 /* =========================
@@ -124,9 +130,7 @@ img{ display:block; }
   color:#333;
 }
 
-.bell-img{
-  width:16px;
-}
+.bell-img{ width:16px; }
 
 .notice-link-text{
   font-size:13px;
@@ -148,22 +152,21 @@ img{ display:block; }
   transform:none;
 }
 
-/* ✅ 공지사항 아래 구분선 */
-.notice-divider{
-  height:1px;
-  background:#E9ECEF;
-  margin:0;          /* ✅ 끝까지 연결 */
-}
+/* =========================
+   Search Area (BG block)
+   ✅ 여기 한 군데만 회색 배경
+========================= */
 .search-area{
   background:#f6f7f9;
-  padding-top:18px;
+  padding-top:18px;          /* 검색 위 회색 여백 */
+  padding-bottom:12px;       /* 배너 아래까지 자연스럽게 */
 }
+
 /* =========================
    Search
 ========================= */
-/* 구분선 아래부터 동일 배경 유지 */
 .search-wrap{
-  padding:0 14px 8px 14px;
+  padding:0 14px 8px 14px;   /* 좌우 정렬 + 검색 아래 여백 */
 }
 
 .search{
@@ -190,9 +193,7 @@ img{ display:block; }
   color:#111;
 }
 
-.search-input::placeholder{
-  color:#9EA4AA;
-}
+.search-input::placeholder{ color:#9EA4AA; }
 
 .search-btn{
   width:36px;
@@ -214,45 +215,37 @@ img{ display:block; }
 
 /* =========================
    Search Focus dashed (LOCKED SPEC)
-   ✅ 색상만 변경 가능, 나머지 절대값 유지
 ========================= */
 .search-input:focus{ outline:none; }
 
 .search:focus-within::after{
   content:"";
   position:absolute;
-
   inset:2.2px;                 /* 🔒 */
   border-radius:18.3px;        /* 🔒 */
   border:2.2px dashed #0A5BFF; /* 🔒 (색상만 변경 가능) */
-
   pointer-events:none;
 }
 
 /* =========================
    Sections
 ========================= */
+.section{ padding:18px 14px 0 14px; }
+
 .section-title{
   font-size:14px;
   font-weight:700;
-  margin-bottom:10px;
-}
-
-/* 여기 아래 추가 */
-.bg-block{
-  background:#f6f7f9;
-  padding-bottom:12px;
-}
-
-/* ✅ 검색~자주찾는서비스 영역 배경 유지 */
-.quick-section{
-  background:#f6f7f9;
-  padding-bottom:12px;
+  margin:0 0 10px 0;
 }
 
 /* =========================
    Quick services
+   ✅ search-area 안에서 section padding은 따로 잡음
 ========================= */
+.quick-section{
+  padding:12px 14px 0 14px;     /* search-area 안에서는 기본 section padding 대신 이 값 */
+}
+
 .quick-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -278,14 +271,12 @@ img{ display:block; }
   box-shadow:0 2px 6px rgba(0,0,0,0.06);
 }
 
-/* ✅ 중복 제거된 최종 quick-label */
 .quick-label{
   font-size:13px;
   font-weight:700;
   letter-spacing:-0.02em;
 }
 
-/* ✅ 중복 제거된 최종 아이콘 */
 .qi-ico{
   display:block;
   flex:0 0 auto;
@@ -302,7 +293,6 @@ img{ display:block; }
   object-position:center;
 }
 
-/* more */
 .more{
   margin:12px auto 0;
   width:fit-content;
@@ -315,11 +305,12 @@ img{ display:block; }
 }
 
 /* =========================
-   Banner
+   Banner (inside search-area)
+   ✅ 배경은 search-area가 담당하므로 여기서 제거
 ========================= */
 .banner{
   padding:10px 14px 0 14px;
-  background:#f6f7f9;
+  background:transparent;
 }
 
 .banner-card{
@@ -333,19 +324,9 @@ img{ display:block; }
   color:#fff;
 }
 
-.banner-text .b-title{
-  margin:0;
-  font-weight:800;
-  font-size:13px;
-}
-
-.banner-text .b-sub{
-  font-size:12px;
-}
-
-.banner-text .b-date{
-  font-size:11px;
-}
+.banner-text .b-title{ margin:0; font-weight:800; font-size:13px; }
+.banner-text .b-sub{ margin:4px 0 0; font-size:12px; }
+.banner-text .b-date{ margin:6px 0 0; font-size:11px; opacity:.9; }
 
 .banner-shape{
   width:82px;
@@ -374,18 +355,17 @@ img{ display:block; }
   background:#fff;
 }
 
-.card-content{
-  padding:10px 12px;
-}
+.card-content{ padding:10px 12px; }
 
 .card-title{
   font-size:12px;
   font-weight:800;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
-.card-sub{
-  font-size:12px;
-}
+.card-sub{ font-size:12px; line-height:1.35; }
 
 .card-ico{
   position:absolute;
@@ -399,9 +379,7 @@ img{ display:block; }
   background:rgba(255,255,255,.85);
 }
 
-.emo{
-  font-size:20px;
-}
+.emo{ font-size:20px; }
 
 /* =========================
    Footer
@@ -411,9 +389,7 @@ img{ display:block; }
   background:#f5f6f8;
 }
 
-.footer-inner{
-  padding:12px 14px;
-}
+.footer-inner{ padding:12px 14px; }
 
 .footer-top{
   display:flex;
@@ -428,15 +404,8 @@ img{ display:block; }
   padding:12px;
 }
 
-.f-title{
-  font-weight:800;
-  font-size:12px;
-}
-
-.f-text{
-  font-size:12px;
-  line-height:1.45;
-}
+.f-title{ font-weight:800; font-size:12px; }
+.f-text{ font-size:12px; line-height:1.45; }
 
 .f-links{
   display:flex;
@@ -473,6 +442,8 @@ img{ display:block; }
   font-size:11px;
   display:grid;
   place-items:center;
+  gap:4px;
+  padding:8px 0;
 }
 
 .bn-ico{
@@ -485,9 +456,3 @@ img{ display:block; }
 .bn-item.active .bn-ico{
   background:rgba(10,91,255,.12);
 }
-
-
-
-
-
-
