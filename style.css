@@ -237,6 +237,12 @@ img{ display:block; }
   margin-bottom:10px;
 }
 
+/* 여기 아래 추가 */
+.bg-block{
+  background:#f6f7f9;
+  padding-bottom:12px;
+}
+
 /* ✅ 검색~자주찾는서비스 영역 배경 유지 */
 .quick-section{
   background:#f6f7f9;
@@ -478,6 +484,7 @@ img{ display:block; }
 .bn-item.active .bn-ico{
   background:rgba(10,91,255,.12);
 }
+
 
 
 
