@@ -203,6 +203,7 @@ img{ display:block; }
   display:grid;
   place-items:center;
   cursor:pointer;
+align-items:center;
 }
 
 .search-svg{
@@ -211,6 +212,7 @@ img{ display:block; }
   stroke:#2B2B2B;
   stroke-width:2;
   fill:none;
+transform:translateY(-1px);
 }
 
 /* =========================
@@ -254,14 +256,14 @@ img{ display:block; }
 
 .quick-item{
   height:48px;
-  padding:0 14px;
+  padding:0 12px;
   border-radius:12px;
   border:1.5px solid #B9D6FF;
   background:#fff;
   text-decoration:none;
   color:#111;
   display:flex;
-  align-items:center;
+  align-items:flex-start
   justify-content:space-between;
   transition:all .15s ease;
 }
@@ -284,6 +286,7 @@ img{ display:block; }
   height:20px;
   object-fit:contain;
   object-position:center;
+   margin-top:1px;
 }
 
 .qi-ico-sm{
@@ -355,7 +358,7 @@ img{ display:block; }
   background:#fff;
 }
 
-.card-content{ padding:10px 12px; }
+.card-content{ padding:12px 12px; }
 
 .card-title{
   font-size:12px;
@@ -370,7 +373,7 @@ img{ display:block; }
 .card-ico{
   position:absolute;
   right:10px;
-  top:28px;
+  top:24px;
   width:40px;
   height:40px;
   border-radius:10px;
@@ -564,4 +567,27 @@ body{ color: var(--c-text); }
 .f-copy{
   font-size:var(--fs-11);
 }
+/* =========================
+   Gov24 Grid Padding (좌우 기준선 통일)
+========================= */
+.notice-top{ padding:0 16px; }
+.brand{ left:16px; }
+.menu{ right:16px; }
+
+.notice-link{ padding:12px 16px; }
+
+/* search-area 내부 */
+.search-wrap{ padding:0 16px 8px 16px; }
+
+/* 섹션들 좌우 정렬 */
+.section{ padding-left:16px; padding-right:16px; }
+
+/* quick-section은 search-area 안에서 따로 쓰는 경우 */
+.quick-section{ padding-left:16px; padding-right:16px; }
+
+/* banner도 동일 */
+.banner{ padding-left:16px; padding-right:16px; }
+
+/* footer도 동일 */
+.footer-inner{ padding-left:16px; padding-right:16px; }
 
