@@ -123,7 +123,7 @@ img{ display:block; }
   height:16px;
   display:block;
   flex:0 0 auto;
-  margin-right:2px; 
+  margin-right:2px;
 }
 .notice-link-text{
   font-size:inherit;
@@ -135,7 +135,7 @@ img{ display:block; }
 .notice-link-text::after{
   content:">";
   margin-left:6px;
-  font-size:16px;   /* 화살표 크게 */
+  font-size:16px;
   line-height:1;
   font-weight:500;
   position:relative;
@@ -289,7 +289,6 @@ img{ display:block; }
 /* =========================
    Banner
 ========================= */
-
 .banner{
   padding:10px 16px 0 16px;
   background:transparent;
@@ -308,21 +307,9 @@ img{ display:block; }
   color:#fff;
 }
 
-.banner-text .b-title{
-  margin:0;
-  font-weight:800;
-  font-size:13px;
-}
-
-.banner-text .b-sub{
-  margin:4px 0 0;
-  font-size:12px;
-}
-
-.banner-text .b-date{
-  margin:6px 0 0;
-  font-size:11px;
-}
+.banner-text .b-title{ margin:0; font-weight:800; font-size:13px; }
+.banner-text .b-sub{ margin:4px 0 0; font-size:12px; }
+.banner-text .b-date{ margin:6px 0 0; font-size:11px; }
 
 .banner-shape{
   width:82px;
@@ -330,16 +317,3 @@ img{ display:block; }
   border-radius:999px;
   background:rgba(255,255,255,.22);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
