@@ -110,6 +110,8 @@ img{ display:block; }
 .notice-link{
   display:flex;
   align-items:center;
+  font-size: 14px;
+  line-height: 1.2; 
   gap:8px;
   padding:12px 16px;
   text-decoration:none;
@@ -137,9 +139,12 @@ img{ display:block; }
   font-weight:700;
   color:#000;
 }
-.notice-arrow {
-  margin-left: 4px;   /* 한칸 정도 간격 */
-  font-size: 1em;     /* 글자 크기와 동일 */
+.notice-arrow{
+  font-size: inherit;   /* ✅ 글자 크기 동일 */
+  line-height: inherit; /* ✅ 높이도 동일 */
+  margin-left: 4px;     /* ✅ 한 칸 정도 간격 */
+  font-weight: 400;
+  transform: translateY(-0.5px); /* 필요하면 0~1px로 미세조정 */
 }
 /* =========================
    Search Area
@@ -304,4 +309,5 @@ img{ display:block; }
   border-radius:999px;
   background:rgba(255,255,255,.22);
 }
+
 
