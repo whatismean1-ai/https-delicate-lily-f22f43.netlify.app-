@@ -154,14 +154,16 @@ img{ display:block; }
   background:#E9ECEF;
   margin:0;          /* ✅ 끝까지 연결 */
 }
-
+.search-area{
+  background:#f6f7f9;
+  padding-top:18px;
+}
 /* =========================
    Search
 ========================= */
 /* 구분선 아래부터 동일 배경 유지 */
 .search-wrap{
-  padding:20px 14px 8px 14px;
-  background:#f6f7f9;
+  padding:0 14px 8px 14px;
 }
 
 .search{
@@ -483,6 +485,7 @@ img{ display:block; }
 .bn-item.active .bn-ico{
   background:rgba(10,91,255,.12);
 }
+
 
 
 
