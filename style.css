@@ -2,14 +2,12 @@
    Reset
 ========================= */
 *{ box-sizing:border-box; }
-
 body{
   margin:0;
   font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans KR",Arial,sans-serif;
   background:#fff;
-  color:#111;
+  color:#000;
 }
-
 img{ display:block; }
 
 /* =========================
@@ -21,7 +19,6 @@ img{ display:block; }
   place-items:start center;
   padding:24px 12px;
 }
-
 .phone{
   width:402px;
   max-width:92vw;
@@ -40,9 +37,8 @@ img{ display:block; }
   display:flex;
   align-items:center;
   gap:6px;
-  padding:0 15px;
+  padding:0 16px; /* ✅ 원본 기준선 */
 }
-
 .notice-top img{
   width:24px;
   height:16px;
@@ -50,12 +46,12 @@ img{ display:block; }
   object-fit:contain;
   image-rendering:auto;
 }
-
 .notice-msg{
   margin:0;
   font-size:13px;
   letter-spacing:.02em;
   line-height:1.2;
+  color:#000;
 }
 
 /* =========================
@@ -65,20 +61,16 @@ img{ display:block; }
   position:relative;
   height:56px;
 }
-
 .brand{
   position:absolute;
-  left:15px;
+  left:16px;   /* ✅ 원본 기준선 */
   top:16px;
 }
-
-.brand-logo{
-  width:90px;
-}
+.brand-logo{ width:90px; }
 
 .menu{
   position:absolute;
-  right:14px;
+  right:16px;  /* ✅ 원본 기준선 */
   top:10px;
   width:58px;
   height:40px;
@@ -89,7 +81,6 @@ img{ display:block; }
   place-items:center;
   gap:4px;
 }
-
 .hamburger{
   width:16px;
   height:11px;
@@ -98,10 +89,7 @@ img{ display:block; }
     linear-gradient(#333,#333) 0 50%/100% 2px no-repeat,
     linear-gradient(#333,#333) 0 100%/100% 2px no-repeat;
 }
-
-.menu-text{
-  font-size:12px;
-}
+.menu-text{ font-size:12px; color:#000; }
 
 /* =========================
    Separators (full width)
@@ -109,13 +97,12 @@ img{ display:block; }
 .sep-inset{
   height:1px;
   background:#E9ECEF;
-  margin:0;
+  margin:0; /* ✅ 끝까지 */
 }
-
 .notice-divider{
   height:1px;
   background:#E9ECEF;
-  margin:0;
+  margin:0; /* ✅ 끝까지 */
 }
 
 /* =========================
@@ -125,12 +112,12 @@ img{ display:block; }
   display:flex;
   align-items:center;
   gap:8px;
-  padding:12px 14px;
+  padding:12px 16px; /* ✅ 원본 기준선 */
   text-decoration:none;
-  color:#333;
+  color:#000;
+  background:#fff;
 }
-
-.bell-img{ width:16px; }
+.bell-img{ width:16px; height:16px; flex:0 0 auto; }
 
 .notice-link-text{
   font-size:13px;
@@ -138,8 +125,8 @@ img{ display:block; }
   letter-spacing:-0.02em;
   display:inline-flex;
   align-items:center;
+  color:#000;
 }
-
 .notice-link-text::after{
   content:"›";
   margin-left:2px;
@@ -147,28 +134,24 @@ img{ display:block; }
   line-height:1;
   font-weight:700;
   color:#000;
-  -webkit-text-stroke:0;
-  text-shadow:none;
-  transform:none;
 }
 
 /* =========================
    Search Area (BG block)
-   ✅ 여기 한 군데만 회색 배경
+   ✅ 검색 위 여백 + 검색/자주찾는서비스/배너까지 회색 배경
 ========================= */
 .search-area{
   background:#f6f7f9;
-  padding-top:18px;          /* 검색 위 회색 여백 */
-  padding-bottom:12px;       /* 배너 아래까지 자연스럽게 */
+  padding-top:18px;     /* ✅ 검색 위 회색 여백(원본 느낌) */
+  padding-bottom:12px;  /* ✅ 배너 아래까지 자연스럽게 */
 }
 
 /* =========================
    Search
 ========================= */
 .search-wrap{
-  padding:0 14px 8px 14px;   /* 좌우 정렬 + 검색 아래 여백 */
+  padding:0 16px 8px 16px; /* ✅ 원본 기준선 */
 }
-
 .search{
   position:relative;
   height:46px;
@@ -183,18 +166,19 @@ img{ display:block; }
     0 6px 14px rgba(0,0,0,0.12),
     0 2px 4px rgba(0,0,0,0.08);
 }
-
 .search-input{
   border:0;
   outline:none;
   flex:1;
-  font-size:15px;
+  font-size:15px;          /* ✅ 원본 */
+  letter-spacing:0.01em;   /* ✅ 원본 */
   background:transparent;
-  color:#111;
+  color:#000;
 }
-
-.search-input::placeholder{ color:#9EA4AA; }
-
+.search-input::placeholder{
+  color:rgba(0,0,0,0.4);   /* ✅ 원본 */
+  letter-spacing:0.01em;   /* ✅ 원본 */
+}
 .search-btn{
   width:36px;
   height:36px;
@@ -203,23 +187,21 @@ img{ display:block; }
   display:grid;
   place-items:center;
   cursor:pointer;
-align-items:center;
 }
-
 .search-svg{
   width:20px;
   height:20px;
   stroke:#2B2B2B;
   stroke-width:2;
   fill:none;
-transform:translateY(-1px);
+  transform:translateY(-1px);
 }
 
 /* =========================
    Search Focus dashed (LOCKED SPEC)
+   ✅ 색상만 변경 가능, 나머지 절대값 유지
 ========================= */
 .search-input:focus{ outline:none; }
-
 .search:focus-within::after{
   content:"";
   position:absolute;
@@ -232,28 +214,28 @@ transform:translateY(-1px);
 /* =========================
    Sections
 ========================= */
-.section{ padding:18px 14px 0 14px; }
-
+.section{
+  padding:18px 16px 0 16px; /* ✅ 원본 기준선 */
+}
 .section-title{
+  margin:0 0 10px 0;
   font-size:14px;
   font-weight:700;
-  margin:0 0 10px 0;
+  color:#000;
 }
 
 /* =========================
-   Quick services
-   ✅ search-area 안에서 section padding은 따로 잡음
+   Quick services (inside search-area)
 ========================= */
 .quick-section{
-  padding:12px 14px 0 14px;     /* search-area 안에서는 기본 section padding 대신 이 값 */
+  padding:12px 16px 0 16px; /* ✅ search-area 안에서 기준선 통일 */
+  background:transparent;   /* ✅ 배경은 search-area가 담당 */
 }
-
 .quick-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px 12px;
 }
-
 .quick-item{
   height:48px;
   padding:0 12px;
@@ -261,24 +243,22 @@ transform:translateY(-1px);
   border:1.5px solid #B9D6FF;
   background:#fff;
   text-decoration:none;
-  color:#111;
+  color:#000;
   display:flex;
-  align-items:flex-start
+  align-items:center;             /* ✅ 중앙 정렬 (원본 느낌) */
   justify-content:space-between;
   transition:all .15s ease;
 }
-
 .quick-item:hover{
   border-color:#8DBBFF;
   box-shadow:0 2px 6px rgba(0,0,0,0.06);
 }
-
 .quick-label{
   font-size:13px;
   font-weight:700;
   letter-spacing:-0.02em;
+  color:#000;
 }
-
 .qi-ico{
   display:block;
   flex:0 0 auto;
@@ -286,16 +266,14 @@ transform:translateY(-1px);
   height:20px;
   object-fit:contain;
   object-position:center;
-   margin-top:1px;
+  margin-top:1px; /* ✅ 원본처럼 살짝 위로 */
 }
-
 .qi-ico-sm{
   width:16px;
   height:16px;
   object-fit:contain;
   object-position:center;
 }
-
 .more{
   margin:12px auto 0;
   width:fit-content;
@@ -303,19 +281,17 @@ transform:translateY(-1px);
   align-items:center;
   gap:6px;
   text-decoration:none;
-  color:#333;
+  color:rgba(0,0,0,0.8);
   font-size:12px;
 }
 
 /* =========================
    Banner (inside search-area)
-   ✅ 배경은 search-area가 담당하므로 여기서 제거
 ========================= */
 .banner{
-  padding:10px 14px 0 14px;
+  padding:10px 16px 0 16px; /* ✅ 원본 기준선 */
   background:transparent;
 }
-
 .banner-card{
   height:92px;
   border-radius:12px;
@@ -325,12 +301,11 @@ transform:translateY(-1px);
   align-items:center;
   padding:14px;
   color:#fff;
+  box-shadow: rgba(0,0,0,.12) 0 4px 14px;
 }
-
 .banner-text .b-title{ margin:0; font-weight:800; font-size:13px; }
-.banner-text .b-sub{ margin:4px 0 0; font-size:12px; }
-.banner-text .b-date{ margin:6px 0 0; font-size:11px; opacity:.9; }
-
+.banner-text .b-sub{ margin:4px 0 0; font-size:12px; opacity:.95; }
+.banner-text .b-date{ margin:6px 0 0; font-size:11px; opacity:.85; }
 .banner-shape{
   width:82px;
   height:82px;
@@ -346,7 +321,6 @@ transform:translateY(-1px);
   grid-template-columns:1fr 1fr;
   gap:12px;
 }
-
 .card{
   position:relative;
   height:90px;
@@ -357,9 +331,7 @@ transform:translateY(-1px);
   color:inherit;
   background:#fff;
 }
-
 .card-content{ padding:12px 12px; }
-
 .card-title{
   font-size:12px;
   font-weight:800;
@@ -367,9 +339,7 @@ transform:translateY(-1px);
   overflow:hidden;
   text-overflow:ellipsis;
 }
-
 .card-sub{ font-size:12px; line-height:1.35; }
-
 .card-ico{
   position:absolute;
   right:10px;
@@ -381,7 +351,6 @@ transform:translateY(-1px);
   place-items:center;
   background:rgba(255,255,255,.85);
 }
-
 .emo{ font-size:20px; }
 
 /* =========================
@@ -390,57 +359,49 @@ transform:translateY(-1px);
 .footer{
   margin-top:12px;
   background:#f5f6f8;
+  padding-bottom:12px;
 }
-
-.footer-inner{
-  padding-left:16px;
-  padding-right:16px;
-}
+.footer-inner{ padding:12px 16px 0 16px; } /* ✅ 기준선 통일 */
 .footer-top{
   display:flex;
   align-items:center;
   gap:6px;
+  padding:8px 0 10px;
   font-weight:700;
+  font-size:13px;
 }
-
+.footer-drop{
+  width:6px;height:6px;
+  border-right:1.6px solid #7a7f87;
+  border-bottom:1.6px solid #7a7f87;
+  transform:rotate(45deg);
+  margin-left:2px;
+}
 .footer-box{
   background:#f7f8fa;
   border-radius:12px;
-  padding:12px;
+  padding:12px 12px 16px;
+  border:1px solid rgba(0,0,0,.04);
 }
-
-.f-title{ font-weight:800; font-size:12px; }
-.f-text{ font-size:12px; line-height:1.45; }
-
-.f-links{
-  display:flex;
-  gap:12px;
-  font-size:12px;
-}
-
-.f-links a{
-  color:#0a5bff;
-  text-decoration:none;
-  font-weight:700;
-}
-
-.f-copy{
-  margin-top:10px;
-  font-size:11px;
-  color:#555;
-}
+.f-row{ margin-bottom:12px; }
+.f-title{ font-weight:800; font-size:12px; margin-bottom:6px; }
+.f-text{ font-size:12px; color:#000; line-height:1.45; }
+.f-divider{ height:1px; background:rgba(0,0,0,.08); margin:10px 0; }
+.f-links{ display:flex; gap:12px; font-size:12px; }
+.f-links a{ color:#0a5bff; text-decoration:none; font-weight:700; }
+.f-copy{ margin-top:10px; font-size:11px; color:rgba(0,0,0,0.8); }
 
 /* =========================
    Bottom nav
 ========================= */
 .bottom-nav{
+  margin-top:12px;
   background:#fff;
   border-top:1px solid rgba(0,0,0,.08);
   height:64px;
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(4, 1fr);
 }
-
 .bn-item{
   text-decoration:none;
   color:#222;
@@ -450,144 +411,9 @@ transform:translateY(-1px);
   gap:4px;
   padding:8px 0;
 }
-
 .bn-ico{
-  width:24px;
-  height:24px;
+  width:24px;height:24px;
   border-radius:8px;
   background:rgba(0,0,0,.06);
 }
-
-.bn-item.active .bn-ico{
-  background:rgba(10,91,255,.12);
-}
-/* =========================
-   Gov24 Text Color Tokens
-   (원본 DevTools 기준)
-========================= */
-:root{
-  --c-text: #000000;            /* 기본 텍스트 */
-  --c-text-80: rgba(0,0,0,.8);  /* 덜 진한 텍스트(원본에서 자주 씀) */
-  --c-text-40: rgba(0,0,0,.4);  /* placeholder */
-}
-
-/* 전체 기본 텍스트 */
-body{ color: var(--c-text); }
-
-/* 상단 배너 문구 */
-.notice-msg{ color: var(--c-text); }
-
-/* 공지사항(공지사항 확인하기) */
-.notice-link{ color: var(--c-text); }
-.notice-link-text{ color: var(--c-text); }
-.notice-link-text::after{ color: var(--c-text); }
-
-/* 섹션 타이틀(자주 찾는 서비스 / 지금 봐야 할 혜택/보조금 등) */
-.section-title{ color: var(--c-text); }
-
-/* 검색 */
-.search-input{ color: var(--c-text); }
-.search-input::placeholder{ color: var(--c-text-40); }
-
-/* 자주 찾는 서비스 카드 텍스트 */
-.quick-label{ color: var(--c-text); }
-
-/* 더보기(원본은 살짝 연함) */
-.more{ color: var(--c-text-80); }
-
-/* 혜택 섹션 “더 많은 혜택 보기” 같은 링크도 원본처럼 */
-.benefit-more{ color: var(--c-text-80); }
-
-/* 푸터 기본 텍스트(너는 #555 섞여있어서 회색이 강했음) */
-.f-text{ color: var(--c-text); }
-.f-copy{ color: var(--c-text-80); }
-/* =========================
-   Gov24 Font Size System
-========================= */
-
-:root{
-  --fs-11:11px;
-  --fs-12:12px;
-  --fs-13:13px;
-  --fs-14:14px;
-  --fs-15:15px;
-}
-
-/* 상단 정부 안내 */
-.notice-msg{
-  font-size:var(--fs-13);
-}
-
-/* 공지사항 */
-.notice-link-text{
-  font-size:var(--fs-14);
-}
-
-/* 검색 */
-.search-input{
-  font-size:var(--fs-15);
-}
-
-/* 섹션 타이틀 */
-.section-title{
-  font-size:var(--fs-15);
-  font-weight:700;
-}
-
-/* 자주 찾는 서비스 카드 */
-.quick-label{
-  font-size:var(--fs-14);
-  font-weight:600;
-}
-
-/* 더보기 */
-.more{
-  font-size:var(--fs-13);
-}
-
-/* 혜택 카드 */
-.card-title{
-  font-size:var(--fs-14);
-  font-weight:700;
-}
-
-.card-sub{
-  font-size:var(--fs-13);
-}
-
-/* 푸터 */
-.f-title{
-  font-size:var(--fs-12);
-}
-
-.f-text{
-  font-size:var(--fs-12);
-}
-
-.f-copy{
-  font-size:var(--fs-11);
-}
-/* =========================
-   Gov24 Grid Padding (좌우 기준선 통일)
-========================= */
-.notice-top{ padding:0 16px; }
-.brand{ left:16px; }
-.menu{ right:16px; }
-
-.notice-link{ padding:12px 16px; }
-
-/* search-area 내부 */
-.search-wrap{ padding:0 16px 8px 16px; }
-
-/* 섹션들 좌우 정렬 */
-.section{ padding-left:16px; padding-right:16px; }
-
-/* quick-section은 search-area 안에서 따로 쓰는 경우 */
-.quick-section{ padding-left:16px; padding-right:16px; }
-
-/* banner도 동일 */
-.banner{ padding-left:16px; padding-right:16px; }
-
-/* footer도 동일 */
-.footer-inner{ padding-left:16px; padding-right:16px; }
-
+.bn-item.active .bn-ico{ background:rgba(10,91,255,.12); }
