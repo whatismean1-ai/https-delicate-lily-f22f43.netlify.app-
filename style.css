@@ -408,8 +408,10 @@ img{ display:block; }
 }
 
 /* =========================
-   Benefit cards (샘플 1번 기준)
+   Benefit cards (배경 = 이미지)
 ========================= */
+
+/* 섹션 제목 */
 .benefit-section .section-title{
   margin: 0 0 10px 0;
   font-size: 14px;
@@ -418,12 +420,14 @@ img{ display:block; }
   line-height: 1.25;
 }
 
+/* 그리드 */
 .benefit-section .cards-grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px 12px;
 }
 
+/* 카드 */
 .benefit-section .card{
   position:relative;
   height: 88px;
@@ -436,11 +440,37 @@ img{ display:block; }
   box-shadow: 0 1px 2px rgba(0,0,0,0.06);
 }
 
+/* ✅ 배경 레이어: “이미지”로 */
+.benefit-section .card-bg{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  opacity:1;
+}
+
+/* ✅ 너가 준 3개 + (핑크 1개 = 이전에 확인한 링크) */
+.benefit-section .card--pink  .card-bg{
+  background-image:url("https://framerusercontent.com/images/F44KGdM5wK0dbICGRiWkWutixI.png?width=160&height=86");
+}
+.benefit-section .card--yellow .card-bg{
+  background-image:url("https://framerusercontent.com/images/1Xw4idFBSIYdpfkJy0mhrqkY8dc.png?width=160&height=86");
+}
+.benefit-section .card--blue .card-bg{
+  background-image:url("https://framerusercontent.com/images/IyxrrAxRRKn0BJpHWjcPGLfFHjE.png?width=160&height=86");
+}
+.benefit-section .card--blue2 .card-bg{
+  background-image:url("https://framerusercontent.com/images/ziTpt7tw8FLV8ytJrQcFuakMSu8.png?width=160&height=86");
+}
+
+/* 내용 */
 .benefit-section .card-content{
   position:relative;
   z-index:2;
   padding: 12px 12px;
-  padding-right: 56px;
+  padding-right: 56px; /* 아이콘 자리 확보 */
 }
 
 .benefit-section .card-title{
@@ -449,7 +479,6 @@ img{ display:block; }
   letter-spacing: -0.03em;
   line-height: 1.25;
   margin: 0 0 6px 0;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -463,6 +492,7 @@ img{ display:block; }
   line-height: 1.35;
 }
 
+/* 아이콘 박스 */
 .benefit-section .card-ico{
   position:absolute;
   right: 12px;
@@ -473,10 +503,8 @@ img{ display:block; }
   border-radius: 10px;
   display:grid;
   place-items:center;
-
   background: rgba(255,255,255,0.92);
   border: 1px solid rgba(0,0,0,0.04);
-  box-shadow: none;
   z-index:3;
 }
 
@@ -485,66 +513,22 @@ img{ display:block; }
   line-height: 1;
 }
 
-.benefit-section .card-bg{
-  position:absolute;
-  inset:0;
-  z-index:1;
-  opacity:1;
-}
-
-.benefit-section .bg-pink{
-  background:
-    radial-gradient(circle at 22% 30%,
-      rgba(255, 140, 160, 0.18) 0 52%,
-      rgba(255, 140, 160, 0.00) 53%),
-    linear-gradient(135deg,
-      rgba(255, 235, 240, 0.65),
-      rgba(255, 255, 255, 0.92));
-}
-.benefit-section .bg-yellow{
-  background:
-    radial-gradient(circle at 78% 30%,
-      rgba(255, 210, 130, 0.18) 0 52%,
-      rgba(255, 210, 130, 0.00) 53%),
-    linear-gradient(135deg,
-      rgba(255, 246, 224, 0.70),
-      rgba(255, 255, 255, 0.92));
-}
-.benefit-section .bg-blue{
-  background:
-    radial-gradient(circle at 22% 72%,
-      rgba(140, 210, 255, 0.18) 0 52%,
-      rgba(140, 210, 255, 0.00) 53%),
-    linear-gradient(135deg,
-      rgba(232, 249, 255, 0.70),
-      rgba(255, 255, 255, 0.92));
-}
-.benefit-section .bg-blue2{
-  background:
-    radial-gradient(circle at 78% 72%,
-      rgba(160, 190, 255, 0.18) 0 52%,
-      rgba(160, 190, 255, 0.00) 53%),
-    linear-gradient(135deg,
-      rgba(236, 244, 255, 0.72),
-      rgba(255, 255, 255, 0.92));
-}
-
+/* 더 많은 혜택 보기 */
 .benefit-section .benefit-more{
   margin: 10px auto 0;
   width: fit-content;
   display:inline-flex;
   align-items:center;
   gap: 8px;
-
   text-decoration:none;
   color:#111;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: -0.02em;
-
   padding: 10px 0 8px;
 }
 
+/* 외부링크 아이콘 */
 .benefit-section .benefit-ext{
   width: 14px;
   height: 14px;
@@ -687,3 +671,4 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
