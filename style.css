@@ -138,6 +138,7 @@ img{ display:block; }
 /* =========================
    Notice row
 ========================= */
+/* ✅ Bell icon (정부24 느낌 정렬/크기) */
 .notice-link{
   display:flex;
   align-items:center;
@@ -150,28 +151,19 @@ img{ display:block; }
   background:#fff;
 }
 
-/* ✅ Bell icon (14px UI 최적화) */
 .bell-img{
   width:16px;
   height:16px;
-  vertical-align:-2px;
-}
-   display:inline-block;
-  vertical-align:middle;
-}
-  /* 네모 배경/테두리/그림자 생기는 것 방지 */
-  background:transparent !important;
-  border:0 !important;
-  outline:0 !important;
-  box-shadow:none !important;
-
-  /* baseline 내려가는 현상 방지 + 원본처럼 살짝 위로 */
-  display:block;
-  transform: translateY(-0.5px);
-
-  /* 부드럽게(픽셀깨짐/계단현상 줄이기) */
+  display:inline-block;      /* img block 리셋 영향 제거 */
+  flex:0 0 auto;
+  transform: translateY(-0.5px); /* 원본처럼 살짝 위로 */
+  background:transparent;
+  border:0;
+  outline:0;
+  box-shadow:none;
   image-rendering:auto;
 }
+
 
 .notice-link-text{
   font-size:inherit;
@@ -353,6 +345,7 @@ img{ display:block; }
   object-position:center;
   flex:0 0 auto;
   transform:translateY(-1px);
+  display:inline-block;
 }
 
 /* ✅ 더보기 (원본처럼 간격 + weight + 얇은 +) */
@@ -636,5 +629,6 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
