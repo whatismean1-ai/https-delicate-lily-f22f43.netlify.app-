@@ -43,8 +43,19 @@ img{ display:block; }
   overflow: auto;
   position: relative;
 
-  /* 스크롤바(선택) */
+  /* 스크롤 부드럽게 */
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+
+  /* 스크롤바 숨기기 */
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE */
+}
+
+/* Chrome, Edge, Safari */
+.phone::-webkit-scrollbar{
+  width:0;
+  height:0;
 }
 
 /* content 영역은 bottom-nav 높이만큼 패딩 */
@@ -608,3 +619,4 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
