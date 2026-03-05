@@ -10,6 +10,7 @@ body{
 }
 img{ display:block; }
 
+/* Screen reader only */
 .sr-only{
   position:absolute;
   width:1px; height:1px;
@@ -30,6 +31,7 @@ img{ display:block; }
   padding:0;
 }
 
+/* 모바일 기본: 화면 꽉 차게 */
 .phone{
   width:100%;
   max-width:100%;
@@ -48,6 +50,7 @@ img{ display:block; }
 }
 .phone::-webkit-scrollbar{ width:0; height:0; }
 
+/* 데스크탑에서만 폰 목업 */
 @media (min-width:600px){
   .stage{ padding:24px 12px; }
   .phone{
@@ -59,6 +62,7 @@ img{ display:block; }
   }
 }
 
+/* content 영역은 bottom-nav 높이만큼 패딩 */
 .content{ padding-bottom:72px; }
 
 /* =========================
@@ -145,11 +149,26 @@ img{ display:block; }
   color:#000;
   background:#fff;
 }
+
+/* ✅ Bell icon (14px UI 최적화) */
 .bell-img{
-  width:14px;
-  height:14px;
-  image-rendering:pixelated;
+  width:14px !important;
+  height:14px !important;
+
+  /* 네모 배경/테두리/그림자 생기는 것 방지 */
+  background:transparent !important;
+  border:0 !important;
+  outline:0 !important;
+  box-shadow:none !important;
+
+  /* baseline 내려가는 현상 방지 + 원본처럼 살짝 위로 */
+  display:block;
+  transform: translateY(-0.5px);
+
+  /* 부드럽게(픽셀깨짐/계단현상 줄이기) */
+  image-rendering:auto;
 }
+
 .notice-link-text{
   font-size:inherit;
   line-height:inherit;
@@ -186,7 +205,7 @@ img{ display:block; }
   height:46px;
   border-radius:23px;
 
-  /* ✅ 정부24 파란색 border */
+  /* ✅ 정부24 파란색 border (너가 원하던 정확 톤) */
   border:2px solid #2B6BFF;
 
   display:flex;
@@ -195,7 +214,7 @@ img{ display:block; }
   gap:8px;
   background:#fff;
 
-  /* ✅ 정부24 그림자 */
+  /* ✅ 원본처럼 “부드러운 2겹” */
   box-shadow:
     0 10px 18px rgba(0,0,0,0.08),
     0 3px 6px rgba(0,0,0,0.05);
@@ -211,8 +230,6 @@ img{ display:block; }
   background:transparent;
   color:#000;
 }
-
-/* ✅ placeholder 색상 */
 .search-input::placeholder{
   color:#6b7280;
   letter-spacing:0.01em;
@@ -227,18 +244,16 @@ img{ display:block; }
   place-items:center;
   cursor:pointer;
 }
-
 .search-svg{
   width:20px;
   height:20px;
   stroke:#2B2B2B;
   stroke-width:2;
   fill:none;
-
-  /* ✅ 검색 아이콘 위치 */
   transform:translateY(-0.5px);
 }
 
+/* Search Focus dashed (LOCKED SPEC 유지) */
 .search-input:focus{ outline:none; }
 .search:focus-within::after{
   content:"";
@@ -258,8 +273,6 @@ img{ display:block; }
   font-size:14px;
   font-weight:700;
   color:#000;
-
-  /* ✅ 타이틀 letter-spacing */
   letter-spacing:-0.02em;
 }
 
@@ -285,16 +298,12 @@ img{ display:block; }
 .quick-item{
   height:48px;
   padding:0 12px;
-    box-shadow:
-    0 2px 4px rgba(0,0,0,0.05),
-    0 6px 10px rgba(0,0,0,0.04);
-} 
 
   /* ✅ 원본 radius */
   border-radius:12px;
 
-  /* ✅ 원본 border */
-  border:2px solid #2F6BFF;
+  /* ✅ 원본처럼 과하지 않은 라이트 블루 보더 */
+  border:1px solid #C8DBFF;
 
   background:#fff;
   text-decoration:none;
@@ -305,21 +314,17 @@ img{ display:block; }
   justify-content:space-between;
   gap:10px;
 
-  /* ✅ 원본 카드 그림자 */
+  /* ✅ 원본 카드 그림자(가볍게) */
   box-shadow:
     0 1px 2px rgba(0,0,0,0.04),
     0 3px 6px rgba(0,0,0,0.05);
 }
 
-.quick-item:active{
-  background:#F5F8FF;
-}
+.quick-item:active{ background:#F5F8FF; }
 
 .quick-label{
   font-size:13px;
   font-weight:700;
-
-  /* ✅ 원본 텍스트 letter-spacing */
   letter-spacing:-0.025em;
 
   color:#000;
@@ -335,8 +340,6 @@ img{ display:block; }
   object-fit:contain;
   object-position:center;
   flex:0 0 auto;
-
-  /* ✅ 아이콘 미세 위치 */
   transform:translateY(-1px);
 }
 .qi-ico-sm{
@@ -348,11 +351,11 @@ img{ display:block; }
   transform:translateY(-1px);
 }
 
-/* 더보기 */
+/* ✅ 더보기 (원본처럼 간격 + weight + 얇은 +) */
 .more{
   width:fit-content;
 
-  /* ✅ 원본 여백 (그리드 ↔ 더보기 ↔ 배너) */
+  /* 그리드 ↔ 더보기 ↔ 배너 간격 여기서 결정 */
   margin:10px auto 14px;
   padding:4px 0;
 
@@ -364,23 +367,20 @@ img{ display:block; }
   color:#000;
 
   font-size:13px;
-
-  /* ✅ 원본 굵기 */
   font-weight:500;
-
-  /* ✅ 원본 letter-spacing */
   letter-spacing:-0.02em;
-
   line-height:1;
 }
 
-/* ✅ + 기호를 CSS로 얇게 */
+/* + 기호가 모바일에서 두꺼워 보이는 문제 해결: 선으로 그림 */
 .plus{
+  --plus-thickness: 1.2px;   /* ✅ 여기만 바꾸면 굵기 조절됨 (1.0~1.4 추천) */
+
   position:relative;
   width:12px;
   height:12px;
   display:inline-block;
-  font-size:0;
+  font-size:0; /* 글리프 숨김 */
 }
 
 .plus::before,
@@ -392,14 +392,14 @@ img{ display:block; }
 
 .plus::before{
   width:12px;
-  height:1.4px;
+  height:var(--plus-thickness);
   top:50%;
   left:0;
   transform:translateY(-50%);
 }
 
 .plus::after{
-  width:1.4px;
+  width:var(--plus-thickness);
   height:12px;
   left:50%;
   top:0;
@@ -410,7 +410,6 @@ img{ display:block; }
    Banner
 ========================= */
 .banner{
-  /* ✅ 배너 위 간격 */
   padding:6px 16px 0;
   margin:0;
 }
@@ -418,8 +417,8 @@ img{ display:block; }
 .banner-card{
   display:block;
 
-  /* ✅ 배너 radius */
-  border-radius:20px;
+  /* ✅ 배너 radius (원본 느낌) */
+  border-radius:18px;
 
   overflow:hidden;
   height:138px;
@@ -633,7 +632,3 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
-
-
-
-
