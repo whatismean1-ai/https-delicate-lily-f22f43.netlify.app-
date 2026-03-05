@@ -286,12 +286,16 @@ img{ display:block; }
 .quick-item{
   height:48px;
   padding:0 12px;
+    box-shadow:
+    0 2px 4px rgba(0,0,0,0.05),
+    0 6px 10px rgba(0,0,0,0.04);
+} 
 
   /* ✅ 원본 radius */
   border-radius:12px;
 
   /* ✅ 원본 border */
-  border:1px solid #C8DBFF;
+  border:2px solid #2F6BFF;
 
   background:#fff;
   text-decoration:none;
@@ -416,7 +420,7 @@ img{ display:block; }
   display:block;
 
   /* ✅ 배너 radius */
-  border-radius:18px;
+  border-radius:20px;
 
   overflow:hidden;
   height:138px;
@@ -630,5 +634,6 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
