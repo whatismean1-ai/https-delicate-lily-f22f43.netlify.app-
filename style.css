@@ -139,74 +139,68 @@ img{ display:block; }
   margin:0;               /* 아래 라인은 풀 */
 }
 /* =========================
-   Notice row
+   Notice row (Gov24 precise)
 ========================= */
 .notice-link{
   display:flex;
   align-items:center;
   gap:4px;
-  padding:6px 12px 6px 12px;
+  padding:6px 12px;
   min-height:32px;
+
   font-size:13px;
   line-height:1.2;
+
   text-decoration:none;
   color:#000;
   background:#fff;
 }
 
 .bell-img{
-  width:23px;
-  height:23px;
-  display:inline-block;   /* img{display:block;} 리셋 영향 제거 */
+  width:20px;
+  height:20px;
+
+  display:inline-block;
   flex:0 0 auto;
 
-  /* 너무 위로 뜨는 것 방지 */
   transform:translateY(0);
-
-  /* 색감 보정 */
   filter: brightness(1.05) saturate(1.15);
-
-  background:transparent;
-  border:0;
-  outline:0;
-  box-shadow:none;
-  image-rendering:auto;
 }
 
 .notice-link-text{
-  font-size: 13px;        /* 12.5 ~ 13.5 사이로 미세조정 */ 
-  font-weight: 500;       /* 원본은 400~500 사이 느낌 */  
-  line-height: 1.15;      /* 1.1~1.2 미세조정 */
+  font-size:13px;
+  font-weight:400;
+  line-height:1.2;
   letter-spacing:-0.02em;
+
   display:inline-flex;
   align-items:center;
- -webkit-font-smoothing: antialiased;
-  text-rendering: geometricPrecision; 
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
 }
+
+/* chevron (>) */
 .notice-chevron{
-  /* 크기/굵기/위치 조절 */
-  --size: 6px;            /* 5~7 */
-  --stroke: 1.6px;        /* 1.4~1.8 */
-  --y: -0.5px;            /* 위아래 위치 (-1 ~ +1) */
+  --size:6px;
+  --stroke:1.4px;
+  --y:-0.4px;
 
-  width: var(--size);
-  height: var(--size);
-  margin-left: 4px;       /* 텍스트와 간격(원본은 3~5px) */
-  flex: 0 0 auto;
+  width:var(--size);
+  height:var(--size);
+  margin-left:5px;
 
-  border-right: var(--stroke) solid #111;
-  border-top: var(--stroke) solid #111;
-  transform: translateY(var(--y)) rotate(45deg);
-  opacity: 0.75;          /* 원본은 살짝 연함(0.7~0.85) */
+  flex:0 0 auto;
+
+  border-right:var(--stroke) solid rgba(0,0,0,0.65);
+  border-top:var(--stroke) solid rgba(0,0,0,0.65);
+
+  transform:translateY(var(--y)) rotate(45deg);
 }
+
+/* 기존 문자 > 제거 */
 .notice-link-text::after{
-  content:">";
-  margin-left:6px;
-  font-size:16px;
-  line-height:1;
-  font-weight:500;
-  position:relative;
-  top:-1px;
+  content:none !important;
 }
 /* =========================
    Search Area (원본 회색 배경)
@@ -651,6 +645,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
