@@ -266,7 +266,7 @@ img{ display:block; }
    Sections
 ========================= */
 .section{
-  padding: 12px 16px 0 16px;
+  padding: 12px 16px 0;
 }
 .section-title{
   margin:0 0 10px 0;
@@ -331,7 +331,7 @@ img{ display:block; }
 }
 
 .more{
-  margin: 6px auto 14px; /* ✅ 위 6 / 아래 14 (원본 느낌) */
+  margin: 8px auto 12px; /* ✅ 위 6 / 아래 14 (원본 느낌) */
   width:fit-content;
   display:flex;
   align-items:center;
@@ -354,29 +354,27 @@ img{ display:block; }
    Banner (원본처럼: 높이 확보 + 꽉 채우기)
 ========================= */
 .banner{
-  padding: 0 16px;   /* ✅ 좌우 여백은 원본처럼 16 */
-  margin: 0;         /* ✅ 배너 margin 제거 (간격은 search-area가 담당) */
+  padding: 0 16px;  /* 좌우 16px */
+  margin: 0;        /* 배너 자체 margin은 0 */
 }
 
 .banner-card{
   display:block;
   border-radius:16px;
   overflow:hidden;
-  height: 120px; /* ✅ 원본 느낌에 더 가까운 고정값 */
-}
 
-  /* ✅ 핵심: 배너 세로 높이 확보 */
-height: clamp(118px, 26vw, 150px);
+  /* ✅ 여기서만 height 1번만 선언 */
+  height: 138px; /* 원본 느낌에 가까운 높이(조금 넉넉) */
+}
 
 .banner-card img{
   width:100%;
   height:100%;
   display:block;
-
-  /* ✅ 핵심: 이미지 안 빈 공간/납작함 해결 */
   object-fit: cover;
   object-position: center;
 }
+
 /* =========================
    Benefit cards
 ========================= */
@@ -619,6 +617,7 @@ height: clamp(118px, 26vw, 150px);
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
 
 
