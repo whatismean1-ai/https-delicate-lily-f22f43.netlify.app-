@@ -128,23 +128,27 @@ img{ display:block; }
 /* =========================
    Separators
 ========================= */
-.sep-inset,
-.notice-divider{
-  margin:0;
+.sep-inset{
+  height:1px;
+  background:#E9ECEF;
+  margin:0 16px;          /* 위 라인은 인셋 */
 }
-
+.notice-divider{
+  height:1px;
+  background:#E9ECEF;
+  margin:0;               /* 아래 라인은 풀 */
+}
 /* =========================
    Notice row
 ========================= */
-/* ✅ Bell icon (정부24 느낌 정렬/크기) */
 .notice-link{
- height:28px
-   display:flex;
+  display:flex;
   align-items:center;
   gap:6px;
-  padding:4px 16px;
+  padding:6px 16px;
+  min-height:32px;
   font-size:13px;
-  line-height:1;
+  line-height:1.2;
   text-decoration:none;
   color:#000;
   background:#fff;
@@ -153,19 +157,21 @@ img{ display:block; }
 .bell-img{
   width:20px;
   height:20px;
-  display:inline-block;      /* img block 리셋 영향 제거 */
+  display:inline-block;   /* img{display:block;} 리셋 영향 제거 */
   flex:0 0 auto;
-  transform: translateY(-1px); /* 원본처럼 살짝 위로 */
-    /* 색감 보정 */
+
+  /* 너무 위로 뜨는 것 방지 */
+  transform:translateY(0);
+
+  /* 색감 보정 */
   filter: brightness(1.05) saturate(1.15);
-}  
+
   background:transparent;
   border:0;
   outline:0;
   box-shadow:none;
   image-rendering:auto;
 }
-
 
 .notice-link-text{
   font-size:inherit;
@@ -174,6 +180,7 @@ img{ display:block; }
   display:inline-flex;
   align-items:center;
 }
+
 .notice-link-text::after{
   content:">";
   margin-left:6px;
@@ -183,7 +190,6 @@ img{ display:block; }
   position:relative;
   top:-1px;
 }
-
 /* =========================
    Search Area (원본 회색 배경)
 ========================= */
@@ -630,6 +636,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
