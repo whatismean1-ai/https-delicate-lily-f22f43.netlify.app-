@@ -152,13 +152,13 @@ img{ display:block; }
 }
 
 .bell-img{
-  width:16px;
-  height:16px;
+  width:18px;
+  height:18px;
   display:inline-block;      /* img block 리셋 영향 제거 */
   flex:0 0 auto;
-  transform: translateY(-0.5px); /* 원본처럼 살짝 위로 */
+  transform: translateY(0.5px); /* 원본처럼 살짝 위로 */
     /* 색감 보정 */
-  filter: brightness(1.15) saturate(0.85);
+  filter: brightness(1) saturate(0.85);
 }  
   background:transparent;
   border:0;
@@ -631,6 +631,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
