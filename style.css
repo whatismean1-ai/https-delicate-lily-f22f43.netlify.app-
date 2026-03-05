@@ -144,7 +144,7 @@ img{ display:block; }
 .notice-link{
   display:flex;
   align-items:center;
-  gap:6px;
+  gap:4px;
   padding:6px 12px 6px 12px;
   min-height:32px;
   font-size:13px;
@@ -174,13 +174,31 @@ img{ display:block; }
 }
 
 .notice-link-text{
-  font-size:inherit;
-  line-height:inherit;
+  font-size: 13px;        /* 12.5 ~ 13.5 사이로 미세조정 */ 
+  font-weight: 500;       /* 원본은 400~500 사이 느낌 */  
+  line-height: 1.15;      /* 1.1~1.2 미세조정 */
   letter-spacing:-0.02em;
   display:inline-flex;
   align-items:center;
+ -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision; 
 }
+.notice-chevron{
+  /* 크기/굵기/위치 조절 */
+  --size: 6px;            /* 5~7 */
+  --stroke: 1.6px;        /* 1.4~1.8 */
+  --y: -0.5px;            /* 위아래 위치 (-1 ~ +1) */
 
+  width: var(--size);
+  height: var(--size);
+  margin-left: 4px;       /* 텍스트와 간격(원본은 3~5px) */
+  flex: 0 0 auto;
+
+  border-right: var(--stroke) solid #111;
+  border-top: var(--stroke) solid #111;
+  transform: translateY(var(--y)) rotate(45deg);
+  opacity: 0.75;          /* 원본은 살짝 연함(0.7~0.85) */
+}
 .notice-link-text::after{
   content:">";
   margin-left:6px;
@@ -633,6 +651,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
