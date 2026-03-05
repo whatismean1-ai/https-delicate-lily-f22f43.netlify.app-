@@ -414,92 +414,98 @@ img{ display:block; }
 }
 
 /* =========================
-   Benefit cards (Gov24 원본톤 보정)
+   Benefit cards (샘플 1번 기준: 톤/폰트/깨짐 수정)
 ========================= */
 
-/* 섹션 타이틀(원본 느낌: 조금 더 단단하게) */
+/* 섹션 제목: 샘플처럼 진하지만 과하지 않게 */
 .benefit-section .section-title{
   margin: 0 0 10px 0;
   font-size: 14px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 700;          /* 800 -> 700 (샘플 느낌) */
+  letter-spacing: -0.03em;
+  line-height: 1.25;
 }
 
-/* 카드 그리드 간격(원본처럼 촘촘) */
+/* 그리드 간격: 샘플처럼 */
 .benefit-section .cards-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px 12px;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 12px;
 }
 
-/* 카드: 보더/그림자 원본처럼 "아주 은은" */
+/* 카드 기본: 샘플처럼 "연한 보더 + 아주 소프트 섀도우" */
 .benefit-section .card{
   position:relative;
-  height:92px;
-  border-radius:12px;
-  overflow:hidden;
-
+  height: 88px;              /* 92 -> 88 (샘플 높이감) */
+  border-radius: 12px;
+  border: 1px solid #D9E6FF; /* 더 연하게 */
   background:#fff;
-  border:1px solid rgba(210, 228, 255, 0.95);  /* 파란기 줄이고 연하게 */
-  box-shadow:
-    0 1px 2px rgba(0,0,0,0.04),
-    0 6px 14px rgba(0,0,0,0.05);
-
+  overflow:hidden;
   text-decoration:none;
   color:inherit;
+
+  /* 진한 그림자 제거 → 샘플처럼 은은하게 */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
 }
 
-/* 텍스트 패딩/리듬 */
+/* 카드 안쪽 패딩/레이아웃 */
 .benefit-section .card-content{
   position:relative;
   z-index:2;
-  padding:12px 12px;
+  padding: 12px 12px;
+  padding-right: 56px; /* ✅ 아이콘 영역 확보(겹침/깨짐 방지) */
 }
 
+/* 타이틀: 샘플처럼(너무 굵지 않게) + 긴 텍스트 안전 처리 */
 .benefit-section .card-title{
-  font-size:13px;
-  font-weight:800;
-  letter-spacing:-0.02em;
-  margin-bottom:6px;
+  font-size: 13px;
+  font-weight: 700;          /* 800 -> 700 */
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  margin: 0 0 6px 0;
 
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* 서브텍스트: 샘플처럼 조금 가늘고 회색기 */
 .benefit-section .card-sub{
-  font-size:12px;
-  font-weight:400;
-  color:#111;
-  line-height:1.35;
-  letter-spacing:-0.01em;
+  font-size: 12px;
+  font-weight: 400;
+  color:#222;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
 }
 
-/* 아이콘 박스: 원본처럼 "조금 작고" + 완전 중앙 정렬 */
+/* 아이콘 박스: 샘플처럼 작고, 가운데 정렬, 흰 박스가 과하지 않게 */
 .benefit-section .card-ico{
   position:absolute;
-  right:10px;
-  top:50%;
-  transform:translateY(-50%);
-  z-index:3;
-
-  width:32px;
-  height:32px;
-  border-radius:10px;
-
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;               /* 34 -> 30 */
+  height: 30px;
+  border-radius: 10px;
   display:grid;
   place-items:center;
 
-  background:rgba(255,255,255,0.92);
-  border:1px solid rgba(0,0,0,0.05);
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: none;          /* ✅ 샘플은 박스 그림자 거의 없음 */
+  z-index:3;
 }
 
+/* 이모지는 실제 원본 PNG로 바꾸면 더 똑같아짐.
+   일단은 샘플처럼 크기만 맞추기 */
 .benefit-section .emo{
-  font-size:18px;
-  line-height:1;
+  font-size: 16px;           /* 18 -> 16 */
+  line-height: 1;
 }
 
-/* 배경: 원본 핵심 = "큰 원이 밖에서 밀고 들어오고" + 아주 옅은 톤 */
+/* 배경(색상이 진한 문제 해결 핵심!)
+   - 기존 그라데이션 알파를 확 낮추고
+   - 큰 원(블랍)을 더 "옅게" */
 .benefit-section .card-bg{
   position:absolute;
   inset:0;
@@ -507,78 +513,94 @@ img{ display:block; }
   opacity:1;
 }
 
-/* Pink */
-.benefit-section .card--pink .card-bg{
+/* 샘플처럼 아주 연한 파스텔:
+   radial alpha ↓, linear alpha ↓ */
+.benefit-section .bg-pink{
   background:
-    radial-gradient(circle at -18% 18%, rgba(255, 138, 160, 0.22) 0 68%, transparent 69%),
-    linear-gradient(135deg, rgba(255, 236, 240, 0.95) 0%, rgba(255,255,255,0.92) 72%);
+    radial-gradient(circle at 22% 30%,
+      rgba(255, 140, 160, 0.18) 0 52%,
+      rgba(255, 140, 160, 0.00) 53%),
+    linear-gradient(135deg,
+      rgba(255, 235, 240, 0.65),
+      rgba(255, 255, 255, 0.92));
 }
 
-/* Yellow */
-.benefit-section .card--yellow .card-bg{
+.benefit-section .bg-yellow{
   background:
-    radial-gradient(circle at 118% 18%, rgba(255, 210, 120, 0.22) 0 68%, transparent 69%),
-    linear-gradient(135deg, rgba(255, 247, 226, 0.95) 0%, rgba(255,255,255,0.92) 72%);
+    radial-gradient(circle at 78% 30%,
+      rgba(255, 210, 130, 0.18) 0 52%,
+      rgba(255, 210, 130, 0.00) 53%),
+    linear-gradient(135deg,
+      rgba(255, 246, 224, 0.70),
+      rgba(255, 255, 255, 0.92));
 }
 
-/* Blue */
-.benefit-section .card--blue .card-bg{
+.benefit-section .bg-blue{
   background:
-    radial-gradient(circle at -18% 118%, rgba(140, 205, 255, 0.22) 0 68%, transparent 69%),
-    linear-gradient(135deg, rgba(232, 246, 255, 0.95) 0%, rgba(255,255,255,0.92) 72%);
+    radial-gradient(circle at 22% 72%,
+      rgba(140, 210, 255, 0.18) 0 52%,
+      rgba(140, 210, 255, 0.00) 53%),
+    linear-gradient(135deg,
+      rgba(232, 249, 255, 0.70),
+      rgba(255, 255, 255, 0.92));
 }
 
-/* Blue2 */
-.benefit-section .card--blue2 .card-bg{
+.benefit-section .bg-blue2{
   background:
-    radial-gradient(circle at 118% 118%, rgba(150, 190, 255, 0.22) 0 68%, transparent 69%),
-    linear-gradient(135deg, rgba(236, 242, 255, 0.95) 0%, rgba(255,255,255,0.92) 72%);
+    radial-gradient(circle at 78% 72%,
+      rgba(160, 190, 255, 0.18) 0 52%,
+      rgba(160, 190, 255, 0.00) 53%),
+    linear-gradient(135deg,
+      rgba(236, 244, 255, 0.72),
+      rgba(255, 255, 255, 0.92));
 }
 
-/* "더 많은 혜택 보기" : 원본은 얇은 텍스트 + 작은 '외부/이동' 아이콘 느낌 */
+/* "더 많은 혜택 보기" : 샘플처럼 가운데 + 작은 외부링크 아이콘 */
 .benefit-section .benefit-more{
-  margin:10px auto 0;
-  width:fit-content;
+  margin: 10px auto 0;
+  width: fit-content;
   display:inline-flex;
   align-items:center;
-  gap:6px;
+  gap: 8px;
 
   text-decoration:none;
   color:#111;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 
-  font-size:13px;
-  font-weight:500;
-  letter-spacing:-0.02em;
-
-  padding:12px 0 10px;
+  padding: 10px 0 8px;
 }
 
-/* 작은 '새창/이동' 아이콘 */
-.benefit-section .benefit-open{
-  width:14px;
-  height:14px;
-  position:relative;
-  opacity:0.78;
-  flex:0 0 auto;
+/* 외부링크 느낌(작은 사각 + 화살표) */
+.benefit-section .benefit-ext{
+  width: 14px;
+  height: 14px;
+  position: relative;
+  display:inline-block;
+  opacity: 0.75;
 }
 
-.benefit-section .benefit-open::before{
+/* 사각형 */
+.benefit-section .benefit-ext::before{
   content:"";
   position:absolute;
-  left:2px; bottom:2px;
-  width:9px; height:9px;
-  border:1.4px solid #111;
-  border-radius:3px;
+  inset: 2px 2px 3px 3px;
+  border: 1.5px solid #111;
+  border-radius: 3px;
 }
 
-.benefit-section .benefit-open::after{
+/* 화살표 */
+.benefit-section .benefit-ext::after{
   content:"";
   position:absolute;
-  right:1px; top:1px;
-  width:6px; height:6px;
-  border-right:1.6px solid #111;
-  border-top:1.6px solid #111;
-  transform:rotate(45deg);
+  right: 1px;
+  top: 2px;
+  width: 6px;
+  height: 6px;
+  border-right: 1.6px solid #111;
+  border-top: 1.6px solid #111;
+  transform: rotate(45deg);
 }
 
 /* =========================
@@ -697,4 +719,5 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
