@@ -195,7 +195,7 @@ img{ display:block; }
 .search-area{
   background:#f6f7f9;
   padding-top:18px;
-  padding-bottom:0px; /* ✅ 원본처럼 배너 아래 회색 여백 */
+  padding-bottom:18px; /* ✅ 회색영역 끝까지 원본처럼 여백 */
 }
 
 /* =========================
@@ -279,7 +279,7 @@ img{ display:block; }
    Quick section
 ========================= */
 .quick-section{
-  padding:12px 16px 0 16px;
+  padding:12px 16px 14px; /* ✅ bottom 14로 (원본처럼 숨 쉴 공간) */
   background:transparent;
 }
 
@@ -331,7 +331,7 @@ img{ display:block; }
 }
 
 .more{
-  margin: 12px auto 12px; /* 아래를 12px로 */
+  margin: 6px auto 14px; /* ✅ 위 6 / 아래 14 (원본 느낌) */
   width:fit-content;
   display:flex;
   align-items:center;
@@ -354,18 +354,19 @@ img{ display:block; }
    Banner (원본처럼: 높이 확보 + 꽉 채우기)
 ========================= */
 .banner{
-  padding: 0 16px;
-  margin: 0 0 10px;   /* 배너 아래 다음 섹션이랑 간격(원본 느낌) */
+  padding: 0 16px;   /* ✅ 좌우 여백은 원본처럼 16 */
+  margin: 0;         /* ✅ 배너 margin 제거 (간격은 search-area가 담당) */
 }
 
 .banner-card{
   display:block;
-  border-radius:16px; /* 원본이 조금 더 둥글어 보여서 12→16 추천 */
+  border-radius:16px;
   overflow:hidden;
+  height: 120px; /* ✅ 원본 느낌에 더 가까운 고정값 */
+}
 
   /* ✅ 핵심: 배너 세로 높이 확보 */
-  height: clamp(110px, 24vw, 140px);
-}
+height: clamp(118px, 26vw, 150px);
 
 .banner-card img{
   width:100%;
@@ -618,6 +619,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
 
 
