@@ -356,43 +356,20 @@ img{ display:block; }
 ========================= */
 .banner{
   padding:10px 16px 0 16px;
-  background:transparent;
 }
 
 .banner-card{
-  height:92px;
+  display:block;
   border-radius:12px;
-  background:#6F82A8;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:14px;
-  color:#fff;
+  overflow:hidden;
 }
 
-.banner-text .b-title{
-  margin:0;
-  font-weight:800;
-  font-size:13px;
+.banner-card img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:12px;
 }
-.banner-text .b-sub{
-  margin:4px 0 0;
-  font-size:12px;
-}
-.banner-text .b-date{
-  margin:6px 0 0;
-  font-size:11px;
-}
-
-.banner-shape{
-  width:82px;
-  height:82px;
-  border-radius:999px;
-  background:rgba(255,255,255,.22);
-}
-
 /* =========================
    Benefit cards
 ========================= */
@@ -635,5 +612,6 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
 
