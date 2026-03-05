@@ -542,23 +542,26 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 /* 원본처럼 "큰 원 + 아주 옅은 그라데이션" */
 .bg-pink{
   background:
-    radial-gradient(circle at 22% 45%, rgba(255,128,155,0.22) 0 52%, transparent 53%),
-    linear-gradient(135deg, rgba(255,230,236,0.75), rgba(255,255,255,0.92));
+    radial-gradient(circle at -30% -40%, rgba(255,138,160,.22) 0 65%, transparent 66%),
+    linear-gradient(135deg, rgba(255,220,227,.6), rgba(255,255,255,.85));
 }
+
 .bg-yellow{
   background:
-    radial-gradient(circle at 78% 45%, rgba(255,205,105,0.22) 0 52%, transparent 53%),
-    linear-gradient(135deg, rgba(255,246,222,0.80), rgba(255,255,255,0.92));
+    radial-gradient(circle at 130% -40%, rgba(255,210,120,.25) 0 65%, transparent 66%),
+    linear-gradient(135deg, rgba(255,243,215,.7), rgba(255,255,255,.9));
 }
+
 .bg-blue{
   background:
-    radial-gradient(circle at 22% 55%, rgba(120,200,255,0.20) 0 52%, transparent 53%),
-    linear-gradient(135deg, rgba(222,245,255,0.80), rgba(255,255,255,0.92));
+    radial-gradient(circle at -30% 120%, rgba(120,200,255,.22) 0 65%, transparent 66%),
+    linear-gradient(135deg, rgba(212,242,255,.7), rgba(255,255,255,.9));
 }
+
 .bg-blue2{
   background:
-    radial-gradient(circle at 78% 55%, rgba(120,170,255,0.20) 0 52%, transparent 53%),
-    linear-gradient(135deg, rgba(230,238,255,0.82), rgba(255,255,255,0.92));
+    radial-gradient(circle at 130% 120%, rgba(120,170,255,.22) 0 65%, transparent 66%),
+    linear-gradient(135deg, rgba(220,232,255,.75), rgba(255,255,255,.9));
 }
 
 /* "더 많은 혜택 보기" : 원본처럼 가늘고 작은 꺾쇠 */
@@ -663,6 +666,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
