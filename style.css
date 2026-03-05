@@ -368,7 +368,6 @@ img{ display:block; }
   width:100%;
   height:auto;
   display:block;
-  border-radius:12px;
 }
 /* =========================
    Benefit cards
@@ -612,6 +611,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
 
 
