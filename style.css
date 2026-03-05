@@ -10,7 +10,6 @@ body{
 }
 img{ display:block; }
 
-/* Screen reader only */
 .sr-only{
   position:absolute;
   width:1px; height:1px;
@@ -37,15 +36,15 @@ img{ display:block; }
   background:#fff;
   border-radius:0;
 
-  max-height: 100vh;
-  overflow: auto;
-  position: relative;
+  max-height:100vh;
+  overflow:auto;
+  position:relative;
 
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
 }
 .phone::-webkit-scrollbar{ width:0; height:0; }
 
@@ -60,7 +59,7 @@ img{ display:block; }
   }
 }
 
-.content{ padding-bottom: 72px; }
+.content{ padding-bottom:72px; }
 
 /* =========================
    Top notice
@@ -138,7 +137,7 @@ img{ display:block; }
 .notice-link{
   display:flex;
   align-items:center;
-  gap:4px;
+  gap:6px;                 /* 원본은 아이콘과 텍스트 간격이 약간 넓음 */
   padding:10px 16px;
   font-size:13px;
   line-height:1.2;
@@ -150,7 +149,8 @@ img{ display:block; }
   width:16px;
   height:16px;
   flex:0 0 auto;
-  margin-right:2px;
+  margin-right:0;
+  transform: translateY(-.5px); /* 아이콘 시각정렬 */
 }
 .notice-link-text{
   font-size:inherit;
@@ -170,18 +170,18 @@ img{ display:block; }
 }
 
 /* =========================
-   Search Area
+   Search Area (원본 회색 배경)
 ========================= */
 .search-area{
   background:#f6f7f9;
-  padding-top:18px;
-  padding-bottom:18px;
+  padding-top:16px;        /* 원본은 위가 살짝 더 타이트 */
+  padding-bottom:14px;     /* 배너까지 포함한 회색영역 끝 느낌 */
 }
 
 /* =========================
    Search
 ========================= */
-.search-wrap{ padding:0 16px 8px 16px; }
+.search-wrap{ padding:0 16px 10px 16px; }
 
 .search{
   position:relative;
@@ -193,10 +193,13 @@ img{ display:block; }
   padding:0 12px 0 18px;
   gap:8px;
   background:#fff;
+
+  /* 원본 느낌: 과한 그림자 X, 부드럽게 2겹 */
   box-shadow:
-    0 6px 14px rgba(0,0,0,0.12),
-    0 2px 4px rgba(0,0,0,0.08);
+    0 8px 18px rgba(0,0,0,0.10),
+    0 2px 5px rgba(0,0,0,0.06);
 }
+
 .search-input{
   border:0;
   outline:none;
@@ -207,7 +210,10 @@ img{ display:block; }
   background:transparent;
   color:#000;
 }
-.search-input::placeholder{ color:rgba(0,0,0,0.4); letter-spacing:0.01em; }
+.search-input::placeholder{
+  color:rgba(0,0,0,0.42);
+  letter-spacing:0.01em;
+}
 
 .search-btn{
   width:36px;
@@ -226,6 +232,7 @@ img{ display:block; }
   fill:none;
   transform:translateY(-1px);
 }
+
 .search-input:focus{ outline:none; }
 .search:focus-within::after{
   content:"";
@@ -239,7 +246,7 @@ img{ display:block; }
 /* =========================
    Sections
 ========================= */
-.section{ padding: 12px 16px 0; }
+.section{ padding:12px 16px 0; }
 .section-title{
   margin:0 0 10px 0;
   font-size:14px;
@@ -248,10 +255,10 @@ img{ display:block; }
 }
 
 /* =========================
-   Quick section  ✅ 여기부터 “더보기 +” 원본 맞춤
+   Quick section (원본 99% 느낌 튜닝)
 ========================= */
 .quick-section{
-  padding:12px 16px 0;   /* ✅ 원본은 섹션 bottom 패딩 거의 없음 (더보기에서 높이를 관리) */
+  padding:8px 16px 0;     /* 타이틀/그리드 위 간격을 원본처럼 */
   background:transparent;
 }
 
@@ -259,14 +266,16 @@ img{ display:block; }
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px;
-  margin-bottom: 4px;   /* ✅ 그리드와 더보기 사이 간격을 얇게 */
+  margin-top:10px;        /* 타이틀과 그리드 간격 */
+  margin-bottom:2px;      /* 그리드 ↔ 더보기 간격 얇게 */
 }
 
+/* ✅ Quick 카드: radius/테두리/그림자 원본 감 */
 .quick-item{
   height:48px;
   padding:0 12px;
-  border-radius:12px;
-  border:1.5px solid #B9D6FF;
+  border-radius:14px;              /* 원본 카드가 12보다 살짝 둥글어 보임 */
+  border:1px solid #B9D6FF;        /* 1.5px보다 원본에 가까움 */
   background:#fff;
   text-decoration:none;
   color:#000;
@@ -276,8 +285,9 @@ img{ display:block; }
   justify-content:space-between;
   gap:10px;
 
-  transition:all .15s ease;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02); /* 아주 약하게 */
 }
+
 .quick-label{
   font-size:13px;
   font-weight:700;
@@ -288,59 +298,62 @@ img{ display:block; }
   text-overflow:ellipsis;
   white-space:nowrap;
 }
+
 .qi-ico{
   width:20px;
   height:20px;
   object-fit:contain;
   object-position:center;
-  flex: 0 0 auto;
+  flex:0 0 auto;
+  transform: translateY(-.5px); /* 아이콘이 살짝 위로 보이는 문제 보정 */
 }
 .qi-ico-sm{
   width:16px;
   height:16px;
   object-fit:contain;
   object-position:center;
-  flex: 0 0 auto;
+  flex:0 0 auto;
+  transform: translateY(-.5px);
 }
 
-/* ✅ “더보기 +” 터치높이/위아래 여백을 원본처럼 */
+/* ✅ 더보기: 원본처럼 “높이 있는 가운데 정렬 텍스트” + ‘얇은 +’ */
 .more{
   width:fit-content;
-  margin: 0 auto;        /* ✅ 아래 여백(마진)으로 벌리지 않음 */
-  padding: 10px 0 12px;  /* ✅ 원본처럼 ‘한 줄인데 높이 있는’ 느낌 */
+  margin:0 auto;
+  padding:10px 0 12px;    /* 터치 높이 + 배너 간격까지 여기서 컨트롤 */
   display:flex;
   align-items:center;
   gap:6px;
   text-decoration:none;
   color:#000;
   font-size:13px;
-  line-height: 1;        /* ✅ 글줄 높이 고정 */
+  line-height:1;
 }
 
+/* + 기호를 폰트로 쓰면 모바일에서 두껍게 보여서, CSS로 얇은 선을 그린다 */
 .plus{
   position:relative;
   width:12px;
   height:12px;
   display:inline-block;
+  font-size:0;            /* + 글리프 숨김(aria-hidden이라 접근성 영향 없음) */
 }
-
 .plus::before,
 .plus::after{
   content:"";
   position:absolute;
   background:#000;
+  opacity:.9;
 }
-
 .plus::before{
   width:12px;
-  height:1.6px;   /* ← 가로선 두께 */
+  height:1.4px;           /* ✅ 여기 조절: 1.2~1.6 */
   top:50%;
   left:0;
   transform:translateY(-50%);
 }
-
 .plus::after{
-  width:1.6px;   /* ← 세로선 두께 */
+  width:1.4px;            /* ✅ 여기 조절: 1.2~1.6 */
   height:12px;
   left:50%;
   top:0;
@@ -348,72 +361,71 @@ img{ display:block; }
 }
 
 /* =========================
-   Banner ✅ 더보기 아래 배너 간격 원본 맞춤
+   Banner (원본 간격/라운드/높이)
 ========================= */
 .banner{
-  padding: 0 16px;
-  margin: 0;             /* ✅ 여백은 더보기 padding으로 이미 확보 */
+  padding:0 16px;
+  margin:0;
 }
-
 .banner-card{
   display:block;
   border-radius:16px;
   overflow:hidden;
   height:138px;
 }
-
 .banner-card img{
   width:100%;
   height:100%;
   display:block;
-  object-fit: cover;
-  object-position: center;
+  object-fit:cover;
+  object-position:center;
 }
 
 /* =========================
-   Benefit cards
+   Benefit cards (네 코드 유지)
 ========================= */
 .cards-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
 }
 .card{
-  position: relative;
-  height: 90px;
-  border-radius: 10px;
-  border: 1px solid rgba(161, 225, 255, 0.5);
-  box-shadow: rgba(0, 0, 0, .18) 0px 0px 2px 0px;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-  background: #fff;
+  position:relative;
+  height:90px;
+  border-radius:10px;
+  border:1px solid rgba(161,225,255,0.5);
+  box-shadow: rgba(0,0,0,.18) 0px 0px 2px 0px;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  background:#fff;
 }
-.card-content{ position: relative; z-index: 2; padding: 10px 12px; }
+.card-content{ position:relative; z-index:2; padding:10px 12px; }
 .card-title{
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-bottom: 6px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  margin-bottom:6px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
-.card-sub{ font-size: 12px; color: #222; line-height: 1.35; }
+.card-sub{ font-size:12px; color:#222; line-height:1.35; }
 .card-ico{
-  position: absolute;
-  right: 10px;
-  top: 28px;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  display: grid;
-  place-items: center;
-  background: rgba(255,255,255,.85);
-  z-index: 3;
+  position:absolute;
+  right:10px;
+  top:28px;
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.85);
+  z-index:3;
 }
-.emo{ font-size: 20px; }
-.card-bg{ position: absolute; inset: 0; z-index: 1; opacity: 1; }
+.emo{ font-size:20px; }
+.card-bg{ position:absolute; inset:0; z-index:1; opacity:1; }
+
 .bg-pink{
   background:
     radial-gradient(circle at 20% 20%, rgba(255,138,160,.22) 0 45%, transparent 46%),
@@ -434,22 +446,23 @@ img{ display:block; }
     radial-gradient(circle at 80% 70%, rgba(120,170,255,.22) 0 45%, transparent 46%),
     linear-gradient(135deg, rgba(220,232,255,.75), rgba(255,255,255,.85));
 }
+
 .benefit-more{
-  margin: 10px auto 0;
-  width: fit-content;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  color: #333;
-  font-size: 12px;
-  padding: 10px 0 8px;
+  margin:10px auto 0;
+  width:fit-content;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  text-decoration:none;
+  color:#333;
+  font-size:12px;
+  padding:10px 0 8px;
 }
 .benefit-more .open{
-  width: 6px;
-  height: 6px;
-  border-right: 1.6px solid #6f7a86;
-  border-top: 1.6px solid #6f7a86;
+  width:6px;
+  height:6px;
+  border-right:1.6px solid #6f7a86;
+  border-top:1.6px solid #6f7a86;
   transform: rotate(45deg);
 }
 
@@ -457,117 +470,114 @@ img{ display:block; }
    Channel
 ========================= */
 .channel-head{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-bottom:10px;
 }
 .plus-btn{
-  border: 0;
-  background: transparent;
-  font-size: 18px;
-  line-height: 1;
-  cursor: pointer;
-  color: #333;
+  border:0;
+  background:transparent;
+  font-size:18px;
+  line-height:1;
+  cursor:pointer;
+  color:#333;
 }
 .channel-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 12px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px 12px;
 }
 .channel-btn{
-  height: 42px;
-  border-radius: 8px;
-  border: 1px solid rgba(0,0,0,.06);
-  background: #f4f5f7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-decoration: none;
-  color: #222;
-  font-size: 12px;
-  font-weight: 700;
+  height:42px;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,.06);
+  background:#f4f5f7;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  text-decoration:none;
+  color:#222;
+  font-size:12px;
+  font-weight:700;
 }
 .ico{
-  width: 18px; height: 18px;
-  border-radius: 6px;
+  width:18px; height:18px;
+  border-radius:6px;
   background: rgba(0,0,0,.08);
-  position: relative;
+  position:relative;
 }
-.ico.search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 12px; }
-.ico.doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 12px; }
-.ico.gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 12px; }
+.ico.search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
+.ico.doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
+.ico.gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
 
 /* =========================
    Footer
 ========================= */
-.footer{ margin-top: 12px; background: #f5f6f8; }
-.footer-inner{ padding: 12px 14px 12px; }
+.footer{ margin-top:12px; background:#f5f6f8; }
+.footer-inner{ padding:12px 14px 12px; }
 .footer-top{
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 0 10px;
-  font-weight: 700;
-  font-size: 13px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 0 10px;
+  font-weight:700;
+  font-size:13px;
 }
 .footer-drop{
-  width: 6px;
-  height: 6px;
-  border-right: 1.6px solid #7a7f87;
-  border-bottom: 1.6px solid #7a7f87;
+  width:6px;
+  height:6px;
+  border-right:1.6px solid #7a7f87;
+  border-bottom:1.6px solid #7a7f87;
   transform: rotate(45deg);
-  margin-left: 2px;
+  margin-left:2px;
 }
 .footer-box{
-  background: #f7f8fa;
-  border-radius: 12px;
-  padding: 12px 12px 16px;
-  border: 1px solid rgba(0,0,0,.04);
+  background:#f7f8fa;
+  border-radius:12px;
+  padding:12px 12px 16px;
+  border:1px solid rgba(0,0,0,.04);
 }
-.f-row{ margin-bottom: 12px; }
-.f-title{ font-weight: 800; font-size: 12px; margin-bottom: 6px; }
-.f-text{ font-size: 12px; color: #222; line-height: 1.45; }
-.f-divider{ height: 1px; background: rgba(0,0,0,.08); margin: 10px 0; }
-.f-links{ display: flex; gap: 12px; font-size: 12px; }
-.f-links a{ color: #0a5bff; text-decoration: none; font-weight: 700; }
-.f-copy{ margin-top: 10px; font-size: 11px; color: #555; }
+.f-row{ margin-bottom:12px; }
+.f-title{ font-weight:800; font-size:12px; margin-bottom:6px; }
+.f-text{ font-size:12px; color:#222; line-height:1.45; }
+.f-divider{ height:1px; background: rgba(0,0,0,.08); margin:10px 0; }
+.f-links{ display:flex; gap:12px; font-size:12px; }
+.f-links a{ color:#0a5bff; text-decoration:none; font-weight:700; }
+.f-copy{ margin-top:10px; font-size:11px; color:#555; }
 
 /* =========================
    Bottom nav
 ========================= */
 .bottom-nav{
-  position: sticky;
-  bottom: 0;
-  z-index: 20;
-
-  background: #fff;
-  border-top: 1px solid rgba(0,0,0,.08);
-  height: 64px;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  position:sticky;
+  bottom:0;
+  z-index:20;
+  background:#fff;
+  border-top:1px solid rgba(0,0,0,.08);
+  height:64px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
 }
 .bn-item{
-  text-decoration: none;
-  color: #222;
-  font-size: 11px;
-  display: grid;
-  place-items: center;
-  gap: 4px;
-  padding: 8px 0;
+  text-decoration:none;
+  color:#222;
+  font-size:11px;
+  display:grid;
+  place-items:center;
+  gap:4px;
+  padding:8px 0;
 }
 .bn-ico{
-  width: 24px;
-  height: 24px;
-  border-radius: 8px;
+  width:24px;
+  height:24px;
+  border-radius:8px;
   background: rgba(0,0,0,.06);
-  position: relative;
+  position:relative;
 }
 .bn-item.active .bn-ico{ background: rgba(10,91,255,.12); }
-.i-user::before{ content:"👤"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
-.i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
-.i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
-.i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
-
+.i-user::before{ content:"👤"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+.i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+.i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+.i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
