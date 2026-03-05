@@ -331,7 +331,7 @@ img{ display:block; }
 }
 
 .more{
-  margin: 8px auto 12px; /* ✅ 위 6 / 아래 14 (원본 느낌) */
+   margin: 6px auto 8px;
   width:fit-content;
   display:flex;
   align-items:center;
@@ -362,16 +362,16 @@ img{ display:block; }
   display:block;
   border-radius:16px;
   overflow:hidden;
-
-  /* ✅ 여기서만 height 1번만 선언 */
-  height: 138px; /* 원본 느낌에 가까운 높이(조금 넉넉) */
+  height:138px;   /* 배너 높이 */
 }
+
 
 .banner-card img{
   width:100%;
   height:100%;
   display:block;
-  object-fit: cover;
+
+  object-fit: cover;     /* 이미지 확대해서 빈공간 채움 */
   object-position: center;
 }
 
@@ -617,6 +617,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
 
 
