@@ -512,12 +512,7 @@ img{ display:block; }
   font-size: 16px;
   line-height: 1;
 }
-.benefit-more svg{
-  width:14px !important;
-  height:14px !important;
-  position:static !important;
-  flex:0 0 14px !important;
-}
+
 /* 더 많은 혜택 보기 */
 .benefit-section .benefit-more{
   margin: 10px auto 0;
@@ -676,5 +671,6 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
