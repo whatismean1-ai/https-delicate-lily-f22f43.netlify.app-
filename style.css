@@ -440,70 +440,23 @@ img{ display:block; }
   box-shadow: 0 1px 2px rgba(0,0,0,0.06);
 }
 
-/* ✅ 배경 이미지를 카드에 깔기 */
+/* ✅ 카드 배경(div) - 정부24 원본처럼 이미지로 */
 .benefit-section .card-bg{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;     /* 원본처럼 꽉 차게 */
-  object-position: center;
-  z-index: 1;
-  pointer-events: none;
-  user-select: none;
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  pointer-events:none;
+  user-select:none;
 }
 
-/* 텍스트 영역 */
-.benefit-section .card-content{
-  position: relative;
-  z-index: 2;
-  padding: 12px 12px;
-  padding-right: 56px;   /* ✅ 아이콘 영역 확보(겹침/깨짐 방지) */
-}
-
-.benefit-section .card-title{
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.25;
-  margin: 0 0 6px 0;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.benefit-section .card-sub{
-  font-size: 12px;
-  font-weight: 400;
-  color: #222;
-  letter-spacing: -0.02em;
-  line-height: 1.35;
-}
-
-/* ✅ 아이콘 박스(원본처럼 작은 흰 박스) */
-.benefit-section .card-ico{
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 10px;
-  display: grid;
-  place-items: center;
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(0,0,0,0.04);
-  z-index: 3;
-}
-
-/* ✅ PNG 아이콘 사이즈 고정 (SVG/width 충돌 같은 문제 원천 차단) */
-.benefit-section .card-ico-img{
-  width: 20px;
-  height: 20px;
-  display: block;
-  object-fit: contain;
-}
+/* 카드별 배경 이미지 매핑 */
+.benefit-section .card--pink  .card-bg{ background-image:url("https://framerusercontent.com/images/F44KGdM5wK0dbICGRiWkWutixI.png?width=160&height=86"); }
+.benefit-section .card--yellow .card-bg{ background-image:url("https://framerusercontent.com/images/1Xw4idFBSIYdpfkJy0mhrqkY8dc.png?width=160&height=86"); }
+.benefit-section .card--blue  .card-bg{ background-image:url("https://framerusercontent.com/images/IyxrrAxRRKn0BJpHWjcPGLfFHjE.png?width=160&height=86"); }
+.benefit-section .card--blue2 .card-bg{ background-image:url("https://framerusercontent.com/images/ziTpt7tw8FLV8ytJrQcFuakMSu8.png?width=160&height=86"); }
 
 /* "더 많은 혜택 보기" */
 .benefit-section .benefit-more{
@@ -662,6 +615,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
