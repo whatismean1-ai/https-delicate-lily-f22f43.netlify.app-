@@ -131,13 +131,9 @@ img{ display:block; }
 .sep-inset{
   height:1px;
   background:#E9ECEF;
-  margin:0;           /* 위 라인은 인셋 */
+  margin:0;
 }
-.notice-divider{
-  height:1px;
-  background:#E9ECEF;
-  margin:0;               /* 아래 라인은 풀 */
-}
+
 /* =========================
    Notice row (Gov24 precise)
 ========================= */
@@ -159,10 +155,8 @@ img{ display:block; }
 .bell-img{
   width:20px;
   height:20px;
-
   display:inline-block;
   flex:0 0 auto;
-
   transform:translateY(0);
   filter: brightness(1.05) saturate(1.15);
 }
@@ -198,10 +192,9 @@ img{ display:block; }
   transform:translateY(var(--y)) rotate(45deg);
 }
 
-/* 기존 문자 > 제거 */
-.notice-link-text::after{
-  content:none !important;
-}
+/* 혹시 남아있을 수 있는 기존 문자 > 제거 */
+.notice-link-text::after{ content:none !important; }
+
 /* =========================
    Search Area (원본 회색 배경)
 ========================= */
@@ -218,10 +211,8 @@ img{ display:block; }
 
 .search{
   position:relative;
-  height: 48px;
-  border-radius: 23px;
-
-  /* ✅ 정부24 파란색 border (너가 원하던 정확 톤) */
+  height:48px;
+  border-radius:23px;
   border:2px solid #2A66F2;
 
   display:flex;
@@ -230,8 +221,7 @@ img{ display:block; }
   gap:8px;
   background:#fff;
 
-  /* ✅ 원본처럼 “부드러운 2겹” */
-box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 }
 
 .search-input{
@@ -283,7 +273,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 ========================= */
 .section{ padding:12px 16px 0; }
 .section-title{
-  margin:0 0 8px 0; /* 10px → 8px */
+  margin:0 0 8px 0;
   font-size:14px;
   font-weight:700;
   color:#000;
@@ -301,10 +291,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 .quick-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-
-  /* ✅ 원본 간격 */
   gap:10px;
-
   margin-top:10px;
   margin-bottom:2px;
 }
@@ -312,13 +299,8 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 .quick-item{
   height:48px;
   padding:0 10px;
-
-  /* ✅ 원본 radius */
   border-radius:10px;
-
-  /* ✅ 원본처럼 과하지 않은 라이트 블루 보더 */
-  border:1px solid #D7E6FF;        /* #C8DBFF 보다 연하게 */
-
+  border:1px solid #D7E6FF;
   background:#fff;
   text-decoration:none;
   color:#000;
@@ -328,7 +310,6 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
   justify-content:space-between;
   gap:10px;
 
-  /* ✅ 원본 카드 그림자(가볍게) */
   box-shadow: 0 1px 3px rgba(0,0,0,0.10);
 }
 
@@ -338,8 +319,6 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
   font-size:13px;
   font-weight:700;
   letter-spacing:-0.025em;
-
-  color:#000;
   min-width:0;
   overflow:hidden;
   text-overflow:ellipsis;
@@ -364,11 +343,9 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
   display:inline-block;
 }
 
-/* ✅ 더보기 (원본처럼 간격 + weight + 얇은 +) */
+/* 더보기 */
 .more{
   width:fit-content;
-
-  /* 그리드 ↔ 더보기 ↔ 배너 간격 여기서 결정 */
   margin:10px auto 14px;
   padding:4px 0;
 
@@ -385,24 +362,21 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
   line-height:1;
 }
 
-/* + 기호가 모바일에서 두꺼워 보이는 문제 해결: 선으로 그림 */
+/* + 기호를 선으로 */
 .plus{
-  --plus-thickness: 1.2px;   /* ✅ 여기만 바꾸면 굵기 조절됨 (1.0~1.4 추천) */
-
+  --plus-thickness: 1.2px;
   position:relative;
   width:12px;
   height:12px;
   display:inline-block;
-  font-size:0; /* 글리프 숨김 */
+  font-size:0;
 }
-
 .plus::before,
 .plus::after{
   content:"";
   position:absolute;
   background:#222;
 }
-
 .plus::before{
   width:12px;
   height:var(--plus-thickness);
@@ -410,7 +384,6 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
   left:0;
   transform:translateY(-50%);
 }
-
 .plus::after{
   width:var(--plus-thickness);
   height:12px;
@@ -426,17 +399,12 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
   padding:6px 16px 0;
   margin:0;
 }
-
 .banner-card{
   display:block;
-
-  /* ✅ 배너 radius (원본 느낌) */
   border-radius:18px;
-
   overflow:hidden;
   height:138px;
 }
-
 .banner-card img{
   width:100%;
   height:100%;
@@ -448,155 +416,190 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 /* =========================
    Benefit cards (정부24 느낌으로 보정)
 ========================= */
-
-/* 제목(원본처럼 살짝 단단하게) */
 .benefit-section .section-title{
-  margin: 0 0 10px 0;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  margin:0 0 10px 0;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:-0.02em;
 }
 
-/* 카드 그리드 간격(원본처럼 조금 더 촘촘) */
 .cards-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 12px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px 12px;
 }
 
-/* 카드 */
 .card{
-  position: relative;
-  height: 92px;
-  border-radius: 12px;
+  position:relative;
+  height:92px;
+  border-radius:12px;
+  border:1px solid #D7E6FF;
 
-  /* 원본: 보더는 아주 연한 블루 톤 */
-  border: 1px solid #D7E6FF;
+  background:#fff;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
 
-  background: #fff;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-
-  /* 원본: 과하지 않은 소프트 섀도우 */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
 }
 
-/* 카드 내부 패딩/텍스트 리듬 */
 .card-content{
-  position: relative;
-  z-index: 2;
-  padding: 12px 12px;
+  position:relative;
+  z-index:2;
+  padding:12px 12px;
 }
 
 .card-title{
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-bottom: 6px;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  margin-bottom:6px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
 .card-sub{
-  font-size: 12px;
-  color: #111;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
+  font-size:12px;
+  color:#111;
+  line-height:1.35;
+  letter-spacing:-0.01em;
 }
 
-/* 아이콘 박스: 원본처럼 "세로 중앙" + 작은 흰 박스 */
+/* 아이콘 */
 .card-ico{
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
 
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
+  width:34px;
+  height:34px;
+  border-radius:10px;
 
-  display: grid;
-  place-items: center;
+  display:grid;
+  place-items:center;
 
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(0,0,0,0.04);
-  z-index: 3;
+  background:rgba(255,255,255,0.92);
+  border:1px solid rgba(0,0,0,0.04);
+  z-index:3;
 }
 
 .emo{
-  font-size: 18px;
-  line-height: 1;
+  font-size:18px;
+  line-height:1;
 }
 
 /* 배경 레이어 */
 .card-bg{
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  opacity: 1;
+  position:absolute;
+  inset:0;
+  z-index:1;
+  opacity:1;
 }
 
-/* 원본처럼 "큰 원 + 아주 옅은 그라데이션" */
+/* 큰 원 + 옅은 그라데이션 */
 .bg-pink{
   background:
     radial-gradient(circle at -30% -40%, rgba(255,138,160,.22) 0 65%, transparent 66%),
     linear-gradient(135deg, rgba(255,220,227,.6), rgba(255,255,255,.85));
 }
-
 .bg-yellow{
   background:
     radial-gradient(circle at 130% -40%, rgba(255,210,120,.25) 0 65%, transparent 66%),
     linear-gradient(135deg, rgba(255,243,215,.7), rgba(255,255,255,.9));
 }
-
 .bg-blue{
   background:
     radial-gradient(circle at -30% 120%, rgba(120,200,255,.22) 0 65%, transparent 66%),
     linear-gradient(135deg, rgba(212,242,255,.7), rgba(255,255,255,.9));
 }
-
 .bg-blue2{
   background:
     radial-gradient(circle at 130% 120%, rgba(120,170,255,.22) 0 65%, transparent 66%),
     linear-gradient(135deg, rgba(220,232,255,.75), rgba(255,255,255,.9));
 }
 
-/* "더 많은 혜택 보기" : 원본처럼 가늘고 작은 꺾쇠 */
+/* 더 많은 혜택 보기 */
 .benefit-more{
-  margin: 10px auto 0;
-  width: fit-content;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  margin:10px auto 0;
+  width:fit-content;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
 
-  text-decoration: none;
-  color: #111;
+  text-decoration:none;
+  color:#111;
 
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:-0.02em;
 
-  padding: 10px 0 8px;
+  padding:10px 0 8px;
 }
 
-/* 원본 느낌의 작은 꺾쇠(> 모양 대신 보더로 제작) */
 .benefit-chevron{
-  --size: 6px;
-  --stroke: 1.6px;
-  --y: -0.5px;
+  --size:6px;
+  --stroke:1.6px;
+  --y:-0.5px;
 
-  width: var(--size);
-  height: var(--size);
-  flex: 0 0 auto;
+  width:var(--size);
+  height:var(--size);
+  flex:0 0 auto;
 
-  border-right: var(--stroke) solid #111;
-  border-top: var(--stroke) solid #111;
-  transform: translateY(var(--y)) rotate(45deg);
-  opacity: 0.7;
+  border-right:var(--stroke) solid #111;
+  border-top:var(--stroke) solid #111;
+  transform:translateY(var(--y)) rotate(45deg);
+  opacity:0.7;
 }
+
+/* =========================
+   Channel
+========================= */
+.channel-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-bottom:10px;
+}
+.plus-btn{
+  border:0;
+  background:transparent;
+  font-size:18px;
+  line-height:1;
+  cursor:pointer;
+  color:#333;
+}
+.channel-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px 12px;
+}
+.channel-btn{
+  height:42px;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,.06);
+  background:#f4f5f7;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  text-decoration:none;
+  color:#222;
+  font-size:12px;
+  font-weight:700;
+}
+.ico{
+  width:18px; height:18px;
+  border-radius:6px;
+  background: rgba(0,0,0,.08);
+  position:relative;
+}
+.ico.search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
+.ico.doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
+.ico.gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
+.ico.user::before{ content:"👤"; position:absolute; inset:0; display:grid; place-items:center; font-size:12px; }
+
 /* =========================
    Footer
 ========================= */
@@ -666,29 +669,3 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
