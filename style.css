@@ -287,7 +287,7 @@ img{ display:block; }
   grid-template-columns:1fr 1fr;
 
   /* ✅ 원본 간격 */
-  gap:14px;
+  gap:10px;
 
   margin-top:10px;
   margin-bottom:2px;
@@ -631,6 +631,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
