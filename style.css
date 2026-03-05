@@ -152,9 +152,9 @@ img{ display:block; }
 
 /* ✅ Bell icon (14px UI 최적화) */
 .bell-img{
-  width:14px !important;
-  height:14px !important;
-
+  display:inline-block;
+  vertical-align:middle;
+}
   /* 네모 배경/테두리/그림자 생기는 것 방지 */
   background:transparent !important;
   border:0 !important;
@@ -632,3 +632,4 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
