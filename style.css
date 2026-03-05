@@ -331,7 +331,7 @@ img{ display:block; }
 }
 
 .more{
-  margin:12px auto 10px; /* ✅ 위/아래 여백 복구 */
+  margin: 12px auto 12px; /* 아래를 12px로 */
   width:fit-content;
   display:flex;
   align-items:center;
@@ -350,21 +350,31 @@ img{ display:block; }
 /* =========================
    Banner (이미지 내부 여백 크롭)
 ========================= */
+/* =========================
+   Banner (원본처럼: 높이 확보 + 꽉 채우기)
+========================= */
 .banner{
-  padding:0 16px;
-  margin:0 0 12px;
+  padding: 0 16px;
+  margin: 0 0 10px;   /* 배너 아래 다음 섹션이랑 간격(원본 느낌) */
 }
 
 .banner-card{
   display:block;
-  border-radius:12px;
+  border-radius:16px; /* 원본이 조금 더 둥글어 보여서 12→16 추천 */
   overflow:hidden;
+
+  /* ✅ 핵심: 배너 세로 높이 확보 */
+  height: clamp(110px, 24vw, 140px);
 }
 
 .banner-card img{
   width:100%;
-  height:auto;         /* ✅ 원본은 크롭 없이 비율 유지 */
+  height:100%;
   display:block;
+
+  /* ✅ 핵심: 이미지 안 빈 공간/납작함 해결 */
+  object-fit: cover;
+  object-position: center;
 }
 /* =========================
    Benefit cards
@@ -608,6 +618,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
 
 
