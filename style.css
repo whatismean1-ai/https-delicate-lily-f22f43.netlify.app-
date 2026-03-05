@@ -151,6 +151,7 @@ img{ display:block; }
   flex:0 0 auto;
   margin-right:0;
   transform: translateY(-.5px);
+ filter: brightness(0.74) saturate(1.45) contrast(1.05) hue-rotate(-10deg);
 }
 .notice-link-text{
   font-size:inherit;
@@ -631,3 +632,4 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
