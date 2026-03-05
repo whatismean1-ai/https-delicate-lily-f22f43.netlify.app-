@@ -146,10 +146,9 @@ img{ display:block; }
   background:#fff;
 }
 .bell-img{
-  width:16px;
-  height:16px;
-  flex:0 0 auto;
-  transform:translateY(-0.5px);
+  width:14px;
+  height:14px;
+  image-rendering:pixelated;
 }
 .notice-link-text{
   font-size:inherit;
@@ -634,6 +633,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
