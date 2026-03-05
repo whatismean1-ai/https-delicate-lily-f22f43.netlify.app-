@@ -348,25 +348,29 @@ img{ display:block; }
 }
 
 /* =========================
-   Banner (위/아래 여백 제거 버전)
+   Banner (이미지 내부 여백 크롭)
 ========================= */
 .banner{
-  padding: 0 16px;  /* 위아래 0 유지 */
-  margin: 0;        /* 안전 */
+  padding: 0 16px;   /* 좌우만 */
+  margin: 0;
 }
 
 .banner-card{
   display:block;
   border-radius:12px;
   overflow:hidden;
+
+  /* ✅ 배너 높이 고정(정부24 느낌) */
+  height: 92px;
 }
 
 .banner-card img{
   width:100%;
-  height:auto;
+  height:100%;
+  object-fit: cover;        /* ✅ 이미지 여백 잘라내고 꽉 채움 */
+  object-position: center;  /* 필요하면 center right로 조정 가능 */
   display:block;
 }
-
 /* =========================
    Benefit cards
 ========================= */
@@ -609,4 +613,5 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
 
