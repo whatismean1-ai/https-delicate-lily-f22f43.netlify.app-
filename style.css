@@ -155,8 +155,8 @@ img{ display:block; }
 }
 
 .bell-img{
-  width:21px;
-  height:21px;
+  width:23px;
+  height:23px;
   display:inline-block;   /* img{display:block;} 리셋 영향 제거 */
   flex:0 0 auto;
 
@@ -633,6 +633,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
