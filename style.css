@@ -201,8 +201,8 @@ img{ display:block; }
 
 .search{
   position:relative;
-  height:46px;
-  border-radius:23px;
+  height:50px;
+  border-radius:25px;
 
   /* ✅ 정부24 파란색 border (너가 원하던 정확 톤) */
   border:2px solid #2A66F2;
@@ -234,8 +234,8 @@ img{ display:block; }
 }
 
 .search-btn{
-  width:36px;
-  height:36px;
+  width:38px;
+  height:38px;
   border:0;
   background:transparent;
   display:grid;
@@ -631,6 +631,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
