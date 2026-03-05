@@ -278,7 +278,7 @@ img{ display:block; }
    Quick section
 ========================= */
 .quick-section{
-  padding:8px 16px 0;
+  padding:8px 20px 0;
   background:transparent;
 }
 
@@ -295,10 +295,10 @@ img{ display:block; }
 
 .quick-item{
   height:48px;
-  padding:0 12px;
+  padding:0 10px;
 
   /* ✅ 원본 radius */
-  border-radius:12px;
+  border-radius:10px;
 
   /* ✅ 원본처럼 과하지 않은 라이트 블루 보더 */
   border:1px solid #C8DBFF;
@@ -631,6 +631,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
