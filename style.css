@@ -195,7 +195,7 @@ img{ display:block; }
 .search-area{
   background:#f6f7f9;
   padding-top:18px;
-  padding-bottom:12px;
+  padding-bottom:0; /* ✅ 아래 X 제거 */
 }
 
 /* =========================
@@ -331,7 +331,7 @@ img{ display:block; }
 }
 
 .more{
-  margin:12px auto 0;
+  margin: 6px auto 0; /* ✅ 위 X 제거(더보기와 배너 붙이기) */
   width:fit-content;
   display:flex;
   align-items:center;
@@ -342,16 +342,17 @@ img{ display:block; }
 }
 .plus{
   font-size:19px;
-  line-height:1;
+  line-height:0.8;
   position:relative;
-  top:-1.5px;
+  top:-1.3px;
 }
 
 /* =========================
    Banner (위/아래 여백 제거 버전)
 ========================= */
 .banner{
-  padding: 0 16px; /* ✅ 위아래 0, 좌우만 16 */
+  padding: 0 16px;  /* 위아래 0 유지 */
+  margin: 0;        /* 안전 */
 }
 
 .banner-card{
@@ -608,3 +609,4 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
