@@ -131,7 +131,7 @@ img{ display:block; }
 .sep-inset{
   height:1px;
   background:#E9ECEF;
-  margin:0 16px;          /* 위 라인은 인셋 */
+  margin:0;           /* 위 라인은 인셋 */
 }
 .notice-divider{
   height:1px;
@@ -636,6 +636,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
 
 
 
