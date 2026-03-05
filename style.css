@@ -5,7 +5,7 @@
 body{
   margin:0;
   font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans KR",Arial,sans-serif;
-  background:#f2f4f8; /* 폰 목업 느낌 */
+  background:#f2f4f8; /* 데스크탑에서 폰 목업 느낌 */
   color:#000;
 }
 img{ display:block; }
@@ -22,40 +22,24 @@ img{ display:block; }
 }
 
 /* =========================
-   Stage + Phone (핵심: phone 내부 스크롤)
+   Stage + Phone (phone 내부 스크롤 + 스크롤바 숨김)
 ========================= */
 .stage{
   min-height:100vh;
   display:grid;
   place-items:start center;
-  padding:0;   /* 여백 제거 */
+  padding:0;
 }
 
-/* 모바일 기본 */
+/* 모바일 기본: 화면 꽉 차게 */
 .phone{
   width:100%;
   max-width:100%;
   background:#fff;
   border-radius:0;
-}
 
-/* 데스크탑에서만 폰 모양 */
-@media (min-width:600px){
-
-  .stage{
-    padding:24px 12px;
-  }
-
-  .phone{
-    width:402px;
-    max-width:92vw;
-    border-radius:14px;
-    box-shadow: rgba(0,0,0,.06) 0 10px 30px;
-  }
-
-}
   /* 내부 스크롤 컨테이너 */
-  max-height: calc(100vh - 48px);
+  max-height: 100vh;
   overflow: auto;
   position: relative;
 
@@ -64,14 +48,27 @@ img{ display:block; }
   scroll-behavior: smooth;
 
   /* 스크롤바 숨기기 */
-  scrollbar-width: none;       /* Firefox */
-  -ms-overflow-style: none;    /* IE */
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE/old Edge */
 }
 
-/* Chrome, Edge, Safari */
+/* Chrome/Edge/Safari 스크롤바 숨김 */
 .phone::-webkit-scrollbar{
   width:0;
   height:0;
+}
+
+/* 데스크탑에서만 폰 목업 */
+@media (min-width:600px){
+  .stage{ padding:24px 12px; }
+
+  .phone{
+    width:402px;
+    max-width:92vw;
+    max-height: calc(100vh - 48px);
+    border-radius:14px;
+    box-shadow: rgba(0,0,0,.06) 0 10px 30px;
+  }
 }
 
 /* content 영역은 bottom-nav 높이만큼 패딩 */
@@ -343,7 +340,6 @@ img{ display:block; }
   color:#000;
   font-size:13px;
 }
-
 .plus{
   font-size:19px;
   line-height:1;
@@ -352,10 +348,10 @@ img{ display:block; }
 }
 
 /* =========================
-   Banner
+   Banner (위/아래 여백 제거 버전)
 ========================= */
 .banner{
-  padding:10px 16px 0 16px;
+  padding: 0 16px; /* ✅ 위아래 0, 좌우만 16 */
 }
 
 .banner-card{
@@ -369,6 +365,7 @@ img{ display:block; }
   height:auto;
   display:block;
 }
+
 /* =========================
    Benefit cards
 ========================= */
@@ -576,7 +573,7 @@ img{ display:block; }
 }
 
 /* =========================
-   Bottom nav (핵심: phone 내부 sticky)
+   Bottom nav (phone 내부 sticky)
 ========================= */
 .bottom-nav{
   position: sticky;
@@ -611,7 +608,3 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
-
-
-
-
