@@ -318,10 +318,33 @@ img{ display:block; }
 }
 
 .plus{
-  font-size:19px;
-  line-height:1;
   position:relative;
-  top:-1px;              /* ✅ + 위치를 원본처럼 살짝 위로 */
+  width:12px;
+  height:12px;
+  display:inline-block;
+}
+
+.plus::before,
+.plus::after{
+  content:"";
+  position:absolute;
+  background:#000;
+}
+
+.plus::before{
+  width:12px;
+  height:1.6px;   /* ← 가로선 두께 */
+  top:50%;
+  left:0;
+  transform:translateY(-50%);
+}
+
+.plus::after{
+  width:1.6px;   /* ← 세로선 두께 */
+  height:12px;
+  left:50%;
+  top:0;
+  transform:translateX(-50%);
 }
 
 /* =========================
@@ -547,3 +570,4 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size: 14px; }
+
