@@ -35,30 +35,29 @@ img{ display:block; }
   max-width:100%;
   background:#F7F8FA;
   border-radius:0;
-  max-height:100vh;
-  overflow:auto;
   position:relative;
+
+  max-height:none;
+  overflow:visible;
+
   -webkit-overflow-scrolling:touch;
   scroll-behavior:smooth;
   scrollbar-width:none;
   -ms-overflow-style:none;
 }
-.phone::-webkit-scrollbar{
-  width:0;
-  height:0;
-}
+
 @media (min-width:600px){
   .stage{ padding:24px 12px; }
+
   .phone{
     width:402px;
     max-width:92vw;
-    max-height:calc(100vh - 48px);
-    overflow:auto;
+    max-height:none;
+    overflow:visible;
     border-radius:14px;
     box-shadow:rgba(0,0,0,.06) 0 10px 30px;
   }
 }
-
 .content{
   padding-bottom:0;
 }
@@ -697,6 +696,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
+
 
 
 
