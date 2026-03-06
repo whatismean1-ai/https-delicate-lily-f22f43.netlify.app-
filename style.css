@@ -63,7 +63,7 @@ img{ display:block; }
 }
 
 /* content 영역은 bottom-nav 높이만큼 패딩 */
-.content{ padding-bottom:72px; }
+.content{ padding-bottom:96px; }
 
 /* =========================
    Top notice
@@ -112,7 +112,7 @@ img{ display:block; }
   position: absolute;
   right: 16px;
   top: 10px;
-  width: 58px;
+  width: 64px;
   height: 40px;
   border: 0;
   background: transparent;
@@ -120,6 +120,9 @@ img{ display:block; }
   display: grid;
   place-items: center;
   gap: 4px;
+}
+.menu-text{
+  white-space: nowrap;
 }
 /* =========================
    Separators
@@ -616,7 +619,7 @@ img{ display:block; }
 }
 
 .footer-inner{
-  padding: 14px 14px 74px;
+  padding: 14px 14px 16px;
 }
 
 .footer-top{
@@ -764,6 +767,7 @@ img{ display:block; }
 .i-search::before{ content: "🔎"; }
 .i-doc::before{ content: "📄"; }
 .i-gift::before{ content: "🎁"; }
+
 
 
 
