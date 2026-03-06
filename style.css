@@ -83,8 +83,9 @@ img{ display:block; }
   object-fit:contain;
 }
 .notice-msg{
-  font-size:13px;
-  color:#111;
+  margin: 0;
+  font-size: 13px;
+  color: #111;
 }
 
 /* =========================
@@ -195,7 +196,8 @@ img{ display:block; }
    Search
 ========================= */
 .search-wrap{
-  background:none;
+  padding: 0 16px 10px 16px;
+  background: none;
 }
 .search{
   position:relative;
@@ -762,5 +764,6 @@ img{ display:block; }
 .i-search::before{ content: "🔎"; }
 .i-doc::before{ content: "📄"; }
 .i-gift::before{ content: "🎁"; }
+
 
 
