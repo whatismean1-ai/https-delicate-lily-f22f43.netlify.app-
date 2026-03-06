@@ -63,8 +63,9 @@ img{ display:block; }
 }
 
 /* content 영역은 bottom-nav 높이만큼 패딩 */
-.content{ padding-bottom:96px; }
-
+.content{
+  padding-bottom: 0;
+}
 /* =========================
    Top notice
 ========================= */
@@ -766,6 +767,7 @@ img{ display:block; }
 .i-search::before{ content: "🔎"; }
 .i-doc::before{ content: "📄"; }
 .i-gift::before{ content: "🎁"; }
+
 
 
 
