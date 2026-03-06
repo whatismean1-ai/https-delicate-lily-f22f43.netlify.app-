@@ -413,4 +413,9 @@ img{ display:block; }
 .bottom-nav{
   background:red !important;
 }
+.footer::after{
+  content:"";
+  display:block;
+  height:300px;
+}
 
