@@ -421,7 +421,7 @@ img{ display:block; }
   position: relative;
   height: 92px;
   min-height: 92px;
-  padding: 9px 12px 10px;
+  padding: 8px 12px 10px;
   border-radius: 14px;
   border: 1px solid transparent;
   overflow: hidden;
@@ -463,23 +463,23 @@ img{ display:block; }
 .benefit-card::before{
   width: 88px;
   height: 88px;
-  right: -25px;
-  bottom: -32px;
+  right: -18px;
+  bottom: -26px;
   background: rgba(255,255,255,0.26);
 }
 
 .benefit-card::after{
   width: 60px;
   height: 60px;
-  right: 8px;
-  bottom: -10px;
+  right: 12px;
+  bottom: -6px;
   background: rgba(255,255,255,0.14);
 }
 
 .benefit-copy{
   position: relative;
   z-index: 1;
-  max-width: calc(100% - 28px);
+  max-width: calc(100% - 26px);
 }
 
 .benefit-title{
@@ -488,11 +488,12 @@ img{ display:block; }
   font-size: 13px;
   font-weight: 800;
   line-height: 1.18;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.035em;
   color: #111;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom:6px; 
 }
 
 .benefit-desc{
@@ -753,6 +754,7 @@ img{ display:block; }
 .i-search::before{ content: "🔎"; }
 .i-doc::before{ content: "📄"; }
 .i-gift::before{ content: "🎁"; }
+
 
 
 
