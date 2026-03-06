@@ -637,7 +637,7 @@ img{ display:block; }
    Bottom nav
 ========================= */
 .bottom-nav{
-  position: relative;   /* 또는 아예 position 삭제 */
+  position: static;   /* 또는 아예 position 삭제 */
   bottom: auto;
   left: auto;
   right: auto;
@@ -691,4 +691,5 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
+
 
