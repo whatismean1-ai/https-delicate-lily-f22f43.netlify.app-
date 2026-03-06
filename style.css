@@ -405,10 +405,10 @@ img{ display:block; }
   background:#ECE8F7;
 }
 
-.i-user::before{ content:"👤"; }
-.i-search::before{ content:"🔎"; }
-.i-doc::before{ content:"📄"; }
-.i-gift::before{ content:"🎁"; }
+.i-user::before{ content:"ㅗ"; }
+.i-search::before{ content:"ㅎ"; }
+.i-doc::before{ content:"ㅅ"; }
+.i-gift::before{ content:"ㄹ"; }
 
 .bottom-nav{
   background:red !important;
@@ -418,4 +418,5 @@ img{ display:block; }
   display:block;
   height:300px;
 }
+
 
