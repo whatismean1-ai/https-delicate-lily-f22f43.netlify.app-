@@ -35,11 +35,14 @@ img{ display:block; }
   max-width:100%;
   background:#F7F8FA;
   border-radius:0;
-  max-height:100vh;
-  overflow:auto;
   position:relative;
+
+  max-height:none;
+  overflow:visible;
+
   -webkit-overflow-scrolling:touch;
   scroll-behavior:smooth;
+
   scrollbar-width:none;
   -ms-overflow-style:none;
 }
@@ -691,5 +694,6 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
+
 
 
