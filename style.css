@@ -410,3 +410,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
+
+.bottom-nav{
+  background:red !important;
+}
