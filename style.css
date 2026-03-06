@@ -38,8 +38,7 @@ img{ display:block; }
   width:100%;
   max-width:100%;
   background:#F7F8FA;
-  max-height:100vh;
-  overflow:auto;
+  position:relative;
 }
 
 @media (min-width:600px){
@@ -51,8 +50,6 @@ img{ display:block; }
   .phone{
     width:402px;
     max-width:92vw;
-    max-height:calc(100vh - 48px);
-    overflow:auto;
     border-radius:14px;
     box-shadow:0 10px 30px rgba(0,0,0,.06);
   }
@@ -75,6 +72,7 @@ img{ display:block; }
 .notice-msg{
   margin:0;
   font-size:13px;
+  color:#111;
 }
 
 /* =========================
@@ -105,10 +103,8 @@ img{ display:block; }
   height:40px;
   border:0;
   background:transparent;
-  cursor:pointer;
   display:grid;
   place-items:center;
-  gap:4px;
 }
 
 .hamburger{
@@ -125,15 +121,10 @@ img{ display:block; }
 }
 
 /* =========================
-   separators
+   Separator
 ========================= */
 
 .sep-inset{
-  height:1px;
-  background:#E6E8EC;
-}
-
-.notice-divider{
   height:1px;
   background:#E6E8EC;
 }
@@ -147,20 +138,22 @@ img{ display:block; }
   align-items:center;
   gap:6px;
   padding:6px 12px;
-  min-height:32px;
   font-size:13px;
   text-decoration:none;
   color:#000;
   background:#FFFFFF;
 }
 
-.bell-img{
-  width:20px;
-  height:20px;
+.notice-chevron{
+  width:6px;
+  height:6px;
+  border-right:1.4px solid rgba(0,0,0,0.6);
+  border-top:1.4px solid rgba(0,0,0,0.6);
+  transform:rotate(45deg);
 }
 
 /* =========================
-   Search area
+   Search Area
 ========================= */
 
 .search-area{
@@ -169,8 +162,12 @@ img{ display:block; }
   padding-bottom:14px;
 }
 
+/* =========================
+   Search
+========================= */
+
 .search-wrap{
-  padding:0 16px 10px 16px;
+  padding:0 16px 10px;
 }
 
 .search{
@@ -179,7 +176,7 @@ img{ display:block; }
   border:2px solid #2A66F2;
   display:flex;
   align-items:center;
-  padding:0 12px 0 20px;
+  padding:0 16px;
   background:#FFFFFF;
   box-shadow:0 2px 6px rgba(0,0,0,0.08);
 }
@@ -189,45 +186,43 @@ img{ display:block; }
   outline:none;
   flex:1;
   font-size:15px;
-  background:transparent;
+}
+
+.search-input::placeholder{
+  color:#6B7280;
 }
 
 .search-btn{
-  width:38px;
-  height:38px;
   border:0;
   background:transparent;
-  display:grid;
-  place-items:center;
-  cursor:pointer;
-}
-
-.search-svg{
-  width:20px;
-  height:20px;
-  stroke:#2B2B2B;
-  stroke-width:2;
-  fill:none;
 }
 
 /* =========================
-   Quick section
+   Sections
+========================= */
+
+.section{
+  padding:12px 16px 0;
+}
+
+.section-title{
+  margin:0 0 8px;
+  font-size:14px;
+  font-weight:700;
+}
+
+/* =========================
+   Quick service
 ========================= */
 
 .quick-section{
   padding:8px 16px 0;
 }
 
-.section-title{
-  font-size:14px;
-  font-weight:700;
-}
-
 .quick-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
-  margin-top:10px;
 }
 
 .quick-item{
@@ -248,16 +243,10 @@ img{ display:block; }
   font-weight:700;
 }
 
-.qi-ico{
-  width:20px;
-  height:20px;
-}
-
 .more{
-  width:fit-content;
   margin:10px auto 14px;
   display:flex;
-  align-items:center;
+  justify-content:center;
   gap:6px;
   text-decoration:none;
   color:#000;
@@ -275,59 +264,66 @@ img{ display:block; }
 .banner-card{
   border-radius:18px;
   overflow:hidden;
-  height:138px;
 }
 
 .banner-card img{
   width:100%;
-  height:100%;
-  object-fit:cover;
+  display:block;
 }
 
 /* =========================
-   Cards
+   Benefit
 ========================= */
 
-.cards-grid{
+.benefit-section{
+  padding:18px 14px 0;
+  background:#F7F8FA;
+}
+
+.benefit-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px;
-  padding:0 16px;
 }
 
-.card{
+.benefit-card{
   height:92px;
+  padding:10px;
   border-radius:14px;
-  padding:10px 12px;
-  position:relative;
   text-decoration:none;
   color:#111;
 }
 
-.card-pink{
+.benefit-card--pink{
   background:#FAF1F4;
 }
 
-.card-yellow{
+.benefit-card--yellow{
   background:#F7EED8;
 }
 
-.card-blue{
+.benefit-card--green{
   background:#EDF4EF;
 }
 
-.card-blue2{
+.benefit-card--blue{
   background:#EEF2F7;
 }
 
-.card-title{
-  font-size:13px;
-  font-weight:800;
+/* =========================
+   Channel
+========================= */
+
+.channel-section{
+  margin-top:18px;
+  padding:16px 14px 0;
+  border-top:1px solid #DDDDDD;
+  background:#F7F8FA;
 }
 
-.card-sub{
-  font-size:12px;
-  margin-top:4px;
+.channel-head{
+  display:flex;
+  justify-content:space-between;
 }
 
 /* =========================
@@ -339,26 +335,14 @@ img{ display:block; }
 }
 
 .footer-inner{
-  padding:14px 14px 16px;
-}
-
-.footer-top{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  padding:10px 0 12px;
-}
-
-.footer-brand{
-  font-size:13px;
-  font-weight:800;
+  padding:14px;
 }
 
 .footer-box{
   background:#FFFFFF;
   border:1px solid #E9EBEF;
   border-radius:14px;
-  padding:12px 12px 16px;
+  padding:12px;
 }
 
 .f-title{
@@ -368,25 +352,13 @@ img{ display:block; }
 
 .f-text{
   font-size:12px;
-  line-height:1.55;
-}
-
-.f-divider{
-  height:1px;
-  background:rgba(0,0,0,.1);
-  margin:10px 0 12px;
-}
-
-.f-links{
-  display:flex;
-  gap:14px;
-  font-size:12px;
+  line-height:1.5;
 }
 
 .f-links a{
   color:#0A5BFF;
-  text-decoration:none;
   font-weight:700;
+  text-decoration:none;
 }
 
 .f-copy{
@@ -405,16 +377,15 @@ img{ display:block; }
   height:68px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  align-items:start;
-  padding-top:6px;
 }
 
 .bn-item{
-  text-decoration:none;
-  color:#222;
   display:flex;
   flex-direction:column;
   align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:#222;
   gap:4px;
 }
 
