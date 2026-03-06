@@ -29,7 +29,6 @@ img{ display:block; }
 ========================= */
 
 .stage{
-  min-height:100vh;
   display:grid;
   place-items:start center;
 }
@@ -414,3 +413,4 @@ img{ display:block; }
 .bottom-nav{
   background:red !important;
 }
+
