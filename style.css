@@ -53,7 +53,8 @@ img{ display:block; }
   .phone{
     width:402px;
     max-width:92vw;
-    max-height:calc(100vh - 48px);
+    max-height:none;
+    overflow:visible;
     border-radius:14px;
     box-shadow:rgba(0,0,0,.06) 0 10px 30px;
   }
@@ -694,6 +695,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
+
 
 
 
