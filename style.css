@@ -413,19 +413,19 @@ img{ display:block; }
 .benefit-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px 10px;
+  gap: 12px;
 }
 
 .benefit-card{
   position: relative;
-  min-height: 96px;
-  height: 96px;
-  border-radius: 12px;
+  min-height: 102px;
+  height: 102px;
+  border-radius: 14px;
   border: 1px solid transparent;
   overflow: hidden;
   text-decoration: none;
   color: #111;
-  padding: 10px 12px 10px;
+  padding: 12px 14px 12px;
   background: #fff;
 }
 
@@ -478,15 +478,15 @@ img{ display:block; }
 .benefit-copy{
   position: relative;
   z-index: 1;
-  max-width: calc(100% - 38px);
+  max-width: calc(100% - 34px);
 }
 
 .benefit-title{
   display: block;
-  margin: 0 0 7px;
-  font-size: 13px;
+  margin: 0 0 8px;
+  font-size: 14px;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.04em;
   color: #111;
   white-space: nowrap;
@@ -496,26 +496,26 @@ img{ display:block; }
 
 .benefit-desc{
   margin: 0;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.45;
   letter-spacing: -0.02em;
   color: #111;
 }
 
 .benefit-icon{
   position: absolute;
-  right: 10px;
-  bottom: 8px;
-  width: 28px;
-  height: 28px;
+  right: 12px;
+  bottom: 9px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
   z-index: 1;
 }
 
 /* 더 많은 혜택 보기 */
 .benefit-more{
-  margin: 14px auto 0;
+  margin: 18px auto 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -523,7 +523,7 @@ img{ display:block; }
   width: fit-content;
   text-decoration: none;
   color: #111;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -564,10 +564,10 @@ img{ display:block; }
    Channel
 ========================= */
 .channel-section{
-  padding-top: 18px;
+  padding-top: 16px;
   padding-bottom: 0;
-  border-top: 1px solid #d9d9d9;
-  margin-top: 18px;
+  border-top: 1px solid #dcdcdc;
+  margin-top: 20px;
 }
 
 .channel-head{
@@ -818,5 +818,6 @@ img{ display:block; }
 .i-search::before{ content: "🔎"; }
 .i-doc::before{ content: "📄"; }
 .i-gift::before{ content: "🎁"; }
+
 
 
