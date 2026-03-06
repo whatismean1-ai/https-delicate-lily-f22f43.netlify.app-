@@ -695,6 +695,39 @@ img{ display:block; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
 
+/* ==== bottom-nav 최종 강제 해제 ==== */
+.phone{
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.bottom-nav{
+  position: static !important;
+  inset: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  align-items: start !important;
+
+  width: 100% !important;
+  height: 68px !important;
+  margin-top: 0 !important;
+  background: #F7F7F7 !important;
+  border-top: 1px solid #D9D9D9 !important;
+  z-index: auto !important;
+}
+
+@media (min-width:600px){
+  .phone{
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
 
 
 
