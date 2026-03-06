@@ -637,11 +637,15 @@ img{ display:block; }
    Bottom nav
 ========================= */
 .bottom-nav{
-  position:static;
-  z-index:auto;
+  position: relative;   /* 또는 아예 position 삭제 */
+  bottom: auto;
+  left: auto;
+  right: auto;
+
   background:#F7F7F7;
   border-top:1px solid #D9D9D9;
   height:68px;
+
   display:grid;
   grid-template-columns:repeat(4,1fr);
   align-items:start;
@@ -687,3 +691,4 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
+
