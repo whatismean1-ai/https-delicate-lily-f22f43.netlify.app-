@@ -83,11 +83,8 @@ img{ display:block; }
   object-fit:contain;
 }
 .notice-msg{
-  margin:0;
   font-size:13px;
-  letter-spacing:.02em;
-  line-height:1.2;
-  color:#000;
+  color:#111;
 }
 
 /* =========================
@@ -753,6 +750,7 @@ img{ display:block; }
 .i-search::before{ content: "🔎"; }
 .i-doc::before{ content: "📄"; }
 .i-gift::before{ content: "🎁"; }
+
 
 
 
