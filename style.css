@@ -710,11 +710,8 @@ img{ display:block; }
 }
 
 .bottom-nav{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 30;
+  position: static;
+  z-index: auto;
   background: #f7f7f7;
   border-top: 1px solid #d9d9d9;
   height: 68px;
@@ -769,6 +766,7 @@ img{ display:block; }
 .i-search::before{ content: "🔎"; }
 .i-doc::before{ content: "📄"; }
 .i-gift::before{ content: "🎁"; }
+
 
 
 
