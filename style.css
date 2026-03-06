@@ -706,11 +706,13 @@ img{ display:block; }
    Bottom nav
 ========================= */
 .content{
-  padding-bottom: 70px;
+  padding-bottom: 120px;
 }
 
 .bottom-nav{
-  position: sticky;
+  position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0;
   z-index: 30;
   background: #f7f7f7;
@@ -767,6 +769,7 @@ img{ display:block; }
 .i-search::before{ content: "🔎"; }
 .i-doc::before{ content: "📄"; }
 .i-gift::before{ content: "🎁"; }
+
 
 
 
