@@ -375,24 +375,28 @@ img{ display:block; }
 /* =========================
    Banner
 ========================= */
-.banner{ padding:6px 16px 0; }
+.banner{
+  padding: 6px 16px 0;
+}
+
 .banner-card{
-  display:block;
-  border-radius:18px;
-  overflow:hidden;
-  height:138px;
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  height: 138px;
 }
+
 .banner-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
+
 
 /* =========================
-   Benefit cards - 원본에 가깝게 재정리
+   Benefit cards
 ========================= */
-
 .benefit-section{
   padding: 16px 16px 0;
 }
@@ -409,40 +413,44 @@ img{ display:block; }
 .benefit-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px 12px;
+  gap: 10px 10px;
 }
 
 .benefit-card{
   position: relative;
-  min-height: 108px;
-  border-radius: 14px;
+  min-height: 96px;
+  height: 96px;
+  border-radius: 12px;
   border: 1px solid transparent;
   overflow: hidden;
   text-decoration: none;
   color: #111;
-  padding: 14px 12px 12px;
+  padding: 10px 12px 10px;
   background: #fff;
 }
 
 /* 카드별 배경/테두리 */
 .benefit-card--pink{
   background: #faf2f4;
-  border-color: #e1cfd7;
-}
-.benefit-card--yellow{
-  background: #f8efd9;
-  border-color: #e2d3ab;
-}
-.benefit-card--green{
-  background: #edf5ef;
-  border-color: #cfe0d7;
-}
-.benefit-card--blue{
-  background: #edf1f7;
-  border-color: #d2dceb;
+  border-color: #ddc7d1;
 }
 
-/* 원본 카드 우하단 흐린 곡선 */
+.benefit-card--yellow{
+  background: #f7edd5;
+  border-color: #decf9f;
+}
+
+.benefit-card--green{
+  background: #edf4ef;
+  border-color: #c8ddd0;
+}
+
+.benefit-card--blue{
+  background: #eef2f7;
+  border-color: #cfd9e7;
+}
+
+/* 우하단 곡선 */
 .benefit-card::before,
 .benefit-card::after{
   content: "";
@@ -452,36 +460,35 @@ img{ display:block; }
 }
 
 .benefit-card::before{
-  width: 112px;
-  height: 112px;
-  right: -38px;
-  bottom: -42px;
-  background: rgba(255,255,255,0.34);
+  width: 92px;
+  height: 92px;
+  right: -28px;
+  bottom: -34px;
+  background: rgba(255,255,255,0.28);
 }
 
 .benefit-card::after{
-  width: 78px;
-  height: 78px;
-  right: -6px;
-  bottom: -8px;
-  background: rgba(255,255,255,0.18);
+  width: 64px;
+  height: 64px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(255,255,255,0.16);
 }
 
 .benefit-copy{
   position: relative;
   z-index: 1;
-  max-width: calc(100% - 42px);
+  max-width: calc(100% - 38px);
 }
 
 .benefit-title{
   display: block;
-  margin: 0 0 8px;
-  font-size: 14px;
+  margin: 0 0 7px;
+  font-size: 13px;
   font-weight: 800;
-  line-height: 1.25;
-  letter-spacing: -0.03em;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
   color: #111;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -489,34 +496,34 @@ img{ display:block; }
 
 .benefit-desc{
   margin: 0;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 1.4;
   letter-spacing: -0.02em;
   color: #111;
 }
 
 .benefit-icon{
   position: absolute;
-  right: 11px;
-  bottom: 10px;
-  width: 32px;
-  height: 32px;
+  right: 10px;
+  bottom: 8px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
   z-index: 1;
 }
 
 /* 더 많은 혜택 보기 */
 .benefit-more{
-  margin: 18px auto 0;
+  margin: 14px auto 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 5px;
   width: fit-content;
   text-decoration: none;
   color: #111;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -524,8 +531,8 @@ img{ display:block; }
 
 .benefit-more-icon{
   position: relative;
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   display: inline-block;
 }
 
@@ -534,9 +541,9 @@ img{ display:block; }
   position: absolute;
   left: 1px;
   bottom: 1px;
-  width: 8px;
-  height: 8px;
-  border: 1.4px solid #222;
+  width: 7px;
+  height: 7px;
+  border: 1.3px solid #222;
   border-radius: 2px;
 }
 
@@ -545,27 +552,29 @@ img{ display:block; }
   position: absolute;
   right: 0;
   top: 0;
-  width: 6px;
-  height: 6px;
-  border-right: 1.5px solid #222;
-  border-top: 1.5px solid #222;
+  width: 5px;
+  height: 5px;
+  border-right: 1.4px solid #222;
+  border-top: 1.4px solid #222;
   transform: rotate(45deg);
 }
 
 
 /* =========================
-   Channel - 원본 톤에 맞춤
+   Channel
 ========================= */
-
 .channel-section{
-  padding-top: 22px;
+  padding-top: 18px;
+  padding-bottom: 0;
+  border-top: 1px solid #d9d9d9;
+  margin-top: 18px;
 }
 
 .channel-head{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 12px;
+  padding-bottom: 10px;
 }
 
 .channel-section .section-title{
@@ -578,22 +587,46 @@ img{ display:block; }
 }
 
 .plus-btn{
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   padding: 0;
   border: 0;
   background: transparent;
   color: #111;
-  font-size: 28px;
-  line-height: 18px;
+  font-size: 26px;
+  line-height: 16px;
   cursor: pointer;
+  transform: translateY(-2px);
 }
 
+/* 완성본처럼 보이게 하려면 숨김 */
+.channel-grid{
+  display: none;
+}
+
+/* 버튼 보여야 하면 아래로 교체
 .channel-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px 12px;
 }
+
+.channel-btn{
+  height: 52px;
+  border-radius: 10px;
+  border: 1px solid #dddddd;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #222;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+*/
 
 .channel-btn{
   height: 52px;
@@ -643,24 +676,101 @@ img{ display:block; }
 
 
 /* =========================
-   Bottom nav - 원본처럼 평평하게
+   Footer
 ========================= */
+.footer{
+  margin-top: 12px;
+  background: #f5f6f8;
+}
 
+.footer-inner{
+  padding: 12px 14px 12px;
+}
+
+.footer-top{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0 10px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.footer-drop{
+  width: 6px;
+  height: 6px;
+  border-right: 1.6px solid #7a7f87;
+  border-bottom: 1.6px solid #7a7f87;
+  transform: rotate(45deg);
+  margin-left: 2px;
+}
+
+.footer-box{
+  background: #f7f8fa;
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+  border: 1px solid rgba(0,0,0,.04);
+}
+
+.f-row{
+  margin-bottom: 12px;
+}
+
+.f-title{
+  font-weight: 800;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.f-text{
+  font-size: 12px;
+  color: #222;
+  line-height: 1.45;
+}
+
+.f-divider{
+  height: 1px;
+  background: rgba(0,0,0,.08);
+  margin: 10px 0;
+}
+
+.f-links{
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.f-links a{
+  color: #0a5bff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.f-copy{
+  margin-top: 10px;
+  font-size: 11px;
+  color: #555;
+}
+
+
+/* =========================
+   Bottom nav
+========================= */
 .content{
-  padding-bottom: 84px;
+  padding-bottom: 72px;
 }
 
 .bottom-nav{
   position: sticky;
   bottom: 0;
   z-index: 30;
-  background: #fff;
-  border-top: 1px solid #dcdcdc;
-  height: 78px;
+  background: #f7f7f7;
+  border-top: 1px solid #d9d9d9;
+  height: 68px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: start;
-  padding-top: 8px;
+  padding-top: 6px;
 }
 
 .bn-item{
@@ -670,20 +780,20 @@ img{ display:block; }
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 6px;
+  gap: 4px;
   padding: 4px 0 0;
 }
 
 .bn-item span:last-child{
-  font-size: 12px;
-  line-height: 1.2;
+  font-size: 11px;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   font-weight: 500;
 }
 
 .bn-ico{
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   position: relative;
   border-radius: 999px;
   background: #efefef;
@@ -701,81 +811,12 @@ img{ display:block; }
   inset: 0;
   display: grid;
   place-items: center;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .i-user::before{ content: "👤"; }
 .i-search::before{ content: "🔎"; }
 .i-doc::before{ content: "📄"; }
 .i-gift::before{ content: "🎁"; }
-/* =========================
-   Footer
-========================= */
-.footer{ margin-top:12px; background:#f5f6f8; }
-.footer-inner{ padding:12px 14px 12px; }
-.footer-top{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  padding:8px 0 10px;
-  font-weight:700;
-  font-size:13px;
-}
-.footer-drop{
-  width:6px;
-  height:6px;
-  border-right:1.6px solid #7a7f87;
-  border-bottom:1.6px solid #7a7f87;
-  transform: rotate(45deg);
-  margin-left:2px;
-}
-.footer-box{
-  background:#f7f8fa;
-  border-radius:12px;
-  padding:12px 12px 16px;
-  border:1px solid rgba(0,0,0,.04);
-}
-.f-row{ margin-bottom:12px; }
-.f-title{ font-weight:800; font-size:12px; margin-bottom:6px; }
-.f-text{ font-size:12px; color:#222; line-height:1.45; }
-.f-divider{ height:1px; background: rgba(0,0,0,.08); margin:10px 0; }
-.f-links{ display:flex; gap:12px; font-size:12px; }
-.f-links a{ color:#0a5bff; text-decoration:none; font-weight:700; }
-.f-copy{ margin-top:10px; font-size:11px; color:#555; }
-
-/* =========================
-   Bottom nav
-========================= */
-.bottom-nav{
-  position:sticky;
-  bottom:0;
-  z-index:20;
-  background:#fff;
-  border-top:1px solid rgba(0,0,0,.08);
-  height:64px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-}
-.bn-item{
-  text-decoration:none;
-  color:#222;
-  font-size:11px;
-  display:grid;
-  place-items:center;
-  gap:4px;
-  padding:8px 0;
-}
-.bn-ico{
-  width:24px;
-  height:24px;
-  border-radius:8px;
-  background: rgba(0,0,0,.06);
-  position:relative;
-}
-.bn-item.active .bn-ico{ background: rgba(10,91,255,.12); }
-.i-user::before{ content:"👤"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
-.i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
-.i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
-.i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 
 
