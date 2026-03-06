@@ -390,165 +390,165 @@ img{ display:block; }
 }
 
 /* =========================
-   Benefit cards (최종 정리본)
+   Benefit cards (정리본)
 ========================= */
+
 .benefit-section .section-title{
   margin: 0 0 10px 0;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.25;
 }
 
 .benefit-section .cards-grid{
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px 12px;
 }
 
 .benefit-section .card{
-  position:relative;
-  isolation:isolate;
-  height:88px;
-  border-radius:12px;
-  border:1px solid #D9E6FF;
-  background:#fff;
-  overflow:hidden;
-  text-decoration:none;
-  color:inherit;
+  position: relative;
+  isolation: isolate;
+  height: 88px;
+  border-radius: 12px;
+  border: 1px solid #D9E6FF;
+  background: #fff;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
   box-shadow: 0 1px 2px rgba(0,0,0,0.06);
 }
 
-/* 배경 레이어 (카드 전체) */
+/* 배경 레이어: span.card-bg 에 이미지 깔기 */
 .benefit-section .card-bg{
-  position:absolute;
-  inset:0;
-  z-index:0;
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  pointer-events:none;
-  user-select:none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  user-select: none;
 }
 
-/* 너가 준 배경 4개 */
+/* 배경 이미지 매핑 */
 .benefit-section .card--pink  .card-bg{
-  background-image:url("https://framerusercontent.com/images/F44KGdM5wK0dbICGRiWkWutixI.png?width=160&height=86");
+  background-image: url("https://framerusercontent.com/images/F44KGdM5wK0dbICGRiWkWutixI.png?width=160&height=86");
 }
 .benefit-section .card--yellow .card-bg{
-  background-image:url("https://framerusercontent.com/images/1Xw4idFBSIYdpfkJy0mhrqkY8dc.png?width=160&height=86");
+  background-image: url("https://framerusercontent.com/images/1Xw4idFBSIYdpfkJy0mhrqkY8dc.png?width=160&height=86");
 }
-.benefit-section .card--blue  .card-bg{
-  background-image:url("https://framerusercontent.com/images/IyxrrAxRRKn0BJpHWjcPGLfFHjE.png?width=160&height=86");
+.benefit-section .card--blue .card-bg{
+  background-image: url("https://framerusercontent.com/images/IyxrrAxRRKn0BJpHWjcPGLfFHjE.png?width=160&height=86");
 }
 .benefit-section .card--blue2 .card-bg{
-  background-image:url("https://framerusercontent.com/images/ziTpt7tw8FLV8ytJrQcFuakMSu8.png?width=160&height=86");
+  background-image: url("https://framerusercontent.com/images/ziTpt7tw8FLV8ytJrQcFuakMSu8.png?width=160&height=86");
 }
 
-/* 텍스트 */
+/* 텍스트 레이어 */
 .benefit-section .card-content{
-  position:relative;
-  z-index:1;
-  padding:12px 12px;
-  padding-right:56px;
+  position: relative;
+  z-index: 1;
+  padding: 12px 12px;
+  padding-right: 56px;
 }
+
 .benefit-section .card-title{
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:-0.03em;
-  line-height:1.25;
-  margin:0 0 6px 0;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  margin: 0 0 6px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .benefit-section .card-sub{
-  font-size:12px;
-  font-weight:400;
-  color:#111;
-  letter-spacing:-0.02em;
-  line-height:1.35;
+  font-size: 12px;
+  font-weight: 400;
+  color: #111;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
 }
 
 /* 아이콘 박스 */
 .benefit-section .card-ico{
-  position:absolute;
-  right:10px;
-  top:50%;
-  transform:translateY(-50%);
-  width:30px;
-  height:30px;
-  border-radius:10px;
+  position: absolute;
+  right: 10px;              /* 12 -> 10 : 카드 오른쪽 여백 살짝 줄임 */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
   background: rgba(255,255,255,0.92);
   border: 1px solid rgba(0,0,0,0.04);
-  z-index:3;
-
-  overflow:hidden;
-
-  /* ✅ 아이콘 “옆 빈공간” 해결: background로 넣고 확대 크롭 */
-  background-repeat:no-repeat;
-  background-position:50% 50%;
-  background-size:125%;
+  z-index: 3;
+  overflow: hidden;         /* 핵심: 확대/크롭 시 밖으로 안 나가게 */
 }
 
-/* 너가 준 아이콘 4개 + 아이콘별 보정 */
-.benefit-section .card--pink  .card-ico{
-  background-image:url("https://framerusercontent.com/images/RTUwlcp9tBRzZtohrh7EnYZ5Q4.png?width=40&height=40");
-  background-size:125%;
-  background-position:50% 50%;
-}
-.benefit-section .card--yellow .card-ico{
-  background-image:url("https://framerusercontent.com/images/2LKnsCtzJDyz5hCHPxWdViD8M.png?width=40&height=40");
-  background-size:145%;
-  background-position:60% 50%;
-}
-.benefit-section .card--blue  .card-ico{
-  background-image:url("https://framerusercontent.com/images/HqMUNxFgfsEP9KpMthrco4d4.png?width=40&height=40");
-  background-size:130%;
-  background-position:50% 50%;
-}
-.benefit-section .card--blue2 .card-ico{
-  background-image:url("https://framerusercontent.com/images/AAwNC7BIO7a353zBcbe45gmw7kc.png?width=40&height=40");
-  background-size:135%;
-  background-position:50% 52%;
+/* ✅ “아이콘 옆 흰 공백(투명 패딩)” 제거 핵심
+   - 이미지가 투명 여백이 많아서 생기는 거라
+   - cover + 약간 확대해서 체감 공백을 없앰 */
+.benefit-section .card-ico-img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 50% 50%;
+  transform: scale(1.22);
+  transform-origin: 50% 50%;
 }
 
-/* 더 많은 혜택 보기 */
+/* (선택) 아이콘마다 중심이 다르면 아래만 살짝 만져 */
+.benefit-section .ico--pink  { object-position: 46% 50%; }
+.benefit-section .ico--yellow{ object-position: 50% 50%; }
+.benefit-section .ico--blue  { object-position: 48% 52%; }
+.benefit-section .ico--blue2 { object-position: 52% 50%; }
+
+/* "더 많은 혜택 보기" */
 .benefit-section .benefit-more{
   margin: 10px auto 0;
   width: fit-content;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  text-decoration:none;
-  color:#111;
-  font-size:13px;
-  font-weight:500;
-  letter-spacing:-0.02em;
-  padding:10px 0 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #111;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  padding: 10px 0 8px;
 }
 
 /* 외부링크 아이콘 */
 .benefit-section .benefit-ext{
-  width:14px; height:14px;
-  position:relative;
-  display:inline-block;
-  opacity:0.75;
+  width: 14px;
+  height: 14px;
+  position: relative;
+  display: inline-block;
+  opacity: 0.75;
 }
 .benefit-section .benefit-ext::before{
-  content:"";
-  position:absolute;
-  inset:2px 2px 3px 3px;
-  border:1.5px solid #111;
-  border-radius:3px;
+  content: "";
+  position: absolute;
+  inset: 2px 2px 3px 3px;
+  border: 1.5px solid #111;
+  border-radius: 3px;
 }
 .benefit-section .benefit-ext::after{
-  content:"";
-  position:absolute;
-  right:1px;
-  top:2px;
-  width:6px; height:6px;
-  border-right:1.6px solid #111;
-  border-top:1.6px solid #111;
-  transform:rotate(45deg);
+  content: "";
+  position: absolute;
+  right: 1px;
+  top: 2px;
+  width: 6px;
+  height: 6px;
+  border-right: 1.6px solid #111;
+  border-top: 1.6px solid #111;
+  transform: rotate(45deg);
 }
 
 /* =========================
@@ -667,3 +667,4 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-doc::before{ content:"📄"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
 .i-gift::before{ content:"🎁"; position:absolute; inset:0; display:grid; place-items:center; font-size:14px; }
+
