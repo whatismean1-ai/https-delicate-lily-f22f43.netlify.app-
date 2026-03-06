@@ -425,7 +425,7 @@ img{ display:block; }
   overflow: hidden;
   text-decoration: none;
   color: #111;
-  padding: 12px 14px 12px;
+  padding: 12px 14px
   background: #fff;
 }
 
@@ -478,7 +478,7 @@ img{ display:block; }
 .benefit-copy{
   position: relative;
   z-index: 1;
-  max-width: calc(100% - 34px);
+  max-width: calc(100% - 28px);
 }
 
 .benefit-title{
@@ -566,7 +566,7 @@ img{ display:block; }
 .channel-section{
   padding-top: 16px;
   padding-bottom: 0;
-  border-top: 1px solid #dcdcdc;
+  border-top: 1px solid #e6e6e6;
   margin-top: 20px;
 }
 
@@ -818,6 +818,7 @@ img{ display:block; }
 .i-search::before{ content: "🔎"; }
 .i-doc::before{ content: "📄"; }
 .i-gift::before{ content: "🎁"; }
+
 
 
 
