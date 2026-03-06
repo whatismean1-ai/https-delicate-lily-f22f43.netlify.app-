@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="./style.css?v=1" />
+  <link rel="stylesheet" href="./style.css?v=2" />
   <title>정부24 클론</title>
 </head>
 <body>
@@ -52,13 +52,11 @@
         <span class="notice-chevron" aria-hidden="true"></span>
       </a>
 
-      <!-- 스크롤 컨텐츠 -->
       <div class="content">
 
-        <!-- 회색 배경 영역 -->
+        <!-- 검색 + 자주찾는서비스 + 배너 -->
         <div class="search-area">
 
-          <!-- 검색 -->
           <section class="search-wrap" aria-label="검색">
             <div class="search">
               <label class="sr-only" for="q">정부 서비스 검색</label>
@@ -77,7 +75,6 @@
             </div>
           </section>
 
-          <!-- 자주 찾는 서비스 -->
           <section class="quick-section" aria-label="자주 찾는 서비스">
             <h2 class="section-title">자주 찾는 서비스</h2>
 
@@ -119,7 +116,6 @@
             </a>
           </section>
 
-          <!-- AI 배너 -->
           <section class="banner" aria-label="AI 배너">
             <a href="#" class="banner-card">
               <img
@@ -132,124 +128,128 @@
 
         </div><!-- /search-area -->
 
-<section class="section benefit-section" aria-label="혜택/보조금">
-  <h2 class="section-title">지금 봐야 할 혜택/보조금</h2>
+        <!-- 혜택/보조금 -->
+        <section class="section benefit-section" aria-label="혜택/보조금">
+          <h2 class="section-title">지금 봐야 할 혜택/보조금</h2>
 
-  <div class="benefit-grid">
-    <a class="benefit-card benefit-card--pink" href="#">
-      <div class="benefit-copy">
-        <strong class="benefit-title">유아학비</strong>
-        <p class="benefit-desc">현금(감면)<br>지급</p>
-      </div>
-      <img class="benefit-icon"
-        src="https://framerusercontent.com/images/RTUwlcp9tBRzZtohrh7EnYZ5Q4.png?width=40&height=40"
-        alt=""
-        aria-hidden="true">
-    </a>
+          <div class="benefit-grid">
+            <a class="benefit-card benefit-card--pink" href="#">
+              <div class="benefit-copy">
+                <strong class="benefit-title">유아학비</strong>
+                <p class="benefit-desc">현금(감면)<br>지급</p>
+              </div>
+              <img class="benefit-icon"
+                src="https://framerusercontent.com/images/RTUwlcp9tBRzZtohrh7EnYZ5Q4.png?width=40&height=40"
+                alt=""
+                aria-hidden="true">
+            </a>
 
-    <a class="benefit-card benefit-card--yellow" href="#">
-      <div class="benefit-copy">
-        <strong class="benefit-title">전세보증금반환보증 보증료</strong>
-        <p class="benefit-desc">현금<br>지급</p>
-      </div>
-      <img class="benefit-icon"
-        src="https://framerusercontent.com/images/2LKnsCtzJDyz5hCHPxWdViD8M.png?width=40&height=40"
-        alt=""
-        aria-hidden="true">
-    </a>
+            <a class="benefit-card benefit-card--yellow" href="#">
+              <div class="benefit-copy">
+                <strong class="benefit-title">전세보증금반환보증 보증료</strong>
+                <p class="benefit-desc">현금<br>지급</p>
+              </div>
+              <img class="benefit-icon"
+                src="https://framerusercontent.com/images/2LKnsCtzJDyz5hCHPxWdViD8M.png?width=40&height=40"
+                alt=""
+                aria-hidden="true">
+            </a>
 
-    <a class="benefit-card benefit-card--green" href="#">
-      <div class="benefit-copy">
-        <strong class="benefit-title">초중고 입학축하금 지원</strong>
-        <p class="benefit-desc">현금 및<br>지역 바우처 제공</p>
-      </div>
-      <img class="benefit-icon"
-        src="https://framerusercontent.com/images/HqMUNxFgfsEP9KpMthrco4d4.png?width=40&height=40"
-        alt=""
-        aria-hidden="true">
-    </a>
+            <a class="benefit-card benefit-card--green" href="#">
+              <div class="benefit-copy">
+                <strong class="benefit-title">초중고 입학축하금 지원</strong>
+                <p class="benefit-desc">현금 및<br>지역 바우처 제공</p>
+              </div>
+              <img class="benefit-icon"
+                src="https://framerusercontent.com/images/HqMUNxFgfsEP9KpMthrco4d4.png?width=40&height=40"
+                alt=""
+                aria-hidden="true">
+            </a>
 
-    <a class="benefit-card benefit-card--blue" href="#">
-      <div class="benefit-copy">
-        <strong class="benefit-title">근로장려금</strong>
-        <p class="benefit-desc">현금<br>지급</p>
-      </div>
-      <img class="benefit-icon"
-        src="https://framerusercontent.com/images/AAwNC7BIO7a353zBcbe45gmw7kc.png?width=40&height=40"
-        alt=""
-        aria-hidden="true">
-    </a>
+            <a class="benefit-card benefit-card--blue" href="#">
+              <div class="benefit-copy">
+                <strong class="benefit-title">근로장려금</strong>
+                <p class="benefit-desc">현금<br>지급</p>
+              </div>
+              <img class="benefit-icon"
+                src="https://framerusercontent.com/images/AAwNC7BIO7a353zBcbe45gmw7kc.png?width=40&height=40"
+                alt=""
+                aria-hidden="true">
+            </a>
+          </div>
+
+          <a class="benefit-more" href="#">
+            <span>더 많은 혜택 보기</span>
+            <span class="benefit-more-icon" aria-hidden="true"></span>
+          </a>
+        </section>
+
+        <!-- 국민소통채널 -->
+        <section class="section channel-section" aria-label="국민소통채널">
+          <div class="channel-head">
+            <h2 class="section-title">국민소통채널</h2>
+            <button class="plus-btn" type="button" aria-label="더보기">+</button>
+          </div>
+        </section>
+
+        <!-- 푸터 -->
+        <footer class="footer" aria-label="푸터">
+          <div class="footer-inner">
+            <div class="footer-top">
+              <span class="footer-brand">정부24</span>
+              <span class="footer-drop" aria-hidden="true"></span>
+            </div>
+
+            <div class="footer-box">
+              <div class="f-row">
+                <div class="f-title">콜센터</div>
+                <div class="f-text">
+                  1588-2188,<br />
+                  02-721-0600 (지역번호 '02'를 확인하세요.)<br />
+                  (09:00 ~ 18:00 평일)
+                </div>
+              </div>
+
+              <div class="f-row">
+                <div class="f-title">정부민원안내콜센터</div>
+                <div class="f-text">국번없이 110 (무료, 휴일포함 365일 24시간)</div>
+              </div>
+
+              <div class="f-divider"></div>
+
+              <div class="f-links">
+                <a href="#">개인정보처리방침</a>
+                <a href="#">이용약관</a>
+              </div>
+
+              <div class="f-copy">© Ministry of the Interior and Safety. All Rights Reserved.</div>
+            </div>
+          </div>
+        </footer>
+
+      </div><!-- /content -->
+
+      <!-- 하단 메뉴 -->
+      <nav class="bottom-nav" aria-label="하단 메뉴">
+        <a class="bn-item active" href="#">
+          <span class="bn-ico i-user" aria-hidden="true"></span>
+          <span>MyGOV</span>
+        </a>
+        <a class="bn-item" href="#">
+          <span class="bn-ico i-search" aria-hidden="true"></span>
+          <span>주제별 보기</span>
+        </a>
+        <a class="bn-item" href="#">
+          <span class="bn-ico i-doc" aria-hidden="true"></span>
+          <span>문서진위확인</span>
+        </a>
+        <a class="bn-item" href="#">
+          <span class="bn-ico i-gift" aria-hidden="true"></span>
+          <span>혜택알림</span>
+        </a>
+      </nav>
+
+    </main>
   </div>
-<a class="benefit-more" href="#">
-  <span>더 많은 혜택 보기</span>
-  <span class="benefit-more-icon" aria-hidden="true"></span>
-</a>
-</section>
-<section class="section channel-section" aria-label="국민소통채널">
-  <div class="channel-head">
-    <h2 class="section-title">국민소통채널</h2>
-    <button class="plus-btn" type="button" aria-label="더보기">+</button>
-  </div>
-</section>
-
-<!-- 푸터 -->
-<footer class="footer" aria-label="푸터">
-  <div class="footer-inner">
-    <div class="footer-top">
-      <span class="footer-brand">정부24</span>
-      <span class="footer-drop" aria-hidden="true"></span>
-    </div>
-
-    <div class="footer-box">
-      <div class="f-row">
-        <div class="f-title">콜센터</div>
-        <div class="f-text">
-          1588-2188,<br />
-          02-721-0600 (지역번호 '02'를 확인하세요.)<br />
-          (09:00 ~ 18:00 평일)
-        </div>
-      </div>
-
-      <div class="f-row">
-        <div class="f-title">정부민원안내콜센터</div>
-        <div class="f-text">국번없이 110 (무료, 휴일포함 365일 24시간)</div>
-      </div>
-
-      <div class="f-divider"></div>
-
-      <div class="f-links">
-        <a href="#">개인정보처리방침</a>
-        <a href="#">이용약관</a>
-      </div>
-
-      <div class="f-copy">© Ministry of the Interior and Safety. All Rights Reserved.</div>
-    </div>
-  </div>
-</footer>
-
-</div><!-- /content -->
-
-<!-- 하단 바텀탭 -->
-<nav class="bottom-nav" aria-label="하단 메뉴">
-  <a class="bn-item active" href="#">
-    <span class="bn-ico i-user" aria-hidden="true"></span>
-    <span>MyGOV</span>
-  </a>
-  <a class="bn-item" href="#">
-    <span class="bn-ico i-search" aria-hidden="true"></span>
-    <span>주제별 보기</span>
-  </a>
-  <a class="bn-item" href="#">
-    <span class="bn-ico i-doc" aria-hidden="true"></span>
-    <span>문서진위확인</span>
-  </a>
-  <a class="bn-item" href="#">
-    <span class="bn-ico i-gift" aria-hidden="true"></span>
-    <span>혜택알림</span>
-  </a>
-</nav>
-
-</main>
-</div>
 </body>
 </html>
