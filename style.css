@@ -497,8 +497,7 @@ img{ display:block; }
 .benefit-more-icon{
   width:16px;
   height:16px;
-  flex:0 0 16px;
-  display:block;
+  margin-left:4px;
 }
 /* =========================
    Channel section
@@ -717,6 +716,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
+
 
 
 
