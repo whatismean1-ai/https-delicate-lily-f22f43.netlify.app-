@@ -476,47 +476,40 @@ img{ display:block; }
   object-fit:contain;
   z-index:1;
 }
+
+/* ===== 원본과 1px 단위 동일 ===== */
 .benefit-more{
-  margin:14px auto 0;
+  margin:12px auto 0;
   width:fit-content;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:5px;
+  gap:4px;
   text-decoration:none;
   color:#111;
   font-size:13px;
-  font-weight:700;
-  line-height:1.15;
-  letter-spacing:-0.03em;
-  padding:2px 0 0;
+  font-weight:500;
+  line-height:1;
+  letter-spacing:0.03em;
+  padding:0;
 }
+
 .benefit-more-icon{
   position:relative;
-  width:12px;
-  height:12px;
+  width:14px;
+  height:14px;
   display:inline-block;
-  transform:translateY(1px);
 }
+
 .benefit-more-icon::before{
   content:"";
   position:absolute;
-  left:1px;
-  bottom:1px;
-  width:7px;
-  height:7px;
-  border:1.2px solid #222;
-  border-radius:2px;
-}
-.benefit-more-icon::after{
-  content:"";
-  position:absolute;
-  right:0;
-  top:0;
-  width:5px;
-  height:5px;
-  border-right:1.3px solid #222;
-  border-top:1.3px solid #222;
+  left:3px;
+  top:3px;
+  width:6px;
+  height:6px;
+  border-right:1.5px solid #222;
+  border-top:1.5px solid #222;
   transform:rotate(45deg);
 }
 
@@ -574,6 +567,7 @@ img{ display:block; }
   font-size:13px;
   font-weight:700;
 }
+
 .ico{
   width:18px;
   height:18px;
@@ -585,6 +579,7 @@ img{ display:block; }
 .ico.doc{ background:#F1EDF8; }
 .ico.gift{ background:#FFF1DB; }
 .ico.user{ background:#EDE8F8; }
+
 .ico.user::before,
 .ico.search::before,
 .ico.doc::before,
@@ -595,11 +590,11 @@ img{ display:block; }
   place-items:center;
   font-size:11px;
 }
+
 .ico.user::before{ content:"👤"; }
 .ico.search::before{ content:"🔎"; }
 .ico.doc::before{ content:"📄"; }
 .ico.gift::before{ content:"🎁"; }
-
 /* =========================
    Footer
 ========================= */
@@ -735,3 +730,4 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
+
