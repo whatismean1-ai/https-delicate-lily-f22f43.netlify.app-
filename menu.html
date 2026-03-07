@@ -1,139 +1,110 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./style.css?v=999">
-<title>전체메뉴</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./style.css?v=999" />
+  <title>전체메뉴</title>
 </head>
-
 <body>
+  <div class="stage">
+    <main class="phone" aria-label="전체메뉴">
 
-<div class="stage">
-<main class="phone">
+      <!-- 상단 알림 -->
+      <div class="notice-top" role="note" aria-label="공식 누리집 안내">
+        <img
+          src="./assets/flag_24x16.png"
+          srcset="./assets/flag_48x32@2x.png 2x"
+          width="24"
+          height="16"
+          alt=""
+          aria-hidden="true"
+        />
+        <p class="notice-msg">이 누리집은 대한민국 공식 전자정부 누리집입니다.</p>
+      </div>
 
-<!-- 상단 알림 -->
-<div class="notice-top">
-<img src="./assets/flag_24x16.png" width="24" height="16">
-<p class="notice-msg">이 누리집은 대한민국 공식 전자정부 누리집입니다.</p>
-</div>
+      <!-- 헤더 -->
+      <header class="topbar">
+        <a class="brand" href="./index.html" aria-label="정부24 홈">
+          <img class="brand-logo" src="./assets/gov24.png" alt="정부24" />
+        </a>
 
-<!-- 헤더 -->
-<header class="topbar">
+        <a class="menu" href="./index.html" aria-label="닫기">
+          <span class="menu-text">닫기</span>
+        </a>
+      </header>
 
-<a class="brand" href="./index.html">
-<img class="brand-logo" src="./assets/gov24.png">
-</a>
+      <div class="sep-inset" aria-hidden="true"></div>
 
-<a class="menu-close" href="./index.html">
-닫기
-</a>
+      <!-- 서비스 바로가기 -->
+      <section class="section" aria-label="서비스 바로가기">
+        <h2 class="section-title">서비스 바로가기</h2>
 
-</header>
+        <div class="channel-grid">
+          <a class="channel-btn" href="./mobile-id.html">
+            <span class="ico user" aria-hidden="true"></span>
+            주민등록증 모바일 확인 서비스
+          </a>
 
-<div class="sep-inset"></div>
+          <a class="channel-btn" href="#">
+            <span class="ico search" aria-hidden="true"></span>
+            주소 영문 변환 서비스
+          </a>
+        </div>
+      </section>
 
-<!-- 서비스 바로가기 -->
-<section class="section">
+      <!-- 분야별 정책정보 -->
+      <section class="section" aria-label="분야별 정책정보">
+        <div class="channel-head">
+          <h2 class="section-title">분야별 정책정보</h2>
+          <button class="plus-btn" type="button" aria-label="더보기">+</button>
+        </div>
+      </section>
 
-<h2 class="section-title">서비스 바로가기</h2>
+      <!-- 국민소통채널 -->
+      <section class="section" aria-label="국민소통채널">
+        <div class="channel-head">
+          <h2 class="section-title">국민소통채널</h2>
+          <button class="plus-btn" type="button" aria-label="더보기">+</button>
+        </div>
+      </section>
 
-<div class="service-list">
+      <!-- 푸터 -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-top">
+            <span class="footer-brand">정부24</span>
+            <span class="footer-drop" aria-hidden="true"></span>
+          </div>
 
-<a class="service-btn" href="./mobile-id.html">
-주민등록증 모바일 확인 서비스
-</a>
+          <div class="footer-box">
+            <div class="f-row">
+              <div class="f-title">콜센터</div>
+              <div class="f-text">
+                1588-2188,<br />
+                02-721-0600 (지역번호 '02'를 확인하세요.)<br />
+                (09:00 ~ 18:00 평일)
+              </div>
+            </div>
 
-<a class="service-btn" href="#">
-주소 영문 변환 서비스
-</a>
+            <div class="f-row">
+              <div class="f-title">정부민원안내콜센터</div>
+              <div class="f-text">국번없이 110 (무료, 휴일포함 365일 24시간)</div>
+            </div>
 
-</div>
+            <div class="f-divider"></div>
 
-</section>
+            <div class="f-links">
+              <a href="#">개인정보처리방침</a>
+              <a href="#">이용약관</a>
+            </div>
 
-<!-- 분야별 정책정보 -->
+            <div class="f-copy">© Ministry of the Interior and Safety. All Rights Reserved.</div>
+          </div>
+        </div>
+      </footer>
 
-<section class="section menu-row">
-
-<div class="menu-row-head">
-
-<h2>분야별 정책정보</h2>
-
-<button class="plus-btn">+</button>
-
-</div>
-
-</section>
-
-<!-- 국민소통채널 -->
-
-<section class="section menu-row">
-
-<div class="menu-row-head">
-
-<h2>국민소통채널</h2>
-
-<button class="plus-btn">+</button>
-
-</div>
-
-</section>
-
-
-<!-- 푸터 -->
-
-<footer class="footer">
-
-<div class="footer-inner">
-
-<div class="footer-top">
-<span class="footer-brand">정부24</span>
-</div>
-
-<div class="footer-box">
-
-<div class="f-row">
-
-<div class="f-title">콜센터</div>
-
-<div class="f-text">
-1588-2188,<br>
-02-721-0600 (지역번호 '02'를 확인하세요.)<br>
-(09:00 ~ 18:00 평일)
-</div>
-
-</div>
-
-<div class="f-row">
-
-<div class="f-title">정부민원안내콜센터</div>
-
-<div class="f-text">
-국번없이 110 (무료, 휴일포함 365일 24시간)
-</div>
-
-</div>
-
-<div class="f-divider"></div>
-
-<div class="f-links">
-<a href="#">개인정보처리방침</a>
-<a href="#">이용약관</a>
-</div>
-
-<div class="f-copy">
-© Ministry of the Interior and Safety. All Rights Reserved.
-</div>
-
-</div>
-
-</div>
-
-</footer>
-
-</main>
-</div>
-
+    </main>
+  </div>
 </body>
 </html>
