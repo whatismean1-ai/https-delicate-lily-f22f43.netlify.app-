@@ -498,7 +498,8 @@ img{ display:block; }
   width:16px;
   height:16px;
   display:block;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23222' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3H21V10'/%3E%3Cpath d='M21 3L10 14'/%3E%3Cpath d='M21 14V21H3V3H10'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
+  flex:0 0 16px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23222' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3H21V10'/%3E%3Cpath d='M21 3L10 14'/%3E%3Cpath d='M21 14V21H3V3H10'/%3E%3C/svg%3E") center / 18px 18px no-repeat;
 }
 /* =========================
    Channel section
@@ -717,6 +718,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
+
 
 
 
