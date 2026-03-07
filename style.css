@@ -478,34 +478,23 @@ img{ display:block; }
 }
 
 .benefit-more-wrap{
-  position:relative;
-  width:120px;
-  height:16px;
   margin:12px auto 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
 }
 
 .benefit-more{
-  position:absolute;
-  left:0;
-  top:0;
-  width:100px;
-  height:16px;
-  display:block;
-  margin:0;
-  padding:0;
-  color:#000;
-  text-decoration:none;
   font-size:13px;
   font-weight:500;
-  line-height:15.6px;
-  letter-spacing:0.39px;
-  white-space:nowrap;
+  letter-spacing:0.03em;
+  text-decoration:none;
+  color:#000;
+  line-height:1.2;
 }
 
 .benefit-more-icon{
-  position:absolute;
-  left:104px;
-  top:0;
   width:16px;
   height:16px;
   display:block;
@@ -728,6 +717,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
+
 
 
 
