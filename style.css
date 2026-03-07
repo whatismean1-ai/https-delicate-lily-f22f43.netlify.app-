@@ -479,14 +479,7 @@ img{ display:block; }
 
 .benefit-more-wrap{
   position:relative;
-  width:118px;
-  height:16px;
-  margin:12px auto 0;
-}
-
-.benefit-more-wrap{
-  position:relative;
-  width:118px;
+  width:120px;
   height:16px;
   margin:12px auto 0;
 }
@@ -494,25 +487,29 @@ img{ display:block; }
 .benefit-more{
   position:absolute;
   left:0;
-  bottom:0;
+  top:0;
   width:100px;
   height:16px;
+  display:block;
+  margin:0;
+  padding:0;
+  color:#000;
+  text-decoration:none;
   font-size:13px;
   font-weight:500;
   line-height:15.6px;
   letter-spacing:0.39px;
-  color:#000;
-  text-decoration:none;
   white-space:nowrap;
 }
 
 .benefit-more-icon{
   position:absolute;
   left:104px;
-  bottom:0;
+  top:0;
   width:16px;
   height:16px;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23222' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3H21V10'/%3E%3Cpath d='M21 3L10 14'/%3E%3Cpath d='M21 14V21H3V3H10'/%3E%3C/svg%3E") center/16px 16px no-repeat;
+  display:block;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23222' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3H21V10'/%3E%3Cpath d='M21 3L10 14'/%3E%3Cpath d='M21 14V21H3V3H10'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
 }
 /* =========================
    Channel section
@@ -731,6 +728,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
+
 
 
 
