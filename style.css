@@ -496,23 +496,25 @@ img{ display:block; }
 
 .benefit-more-icon{
   position:relative;
-  width:14px;
-  height:14px;
+  width:16px;
+  height:16px;
   display:inline-block;
 }
 
 .benefit-more-icon::before{
   content:"";
   position:absolute;
-  left:3px;
-  top:3px;
-  width:6px;
-  height:6px;
+  left:4px;
+  top:4px;
+  width:7px;
+  height:7px;
   border-right:1.5px solid #222;
   border-top:1.5px solid #222;
   transform:rotate(45deg);
 }
-
+.benefit-more:hover .benefit-more-icon{
+  transform:translateX(2px);
+}
 /* =========================
    Channel section
 ========================= */
@@ -730,4 +732,5 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
+
 
