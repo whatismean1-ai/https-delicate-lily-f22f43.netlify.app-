@@ -502,7 +502,7 @@ img{ display:block; }
 
 .benefit-more-icon{
   position:absolute;
-  right:0;
+  left:104px;
   bottom:0;
   width:16px;
   height:16px;
@@ -726,6 +726,7 @@ img{ display:block; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
 .i-gift::before{ content:"🎁"; }
+
 
 
 
