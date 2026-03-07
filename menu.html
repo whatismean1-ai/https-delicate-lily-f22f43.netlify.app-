@@ -24,85 +24,152 @@
       </div>
 
       <!-- 헤더 -->
-      <header class="topbar">
+      <header class="topbar topbar-menu-page">
         <a class="brand" href="./index.html" aria-label="정부24 홈">
           <img class="brand-logo" src="./assets/gov24.png" alt="정부24" />
         </a>
 
-        <a class="menu" href="./index.html" aria-label="닫기">
+        <a class="menu menu-close-link" href="./index.html" aria-label="닫기">
           <span class="menu-text">닫기</span>
         </a>
       </header>
 
       <div class="sep-inset" aria-hidden="true"></div>
 
+      <!-- MyGOV -->
+      <section class="menu-panel">
+        <div class="menu-group-head">
+          <div class="menu-group-title-row">
+            <span class="menu-group-icon menu-group-icon--mygov" aria-hidden="true"></span>
+            <h2 class="menu-group-title">MyGOV</h2>
+          </div>
+        </div>
+
+        <div class="menu-links-grid menu-links-grid--2col">
+          <a href="#" class="menu-link">MyGOV 홈</a>
+          <a href="#" class="menu-link">나의 생활정보</a>
+          <a href="#" class="menu-link menu-link--fold">나의 신청내역</a>
+          <a href="#" class="menu-link menu-link--fold">나의 정보관리</a>
+        </div>
+      </section>
+
+      <!-- 민원서비스 -->
+      <section class="menu-panel">
+        <div class="menu-divider-band" aria-hidden="true"></div>
+
+        <div class="menu-group-head">
+          <div class="menu-group-title-row">
+            <span class="menu-group-icon menu-group-icon--service" aria-hidden="true"></span>
+            <h2 class="menu-group-title">민원서비스</h2>
+          </div>
+        </div>
+
+        <div class="menu-links-grid menu-links-grid--2col">
+          <a href="#" class="menu-link">민원찾기</a>
+          <a href="#" class="menu-link">주제별 보기</a>
+          <a href="#" class="menu-link">행정서식 간편이름</a>
+          <a href="#" class="menu-link">사실/진위확인</a>
+          <a href="#" class="menu-link">원스톱서비스</a>
+          <a href="#" class="menu-link">기업/단체 서비스</a>
+          <a href="#" class="menu-link">돌봄시설 등 위치 찾기</a>
+          <a href="#" class="menu-link">정부24 다운로드파일<br />진본 확인</a>
+        </div>
+      </section>
+
+      <!-- 맞춤혜택 -->
+      <section class="menu-panel">
+        <div class="menu-divider-band" aria-hidden="true"></div>
+
+        <div class="menu-group-head">
+          <div class="menu-group-title-row">
+            <span class="menu-group-icon menu-group-icon--benefit" aria-hidden="true"></span>
+            <h2 class="menu-group-title">맞춤혜택</h2>
+          </div>
+        </div>
+
+        <div class="menu-links-grid menu-links-grid--2col">
+          <a href="#" class="menu-link">혜택 조회하기</a>
+          <a href="#" class="menu-link">혜택 알림받기</a>
+        </div>
+      </section>
+
+      <!-- 정책정보 -->
+      <section class="menu-panel">
+        <div class="menu-divider-band" aria-hidden="true"></div>
+
+        <div class="menu-group-head">
+          <div class="menu-group-title-row">
+            <span class="menu-group-icon menu-group-icon--policy" aria-hidden="true"></span>
+            <h2 class="menu-group-title">정책정보</h2>
+          </div>
+        </div>
+
+        <div class="menu-links-grid menu-links-grid--2col">
+          <a href="#" class="menu-link">분야별 정책정보</a>
+          <a href="#" class="menu-link">정부/지자체 조직도</a>
+          <a href="#" class="menu-link">정부/지자체 누리집</a>
+          <a href="#" class="menu-link">지자체 소식</a>
+          <a href="#" class="menu-link">공모전</a>
+          <a href="#" class="menu-link">공공자원공유</a>
+          <a href="#" class="menu-link">국고보조금 부정수급<br />신고</a>
+        </div>
+      </section>
+
+      <!-- 고객센터 -->
+      <section class="menu-panel">
+        <div class="menu-divider-band" aria-hidden="true"></div>
+
+        <div class="menu-group-head">
+          <div class="menu-group-title-row">
+            <span class="menu-group-icon menu-group-icon--support" aria-hidden="true"></span>
+            <h2 class="menu-group-title">고객센터</h2>
+          </div>
+        </div>
+
+        <div class="menu-links-grid menu-links-grid--2col">
+          <a href="#" class="menu-link">공지사항</a>
+          <a href="#" class="menu-link menu-link--fold">이용안내</a>
+          <a href="#" class="menu-link">자주 묻는 질문</a>
+          <a href="#" class="menu-link">상담예약</a>
+          <a href="#" class="menu-link">개선의견</a>
+          <a href="#" class="menu-link menu-link--fold">정부24 소개</a>
+          <a href="#" class="menu-link menu-link--fold">인증센터</a>
+          <a href="#" class="menu-link menu-link--fold">보안센터</a>
+          <a href="#" class="menu-link">문서 진위확인</a>
+        </div>
+      </section>
+
       <!-- 서비스 바로가기 -->
-      <section class="section" aria-label="서비스 바로가기">
-        <h2 class="section-title">서비스 바로가기</h2>
+      <section class="menu-panel">
+        <div class="menu-divider-band" aria-hidden="true"></div>
 
-        <div class="channel-grid">
-          <a class="channel-btn" href="./mobile-id.html">
-            <span class="ico user" aria-hidden="true"></span>
-            주민등록증 모바일 확인 서비스
-          </a>
-
-          <a class="channel-btn" href="#">
-            <span class="ico search" aria-hidden="true"></span>
-            주소 영문 변환 서비스
-          </a>
-        </div>
-      </section>
-
-      <!-- 분야별 정책정보 -->
-      <section class="section" aria-label="분야별 정책정보">
-        <div class="channel-head">
-          <h2 class="section-title">분야별 정책정보</h2>
-          <button class="plus-btn" type="button" aria-label="더보기">+</button>
-        </div>
-      </section>
-
-      <!-- 국민소통채널 -->
-      <section class="section" aria-label="국민소통채널">
-        <div class="channel-head">
-          <h2 class="section-title">국민소통채널</h2>
-          <button class="plus-btn" type="button" aria-label="더보기">+</button>
-        </div>
-      </section>
-
-      <!-- 푸터 -->
-      <footer class="footer">
-        <div class="footer-inner">
-          <div class="footer-top">
-            <span class="footer-brand">정부24</span>
-            <span class="footer-drop" aria-hidden="true"></span>
-          </div>
-
-          <div class="footer-box">
-            <div class="f-row">
-              <div class="f-title">콜센터</div>
-              <div class="f-text">
-                1588-2188,<br />
-                02-721-0600 (지역번호 '02'를 확인하세요.)<br />
-                (09:00 ~ 18:00 평일)
-              </div>
-            </div>
-
-            <div class="f-row">
-              <div class="f-title">정부민원안내콜센터</div>
-              <div class="f-text">국번없이 110 (무료, 휴일포함 365일 24시간)</div>
-            </div>
-
-            <div class="f-divider"></div>
-
-            <div class="f-links">
-              <a href="#">개인정보처리방침</a>
-              <a href="#">이용약관</a>
-            </div>
-
-            <div class="f-copy">© Ministry of the Interior and Safety. All Rights Reserved.</div>
+        <div class="menu-group-head">
+          <div class="menu-group-title-row">
+            <span class="menu-group-icon menu-group-icon--gov" aria-hidden="true"></span>
+            <h2 class="menu-group-title">서비스 바로가기</h2>
           </div>
         </div>
-      </footer>
+
+        <div class="menu-links-grid menu-links-grid--2col">
+          <a href="#" class="menu-link">국민비서 구삐</a>
+          <a href="./mobile-id.html" class="menu-link">주민등록증 모바일 확인<br />서비스</a>
+          <a href="#" class="menu-link">전자증명서·공공마이<br />데이터</a>
+          <a href="#" class="menu-link">나의 정보관리</a>
+        </div>
+      </section>
+
+      <!-- 하단 옵션 -->
+      <section class="menu-bottom-tools" aria-label="하단 옵션">
+        <button type="button" class="menu-tool-row">
+          <span class="menu-tool-text">지원</span>
+          <span class="menu-tool-arrow" aria-hidden="true"></span>
+        </button>
+
+        <button type="button" class="menu-tool-row">
+          <span class="menu-tool-text">화면크기</span>
+          <span class="menu-tool-arrow" aria-hidden="true"></span>
+        </button>
+      </section>
 
     </main>
   </div>
