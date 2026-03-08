@@ -376,10 +376,12 @@ img{ display:block; }
 /* =========================
    Benefit section
 ========================= */
+
 .benefit-section{
-  padding:18px 14px 0;
+  padding:18px 16px 0;
   background:#F7F8FA;
 }
+
 .benefit-section .section-title{
   margin:0 0 12px;
   font-size:16px;
@@ -388,65 +390,31 @@ img{ display:block; }
   letter-spacing:-0.04em;
   color:#111;
 }
+
 .benefit-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  column-gap:14px;
+  row-gap:12px;
 }
+
 .benefit-card{
   position:relative;
-  height:92px;
-  min-height:92px;
-  padding:8px 12px 10px;
+  height:90px;
+  padding:10px 12px;
   border-radius:14px;
   border:1px solid transparent;
   overflow:hidden;
   text-decoration:none;
   color:#111;
-  background:#FFFFFF;
 }
-.benefit-card--pink{
-  background:#FAF1F4;
-  border-color:#D9C2CB;
-}
-.benefit-card--yellow{
-  background:#F7EED8;
-  border-color:#DCCB98;
-}
-.benefit-card--green{
-  background:#EDF4EF;
-  border-color:#C7DAD0;
-}
-.benefit-card--blue{
-  background:#EEF2F7;
-  border-color:#C7D3E2;
-}
-.benefit-card::before,
-.benefit-card::after{
-  content:"";
-  position:absolute;
-  border-radius:999px;
-  pointer-events:none;
-}
-.benefit-card::before{
-  width:88px;
-  height:88px;
-  right:-18px;
-  bottom:-26px;
-  background:rgba(255,255,255,0.26);
-}
-.benefit-card::after{
-  width:60px;
-  height:60px;
-  right:12px;
-  bottom:-6px;
-  background:rgba(255,255,255,0.14);
-}
+
 .benefit-copy{
   position:relative;
-  z-index:1;
-  max-width:calc(100% - 26px);
+  z-index:2;
+  max-width:calc(100% - 48px);
 }
+
 .benefit-title{
   display:block;
   margin:0 0 6px;
@@ -459,6 +427,7 @@ img{ display:block; }
   overflow:hidden;
   text-overflow:ellipsis;
 }
+
 .benefit-desc{
   margin:0;
   font-size:12px;
@@ -467,15 +436,137 @@ img{ display:block; }
   letter-spacing:-0.03em;
   color:#111;
 }
+
 .benefit-icon{
   position:absolute;
   right:12px;
   bottom:8px;
-  width:27px;
-  height:27px;
+  width:28px;
+  height:28px;
   object-fit:contain;
-  z-index:1;
+  z-index:2;
 }
+
+/* 카드 배경 */
+
+.benefit-card--pink{
+  background:#FBEFF2;
+  border-color:#D8C3CB;
+}
+
+.benefit-card--yellow{
+  background:#F8EFD9;
+  border-color:#DDCC9B;
+}
+
+.benefit-card--blue{
+  background:#EEF3F9;
+  border-color:#C8D5E4;
+}
+
+.benefit-card--green-fixed{
+  background:#EEF6F1;
+  border-color:#C8DBD1;
+}
+
+/* 공통 원형 장식: 노랑/파랑 전용 */
+.benefit-card--yellow::before,
+.benefit-card--yellow::after,
+.benefit-card--blue::before,
+.benefit-card--blue::after{
+  content:"";
+  position:absolute;
+  border-radius:999px;
+  pointer-events:none;
+}
+
+.benefit-card--yellow::before,
+.benefit-card--blue::before{
+  width:92px;
+  height:92px;
+  right:-18px;
+  bottom:-28px;
+  background:rgba(255,255,255,0.34);
+}
+
+.benefit-card--yellow::after,
+.benefit-card--blue::after{
+  width:62px;
+  height:62px;
+  right:10px;
+  bottom:-8px;
+  background:rgba(255,255,255,0.22);
+}
+
+/* pink 카드: 아래 흰 원 제거, 좌상단만 강조 */
+.benefit-card--pink::before,
+.benefit-card--pink::after{
+  content:"";
+  position:absolute;
+  border-radius:999px;
+  pointer-events:none;
+}
+
+.benefit-card--pink::before{
+  left:-16px;
+  top:-34px;
+  width:96px;
+  height:96px;
+  background:rgba(255,255,255,0.46);
+}
+
+.benefit-card--pink::after{
+  display:none;
+}
+
+/* green 카드 전용: 원본처럼 좌상단 큰 원 + 우하단 작은 원 */
+.benefit-card--green-fixed .benefit-copy{
+  max-width:calc(100% - 34px);
+}
+
+.benefit-card--green-fixed .benefit-title{
+  white-space:nowrap;
+  overflow:visible;
+  text-overflow:clip;
+  letter-spacing:-0.045em;
+}
+
+.benefit-card--green-fixed .benefit-desc{
+  letter-spacing:-0.04em;
+}
+
+.benefit-card--green-fixed::before,
+.benefit-card--green-fixed::after{
+  content:"";
+  position:absolute;
+  border-radius:999px;
+  pointer-events:none;
+}
+
+.benefit-card--green-fixed::before{
+  left:-20px;
+  top:-26px;
+  width:108px;
+  height:108px;
+  background:rgba(255,255,255,0.34);
+}
+
+.benefit-card--green-fixed::after{
+  right:-6px;
+  bottom:-18px;
+  width:78px;
+  height:78px;
+  background:rgba(255,255,255,0.18);
+}
+
+.benefit-icon--green-fixed{
+  right:10px;
+  bottom:7px;
+  width:26px;
+  height:26px;
+}
+
+/* more */
 
 .benefit-more-wrap{
   text-align:center;
@@ -496,9 +587,8 @@ img{ display:block; }
 .benefit-more-icon{
   width:16px;
   height:16px;
-  flex:0 0 16px;
   display:block;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23222' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3h7v7'/%3E%3Cpath d='M21 3l-9 9'/%3E%3Cpath d='M21 14v7H3V3h7'/%3E%3C/svg%3E") center / contain no-repeat;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23222' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 2.5H13.5V6.5'/%3E%3Cpath d='M13.5 2.5L7.5 8.5'/%3E%3Cpath d='M13.5 9.5V13.5H2.5V2.5H6.5'/%3E%3C/svg%3E") center/16px no-repeat;
 }
 /* =========================
    Channel section
@@ -554,7 +644,6 @@ img{ display:block; }
   font-size:13px;
   font-weight:700;
 }
-
 .ico{
   width:18px;
   height:18px;
@@ -577,11 +666,11 @@ img{ display:block; }
   place-items:center;
   font-size:11px;
 }
-
 .ico.user::before{ content:"👤"; }
 .ico.search::before{ content:"🔎"; }
 .ico.doc::before{ content:"📄"; }
 .ico.gift::before{ content:"🎁"; }
+
 /* =========================
    Footer
 ========================= */
@@ -673,7 +762,6 @@ img{ display:block; }
   align-items:start;
   padding-top:6px;
 }
-
 .bn-item{
   text-decoration:none;
   color:#222;
@@ -683,13 +771,11 @@ img{ display:block; }
   justify-content:center;
   gap:4px;
 }
-
 .bn-item span:last-child{
   font-size:11px;
   line-height:1.1;
   letter-spacing:-0.02em;
 }
-
 .bn-ico{
   width:22px;
   height:22px;
@@ -697,11 +783,9 @@ img{ display:block; }
   border-radius:999px;
   background:#EFEFEF;
 }
-
 .bn-item.active .bn-ico{
   background:#ECE8F7;
 }
-
 .i-user::before,
 .i-search::before,
 .i-doc::before,
@@ -712,28 +796,11 @@ img{ display:block; }
   place-items:center;
   font-size:13px;
 }
-
 .i-user::before{ content:"👤"; }
 .i-search::before{ content:"🔎"; }
 .i-doc::before{ content:"📄"; }
+
 .i-gift::before{ content:"🎁"; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
