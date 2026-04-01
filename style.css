@@ -91,6 +91,17 @@ img{display:block;}
   text-overflow:ellipsis;
 }
 
+/* 공지사항 텍스트 */
+.notice-text {
+  font-size: 18px;
+}
+
+/* 벨 아이콘 */
+.notice-icon {
+  width: 18px;
+  height: 18px;
+}
+
 /* =========================
    Header
 ========================= */
@@ -124,7 +135,7 @@ img{display:block;}
 }
 
 .topbar-user-name{
-  font-size:18px;
+  font-size:20px;
   font-weight:700;
   line-height:1;
   letter-spacing:-0.02em;
@@ -228,15 +239,15 @@ img{display:block;}
   background:#fff;
 }
 .bell-img{
-  width:18px;
-  height:18px;
+  width:20px;
+  height:20px;
   display:inline-block;
   flex:0 0 auto;
   object-fit:contain;
   filter:none;
 }
 .notice-link-text{
-  font-size:13px;
+  font-size:15px;
   font-weight:400;
   line-height:1.2;
   letter-spacing:-0.02em;
@@ -244,11 +255,12 @@ img{display:block;}
   align-items:center;
 }
 .notice-arrow{
-  width:12px;
-  height:12px;
+  width:18px;
+  height:18px;
   margin-left:6px;
   object-fit:contain;
   opacity:0.7;
+  color:#000;
 }
 
 /* =========================
@@ -356,14 +368,14 @@ img{display:block;}
 }
 .quick-item{
   height:48px;
-  padding:0 12px;
+  padding:0 8px;
   border-radius:12px;
   border:1px solid #c9d8f2;
   background:#fff;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:10px;
+  gap:6px;
   box-shadow:
     0 1px 2px rgba(31,94,180,0.06),
     0 2px 6px rgba(31,94,180,0.04);
@@ -373,7 +385,7 @@ img{display:block;}
 
 .quick-item:link{
   height:48px;
-  padding:0 10px;
+  padding:0 8px;
   border-radius:12px;
   border:1px solid #dbe3f0;
   background:#fff;
@@ -382,13 +394,13 @@ img{display:block;}
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:10px;
+  gap:6px;
   box-shadow:0 2px 4px rgba(0,0,0,0.04);
 }
 
 .quick-item:active{background:#F5F8FF;}
 .quick-label{
-  font-size:14px;
+  font-size:13px;
   font-weight:550;
   letter-spacing:-0.02em;
   color:#111;
@@ -801,21 +813,30 @@ img{display:block;}
 }
 
 .lifeguide-tabs{
-  display:grid;
-  grid-template-columns:repeat(6, minmax(0, 1fr));
-  column-gap:18px;
-  padding:12px 12px 0;
+  display:flex;
+  gap:9px;
+  padding:12px 0px 0;
   margin:0 0 18px;
   min-height:84px;
-  align-items:start;
+  align-items:flex-start;
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
 }
+.lifeguide-tabs::-webkit-scrollbar{
+  display:none;
+}
+
 
 .lifeguide-tab{
   border:0;
   background:none;
   padding:0;
   margin:0;
-  min-width:0;
+  min-width:52px;
+  flex:0 0 52px;
   min-height:72px;
   display:flex;
   flex-direction:column;
@@ -825,6 +846,8 @@ img{display:block;}
   color:#111;
   font-size:12px;
   font-weight:400;
+  line-height:1.2;
+  white-space:normal;
 }
 
 .lifeguide-tab .img-wrap{
@@ -839,8 +862,8 @@ img{display:block;}
 }
 
 .lifeguide-tab .img-wrap img{
-  width:38px;
-  height:38px;
+  width:40px;
+  height:40px;
 }
 
 .lifeguide-tab > img{
@@ -860,7 +883,12 @@ img{display:block;}
 .lifeguide-tab.is-active .img-wrap,
 .lifeguide-tab.is-active > img{
   background:#fff;
-  border-color:#7086a0;
+  border:2px solid transparent;
+  border-radius:14px;
+
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(to bottom, #2AC769, #3B82F6) border-box;
 }
 
 /* 패널 */
@@ -1739,7 +1767,7 @@ img{display:block;}
 .footer-title{
   display:block;
   margin-bottom:6px;
-  font-size:13px;
+  font-size:15px;
   font-weight:700;
   line-height:1.35;
   color:#111;
@@ -1748,7 +1776,7 @@ img{display:block;}
 
 .footer-text{
   margin:0;
-  font-size:12px;
+  font-size:14px;
   font-weight:400;
   line-height:1.72;
   color:#000;
