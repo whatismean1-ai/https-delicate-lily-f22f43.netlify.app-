@@ -1,0 +1,2876 @@
+/* ===== COMMON.CSS ===== */
+/* ===== LAND ===== */
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://static.gov.kr/content/fonts/PretendardGOV-Bold.subset.woff2') format('woff2'),
+       url('https://static.gov.kr/content/fonts/PretendardGOV-Bold.subset.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://static.gov.kr/content/fonts/PretendardGOV-Medium.subset.woff2') format('woff2'),
+       url('https://static.gov.kr/content/fonts/PretendardGOV-Medium.subset.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://static.gov.kr/content/fonts/PretendardGOV-Regular.subset.woff2') format('woff2'),
+       url('https://static.gov.kr/content/fonts/PretendardGOV-Regular.subset.woff') format('woff');
+}
+
+/* =========================
+   LAND RESET
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body.land-page {
+  font-family: "Pretendard GOV", "Pretendard", "Noto Sans KR", sans-serif;
+  background: #fff;
+  color: #000;
+  font-size: 15.5px;
+  font-weight: 450;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  -webkit-text-size-adjust: 100%;
+}
+
+.land-page img {
+  max-width: 100%;
+}
+
+.land-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.land-page button,
+.land-page input,
+.land-page select,
+.land-page textarea {
+  font: inherit;
+}
+.land-inline-icon,
+.land-lower-plus img,
+.land-footer-social-icon,
+.land-topbar-ai-icon,
+.land-menu-icon,
+.land-servicebar-btn img {
+  display: inline-block;
+}
+
+/* =========================
+   LAND STAGE + PHONE
+========================= */
+.land-stage {
+  min-height: 100vh;
+  display: grid;
+  place-items: start center;
+  padding: 0;
+  background: #fff;
+}
+
+.land-phone {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100vh;
+    overflow-x: hidden;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 0;
+  padding-bottom: 0;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.land-phone::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+@media (min-width: 600px) {
+  .land-stage {
+    padding: 24px 12px;
+  }
+
+  .land-phone {
+    width: 402px;
+    max-width: 92vw;
+    max-height: calc(100vh - 48px);
+    border-radius: 14px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0 10px 30px;
+  }
+}
+
+/* =========================
+   TOP NOTICE
+========================= */
+.land-notice-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 16px;
+  background: #eef2f7;
+}
+
+.land-notice-top img {
+  width: 28px;
+  height: 18px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.land-notice-msg {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.3;
+  color: #111;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   HEADER
+========================= */
+.land-topbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 16px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.land-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.land-brand-logo {
+  width: 90px;
+  height: auto;
+}
+
+.land-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 0 0 auto;
+}
+
+.land-topbar-ai {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-width: 44px;
+  color: inherit;
+}
+
+.land-topbar-ai-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.land-topbar-ai-text {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #111;
+  white-space: nowrap;
+}
+
+.land-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  width: auto;
+  min-width: 44px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.land-menu-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.land-menu-text {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #111;
+  white-space: nowrap;
+}
+
+/* =========================
+   TITLEBAR
+========================= */
+.land-servicebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 56px;
+   padding: 0 8px 0 4px;
+  background: #fff;
+}
+
+.land-servicebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.land-servicebar-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.land-servicebar-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #222;
+  word-break: keep-all;
+}
+
+.land-servicebar-btn-share {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #d8dce3;
+  border-radius: 0;
+}
+
+.land-servicebar-btn-share img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.land-content {
+  padding: 0 16px 0;
+  background: #fff;
+}
+
+.land-section {
+  padding-top: 28px;
+}
+
+.land-section-first {
+  padding-top: 9px;
+}
+
+.land-section-title {
+  margin: 0 0 30px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #111;
+}
+
+.land-section-line {
+  height: 1px;
+  margin-top: 44px;
+  margin-bottom: 28px;
+  background: #dcdcdc;
+}
+
+.land-info-block {
+  margin-bottom: 36px;
+}
+
+.land-info-title {
+  margin: 0 0 28px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111;
+}
+
+.land-info-desc {
+  margin: 0;
+  font-size: 15px;
+  line-height: 2.05;
+  color: #444;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.land-section-basic {
+  margin-top: 10px;
+  padding-top: 40px;
+  border-top: 1px solid #dcdcdc;
+}
+
+.land-section-basic .land-section-title {
+  margin-bottom: 36px;
+}
+
+.land-form-chip {
+  margin-top: 18px;
+  padding: 15px 16px;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  background: #F8F8F8;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #111;
+}
+
+/* 리스트 */
+.land-bullet-list,
+.land-law-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.land-bullet-list li,
+.land-law-list li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #444;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.land-law-list li {
+  display: list-item;
+}
+
+/* 아이콘 */
+.land-inline-icon {
+  display: inline;
+  position: relative;
+  top: 1px;                /* 핵심 */
+  width: 1.3em;
+  height: 1.3em;
+  margin-left: 0;
+  vertical-align: text-bottom;
+}
+
+/* step */
+.land-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 34px;
+}
+
+.land-step-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.land-step-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 30px;
+  bottom: -22px;
+  width: 1px;
+  background: #d7deef;
+}
+
+.land-step-num {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: #003675;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.land-step-body {
+  min-width: 0;
+}
+
+.land-step-title {
+  margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #003675;
+}
+
+.land-step-desc {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #003675;
+}
+
+/* 참고 박스 */
+.land-note-box {
+  position: relative;
+  padding: 16px 16px 16px 40px;
+  border: 1px solid #ececec;
+  border-radius: 16px;
+  background: #fafafa;
+}
+
+.land-note-box::before {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 14px;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'><circle cx='8' cy='8' r='6.5' stroke='%23999' stroke-width='1.2'/><path d='M8 4.6V8.2' stroke='%23999' stroke-width='1.2' stroke-linecap='round'/><circle cx='8' cy='10.9' r='0.8' fill='%23999'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+}
+
+.land-note-title {
+  margin-bottom: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #555;
+}
+
+.land-note-box p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #666;
+  word-break: keep-all;
+}
+
+/* 기관 */
+.land-agency-text {
+  margin: 12px 0 34px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #111;
+  word-break: keep-all;
+}
+
+/* 마지막 */
+.land-section:last-of-type {
+  padding-bottom: 60px;
+}
+
+/* =========================
+   LOWER LINKS
+========================= */
+.land-lower-links {
+  margin-top: 44px;
+  padding: 0;
+  background: #fff;
+}
+
+.land-lower-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  border: 0;
+  border-top: 1px solid #DFE3E8;
+  background: #fff;
+  font-size: 16px !important;
+  font-weight: 400;
+  color: #111;
+  cursor: pointer;
+}
+
+.land-lower-row:last-child {
+  border-bottom: 1px solid #DFE3E8;
+}
+
+.land-lower-row span:first-child {
+  letter-spacing: -0.02em;
+}
+
+.land-lower-plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.land-lower-plus img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.7;
+  opacity: 1;      /* 검정 진하게 */
+ filter: brightness(0);  /* 검정으로 변환 */
+}
+
+/* =========================
+   POLICY / CHANNEL MODAL
+========================= */
+.land-policy-modal[hidden],
+.land-channel-modal[hidden] {
+  display: none;
+}
+
+.land-policy-modal,
+.land-channel-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+}
+
+.land-policy-modal-dim,
+.land-channel-modal-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.26);
+}
+
+.land-policy-modal-box {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  width: calc(100% - 32px);
+  max-width: 364px;
+  padding: 28px 18px 34px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.land-policy-modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.land-policy-modal-head h2 {
+  margin: 0;
+  color: #222;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.land-policy-modal-close {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  margin: -4px -2px 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #666;
+  font-size: 40px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+
+.land-policy-modal-list {
+  display: grid;
+  gap: 10px;
+}
+
+.land-policy-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 92px;
+  padding: 0 16px;
+  border: 1px solid #ece3e7;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.land-policy-item img {
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.land-policy-item:nth-child(1) img { background: #E7F6EF; }
+.land-policy-item:nth-child(2) img { background: #EEF3FF; }
+.land-policy-item:nth-child(3) img { background: #FFF1F3; }
+.land-policy-item:nth-child(4) img { background: #EEF0FF; }
+
+.land-policy-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.land-policy-text strong {
+  color: #333;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.land-policy-text span {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+  word-break: keep-all;
+}
+
+.land-channel-modal-box {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 32px);
+  max-width: 356px;
+  max-height: 80vh;
+  padding: 30px 16px 24px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.land-channel-modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  margin-bottom: 26px;
+}
+
+.land-channel-modal-head h2 {
+  margin: 0;
+  transform: translateY(3px);
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.land-channel-modal-close {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  margin: -4px -2px 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 30px;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+}
+
+.land-channel-modal-list {
+  display: grid;
+  gap: 12px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding-right: 2px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.land-channel-modal-list::-webkit-scrollbar {
+  display: none;
+}
+
+.land-channel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 86px;
+  padding: 0 18px;
+  border: 1px solid #ece3e7;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.land-channel-item img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 72px;
+  object-fit: contain;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.land-footer {
+  padding-top: 18px;
+  padding-bottom: 12px;
+  background: #F8F8F8;
+}
+
+.land-footer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 18px 20px 12px;
+}
+
+.land-footer-head-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.land-footer-logo-mark {
+  width: 90px;
+  height: auto;
+}
+
+.land-footer-toggle-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.8;
+  filter: contrast(2.5) brightness(0.6);
+}
+
+.land-footer-head-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-right: 4px; /* 살짝 더 밀기 (원본 느낌) */
+}
+
+.land-footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #D7DCE2;
+  border-radius: 50%;
+  background: #f8f8f8;
+}
+
+.land-footer-social-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.land-footer-info {
+  padding: 0 0px 18px;
+  background: #F8F8F8;
+}
+
+.land-footer-block {
+margin: 0 20px 16px;   /* 좌우 여백 여기로 이동 */
+}
+
+.land-footer-title {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #111;
+  letter-spacing: -0.03em;
+}
+
+.land-footer-text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.72;
+  color: #000;
+  letter-spacing: -0.02em;
+}
+
+.land-footer-divider {
+  height: 1px;
+  margin: 14px 0;
+  background: #DFE3E8;
+}
+
+.land-footer-links {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.land-footer-links a:first-child {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0A3D91;
+}
+
+.land-footer-links a:last-child {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #222222;
+}
+
+.land-footer-copy {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000;
+  letter-spacing: -0.01em;
+}
+
+/* =========================
+   BOTTOM CTA
+========================= */
+.land-bottom-cta {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  padding: 18px 28px 34px;
+  background: #fff;
+  border-top: 1px solid #e8e8e8;
+}
+
+.land-issue-btn {
+  width: 100%;
+  height: 56px;
+  border: 0;
+  border-radius: 12px;
+  background: #2f5ee5;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 600px) {
+  .land-bottom-cta {
+    left: 50%;
+    right: auto;
+    width: 402px;
+    max-width: 92vw;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+  }
+}
+body.building-page .land-phone{
+  padding-bottom:80px;
+}
+
+/* ===== CAR ===== */
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://static.gov.kr/content/fonts/PretendardGOV-Bold.subset.woff2') format('woff2'),
+       url('https://static.gov.kr/content/fonts/PretendardGOV-Bold.subset.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://static.gov.kr/content/fonts/PretendardGOV-Medium.subset.woff2') format('woff2'),
+       url('https://static.gov.kr/content/fonts/PretendardGOV-Medium.subset.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://static.gov.kr/content/fonts/PretendardGOV-Regular.subset.woff2') format('woff2'),
+       url('https://static.gov.kr/content/fonts/PretendardGOV-Regular.subset.woff') format('woff');
+}
+
+/* =========================
+   LAND RESET
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body.car-page {
+  font-family: "Pretendard GOV", "Pretendard", "Noto Sans KR", sans-serif;
+  background: #fff;
+  color: #000;
+  font-size: 15.5px;
+  font-weight: 450;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  -webkit-text-size-adjust: 100%;
+}
+
+.car-page img {
+  max-width: 100%;
+}
+
+.car-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.car-page button,
+.car-page input,
+.car-page select,
+.car-page textarea {
+  font: inherit;
+}
+.car-inline-icon,
+.car-lower-plus img,
+.car-footer-social-icon,
+.car-topbar-ai-icon,
+.car-menu-icon,
+.car-servicebar-btn img {
+  display: inline-block;
+}
+
+/* =========================
+   LAND STAGE + PHONE
+========================= */
+.car-stage {
+  min-height: 100vh;
+  display: grid;
+  place-items: start center;
+  padding: 0;
+  background: #fff;
+}
+
+.car-phone {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100vh;
+    overflow-x: hidden;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 0;
+  padding-bottom: 0;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.car-phone::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+@media (min-width: 600px) {
+  .car-stage {
+    padding: 24px 12px;
+  }
+
+  .car-phone {
+    width: 402px;
+    max-width: 92vw;
+    max-height: calc(100vh - 48px);
+    border-radius: 14px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0 10px 30px;
+  }
+}
+
+/* =========================
+   TOP NOTICE
+========================= */
+.car-notice-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 16px;
+  background: #eef2f7;
+}
+
+.car-notice-top img {
+  width: 28px;
+  height: 18px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.car-notice-msg {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.3;
+  color: #111;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   HEADER
+========================= */
+.car-topbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 16px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.car-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.car-brand-logo {
+  width: 90px;
+  height: auto;
+}
+
+.car-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 0 0 auto;
+}
+
+.car-topbar-ai {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-width: 44px;
+  color: inherit;
+}
+
+.car-topbar-ai-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.car-topbar-ai-text {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #111;
+  white-space: nowrap;
+}
+
+.car-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  width: auto;
+  min-width: 44px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.car-menu-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.car-menu-text {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #111;
+  white-space: nowrap;
+}
+
+/* =========================
+   TITLEBAR
+========================= */
+.car-servicebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 56px;
+  padding: 0 8px 0 4px;
+  background: #fff;
+}
+
+
+.car-servicebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.car-servicebar-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.car-servicebar-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #222;
+  word-break: keep-all;
+}
+
+.car-servicebar-btn-share {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #d8dce3;
+  border-radius: 0;
+}
+
+.car-servicebar-btn-share img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.car-content {
+  padding: 0 16px 0;
+  background: #fff;
+}
+
+.car-section {
+  padding-top: 28px;
+}
+
+.car-section-first {
+  padding-top: 9px;
+}
+
+.car-section-title {
+  margin: 0 0 30px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #111;
+}
+
+.car-section-line {
+  height: 1px;
+  margin-top: 44px;
+  margin-bottom: 28px;
+  background: #dcdcdc;
+}
+
+.car-info-block {
+  margin-bottom: 36px;
+}
+
+.car-info-title {
+  margin: 0 0 28px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111;
+}
+
+.car-info-desc {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.car-section-basic {
+  margin-top: 10px;
+  padding-top: 40px;
+  border-top: 1px solid #dcdcdc;
+}
+
+.car-section-basic .car-section-title {
+  margin-bottom: 36px;
+}
+
+.car-form-chip {
+  margin-top: 18px;
+  padding: 15px 16px;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  background: #F8F8F8;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #111;
+}
+
+/* 리스트 */
+.car-bullet-list,
+.car-law-list {
+  margin: 0;
+  padding-left: 22px;
+  list-style-position: outside;
+}
+
+.car-bullet-list li,
+.car-law-list li {
+  margin: 0 0 18px 0;
+  padding-left: 2px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #444;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.car-law-list li {
+  display: list-item;
+}
+
+/* 아이콘 */
+.car-inline-icon {
+  display: inline;
+  position: relative;
+  top: 1px;                /* 핵심 */
+  width: 1.3em;
+  height: 1.3em;
+  margin-left: 0;
+  vertical-align: text-bottom;
+}
+
+/* step */
+.car-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 34px;
+}
+
+.car-step-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.car-bullet-list li::marker,
+.car-law-list li::marker {
+  font-size: 0.9em;
+}
+
+.car-bullet-list li:last-child,
+.car-law-list li:last-child {
+  margin-bottom: 0;
+}
+
+.car-step-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 30px;
+  bottom: -22px;
+  width: 1px;
+  background: #d7deef;
+}
+
+.car-step-num {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: #003675;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.car-step-body {
+  min-width: 0;
+}
+
+.car-step-title {
+  margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #003675;
+}
+
+.car-step-desc {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #003675;
+}
+
+/* 참고 박스 */
+.car-note-box {
+  position: relative;
+  padding: 16px 16px 16px 40px;
+  border: 1px solid #ececec;
+  border-radius: 16px;
+  background: #fafafa;
+}
+
+.car-note-box::before {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 14px;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'><circle cx='8' cy='8' r='6.5' stroke='%23999' stroke-width='1.2'/><path d='M8 4.6V8.2' stroke='%23999' stroke-width='1.2' stroke-linecap='round'/><circle cx='8' cy='10.9' r='0.8' fill='%23999'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+}
+
+.car-note-title {
+  margin-bottom: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #555;
+}
+
+.car-note-box p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #666;
+  word-break: keep-all;
+}
+
+/* 기관 */
+.car-agency-text {
+  margin: 12px 0 34px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #111;
+  word-break: keep-all;
+}
+
+/* 마지막 */
+.car-section:last-of-type {
+  padding-bottom: 60px;
+}
+
+/* =========================
+   LOWER LINKS
+========================= */
+.car-lower-links {
+  margin-top: 44px;
+  padding: 0;
+  background: #fff;
+}
+
+.car-lower-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  border: 0;
+  border-top: 1px solid #DFE3E8;
+  background: #fff;
+  font-size: 16px !important;
+  font-weight: 400;
+  color: #111;
+  cursor: pointer;
+}
+
+.car-lower-row:last-child {
+  border-bottom: 1px solid #DFE3E8;
+}
+
+.car-lower-row span:first-child {
+  letter-spacing: -0.02em;
+}
+
+.car-lower-plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-lower-plus img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.7;
+  opacity: 1;      /* 검정 진하게 */
+ filter: brightness(0);  /* 검정으로 변환 */
+}
+
+/* =========================
+   POLICY / CHANNEL MODAL
+========================= */
+.car-policy-modal[hidden],
+.car-channel-modal[hidden] {
+  display: none;
+}
+
+.car-policy-modal,
+.car-channel-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+}
+
+.car-policy-modal-dim,
+.car-channel-modal-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.26);
+}
+
+.car-policy-modal-box {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  width: calc(100% - 32px);
+  max-width: 364px;
+  padding: 28px 18px 34px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.car-policy-modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.car-policy-modal-head h2 {
+  margin: 0;
+  color: #222;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.car-policy-modal-close {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  margin: -4px -2px 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #666;
+  font-size: 40px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+
+.car-policy-modal-list {
+  display: grid;
+  gap: 10px;
+}
+
+.car-policy-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 92px;
+  padding: 0 16px;
+  border: 1px solid #ece3e7;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.car-policy-item img {
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.car-policy-item:nth-child(1) img { background: #E7F6EF; }
+.car-policy-item:nth-child(2) img { background: #EEF3FF; }
+.car-policy-item:nth-child(3) img { background: #FFF1F3; }
+.car-policy-item:nth-child(4) img { background: #EEF0FF; }
+
+.car-policy-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.car-policy-text strong {
+  color: #333;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.car-policy-text span {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+  word-break: keep-all;
+}
+
+.car-channel-modal-box {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 32px);
+  max-width: 356px;
+  max-height: 80vh;
+  padding: 30px 16px 24px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.car-channel-modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  margin-bottom: 26px;
+}
+
+.car-channel-modal-head h2 {
+  margin: 0;
+  transform: translateY(3px);
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.car-channel-modal-close {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  margin: -4px -2px 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 30px;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+}
+
+.car-channel-modal-list {
+  display: grid;
+  gap: 12px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding-right: 2px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.car-channel-modal-list::-webkit-scrollbar {
+  display: none;
+}
+
+.car-channel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 86px;
+  padding: 0 18px;
+  border: 1px solid #ece3e7;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.car-channel-item img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 72px;
+  object-fit: contain;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.car-footer {
+  padding-top: 18px;
+  padding-bottom: 12px;
+  background: #F8F8F8;
+}
+
+.car-footer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 18px 20px 12px;
+}
+
+.car-footer-head-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.car-footer-logo-mark {
+  width: 90px;
+  height: auto;
+}
+
+.car-footer-toggle-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.8;
+  filter: contrast(2.5) brightness(0.6);
+}
+
+.car-footer-head-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-right: 4px; /* 살짝 더 밀기 (원본 느낌) */
+}
+
+.car-footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #D7DCE2;
+  border-radius: 50%;
+  background: #f8f8f8;
+}
+
+.car-footer-social-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.car-footer-info {
+  padding: 0 0px 18px;
+  background: #F8F8F8;
+}
+
+.car-footer-block {
+margin: 0 20px 16px;   /* 좌우 여백 여기로 이동 */
+}
+
+.car-footer-title {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #111;
+  letter-spacing: -0.03em;
+}
+
+.car-footer-text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.72;
+  color: #000;
+  letter-spacing: -0.02em;
+}
+
+.car-footer-divider {
+  height: 1px;
+  margin: 14px 0;
+  background: #DFE3E8;
+}
+
+.car-footer-links {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.car-footer-links a:first-child {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0A3D91;
+}
+
+.car-footer-links a:last-child {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #222222;
+}
+
+.car-footer-copy {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000;
+  letter-spacing: -0.01em;
+}
+
+/* =========================
+   BOTTOM CTA
+========================= */
+.car-bottom-cta {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  padding: 18px 28px 34px;
+  background: #fff;
+  border-top: 1px solid #e8e8e8;
+}
+
+.car-issue-btn {
+  width: 100%;
+  height: 56px;
+  border: 0;
+  border-radius: 12px;
+  background: #2f5ee5;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 600px) {
+  .car-bottom-cta {
+    left: 50%;
+    right: auto;
+    width: 402px;
+    max-width: 92vw;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+  }
+}
+body.car-page .car-phone{
+  padding-bottom:80px;
+}
+
+/* ===== CAR OVERRIDE ===== */
+
+/* =========================
+   CONTENT (수정 반영됨)
+========================= */
+.car-content {
+  padding: 0 16px 0; /* 20 → 16 */
+  background: #fff;
+}
+
+.car-section {
+  padding-top: 24px; /* 28 → 24 */
+}
+
+.car-section-first {
+  padding-top: 4px; /* 9 → 4 */
+}
+
+.car-section-title {
+  margin: 0 0 24px; /* 30 → 24 */
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3; /* 1.35 → 1.3 */
+  color: #111;
+}
+
+.car-section-line {
+  height: 1px;
+  margin-top: 32px; /* 44 → 32 */
+  margin-bottom: 24px; /* 28 → 24 */
+  background: #dcdcdc;
+}
+
+.car-info-block {
+  margin-bottom: 28px; /* 36 → 28 */
+}
+
+.car-info-title {
+  margin: 0 0 18px; /* 28 → 18 */
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #111;
+}
+
+/* 자동차등록원부 제목 2줄만 */
+.car-section:nth-of-type(4) .car-info-block:first-child p:first-of-type,
+.car-section:nth-of-type(4) .car-info-block:first-child p:nth-of-type(3){
+  font-size:17px;
+  font-weight:700;
+}
+
+.car-info-desc {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.82; /* 2.05 → 1.82 */
+  font-weight: 400;
+  color: #444;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.car-section-basic {
+  margin-top: 10px;
+  padding-top: 32px; /* 40 → 32 */
+  border-top: 1px solid #dcdcdc;
+}
+
+.car-section-basic .car-section-title {
+  margin-bottom: 28px; /* 36 → 28 */
+}
+
+.car-form-chip {
+  margin-top: 14px; /* 18 → 14 */
+  padding: 12px 16px; /* 15 → 12 */
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  background: #F8F8F8;
+  font-size: 15px;
+  line-height: 1.35;
+  color: #111;
+}
+
+/* 리스트 */
+.car-bullet-list li,
+.car-law-list li {
+  margin-bottom: 8px; /* 12 → 8 */
+  font-size: 16px;
+  line-height: 1.72; /* 1.9 → 1.72 */
+  color: #444;
+}
+
+/* 기관 */
+.car-agency-text {
+  margin: 10px 0 22px; /* 12/34 → 10/22 */
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #111;
+}
+
+body.car-page{
+  font-size:15.5px;
+}
+
+/* ===== CHOBON ===== */
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://static.gov.kr/content/fonts/PretendardGOV-Bold.subset.woff2') format('woff2'),
+       url('https://static.gov.kr/content/fonts/PretendardGOV-Bold.subset.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://static.gov.kr/content/fonts/PretendardGOV-Medium.subset.woff2') format('woff2'),
+       url('https://static.gov.kr/content/fonts/PretendardGOV-Medium.subset.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://static.gov.kr/content/fonts/PretendardGOV-Regular.subset.woff2') format('woff2'),
+       url('https://static.gov.kr/content/fonts/PretendardGOV-Regular.subset.woff') format('woff');
+}
+
+/* =========================
+   LAND RESET
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body.chobon-page {
+  font-family: "Pretendard GOV", "Pretendard", "Noto Sans KR", sans-serif;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  -webkit-text-size-adjust: 100%;
+}
+
+.chobon-page img {
+  max-width: 100%;
+}
+
+.chobon-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.chobon-page button,
+.chobon-page input,
+.chobon-page select,
+.chobon-page textarea {
+  font: inherit;
+}
+.chobon-inline-icon,
+.chobon-lower-plus img,
+.chobon-footer-social-icon,
+.chobon-topbar-ai-icon,
+.chobon-menu-icon,
+.chobon-servicebar-btn img {
+  display: inline-block;
+}
+
+/* =========================
+   LAND STAGE + PHONE
+========================= */
+.chobon-stage {
+  min-height: 100vh;
+  display: grid;
+  place-items: start center;
+  padding: 0;
+  background: #fff;
+}
+
+.chobon-phone {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100vh;
+    overflow-x: hidden;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 0;
+  padding-bottom: 0;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.chobon-phone::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+@media (min-width: 600px) {
+  .chobon-stage {
+    padding: 24px 12px;
+  }
+
+  .chobon-phone {
+    width: 402px;
+    max-width: 92vw;
+    max-height: calc(100vh - 48px);
+    border-radius: 14px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0 10px 30px;
+  }
+}
+
+/* =========================
+   TOP NOTICE
+========================= */
+.chobon-notice-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 16px;
+  background: #eef2f7;
+}
+
+.chobon-notice-top img {
+  width: 28px;
+  height: 18px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.chobon-notice-msg {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.3;
+  color: #111;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   HEADER
+========================= */
+.chobon-topbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 16px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.chobon-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.chobon-brand-logo {
+  width: 90px;
+  height: auto;
+}
+
+.chobon-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 0 0 auto;
+}
+
+.chobon-topbar-ai {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-width: 44px;
+  color: inherit;
+}
+
+.chobon-topbar-ai-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.chobon-topbar-ai-text {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #111;
+  white-space: nowrap;
+}
+
+.chobon-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  width: auto;
+  min-width: 44px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.chobon-menu-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.chobon-menu-text {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #111;
+  white-space: nowrap;
+}
+
+/* =========================
+   TITLEBAR
+========================= */
+.chobon-servicebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 56px;
+  padding: 0 8px 0 4px;
+  background: #fff;
+}
+
+.chobon-servicebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.chobon-servicebar-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.chobon-servicebar-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #222;
+  word-break: keep-all;
+}
+
+.chobon-servicebar-btn-share {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #d8dce3;
+  border-radius: 0;
+}
+
+.chobon-servicebar-btn-share img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.chobon-content {
+  padding: 0 16px 0;
+  background: #fff;
+}
+
+.chobon-section {
+  padding-top: 28px;
+}
+
+.chobon-section-first {
+  padding-top: 9px;
+}
+
+.chobon-section-title {
+  margin: 0 0 30px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #111;
+}
+
+.chobon-section-line {
+  height: 1px;
+  margin-top: 44px;
+  margin-bottom: 28px;
+  background: #dcdcdc;
+}
+
+.chobon-info-block {
+  margin-bottom: 36px;
+}
+
+.chobon-info-title {
+  margin: 0 0 28px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111;
+}
+
+.chobon-info-desc {
+  margin: 0;
+  font-size: 15px;
+  line-height: 2.05;
+  color: #444;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.chobon-section-basic {
+  margin-top: 10px;
+  padding-top: 40px;
+  border-top: 1px solid #dcdcdc;
+}
+
+.chobon-section-basic .chobon-section-title {
+  margin-bottom: 36px;
+}
+
+.chobon-form-chip {
+  margin-top: 18px;
+  padding: 15px 16px;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  background: #F8F8F8;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #111;
+}
+
+/* 리스트 */
+.chobon-bullet-list,
+.chobon-law-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.chobon-bullet-list li,
+.chobon-law-list li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #444;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.chobon-law-list li {
+  display: list-item;
+}
+
+/* 아이콘 */
+.chobon-inline-icon {
+  display: inline;
+  position: relative;
+  top: 1px;                /* 핵심 */
+  width: 1.3em;
+  height: 1.3em;
+  margin-left: 0;
+  vertical-align: text-bottom;
+}
+
+/* step */
+.chobon-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 34px;
+}
+
+.chobon-step-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.chobon-step-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 30px;
+  bottom: -22px;
+  width: 1px;
+  background: #d7deef;
+}
+
+.chobon-step-num {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: #003675;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.chobon-step-body {
+  min-width: 0;
+}
+
+.chobon-step-title {
+  margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #003675;
+}
+
+.chobon-step-desc {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #003675;
+}
+
+/* 참고 박스 */
+.chobon-note-box {
+  position: relative;
+  padding: 16px 16px 16px 40px;
+  border: 1px solid #ececec;
+  border-radius: 16px;
+  background: #fafafa;
+}
+
+.chobon-note-box::before {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 14px;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'><circle cx='8' cy='8' r='6.5' stroke='%23999' stroke-width='1.2'/><path d='M8 4.6V8.2' stroke='%23999' stroke-width='1.2' stroke-linecap='round'/><circle cx='8' cy='10.9' r='0.8' fill='%23999'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+}
+
+.chobon-note-title {
+  margin-bottom: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #555;
+}
+
+.chobon-note-box p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #666;
+  word-break: keep-all;
+}
+
+/* 기관 */
+.chobon-agency-text {
+  margin: 12px 0 34px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #111;
+  word-break: keep-all;
+}
+
+/* 마지막 */
+.chobon-section:last-of-type {
+  padding-bottom: 60px;
+}
+
+/* =========================
+   LOWER LINKS
+========================= */
+.chobon-lower-links {
+  margin-top: 44px;
+  padding: 0;
+  background: #fff;
+}
+
+.chobon-lower-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  border: 0;
+  border-top: 1px solid #DFE3E8;
+  background: #fff;
+  font-size: 16px !important;
+  font-weight: 400;
+  color: #111;
+  cursor: pointer;
+}
+
+.chobon-lower-row:last-child {
+  border-bottom: 1px solid #DFE3E8;
+}
+
+.chobon-lower-row span:first-child {
+  letter-spacing: -0.02em;
+}
+
+.chobon-lower-plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chobon-lower-plus img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.7;
+  opacity: 1;      /* 검정 진하게 */
+ filter: brightness(0);  /* 검정으로 변환 */
+}
+
+/* =========================
+   POLICY / CHANNEL MODAL
+========================= */
+.chobon-policy-modal[hidden],
+.chobon-channel-modal[hidden] {
+  display: none;
+}
+
+.chobon-policy-modal,
+.chobon-channel-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+}
+
+.chobon-policy-modal-dim,
+.chobon-channel-modal-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.26);
+}
+
+.chobon-policy-modal-box {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  width: calc(100% - 32px);
+  max-width: 364px;
+  padding: 28px 18px 34px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.chobon-policy-modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.chobon-policy-modal-head h2 {
+  margin: 0;
+  color: #222;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.chobon-policy-modal-close {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  margin: -4px -2px 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #666;
+  font-size: 40px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+
+.chobon-policy-modal-list {
+  display: grid;
+  gap: 10px;
+}
+
+.chobon-policy-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 92px;
+  padding: 0 16px;
+  border: 1px solid #ece3e7;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.chobon-policy-item img {
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.chobon-policy-item:nth-child(1) img { background: #E7F6EF; }
+.chobon-policy-item:nth-child(2) img { background: #EEF3FF; }
+.chobon-policy-item:nth-child(3) img { background: #FFF1F3; }
+.chobon-policy-item:nth-child(4) img { background: #EEF0FF; }
+
+.chobon-policy-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.chobon-policy-text strong {
+  color: #333;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.chobon-policy-text span {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+  word-break: keep-all;
+}
+
+.chobon-channel-modal-box {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 32px);
+  max-width: 356px;
+  max-height: 80vh;
+  padding: 30px 16px 24px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.chobon-channel-modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  margin-bottom: 26px;
+}
+
+.chobon-channel-modal-head h2 {
+  margin: 0;
+  transform: translateY(3px);
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.chobon-channel-modal-close {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  margin: -4px -2px 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 30px;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+}
+
+.chobon-channel-modal-list {
+  display: grid;
+  gap: 12px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding-right: 2px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.chobon-channel-modal-list::-webkit-scrollbar {
+  display: none;
+}
+
+.chobon-channel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 86px;
+  padding: 0 18px;
+  border: 1px solid #ece3e7;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.chobon-channel-item img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 72px;
+  object-fit: contain;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.chobon-footer {
+  padding-top: 18px;
+  padding-bottom: 12px;
+  background: #F8F8F8;
+}
+
+.chobon-footer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 18px 20px 12px;
+}
+
+.chobon-footer-head-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chobon-footer-logo-mark {
+  width: 90px;
+  height: auto;
+}
+
+.chobon-footer-toggle-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.8;
+  filter: contrast(2.5) brightness(0.6);
+}
+
+.chobon-footer-head-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-right: 4px; /* 살짝 더 밀기 (원본 느낌) */
+}
+
+.chobon-footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #D7DCE2;
+  border-radius: 50%;
+  background: #f8f8f8;
+}
+
+.chobon-footer-social-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.chobon-footer-info {
+  padding: 0 0px 18px;
+  background: #F8F8F8;
+}
+
+.chobon-footer-block {
+margin: 0 20px 16px;   /* 좌우 여백 여기로 이동 */
+}
+
+.chobon-footer-title {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #111;
+  letter-spacing: -0.03em;
+}
+
+.chobon-footer-text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.72;
+  color: #000;
+  letter-spacing: -0.02em;
+}
+
+.chobon-footer-divider {
+  height: 1px;
+  margin: 14px 0;
+  background: #DFE3E8;
+}
+
+.chobon-footer-links {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.chobon-footer-links a:first-child {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0A3D91;
+}
+
+.chobon-footer-links a:last-child {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #222222;
+}
+
+.chobon-footer-copy {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000;
+  letter-spacing: -0.01em;
+}
+
+/* =========================
+   BOTTOM CTA
+========================= */
+.chobon-bottom-cta {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  z-index: 20;
+  padding: 18px 28px 34px;
+  background: #fff;
+  border-top: 1px solid #e8e8e8;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
+}
+
+.chobon-issue-btn {
+  width: 100%;
+  height: 56px;
+  border: 0;
+  border-radius: 12px;
+  background: #2f5ee5;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 600px) {
+  .chobon-bottom-cta {
+    left: 50%;
+    right: auto;
+    width: 402px;
+    max-width: 92vw;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+  }
+}

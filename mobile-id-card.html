@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./style.css?v=999" />
+  <link rel="stylesheet" href="./mobile-id-card.css?v=1" />
+  <title>주민등록증 모바일 확인서비스</title>
+</head>
+<body>
+  <div class="stage">
+    <main class="phone mid-page" aria-label="주민등록증 모바일 확인서비스">
+
+      <header class="mid-topbar">
+        <a class="mid-topbar-back" href="./mobile-id.html" aria-label="뒤로">
+          <span class="mid-topbar-back-arrow" aria-hidden="true">◀</span>
+          <span class="mid-topbar-back-text">정부24</span>
+        </a>
+
+        <div class="mid-topbar-title-group" aria-label="주민등록증 모바일 확인서비스">
+          <img
+            class="mid-topbar-logo"
+            src="./assets/ico-korean-flag.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="mid-topbar-title">주민등록증 모바일 확인서비스</span>
+        </div>
+
+        <a class="mid-topbar-menu" href="./menu.html" aria-label="전체메뉴">
+          <img
+            class="mid-topbar-menu-icon"
+            src="./assets/ico-allmenu.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </a>
+      </header>
+
+      <section class="mid-card" aria-label="모바일 확인 카드">
+        <div class="mid-card-inner">
+
+          <div class="mid-card-photo-row">
+            <div class="mid-card-photo"></div>
+
+            <button type="button" class="mid-card-expand" aria-label="확대">
+              <span class="mid-card-expand-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="mid-card-info-row">
+            <div class="mid-card-person">
+              <div class="mid-card-name">홍길동</div>
+              <div class="mid-card-address">광주광역시 광산구</div>
+            </div>
+
+            <div class="mid-card-qr" aria-label="QR코드">
+              <div class="mid-card-qr-box" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="mid-card-timer">
+            <div class="mid-card-progress">
+              <div class="mid-card-progress-bar" id="midCardProgressBar"></div>
+            </div>
+
+            <div class="mid-card-timer-row">
+              <span class="mid-card-timer-label">남은시간</span>
+              <span class="mid-card-timer-value" id="midCardRemaining">30초</span>
+            </div>
+
+            <div class="mid-card-guide">QR코드를 리더기에 스캔하세요</div>
+            <div class="mid-card-time" id="midCardNow">2026년03월10일 5:54:42</div>
+          </div>
+
+          <button type="button" class="mid-card-detail-btn">상세정보 표시</button>
+        </div>
+      </section>
+
+      <div class="mid-banner">
+        <div class="mid-banner-track"></div>
+      </div>
+
+      <div class="mid-modal-dim"></div>
+
+      <div class="mid-modal" role="dialog" aria-modal="true" aria-labelledby="midModalTitle">
+        <div class="mid-modal-head">
+          <img
+            class="mid-modal-head-icon"
+            src="./assets/ico-korean-flag.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <h2 class="mid-modal-title" id="midModalTitle">주민등록사항 조작 및 부정 사용 금지</h2>
+        </div>
+
+        <div class="mid-modal-body">
+          <p class="mid-modal-text">
+            정보통신기기에 제공된 주민등록사항을<br />
+            조작하거나 부정하게 사용시
+            <span class="mid-modal-point">3년 이하의</span><br />
+            <span class="mid-modal-point">징역</span>
+            또는
+            <span class="mid-modal-point">3천만원 이하의 벌금</span>
+            에 처해 질수<br />
+            있습니다.
+          </p>
+
+          <p class="mid-modal-law">※ 주민등록법 제37조</p>
+        </div>
+
+        <button type="button" class="mid-modal-confirm">확인</button>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
