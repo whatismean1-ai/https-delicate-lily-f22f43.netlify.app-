@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>정부24 클론</title>
+</head>
+<body>
+
+
+  <div class="stage">
+    <main class="phone" aria-label="정부24 모바일 홈">
+
+      <div class="notice-top" role="note" aria-label="공식 누리집 안내">
+        <img
+          src="./assets/ico-korea-flag.svg"
+          width="24"
+          height="16"
+          alt=""
+          aria-hidden="true"
+        />
+        <p class="notice-msg">이 누리집은 대한민국 공식 전자정부 누리집입니다.</p>
+      </div>
+
+      <header class="topbar">
+        <div class="topbar-user">
+          <span class="topbar-user-name">김종혁님</span>
+          <img
+            class="topbar-user-setting"
+            src="./assets/ico-benefit-setting.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+
+        <div class="topbar-actions">
+          <a href="#" class="topbar-ai" aria-label="정부24 AI">
+            <img
+              class="topbar-ai-icon"
+              src="./assets/ico-ai.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <span class="topbar-ai-text">정부24 AI</span>
+          </a>
+
+          <a href="./menu.html" class="menu" aria-label="전체메뉴">
+            <img
+              class="menu-icon"
+              src="./assets/ico-allmenu.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <span class="menu-text">전체메뉴</span>
+          </a>
+        </div>
+      </header>
+
+      <a class="notice-link" href="#" aria-label="공지사항 확인하기">
+        <img
+          class="bell-img"
+          src="./assets/gov24_bell_16.png"
+          srcset="./assets/gov24_bell_32.png 2x"
+          width="16"
+          height="16"
+          alt=""
+          aria-hidden="true"
+        />
+        <span class="notice-link-text">공지사항 확인하기</span>
+        <img
+          class="notice-arrow"
+          src="./assets/bg-page-next.svg"
+          alt=""
+          aria-hidden="true"
+        />
+      </a>
+
+      <div class="main-bg">
+
+        <section class="quick-section" aria-label="자주 찾는 서비스">
+          <div class="quick-section-head">
+            <h2 class="section-title">자주 찾는 서비스</h2>
+            <button type="button" class="quick-section-more" aria-label="자주 찾는 서비스 더보기">
+              <img src="./assets/ico-more-plus.svg" alt="" aria-hidden="true" class="quick-section-more-icon" />
+            </button>
+          </div>
+
+          <div class="quick-grid">
+            <a class="quick-item" href="./land_common.html">
+              <span class="quick-label">토지(임야)대장</span>
+              <img class="qi-ico" src="./assets/pdf_20_set.png" srcset="./assets/pdf_40_set.png 2x" width="20" height="20" alt="" aria-hidden="true" />
+            </a>
+
+<a class="quick-item" href="./chobon_common.html">
+  <span class="quick-label">주민등록등본(초본)</span>
+  <img class="qi-ico" src="./assets/pdf_20_set.png" srcset="./assets/pdf_40_set.png 2x" width="20" height="20" alt="" aria-hidden="true" />
+</a>
+
+            <a class="quick-item" href="./car_common.html">
+              <span class="quick-label">자동차등록원부</span>
+              <img class="qi-ico" src="./assets/pc_20_set.png" srcset="./assets/pc_40_set.png 2x" width="20" height="20" alt="" aria-hidden="true" />
+            </a>
+
+            <a class="quick-item" href="building_common.html">
+              <span class="quick-label">건축물대장</span>
+              <img class="qi-ico" src="./assets/pdf_20_set.png" srcset="./assets/pdf_40_set.png 2x" width="20" height="20" alt="" aria-hidden="true" />
+            </a>
+
+            <a class="quick-item" href="#">
+              <span class="quick-label">가족관계증명서</span>
+              <img class="qi-ico qi-ico-sm" src="./assets/link_16_set.png" srcset="./assets/link_32_set.png 2x" width="16" height="16" alt="" aria-hidden="true" />
+            </a>
+
+            <a class="quick-item" href="#">
+              <span class="quick-label">여권 재발급</span>
+              <img class="qi-ico" src="./assets/ico-mo-main-doc.svg" width="20" height="20" alt="" aria-hidden="true" />
+            </a>
+          </div>
+        </section>
+
+<section class="quick-shortcut-row" aria-label="빠른 바로가기">
+  <button type="button" class="quick-shortcut-arrow quick-shortcut-arrow-left" aria-label="이전">
+    <img src="./assets/ico-swiper-arr.svg" alt="" aria-hidden="true">
+  </button>
+
+  <div class="quick-shortcut-center">
+    <a href="#" class="quick-shortcut-chip">
+      <img src="./assets/ico-main-service-00.svg" alt="" aria-hidden="true">
+      <span>주소 영문 변환</span>
+    </a>
+
+    <a href="#" class="quick-shortcut-chip">
+      <img src="./assets/ico-main-service-09.svg" alt="" aria-hidden="true">
+      <span>주간 환율</span>
+    </a>
+  </div>
+
+  <button type="button" class="quick-shortcut-arrow quick-shortcut-arrow-right" aria-label="다음">
+    <img src="./assets/ico-arr-right.svg" alt="" aria-hidden="true">
+  </button>
+</section>
+
+<section class="benefit-section">
+  <div class="benefit-inner">
+    <svg class="benefit-shape" viewBox="0 0 390 188" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M18 5
+               H112
+               C132 5 138 6 142 18
+               V30
+               C142 44 158 52 184 52
+               H370
+               C380 52 389 61 389 73
+               V171
+               C389 179 380 186 370 186
+               H18
+               C8 186 1 179 1 171
+               V19
+               C1 9 8 5 18 5 Z" />
+    </svg>
+
+    <div class="benefit-head">
+      <a href="#" class="benefit-head-link">
+        <span class="benefit-title">혜택알리미</span>
+        <img src="./assets/ico-swiper-arr.svg" alt="" class="benefit-arrow" aria-hidden="true">
+      </a>
+    </div>
+
+<div class="benefit-grid">
+  <div class="benefit-item"><span class="benefit-text">급한 생활비, 대출 연체, 신용 하락, 당장의 부담을 덜 수 있는 정부 지원 모음 서비스 상세 이동</span></div>
+  <div class="benefit-item"><span class="benefit-text">창업을 준비 중이라면, 정부의 초기 자금 및 공간 지원 모음 서비스 상세 이동</span></div>
+  <div class="benefit-item"><span class="benefit-text">혼자 살아도 든든하게, 1인 청년을 위한 생활지원 모음 서비스 상세 이동</span></div>
+  <div class="benefit-item"><span class="benefit-text">양육 부담을 줄일 수 있도록, 정부의 돌봄·보육 지원 정보 한눈에 서비스 상세 이동</span></div>
+</div>
+  </div>
+</section>
+
+<section class="lifeguide-section">
+  <div class="lifeguide-inner">
+    <div class="lifeguide-shape-top" aria-hidden="true">
+      <svg class="lifeguide-shape" viewBox="0 0 390 260" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M18 12
+                 H112
+                 C132 12 138 13 142 24
+                 V30
+                 C142 44 158 52 184 52
+                 H370
+                 C380 52 389 61 389 73
+                 V239
+                 C389 247 380 253 370 253
+                 H18
+                 C8 253 1 247 1 239
+                 V26
+                 C1 16 8 12 18 12 Z" />
+      </svg>
+    </div>
+
+    <div class="lifeguide-body-fill" aria-hidden="true"></div>
+
+    <div class="lifeguide-head">
+      <a href="#" class="lifeguide-head-link">
+        <span class="lifeguide-title">생활가이드</span>
+        <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-arrow" aria-hidden="true">
+      </a>
+    </div>
+
+    <div class="lifeguide-tabs" role="tablist" aria-label="생활가이드 주제">
+      <button type="button" class="lifeguide-tab" data-guide="death" aria-selected="false">
+        <img src="./assets/img-main-life-guide07.svg" alt="" aria-hidden="true">
+        <span>사망</span>
+      </button>
+
+      <button type="button" class="lifeguide-tab" data-guide="marriage" aria-selected="false">
+        <img src="./assets/img-main-life-guide04.svg" alt="" aria-hidden="true">
+        <span>결혼</span>
+      </button>
+
+      <button type="button" class="lifeguide-tab is-active" data-guide="welfare" aria-selected="true">
+        <span class="img-wrap">
+          <img src="./assets/img-main-life-guide06.svg" alt="" aria-hidden="true">
+        </span>
+        <span>보건·복지</span>
+      </button>
+
+      <button type="button" class="lifeguide-tab" data-guide="move" aria-selected="false">
+        <img src="./assets/img-main-life-guide05.svg" alt="" aria-hidden="true">
+        <span>이사</span>
+      </button>
+
+      <button type="button" class="lifeguide-tab" data-guide="birth" aria-selected="false">
+        <img src="./assets/img-main-life-guide01.svg" alt="" aria-hidden="true">
+        <span>임신·출산</span>
+      </button>
+
+      <button type="button" class="lifeguide-tab" data-guide="childcare" aria-selected="false">
+        <img src="./assets/img-main-life-guide03.svg" alt="" aria-hidden="true">
+        <span>육아</span>
+      </button>
+    </div>
+
+    <div class="lifeguide-panels">
+      <div class="lifeguide-panel" data-panel="death" hidden>
+        <div class="lifeguide-list">
+          <a href="#" class="lifeguide-item">
+            <span>누군가가 돌아가셨을 때(유족이 있는 경우)</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+          <a href="#" class="lifeguide-item">
+            <span>상속을 할 때</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+
+      <div class="lifeguide-panel" data-panel="marriage" hidden>
+        <div class="lifeguide-list">
+          <a href="#" class="lifeguide-item">
+            <span>누군가와 결혼할 때</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+          <a href="#" class="lifeguide-item">
+            <span>외국인과 결혼할 때</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+
+      <div class="lifeguide-panel is-active" data-panel="welfare">
+        <div class="lifeguide-list">
+          <a href="#" class="lifeguide-item">
+            <span>치매가 의심될 때</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+          <a href="#" class="lifeguide-item">
+            <span>돌봄이 필요할 때(노인)</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+        </div>
+
+        <div class="lifeguide-hidden">
+          <a href="#" class="lifeguide-item">
+            <span>암 진단을 받았을 때</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+        </div>
+
+        <button type="button" class="lifeguide-more" aria-expanded="false">
+          <span>더보기</span>
+          <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-more-arrow" aria-hidden="true">
+        </button>
+      </div>
+
+      <div class="lifeguide-panel" data-panel="move" hidden>
+        <div class="lifeguide-list">
+          <a href="#" class="lifeguide-item">
+            <span>이사를 할 때</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+          <a href="#" class="lifeguide-item">
+            <span>셀프등기를 하려고 할 때</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+
+      <div class="lifeguide-panel" data-panel="birth" hidden>
+        <div class="lifeguide-list">
+          <a href="#" class="lifeguide-item">
+            <span>아이를 갖고자 할 때</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+          <a href="#" class="lifeguide-item">
+            <span>임신에 어려움을 겪을 때</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+        </div>
+
+        <div class="lifeguide-hidden">
+          <a href="#" class="lifeguide-item">
+            <span>아이가 태어났을 때</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+        </div>
+
+        <button type="button" class="lifeguide-more" aria-expanded="false">
+          <span>더보기</span>
+          <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-more-arrow" aria-hidden="true">
+        </button>
+      </div>
+
+      <div class="lifeguide-panel" data-panel="childcare" hidden>
+        <div class="lifeguide-list">
+          <a href="#" class="lifeguide-item">
+            <span>아이를 양육할 때</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+          <a href="#" class="lifeguide-item">
+            <span>아이를 어린이집에 보내려고 할 때</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+        </div>
+
+        <div class="lifeguide-hidden">
+          <a href="#" class="lifeguide-item">
+            <span>육아휴직을 하려고 할 때</span>
+            <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-item-arrow" aria-hidden="true">
+          </a>
+        </div>
+
+        <button type="button" class="lifeguide-more" aria-expanded="false">
+          <span>더보기</span>
+          <img src="./assets/ico-swiper-arr.svg" alt="" class="lifeguide-more-arrow" aria-hidden="true">
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="resident-ai-wrap" aria-label="주민등록 모바일 확인 서비스 및 AI 검색">
+
+  <section class="resident-check-section" aria-label="주민등록 모바일 확인 서비스">
+    <div class="resident-check-card">
+      <div class="resident-check-left">
+        <img
+          src="./assets/ico-main-service-04.svg"
+          alt=""
+          class="resident-check-icon"
+          aria-hidden="true"
+        />
+        <span class="resident-check-text">주민등록 모바일 확인 서비스</span>
+      </div>
+
+      <button type="button" class="resident-check-top" aria-label="위로 이동">
+        <span class="resident-check-top-arrow" aria-hidden="true">↑</span>
+      </button>
+    </div>
+  </section>
+
+<section class="lower-links" aria-label="하단 메뉴">
+
+  <button class="lower-row" type="button">
+    <span>분야별 정책정보</span>
+    <span class="lower-plus" aria-hidden="true">
+      <img src="./assets/ico-more-plus.svg" alt="">
+    </span>
+  </button>
+
+  <button class="lower-row" type="button">
+    <span>국민소통채널</span>
+    <span class="lower-plus" aria-hidden="true">
+      <img src="./assets/ico-more-plus.svg" alt="">
+    </span>
+  </button>
+
+</section>
+
+<!-- 분야별 정책정보 모달 -->
+<div class="policy-modal" id="policyModal" hidden>
+  <div class="policy-modal-dim"></div>
+
+  <div class="policy-modal-box" role="dialog" aria-modal="true" aria-labelledby="policyTitle">
+    <div class="policy-modal-head">
+      <h2 id="policyTitle">분야별 정책정보</h2>
+      <button type="button" class="policy-modal-close" aria-label="닫기">×</button>
+    </div>
+
+    <div class="policy-modal-list">
+      <a href="#" class="policy-item">
+        <img src="./assets/ico-main-service-02.svg" alt="" aria-hidden="true" />
+        <div class="policy-text">
+          <strong>정책뉴스</strong>
+          <span>정부의 주요 정책과 발표소식</span>
+        </div>
+      </a>
+
+      <a href="#" class="policy-item">
+        <img src="./assets/ico-main-service-05.svg" alt="" aria-hidden="true" />
+        <div class="policy-text">
+          <strong>연구보고서</strong>
+          <span>특정 정책이나 사회 현안 분석</span>
+        </div>
+      </a>
+
+      <a href="#" class="policy-item">
+        <img src="./assets/ico-main-service-06.svg" alt="" aria-hidden="true" />
+        <div class="policy-text">
+          <strong>간행물</strong>
+          <span>정부 정기 발행 소식지/월간지</span>
+        </div>
+      </a>
+
+      <a href="#" class="policy-item">
+        <img src="./assets/ico-main-service-07.svg" alt="" aria-hidden="true" />
+        <div class="policy-text">
+          <strong>정책자료</strong>
+          <span>정책시행 관련 법령 및 지침 정보</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- 국민소통채널 모달 -->
+<div class="channel-modal" id="channelModal" hidden>
+  <div class="channel-modal-dim"></div>
+
+  <div class="channel-modal-box" role="dialog" aria-modal="true" aria-labelledby="channelTitle">
+    <div class="channel-modal-head">
+      <h2 id="channelTitle">국민소통채널</h2>
+      <button type="button" class="channel-modal-close" aria-label="닫기">×</button>
+    </div>
+
+    <div class="channel-modal-list">
+      <a href="#" class="channel-item"><img src="./assets/img-channel-01.png" alt=""></a>
+      <a href="#" class="channel-item"><img src="./assets/img-channel-02.png" alt=""></a>
+      <a href="#" class="channel-item"><img src="./assets/img-channel-03.png" alt=""></a>
+      <a href="#" class="channel-item"><img src="./assets/img-channel-04.png" alt=""></a>
+      <a href="#" class="channel-item"><img src="./assets/img-channel-05.png" alt=""></a>
+      <a href="#" class="channel-item"><img src="./assets/img-channel-06.png" alt=""></a>
+      <a href="#" class="channel-item"><img src="./assets/img-channel-07.png" alt=""></a>
+      <a href="#" class="channel-item"><img src="./assets/img-channel-08.png" alt=""></a>
+      <a href="#" class="channel-item"><img src="./assets/img-channel-09.png" alt=""></a>
+      <a href="#" class="channel-item"><img src="./assets/img-channel-10.png" alt=""></a>
+      <a href="#" class="channel-item"><img src="./assets/img-channel-11.png" alt=""></a>
+      <a href="#" class="channel-item"><img src="./assets/img-channel-12.png" alt=""></a>
+      <a href="#" class="channel-item"><img src="./assets/img-channel-21.png" alt=""></a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer" aria-label="푸터">
+  <div class="footer-head">
+    <div class="footer-head-left">
+      <img src="./assets/logo-header.svg" alt="정부24" class="footer-logo-mark">
+      <img src="./assets/ico-footer-toggle.svg" alt="" class="footer-toggle-icon" aria-hidden="true">
+    </div>
+
+    <div class="footer-head-right" aria-label="정부24 소셜 채널">
+      <a href="#" class="footer-social-link" aria-label="트위터">
+        <img src="./assets/ico-twitter.svg" alt="" class="footer-social-icon" aria-hidden="true">
+      </a>
+      <a href="#" class="footer-social-link" aria-label="카카오스토리">
+        <img src="./assets/ico-kakao-story.svg" alt="" class="footer-social-icon" aria-hidden="true">
+      </a>
+      <a href="#" class="footer-social-link" aria-label="블로그">
+        <img src="./assets/ico-blog.svg" alt="" class="footer-social-icon" aria-hidden="true">
+      </a>
+      <a href="#" class="footer-social-link" aria-label="페이스북">
+        <img src="./assets/ico-facebook.svg" alt="" class="footer-social-icon" aria-hidden="true">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-info">
+    <div class="footer-block">
+      <strong class="footer-title">콜센터</strong>
+      <p class="footer-text">
+        1588-2188,<br />
+        02-721-0600 (지역번호 '02'를 확인하세요.)<br />
+        (09:00 ~ 18:00 평일)
+      </p>
+    </div>
+
+    <div class="footer-block">
+      <strong class="footer-title">정부민원안내콜센터</strong>
+      <p class="footer-text">국번없이 110 (무료, 휴일포함 365일 24시간)</p>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-links">
+      <a href="#">개인정보처리방침</a>
+      <a href="#">이용약관</a>
+    </div>
+
+    <p class="footer-copy">© Ministry of the Interior and Safety. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<div class="bottom-ai-fixed">
+  <div class="ai-search-wrap">
+    <div class="ai-search-tooltip">
+      정부24 검색으로 돌아가기
+      <button type="button" class="ai-search-tooltip-close" aria-label="닫기">×</button>
+    </div>
+
+    <a href="#" class="ai-search-bar" aria-label="AI 정부24에 물어보세요">
+      <div class="ai-search-left">
+        <img
+          src="./assets/img-main-serach-ai.png"
+          alt=""
+          class="ai-search-character"
+          aria-hidden="true"
+        />
+        <span class="ai-search-placeholder">AI 정부 24에 물어보세요</span>
+      </div>
+
+      <div class="ai-search-right">
+        <img
+          src="./assets/ico-paper-airplane.svg"
+          alt=""
+          class="ai-search-action"
+          aria-hidden="true"
+        />
+        <img
+          src="./assets/ico-korean-flag.svg"
+          alt=""
+          class="ai-search-action"
+          aria-hidden="true"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+
+<nav class="bottom-nav" aria-label="하단 메뉴">
+  <img
+    class="tabbar-overlay"
+    src="./assets/PxHWMmBH7MPm69jq7DJObI3aB5g.avif"
+    alt=""
+    aria-hidden="true"
+  />
+</nav>
+
+</section>
+
+</main>
+</div>
+
+<div class="quick-modal" id="quickModal" hidden>
+  <div class="quick-modal-dim"></div>
+
+<div class="quick-modal-frame">
+  <div class="quick-modal-box" role="dialog" aria-modal="true" aria-labelledby="quickModalTitle">
+    <div class="quick-modal-head">
+      <span id="quickModalTitle">자주 찾는 서비스 모아보기</span>
+      <button type="button" class="quick-modal-close" id="quickModalClose" aria-label="닫기">
+        <img src="./assets/ico-close-modal.svg" alt="" aria-hidden="true">
+      </button>
+    </div>
+
+    <div class="quick-modal-list">
+      <a class="quick-modal-item" href="./land.html">
+        <span class="quick-modal-item-text">토지(임야)대장</span>
+        <img class="quick-modal-item-icon" src="./assets/pdf_20_set.png" alt="" aria-hidden="true" />
+      </a>
+
+      <div class="quick-modal-item">
+        <span class="quick-modal-item-text">주민등록등본(초본)</span>
+        <img class="quick-modal-item-icon" src="./assets/pdf_20_set.png" alt="" aria-hidden="true" />
+      </div>
+
+      <div class="quick-modal-item">
+        <span class="quick-modal-item-text">자동차등록원부</span>
+        <img class="quick-modal-item-icon" src="./assets/pc_20_set.png" alt="" aria-hidden="true" />
+      </div>
+
+        <div class="quick-modal-item">
+          <span class="quick-modal-item-text">건축물대장</span>
+          <img class="quick-modal-item-icon" src="./assets/pdf_20_set.png" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="quick-modal-item">
+          <span class="quick-modal-item-text">가족관계증명서</span>
+          <img class="quick-modal-item-icon" src="./assets/link_16_set.png" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="quick-modal-item">
+          <span class="quick-modal-item-text">여권 재발급</span>
+          <img class="quick-modal-item-icon" src="./assets/ico-mo-main-doc.svg" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="quick-modal-item">
+          <span class="quick-modal-item-text">지방세 납세증명</span>
+          <img class="quick-modal-item-icon" src="./assets/pdf_20_set.png" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="quick-modal-item">
+          <span class="quick-modal-item-text">납세증명</span>
+          <img class="quick-modal-item-icon" src="./assets/pdf_20_set.png" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="quick-modal-item">
+          <span class="quick-modal-item-text">인감증명서</span>
+          <img class="quick-modal-item-icon" src="./assets/pc_20_set.png" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="quick-modal-item">
+          <span class="quick-modal-item-text">지적도(임야도)</span>
+          <img class="quick-modal-item-icon" src="./assets/pc_20_set.png" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="quick-modal-item">
+          <span class="quick-modal-item-text">소득금액 증명</span>
+          <img class="quick-modal-item-icon" src="./assets/pdf_20_set.png" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="quick-modal-item">
+          <span class="quick-modal-item-text">건강보험 자격득실 확인</span>
+          <img class="quick-modal-item-icon" src="./assets/pdf_20_set.png" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="quick-modal-item">
+          <span class="quick-modal-item-text">운전경력 증명</span>
+          <img class="quick-modal-item-icon" src="./assets/pc_20_set.png" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="quick-modal-item">
+          <span class="quick-modal-item-text">사업자등록 증명</span>
+          <img class="quick-modal-item-icon" src="./assets/pc_20_set.png" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="quick-modal-item">
+          <span class="quick-modal-item-text">대학교 졸업(예정) 증명</span>
+          <img class="quick-modal-item-icon" src="./assets/ico-mo-main-doc.svg" alt="" aria-hidden="true" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
