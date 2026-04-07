@@ -1,21 +1,21 @@
+<!doctype html>
+<html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-  <!-- CSS -->
   <link rel="stylesheet" href="./style.css" />
 
-  <!-- PWA (여기 위치 OK) -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ffffff">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="정부24">
-  <link rel="apple-touch-icon" href="gov24.png">
+  <link rel="apple-touch-icon" href="ico-iw-app.png">
 
   <title>정부24</title>
 </head>
-
+<body>
 
   <div class="stage">
     <main class="phone" aria-label="정부24 모바일 홈">
@@ -115,7 +115,7 @@
               <img class="qi-ico" src="./assets/pdf_20_set.png" srcset="./assets/pdf_40_set.png 2x" width="20" height="20" alt="" aria-hidden="true" />
             </a>
 
-            <a class="quick-item" href="family.html">
+           <a href="family.html" class="quick-item">
               <span class="quick-label">가족관계증명서</span>
               <img class="qi-ico qi-ico-sm" src="./assets/link_16_set.png" srcset="./assets/link_32_set.png 2x" width="16" height="16" alt="" aria-hidden="true" />
             </a>
@@ -366,26 +366,21 @@
 
 <section class="resident-ai-wrap" aria-label="주민등록 모바일 확인 서비스 및 AI 검색">
 
-  <section class="resident-check-section" aria-label="주민등록 모바일 확인 서비스">
-    <div class="resident-check-card">
-      <div class="resident-check-left">
-        <img
-          src="./assets/ico-main-service-04.svg"
-          alt=""
-          class="resident-check-icon"
-          aria-hidden="true"
-        />
-        <span class="resident-check-text">주민등록 모바일 확인 서비스</span>
-      </div>
-
-      <button type="button" class="resident-check-top" aria-label="위로 이동">
-        <span class="resident-check-top-arrow" aria-hidden="true">↑</span>
-      </button>
+<section class="resident-check-section" aria-label="주민등록 모바일 확인 서비스">
+  <a href="./mobile-id-card.html" class="resident-check-card">
+    <div class="resident-check-left">
+      <img
+        src="./assets/ico-main-service-04.svg"
+        alt=""
+        class="resident-check-icon"
+        aria-hidden="true"
+      />
+      <span class="resident-check-text">주민등록 모바일 확인 서비스</span>
     </div>
-  </section>
+  </a>
+</section>
 
 <section class="lower-links" aria-label="하단 메뉴">
-
   <button class="lower-row" type="button">
     <span>분야별 정책정보</span>
     <span class="lower-plus" aria-hidden="true">
@@ -399,7 +394,6 @@
       <img src="./assets/ico-more-plus.svg" alt="">
     </span>
   </button>
-
 </section>
 
 <!-- 분야별 정책정보 모달 -->
@@ -562,15 +556,34 @@
 </div>
 
 <nav class="bottom-nav" aria-label="하단 메뉴">
-  <img
-    class="tabbar-overlay"
-    src="./assets/PxHWMmBH7MPm69jq7DJObI3aB5g.avif"
-    alt=""
-    aria-hidden="true"
-  />
+  <div class="bottom-nav-inner">
+    <a href="#" class="bottom-nav-item">
+      <img src="./assets/app_icon1.svg" alt="">
+      <span>MyGOV</span>
+    </a>
+
+    <a href="#" class="bottom-nav-item">
+      <img src="./assets/app_icon2.svg" alt="">
+      <span>주제별 보기</span>
+    </a>
+
+    <a href="#" class="bottom-nav-item">
+      <img src="./assets/app_icon3.svg" alt="">
+      <span>문서진위확인</span>
+    </a>
+
+    <a href="#" class="bottom-nav-item">
+      <img src="./assets/app_icon4.svg" alt="">
+      <span>혜택알림</span>
+    </a>
+  </div>
 </nav>
 
 </section>
+
+<button type="button" class="floating-top-btn" aria-label="위로 이동">
+  <span class="floating-top-btn-arrow">↑</span>
+</button>
 
 </main>
 </div>
@@ -665,6 +678,21 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="page-loading" id="pageLoading" hidden>
+  <svg class="ios-spinner" viewBox="0 0 100 100">
+    <g transform="translate(50,50)">
+      <rect x="-4" y="-30" width="8" height="18" rx="4" opacity="1"/>
+      <rect x="-4" y="-30" width="8" height="18" rx="4" opacity="0.85" transform="rotate(45)"/>
+      <rect x="-4" y="-30" width="8" height="18" rx="4" opacity="0.7" transform="rotate(90)"/>
+      <rect x="-4" y="-30" width="8" height="18" rx="4" opacity="0.55" transform="rotate(135)"/>
+      <rect x="-4" y="-30" width="8" height="18" rx="4" opacity="0.4" transform="rotate(180)"/>
+      <rect x="-4" y="-30" width="8" height="18" rx="4" opacity="0.3" transform="rotate(225)"/>
+      <rect x="-4" y="-30" width="8" height="18" rx="4" opacity="0.2" transform="rotate(270)"/>
+      <rect x="-4" y="-30" width="8" height="18" rx="4" opacity="0.1" transform="rotate(315)"/>
+    </g>
+  </svg>
 </div>
 
 <script src="./script.js"></script>
