@@ -1,11 +1,19 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>자동차 등록원부등본(초본) 발급(열람)</title>
-  <link rel="stylesheet" href="./common.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="정부24">
+  <link rel="apple-touch-icon" href="ico-iw-app.png">
+
+  <link rel="stylesheet" href="./common.css">
 </head>
+<body>
 <body class="car-page">
   <div class="car-stage">
     <main class="car-phone" aria-label="정부24 모바일 서비스 상세">
@@ -289,11 +297,12 @@
       </div>
 
       <div class="car-channel-modal" id="channelModal" hidden>
-        <div class="car-channel-modal-dim"></div>
+        <div class="car-channel-modal-dim channel-modal-dim"></div>
         <div class="car-channel-modal-box" role="dialog" aria-modal="true" aria-labelledby="landChannelTitle">
           <div class="car-channel-modal-head">
+
             <h2 id="landChannelTitle">국민소통채널</h2>
-            <button type="button" class="car-channel-modal-close" aria-label="닫기">
+            <button type="button" class="car-channel-modal-close channel-modal-close" aria-label="닫기">
               <img src="./assets/ico-close-modal.svg" alt="">
             </button>
           </div>
