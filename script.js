@@ -325,28 +325,30 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ----------------
      RESIDENT TOP BUTTON
   ---------------- */
-  const topButton = document.querySelector(".resident-check-top");
+const topButton = document.querySelector(".floating-top-btn");
+const lifeGuideSection = document.querySelector(".lifeguide-section");
 
-  if (topButton) {
-    function toggleTopButton() {
-      if (window.scrollY > 220) {
-        topButton.classList.add("is-visible");
-      } else {
-        topButton.classList.remove("is-visible");
-      }
-    }
+function toggleTopButton() {
+  if (!topButton || !lifeGuideSection) return;
 
-    toggleTopButton();
-    window.addEventListener("scroll", toggleTopButton);
+  const guideTop = lifeGuideSection.getBoundingClientRect().top;
 
-    topButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    });
+  if (guideTop <= window.innerHeight - 120) {
+    topButton.classList.add("is-visible");
+  } else {
+    topButton.classList.remove("is-visible");
   }
+}
+
+window.addEventListener("scroll", toggleTopButton);
+toggleTopButton();
+
+topButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
 
   /* ----------------
      QUICK MODAL EVENTS
@@ -604,3 +606,23 @@ if(closeBtn){
     window.location.href = 'index.html';
   });
 }
+
+document.querySelectorAll('a[href$=".html"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#")) return;
+
+    if (href === "./menu.html" || href === "menu.html") return;
+
+    e.preventDefault();
+
+    const loading = document.getElementById("pageLoading");
+    if (loading) {
+      loading.hidden = false;
+    }
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 1000);
+  });
+});
