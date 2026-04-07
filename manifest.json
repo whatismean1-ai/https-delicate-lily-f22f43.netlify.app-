@@ -7,8 +7,8 @@
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "gov24.png",
-      "sizes": "192x192",
+      "src": "ico-iw-app.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
