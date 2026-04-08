@@ -606,23 +606,3 @@ if(closeBtn){
     window.location.href = 'index.html';
   });
 }
-
-document.querySelectorAll('a[href$=".html"]').forEach((link) => {
-  link.addEventListener("click", (e) => {
-    const href = link.getAttribute("href");
-    if (!href || href.startsWith("#")) return;
-
-    if (href === "./menu.html" || href === "menu.html") return;
-
-    e.preventDefault();
-
-    const loading = document.getElementById("pageLoading");
-    if (loading) {
-      loading.hidden = false;
-    }
-
-    setTimeout(() => {
-      window.location.href = href;
-    }, 1000);
-  });
-});
