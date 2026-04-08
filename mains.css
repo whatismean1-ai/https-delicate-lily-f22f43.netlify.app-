@@ -106,6 +106,12 @@ body {
   line-height: 1;
 }
 
+.header-back,
+.header-back:visited{
+  color:#111;
+  text-decoration:none;
+}
+
 #wrap {
   grid-row: 2;
   width: 100%;
