@@ -154,7 +154,7 @@ body {
   max-width: none;
   aspect-ratio: 350 / 590;
   height: auto;
-  max-height: none;
+  max-height: calc(100vh - 88px); /* 헤더46 + 푸터42 */
   background-color: #fff;
   border-radius: 16px;
   box-shadow: none;
