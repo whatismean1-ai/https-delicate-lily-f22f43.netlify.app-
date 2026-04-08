@@ -23,13 +23,14 @@ body {
 .jumin {
   width: 100%;
   max-width: none;
-  min-height: 100dvh;
+   min-height: 100vh;   /* d vh → vh */
   margin: 0;
   position: relative;
-  display: grid;
+   display: flex;       /* grid 제거 */
+   flex-direction: column;
   grid-template-rows: 46px 1fr 42px;
   background: #ffffff;
-  overflow: hidden;
+  overflow: visible;   /* hidden 제거 */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
 }
@@ -113,6 +114,7 @@ body {
 }
 
 #wrap {
+  flex:1;
   grid-row: 2;
   width: 100%;
   min-height: 0;
@@ -121,7 +123,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
   padding-top: 4px;
   padding-bottom: 4px;
 }
