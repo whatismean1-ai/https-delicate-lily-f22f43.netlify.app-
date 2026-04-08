@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-/>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -28,7 +28,6 @@
   <link rel="stylesheet" href="mains.css" />
 </head>
 <body>
-
   <div class="jumin on act">
     <div class="top-space"></div>
 
@@ -44,7 +43,7 @@
     </div>
 
     <div id="wrap">
-      <div id="box" class="box_main">
+      <div class="card-shell box_main">
         <img
           id="profileImage"
           class="profile-image"
@@ -85,8 +84,8 @@
         </div>
       </div>
 
-      <div class="modal" style="display: none;">
-        <div id="box" class="detail_box">
+      <div class="modal" aria-hidden="true">
+        <div class="card-shell detail_box">
           <img
             id="detailProfileImage"
             class="profile-image"
@@ -97,11 +96,11 @@
           <div id="detailInfoMount"></div>
         </div>
 
-        <div class="back js-close-detail">
+        <button type="button" class="back js-close-detail" aria-label="닫기">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="29" fill="currentColor" viewBox="0 0 18 14">
             <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>
           </svg>
-        </div>
+        </button>
       </div>
     </div>
 
@@ -124,13 +123,19 @@
   </div>
 
   <script>
+    function setRealVh() {
+      document.documentElement.style.setProperty("--app-vh", `${window.innerHeight * 0.01}px`);
+    }
+
+    setRealVh();
+    window.addEventListener("resize", setRealVh);
+    window.addEventListener("orientationchange", setRealVh);
+
     const cardData = {
       name: "홍성환",
-
       rrnFront: "890928",
       rrnBackMasked: "*******",
       rrnBackFull: "1144311",
-
       region: "광주광역시 광산구",
       address: "수등로123번길 22 (신가동, 아름마을휴먼시아2단지아파트) 205동 701호",
       issueDate: "2021.05.10",
@@ -140,34 +145,34 @@
 
     let qrRefreshCount = 0;
 
-function renderDetailInfo() {
-  const mount = document.getElementById("detailInfoMount");
-  if (!mount) return;
+    function renderDetailInfo() {
+      const mount = document.getElementById("detailInfoMount");
+      if (!mount) return;
 
-  mount.innerHTML = `
-    <div class="detail-fixed-name" id="detailName">${cardData.name}</div>
+      mount.innerHTML = `
+        <div class="detail-fixed-name" id="detailName">${cardData.name}</div>
 
-    <input type="checkbox" id="switch" hidden onchange="updateText()" />
+        <input type="checkbox" id="switch" hidden onchange="updateText()" />
 
-    <label for="switch" class="switch_label detail-fixed-switch">
-      <span class="onf_btn"></span>
-    </label>
+        <label for="switch" class="switch_label detail-fixed-switch">
+          <span class="onf_btn"></span>
+        </label>
 
-    <div class="detail-fixed-rrn">
-      ${cardData.rrnFront}-<span id="idNumber">${cardData.rrnBackMasked}</span>
-    </div>
+        <div class="detail-fixed-rrn">
+          ${cardData.rrnFront}-<span id="idNumber">${cardData.rrnBackMasked}</span>
+        </div>
 
-    <div class="detail-fixed-address">
-      ${cardData.region}
-      <span id="userLocation">ㅤ<br />ㅤ</span>
-    </div>
+        <div class="detail-fixed-address">
+          ${cardData.region}
+          <span id="userLocation">ㅤ<br />ㅤ</span>
+        </div>
 
-    <div class="modal-bottom">
-      <h4 id="issueDate">${cardData.issueDate}</h4>
-      <p id="issuerName">${cardData.issuer}</p>
-    </div>
-  `;
-}
+        <div class="modal-bottom">
+          <h4 id="issueDate">${cardData.issueDate}</h4>
+          <p id="issuerName">${cardData.issuer}</p>
+        </div>
+      `;
+    }
 
     function applyCardData() {
       document.getElementById("mainName").textContent = cardData.name;
@@ -184,6 +189,8 @@ function renderDetailInfo() {
       const idNumber = document.getElementById("idNumber");
       const userLocation = document.getElementById("userLocation");
 
+      if (!checkbox || !idNumber || !userLocation) return;
+
       if (checkbox.checked) {
         idNumber.innerHTML = cardData.rrnBackFull;
         userLocation.innerHTML = cardData.address;
@@ -199,7 +206,8 @@ function renderDetailInfo() {
         `${now.getFullYear()}년${String(now.getMonth() + 1).padStart(2, "0")}월${String(now.getDate()).padStart(2, "0")}일 ` +
         `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}:${String(now.getSeconds()).padStart(2, "0")}`;
 
-      document.getElementById("current-time").innerText = formattedTime;
+      const timeEl = document.getElementById("current-time");
+      if (timeEl) timeEl.innerText = formattedTime;
     }
 
     function updateQrCode() {
@@ -207,15 +215,15 @@ function renderDetailInfo() {
       const token = Math.floor(now.getTime() / 30000);
 
       const qrValue = `user=${cardData.name}|region=${cardData.region.replace(/\s/g, "")}|token=${token}`;
-
       const qrImg = document.getElementById("QR_img");
+      const qrOverlay = document.querySelector(".qr-overlay");
+
+      if (!qrImg) return;
 
       qrImg.src =
         `https://api.qrserver.com/v1/create-qr-code/?size=250x250&ecc=H&color=000000&bgcolor=ffffff&data=${encodeURIComponent(qrValue)}`;
 
       qrRefreshCount++;
-
-      const qrOverlay = document.querySelector(".qr-overlay");
 
       if (qrRefreshCount >= 5) {
         if (qrOverlay) qrOverlay.style.display = "block";
@@ -237,9 +245,8 @@ function renderDetailInfo() {
       updateText();
       updateTime();
       updateQrCode();
+      setRealVh();
 
-      const loadingScreen = document.getElementById("loading-screen");
-      const loadingBar = document.querySelector(".loading_bar .bar");
       const openBtn = document.querySelector(".js-click-modal");
       const closeBtn = document.querySelector(".js-close-detail");
       const mainBox = document.querySelector(".box_main");
@@ -253,29 +260,26 @@ function renderDetailInfo() {
         qrOverlay.addEventListener("click", resetQr);
       }
 
-      if (loadingBar) {
-        loadingBar.classList.add("start");
+      if (openBtn && closeBtn && mainBox && modal) {
+        openBtn.addEventListener("click", () => {
+          mainBox.style.display = "none";
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+        });
+
+        closeBtn.addEventListener("click", () => {
+          mainBox.style.display = "flex";
+          modal.classList.remove("is-open");
+          modal.setAttribute("aria-hidden", "true");
+
+          const checkbox = document.getElementById("switch");
+          if (checkbox) checkbox.checked = false;
+          updateText();
+        });
       }
 
-      setTimeout(() => {
-        if (loadingScreen) loadingScreen.style.display = "none";
-      }, 1200);
-
-      openBtn.addEventListener("click", () => {
-        mainBox.style.display = "none";
-        modal.style.display = "flex";
-      });
-
-      closeBtn.addEventListener("click", () => {
-        mainBox.style.display = "flex";
-        modal.style.display = "none";
-        document.getElementById("switch").checked = false;
-        updateText();
-      });
-
       let count = 30;
-
-      progress.value = count;
+      if (progress) progress.value = count;
       if (timeText) timeText.textContent = `${count}초`;
 
       setInterval(() => {
@@ -286,11 +290,8 @@ function renderDetailInfo() {
           updateQrCode();
         }
 
-        progress.value = count;
-
-        if (timeText) {
-          timeText.textContent = `${count}초`;
-        }
+        if (progress) progress.value = count;
+        if (timeText) timeText.textContent = `${count}초`;
       }, 1000);
 
       setInterval(updateTime, 1000);
