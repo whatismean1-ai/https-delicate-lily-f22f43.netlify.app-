@@ -82,7 +82,7 @@ body {
 .header-back:visited {
   color: #111;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15.5px;
   font-weight: 400;
   white-space: nowrap;
   line-height: 1;
@@ -92,7 +92,7 @@ body {
 .header-top > .logo {
   flex: 1;
   justify-content: flex-start;
-  font-size: 14.5px;
+  font-size: 15.5px;
   font-weight: 500;
   line-height: 1;
   color: #222;
@@ -110,7 +110,7 @@ body {
 }
 
 .header-top > p {
-  width: 20px;
+  width: 24px;
   flex: 0 0 20px;
   justify-content: flex-end;
   font-size: 20px;
@@ -142,9 +142,9 @@ body {
 #footer > marquee > p {
   width: 100%;
   color: #fff;
-  font-size: 10px;
+  font-size: 12px;
   opacity: 0.55;
-  line-height: 42px;
+  line-height: 43px;
   text-align: center;
 }
 
@@ -310,15 +310,16 @@ progress::-moz-progress-bar {
 
 .QR_text {
   margin-top: 18px;
-  font-size: 13px;
+  font-size: 15px;
   color: #999;
 }
 
 #current-time {
   width: 100%;
   margin-top: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: #999;
+  margin-bottom: 10px;
 }
 
 .box_footer {
