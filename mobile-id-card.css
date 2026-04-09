@@ -253,3 +253,7 @@ body {
 .mid-modal-confirm:active {
   background: #f8f8f8;
 }
+
+#drawer {
+  background: rgba(0,255,0,0.3);
+}
