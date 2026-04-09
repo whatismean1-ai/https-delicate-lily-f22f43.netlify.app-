@@ -1,7 +1,8 @@
 html,
 body {
   width: 100%;
-  min-height: 100dvh;
+  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -14,20 +15,32 @@ body {
   color: #222;
 }
 
+:root {
+  --app-height: 100vh;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --topbar-base-h: 46px;
+  --topbar-h: calc(var(--topbar-base-h) + var(--safe-top));
+}
+
 .mid-screen {
   width: 100%;
-  min-height: 100dvh;
+  height: var(--app-height);
+  min-height: var(--app-height);
   background: #eef2f7;
+  overflow: hidden;
 }
 
 .mid-app {
   position: relative;
   width: 100%;
-  min-height: 100dvh;
+  height: var(--app-height);
+  min-height: var(--app-height);
   background: #eef2f7;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
   overflow: hidden;
+  padding-top: var(--topbar-h);
+  padding-bottom: var(--safe-bottom);
+  box-sizing: border-box;
 }
 
 /* ================================
@@ -35,37 +48,24 @@ body {
 ================================ */
 .mid-topbar {
   position: fixed;
-  top: env(safe-area-inset-top);
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  max-width: 100%;
-  height: 46px;
-  padding: 0 25px;
+  height: var(--topbar-h);
+  padding: var(--safe-top) 16px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #eef2f7;
+  background: linear-gradient(180deg, #f8fafc 32px, #eef2f7 100%);
+  border-bottom: 1px solid #cdd1d5;
   box-sizing: border-box;
   z-index: 30;
 }
 
-.mid-topbar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.1);
-  pointer-events: none;
-}
-
+.mid-topbar::before,
 .mid-topbar::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: #d8dde5;
+  content: none;
 }
 
 .mid-topbar-back,
@@ -101,7 +101,7 @@ body {
   justify-content: flex-start;
   min-width: 0;
   margin-left: 10px;
-  gap: 8px;
+  gap: 6px;
 }
 
 .mid-topbar-logo {
@@ -121,15 +121,15 @@ body {
 }
 
 .mid-topbar-menu {
-  width: 20px;
-  flex: 0 0 20px;
+  width: 26px;
+  flex: 0 0 26px;
   justify-content: flex-end;
   text-decoration: none;
 }
 
 .mid-topbar-menu-icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
   display: block;
 }
@@ -140,9 +140,19 @@ body {
 .mid-dim {
   position: fixed;
   inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: var(--app-height);
   background: rgba(0, 0, 0, 0.28);
   z-index: 40;
   display: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mid-dim.is-open {
+  display: block;
 }
 
 /* ================================
@@ -151,16 +161,20 @@ body {
 .mid-modal {
   position: fixed;
   left: 50%;
-  top: calc(env(safe-area-inset-top) + 46%);
+  top: 50%;
   transform: translate(-50%, -50%);
-  width: 320px;
-  max-width: 90%;
+  width: min(320px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
   z-index: 50;
   display: none;
-  box-shadow: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.mid-modal.is-open {
+  display: block;
 }
 
 .mid-modal-head {
@@ -226,6 +240,8 @@ body {
   font-weight: 400;
   color: #2f66ff;
   cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .mid-modal-confirm:active {
