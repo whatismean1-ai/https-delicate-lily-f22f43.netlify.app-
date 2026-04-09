@@ -19,8 +19,6 @@ body {
   --app-height: 100vh;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --topbar-base-h: 46px;
-  --topbar-h: calc(var(--topbar-base-h) + var(--safe-top));
 }
 
 .mid-screen {
@@ -37,9 +35,9 @@ body {
   height: var(--app-height);
   min-height: var(--app-height);
   background: #eef2f7;
-  overflow: hidden;
-  padding-top: var(--topbar-h);
+  padding-top: calc(65px + var(--safe-top));
   padding-bottom: var(--safe-bottom);
+  overflow: hidden;
   box-sizing: border-box;
 }
 
@@ -50,14 +48,13 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   width: 100%;
-  height: var(--topbar-h);
-  padding: var(--safe-top) 16px 0;
+  height: calc(65px + var(--safe-top));
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background: linear-gradient(180deg, #f8fafc 32px, #eef2f7 100%);
+  align-items: center;
+  padding: calc(12px + var(--safe-top)) 16px 12px;
+  background: linear-gradient(180deg, #F8FAFC 32px, #EEF2F7 100%);
   border-bottom: 1px solid #cdd1d5;
   box-sizing: border-box;
   z-index: 30;
@@ -101,7 +98,7 @@ body {
   justify-content: flex-start;
   min-width: 0;
   margin-left: 10px;
-  gap: 6px;
+  gap: 8px;
 }
 
 .mid-topbar-logo {
@@ -121,15 +118,15 @@ body {
 }
 
 .mid-topbar-menu {
-  width: 26px;
-  flex: 0 0 26px;
+  width: 20px;
+  flex: 0 0 20px;
   justify-content: flex-end;
   text-decoration: none;
 }
 
 .mid-topbar-menu-icon {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
   display: block;
 }
@@ -140,15 +137,13 @@ body {
 .mid-dim {
   position: fixed;
   inset: 0;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: var(--app-height);
   background: rgba(0, 0, 0, 0.28);
   z-index: 40;
   display: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .mid-dim.is-open {
@@ -163,14 +158,14 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: min(320px, calc(100vw - 32px));
+  width: 320px;
   max-width: calc(100vw - 32px);
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
   z-index: 50;
   display: none;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  box-shadow: none;
 }
 
 .mid-modal.is-open {
