@@ -424,7 +424,7 @@ progress::-moz-progress-bar {
 .back {
   position: fixed !important;   /* 핵심 */
   left: 16px !important;
-  bottom: 90px !important;
+  bottom: 112px !important;
 
   width: 44px;
   height: 44px;
