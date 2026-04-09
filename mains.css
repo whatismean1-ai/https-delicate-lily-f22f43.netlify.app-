@@ -422,21 +422,23 @@ progress::-moz-progress-bar {
 }
 
 .back {
-  position: absolute;
-  left: calc(50% - 170px + 12px);
-  bottom: 85px;
-  transform: none;
+  position: fixed !important;   /* 핵심 */
+  left: 16px !important;
+  bottom: 90px !important;
+
   width: 44px;
   height: 44px;
+
   display: none;
   align-items: center;
   justify-content: center;
+
   border: 0;
   border-radius: 50%;
   background-color: #fff;
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.22);
-  z-index: 50;
-  color: inherit;
+
+  z-index: 999;
 }
 
 .back svg {
