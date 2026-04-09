@@ -32,7 +32,6 @@ function closeDrawer() {
   if (!overlay || !drawer) return;
 
   drawer.classList.remove("is-open");
-    overlay.hidden = true;   // 🔴 이 줄 추가
   drawer.setAttribute("aria-hidden", "true");
   btn?.setAttribute("aria-expanded", "false");
 
