@@ -113,7 +113,7 @@ body {
   width: 24px;
   flex: 0 0 20px;
   justify-content: flex-end;
-  font-size: 20px;
+  font-size: 26px;
   line-height: 1;
 }
 
@@ -422,23 +422,21 @@ progress::-moz-progress-bar {
 }
 
 .back {
-  position: fixed !important;   /* 핵심 */
-  left: 16px !important;
-  bottom: 112px !important;
-
+  position: fixed !important;
+  left: calc((100vw - min(350px, calc(100vw - 35px), calc(var(--card-max-h) * 350 / 590))) / 2) !important;
+  bottom: 132px !important;
+  transform: none;
   width: 44px;
   height: 44px;
-
   display: none;
   align-items: center;
   justify-content: center;
-
   border: 0;
   border-radius: 50%;
   background-color: #fff;
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.22);
-
   z-index: 999;
+  color: inherit;
 }
 
 .back svg {
@@ -518,4 +516,30 @@ progress::-moz-progress-bar {
   text-align: center;
   width: 100%;
   padding: 0 20px;
+}
+
+.ticker {
+  width: 100%;
+  height: 42px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-track {
+  white-space: nowrap;
+  display: inline-block;
+  animation: tickerMove 18s linear infinite;
+  font-size: 10px;
+  color: #fff;
+  opacity: 0.55;
+}
+
+@keyframes tickerMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
