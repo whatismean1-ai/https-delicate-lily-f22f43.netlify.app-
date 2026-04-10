@@ -205,6 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+
 /* ----------------
    MID MODAL
 ---------------- */
@@ -224,9 +225,8 @@ function closeMidModal() {
   lockBody(false);
 }
 
-window.addEventListener("load", () => {
-  openMidModal();
-});
+/* 🔥 이걸로 바꿔 */
+openMidModal();
 
 midModalConfirmBtn?.addEventListener("click", () => {
   closeMidModal();
