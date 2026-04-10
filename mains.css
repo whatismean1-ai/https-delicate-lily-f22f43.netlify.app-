@@ -496,15 +496,25 @@ progress::-moz-progress-bar {
   color: #2c2c2c;
 }
 
+.detail-fixed-address {
+  position: absolute;
+  top: 332px;
+  left: 22px;
+  right: 22px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #2c2c2c;
+}
+
 #userLocation {
   display: block;
+  margin-top: 4px;
   font-size: 17px;
   line-height: 1.4;
-  margin-top: 4px;
-
-  white-space: nowrap;       /* 🔥 한 줄 고정 */
-  overflow: hidden;          /* 🔥 넘치면 자르고 */
-  text-overflow: ellipsis;   /* 🔥 ... 처리 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .detail-fixed-address span {
