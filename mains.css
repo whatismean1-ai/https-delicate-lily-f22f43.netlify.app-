@@ -497,7 +497,7 @@ progress::-moz-progress-bar {
 
 .detail-fixed-address {
   position: absolute;
-  top: 280px;
+  top: 300px;
   left: 22px;
   right: 22px;
   font-size: 17px;
