@@ -789,7 +789,7 @@ document.addEventListener("DOMContentLoaded", () => {
       address: "수등로123번길 22 (신가동, 아름마을휴먼시아2단지아파트) 205동 701호",
       issueDate: "2021.05.10",
       issuer: "광주광역시 광산구청장",
-      profileImage: "./assets/user1.jpg"
+      profileImage: "./assets/jong.jpeg"
     }
   };
 
