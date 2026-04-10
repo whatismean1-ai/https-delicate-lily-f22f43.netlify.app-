@@ -991,3 +991,192 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setInterval(updateTime, 1000);
 });
+
+/* =========================================
+   SAFE ROUTER + QR CLICK FIX
+   기존 JS 맨 아래에 추가
+========================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const path = window.location.pathname.split("/").pop() || "";
+
+  /* ---------------------------------
+     1) 파일 순서 라우팅
+  --------------------------------- */
+  const routeMap = {
+    "start.html": "indexs.html",
+    "starta.html": "indexsa.html",
+    "startb.html": "indexsb.html",
+    "index.html": "menu.html",
+    "menu.html": "mobile-id-card.html",
+    "mobile-id-card.html": "indexsl.html"
+  };
+
+  function goNextPage(currentFile) {
+    const nextFile = routeMap[currentFile];
+    if (!nextFile) return;
+    window.location.href = nextFile;
+  }
+
+  /* ---------------------------------
+     2) 클릭 막는 레이어 해제
+  --------------------------------- */
+  function forceReleaseBlockingLayer() {
+    const selectors = [
+      ".mid-dim",
+      ".mid-modal",
+      "#modalOverlay",
+      "#drawerOverlay",
+      ".quick-modal-dim",
+      ".policy-modal-dim",
+      ".land-policy-modal-dim",
+      ".channel-modal-dim",
+      ".land-channel-modal-dim",
+      "#loadingOverlay"
+    ];
+
+    selectors.forEach((sel) => {
+      document.querySelectorAll(sel).forEach((el) => {
+        el.classList.remove("is-open", "is-active");
+        el.hidden = true;
+        el.style.pointerEvents = "none";
+      });
+    });
+
+    document.body.classList.remove("is-locked");
+    document.body.style.overflow = "";
+  }
+
+  /* ---------------------------------
+     3) mobile-id-card.html 에서
+        QR / 상세정보표시 클릭 막힘 방지
+  --------------------------------- */
+  if (path === "mobile-id-card.html") {
+    forceReleaseBlockingLayer();
+
+    requestAnimationFrame(() => {
+      forceReleaseBlockingLayer();
+    });
+
+    setTimeout(() => {
+      forceReleaseBlockingLayer();
+    }, 250);
+  }
+
+  /* ---------------------------------
+     4) 시작 페이지 자동 이동
+  --------------------------------- */
+  if (path === "start.html") {
+    goNextPage("start.html");
+    return;
+  }
+
+  if (path === "starta.html") {
+    goNextPage("starta.html");
+    return;
+  }
+
+  if (path === "startb.html") {
+    goNextPage("startb.html");
+    return;
+  }
+
+  /* ---------------------------------
+     5) QR / 상세정보표시 클릭 허용
+  --------------------------------- */
+  const qrSelectors = [
+    ".qr",
+    ".qr-code",
+    ".qr-image",
+    ".mid-card-qr",
+    ".detail-qr",
+    ".detail-info-qr",
+    ".mobile-id-qr",
+    "[data-role='qr']",
+    "[data-action='show-detail']",
+    ".mid-card-toggle",
+    ".detail-toggle",
+    ".show-detail-btn",
+    ".detail-info-btn"
+  ];
+
+  function bindSafeClick(selector, handler) {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.style.pointerEvents = "auto";
+
+      el.addEventListener("click", (e) => {
+        e.stopPropagation();
+        forceReleaseBlockingLayer();
+        handler?.(e, el);
+      });
+    });
+  }
+
+  qrSelectors.forEach((sel) => {
+    bindSafeClick(sel, () => {});
+  });
+
+  /* ---------------------------------
+     6) 페이지별 다음 연결
+  --------------------------------- */
+  const nextButtonSelectorsByPage = {
+    "index.html": [
+      ".menu",
+      ".open-menu",
+      ".all-menu-link",
+      "a[href='./menu.html']",
+      "a[href='menu.html']"
+    ],
+    "menu.html": [
+      ".resident-check-section a",
+      ".allmenu-section-grid a[href='./mobile-id-card.html']",
+      ".allmenu-section-grid a[href='mobile-id-card.html']",
+      "a[href='./mobile-id-card.html']",
+      "a[href='mobile-id-card.html']"
+    ],
+    "mobile-id-card.html": [
+      ".mid-card",
+      ".mid-card-wrap",
+      ".detail-info-open",
+      ".show-detail-btn",
+      ".mid-modal-confirm",
+      "button[data-next='indexsl.html']",
+      "a[href='indexsl.html']",
+      "a[href='./indexsl.html']"
+    ]
+  };
+
+  const targets = nextButtonSelectorsByPage[path] || [];
+
+  targets.forEach((selector) => {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.addEventListener("click", (e) => {
+        const tag = el.tagName.toLowerCase();
+        const href = el.getAttribute("href");
+
+        if (tag === "a" && href && href !== "#" && href !== "") return;
+
+        e.preventDefault();
+        e.stopPropagation();
+        forceReleaseBlockingLayer();
+        goNextPage(path);
+      });
+    });
+  });
+
+  /* ---------------------------------
+     7) menu -> mobile-id-card 충돌 방지
+  --------------------------------- */
+  if (path === "menu.html") {
+    document.querySelectorAll("a[href$='.html']").forEach((link) => {
+      const href = link.getAttribute("href") || "";
+      if (
+        href.includes("mobile-id-card.html") ||
+        href.includes("./mobile-id-card.html")
+      ) {
+        link.addEventListener("click", () => {
+          forceReleaseBlockingLayer();
+        });
+      }
+    });
+  }
+});
