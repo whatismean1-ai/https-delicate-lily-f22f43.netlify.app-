@@ -1069,23 +1069,7 @@ function goNextPage(currentFile) {
     }, 250);
   }
 
-  /* ---------------------------------
-     4) 시작 페이지 자동 이동
-  --------------------------------- */
-  if (path === "start.html") {
-    goNextPage("start.html");
-    return;
-  }
 
-  if (path === "starta.html") {
-    goNextPage("starta.html");
-    return;
-  }
-
-  if (path === "startb.html") {
-    goNextPage("startb.html");
-    return;
-  }
 
   /* ---------------------------------
      5) QR / 상세정보표시 클릭 허용
