@@ -1112,7 +1112,7 @@ a{text-decoration:none;color:inherit;}
   position:fixed;
   left:50%;
   transform:translateX(-50%);
-  bottom:130px; /* 하단탭 90px + 간격 12px */
+  bottom:118px; /* 하단탭 90px + 간격 12px */
   width:92%;           /* 🔥 핵심 */
   max-width:385px;         /* 원하는 크기 */
   padding:0 6px;
