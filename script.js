@@ -205,32 +205,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* ----------------
+     MID MODAL
+  ---------------- */
+  const midModalConfirmBtn = document.querySelector(".mid-modal-confirm");
+  const midModal = document.querySelector(".mid-modal");
+  const midModalDim = document.querySelector(".mid-dim");
 
-/* ----------------
-   MID MODAL
----------------- */
-const midModalConfirmBtn = document.querySelector(".mid-modal-confirm");
-const midModal = document.querySelector(".mid-modal");
-const midModalDim = document.querySelector(".mid-dim");
+  function openMidModal() {
+    midModal?.classList.add("is-open");
+    midModalDim?.classList.add("is-open");
+    lockBody(true);
+  }
 
-function openMidModal() {
-  midModal?.classList.add("is-open");
-  midModalDim?.classList.add("is-open");
-  lockBody(true);
-}
+  function closeMidModal() {
+    midModal?.classList.remove("is-open");
+    midModalDim?.classList.remove("is-open");
+    lockBody(false);
+  }
 
-function closeMidModal() {
-  midModal?.classList.remove("is-open");
-  midModalDim?.classList.remove("is-open");
-  lockBody(false);
-}
+  openMidModal();
 
-/* 🔥 이걸로 바꿔 */
-openMidModal();
-
-midModalConfirmBtn?.addEventListener("click", () => {
-  closeMidModal();
-});
+  midModalConfirmBtn?.addEventListener("click", () => {
+    closeMidModal();
+  });
 
   /* ----------------
      MID TIMER
@@ -340,30 +338,30 @@ midModalConfirmBtn?.addEventListener("click", () => {
   /* ----------------
      RESIDENT TOP BUTTON
   ---------------- */
-const topButton = document.querySelector(".floating-top-btn");
-const lifeGuideSection = document.querySelector(".lifeguide-section");
+  const topButton = document.querySelector(".floating-top-btn");
+  const lifeGuideSection = document.querySelector(".lifeguide-section");
 
-function toggleTopButton() {
-  if (!topButton || !lifeGuideSection) return;
+  function toggleTopButton() {
+    if (!topButton || !lifeGuideSection) return;
 
-  const guideTop = lifeGuideSection.getBoundingClientRect().top;
+    const guideTop = lifeGuideSection.getBoundingClientRect().top;
 
-  if (guideTop <= window.innerHeight - 120) {
-    topButton.classList.add("is-visible");
-  } else {
-    topButton.classList.remove("is-visible");
+    if (guideTop <= window.innerHeight - 120) {
+      topButton.classList.add("is-visible");
+    } else {
+      topButton.classList.remove("is-visible");
+    }
   }
-}
 
-window.addEventListener("scroll", toggleTopButton);
-toggleTopButton();
+  window.addEventListener("scroll", toggleTopButton);
+  toggleTopButton();
 
-topButton.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+  topButton?.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
-});
 
   /* ----------------
      QUICK MODAL EVENTS
@@ -391,12 +389,10 @@ topButton.addEventListener("click", () => {
   });
 });
 
-
-
 /* =========================
    분야별 정책정보 모달
 ========================= */
- document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const policyOpenBtn =
     document.querySelector(".lower-links .lower-row:first-child") ||
     document.querySelector('.land-lower-row[data-modal-target="policy"]');
@@ -446,27 +442,27 @@ topButton.addEventListener("click", () => {
   });
 });
 
-
 const channelModal = document.getElementById("channelModal");
 
 document.addEventListener("click", (e) => {
   const secondLowerRow =
-  e.target.closest(".lower-links .lower-row:nth-child(2)") ||
-  e.target.closest('.land-lower-row[data-modal-target="channel"]');  
+    e.target.closest(".lower-links .lower-row:nth-child(2)") ||
+    e.target.closest('.land-lower-row[data-modal-target="channel"]');
+
   if (secondLowerRow && channelModal) {
     channelModal.hidden = false;
     document.body.classList.add("is-locked");
   }
 
   const closeBtn = e.target.closest(
-  ".channel-modal-close, .channel-modal-dim, .land-channel-modal-close, .land-channel-modal-dim"
-);
+    ".channel-modal-close, .channel-modal-dim, .land-channel-modal-close, .land-channel-modal-dim"
+  );
+
   if (closeBtn && channelModal) {
     channelModal.hidden = true;
     document.body.classList.remove("is-locked");
   }
 });
-
 
 /* ================================
    AI BANNER CLICK
@@ -488,68 +484,68 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 /* ================================
-famaily
+   famaily
 ================================ */
 
-
-document.addEventListener('DOMContentLoaded', function () {
-  const tabButtons = document.querySelectorAll('.tab-button');
-  const tabPanels = document.querySelectorAll('.service-panel');
+document.addEventListener("DOMContentLoaded", function () {
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const tabPanels = document.querySelectorAll(".service-panel");
 
   tabButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      const targetId = button.getAttribute('data-tab-target');
+    button.addEventListener("click", function () {
+      const targetId = button.getAttribute("data-tab-target");
 
       tabButtons.forEach(function (item) {
-        item.classList.remove('is-active');
-        item.setAttribute('aria-selected', 'false');
+        item.classList.remove("is-active");
+        item.setAttribute("aria-selected", "false");
       });
 
       tabPanels.forEach(function (panel) {
-        panel.classList.remove('is-active');
-        panel.setAttribute('aria-hidden', 'true');
+        panel.classList.remove("is-active");
+        panel.setAttribute("aria-hidden", "true");
       });
 
-      button.classList.add('is-active');
-      button.setAttribute('aria-selected', 'true');
+      button.classList.add("is-active");
+      button.setAttribute("aria-selected", "true");
 
       const targetPanel = document.getElementById(targetId);
       if (targetPanel) {
-        targetPanel.classList.add('is-active');
-        targetPanel.setAttribute('aria-hidden', 'false');
+        targetPanel.classList.add("is-active");
+        targetPanel.setAttribute("aria-hidden", "false");
       }
     });
   });
 
-  const bannerSlides = document.querySelectorAll('.banner-slide');
-  const bannerPages = document.querySelectorAll('.banner-page');
-  const bannerPrev = document.getElementById('bannerPrev');
-  const bannerNext = document.getElementById('bannerNext');
+  const bannerSlides = document.querySelectorAll(".banner-slide");
+  const bannerPages = document.querySelectorAll(".banner-page");
+  const bannerPrev = document.getElementById("bannerPrev");
+  const bannerNext = document.getElementById("bannerNext");
 
   let currentBannerIndex = 0;
 
   function setBanner(index) {
     bannerSlides.forEach(function (slide, slideIndex) {
-      slide.classList.toggle('is-active', slideIndex === index);
+      slide.classList.toggle("is-active", slideIndex === index);
     });
 
     bannerPages.forEach(function (page, pageIndex) {
-      page.classList.toggle('is-active', pageIndex === index);
+      page.classList.toggle("is-active", pageIndex === index);
     });
 
     currentBannerIndex = index;
   }
 
   bannerPages.forEach(function (pageButton) {
-    pageButton.addEventListener('click', function () {
-      const index = Number(pageButton.getAttribute('data-banner-index'));
+    pageButton.addEventListener("click", function () {
+      const index = Number(pageButton.getAttribute("data-banner-index"));
       setBanner(index);
     });
   });
 
   if (bannerPrev) {
-    bannerPrev.addEventListener('click', function () {
+    bannerPrev.addEventListener("click", function () {
       let nextIndex = currentBannerIndex - 1;
       if (nextIndex < 0) {
         nextIndex = bannerSlides.length - 1;
@@ -559,7 +555,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (bannerNext) {
-    bannerNext.addEventListener('click', function () {
+    bannerNext.addEventListener("click", function () {
       let nextIndex = currentBannerIndex + 1;
       if (nextIndex >= bannerSlides.length) {
         nextIndex = 0;
@@ -568,151 +564,264 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  setBanner(0);
+  if (bannerSlides.length > 0) {
+    setBanner(0);
+  }
 });
 
-
-const slides = document.querySelectorAll('.family-page .banner-slide');
-const pages = document.querySelectorAll('.family-page .banner-page');
+const slides = document.querySelectorAll(".family-page .banner-slide");
+const pages = document.querySelectorAll(".family-page .banner-page");
 
 let currentIndex = 0;
 let bannerTimer = null;
 
-function showBanner(index){
+function showBanner(index) {
   slides.forEach((slide, i) => {
-    slide.classList.toggle('is-active', i === index);
+    slide.classList.toggle("is-active", i === index);
   });
 
   pages.forEach((page, i) => {
-    page.classList.toggle('is-active', i === index);
+    page.classList.toggle("is-active", i === index);
   });
 
   currentIndex = index;
 }
 
-function nextBanner(){
+function nextBanner() {
+  if (slides.length === 0) return;
   const nextIndex = (currentIndex + 1) % slides.length;
   showBanner(nextIndex);
 }
 
-function startBannerAuto(){
+function startBannerAuto() {
+  if (slides.length === 0) return;
   bannerTimer = setInterval(nextBanner, 3000);
 }
 
-function stopBannerAuto(){
+function stopBannerAuto() {
   clearInterval(bannerTimer);
 }
 
 pages.forEach((page, index) => {
-  page.addEventListener('click', () => {
+  page.addEventListener("click", () => {
     showBanner(index);
     stopBannerAuto();
     startBannerAuto();
   });
 });
 
-showBanner(0);
-startBannerAuto();
+if (slides.length > 0) {
+  showBanner(0);
+  startBannerAuto();
+}
 
-const closeBtn = document.querySelector('.family-top-close');
+const closeBtn = document.querySelector(".family-top-close");
 
-if(closeBtn){
-  closeBtn.addEventListener('click', () => {
-    window.location.href = 'index.html';
+if (closeBtn) {
+  closeBtn.addEventListener("click", () => {
+    window.location.href = "index.html";
   });
 }
 
 /* ================================
-   PAGE DATA (🔥 핵심)
+   PAGE DATA
 ================================ */
 
-const PAGE_DATA = {
-  index: {
-    userName: "김종혁님"
-  },
+document.addEventListener("DOMContentLoaded", () => {
+  const page = document.body.dataset.page;
 
-  indexs: {
+  if (page === "index") {
+    const userNameEl = document.querySelector(".topbar-user-name");
+    if (userNameEl) userNameEl.textContent = "김종혁님";
+    return;
+  }
+
+  if (page !== "indexs") return;
+
+  const cardData = {
     name: "홍성환",
-    region: "광주광역시 광산구",
     rrnFront: "890928",
+    rrnBackMasked: "*******",
     rrnBackFull: "1144311",
+    region: "광주광역시 광산구",
     address: "수등로123번길 22 (신가동, 아름마을휴먼시아2단지아파트) 205동 701호",
     issueDate: "2021.05.10",
     issuer: "광주광역시 광산구청장",
     profileImage: "https://i.postimg.cc/kGszy40D/photo-2026-04-04-00-34-29.jpg"
-  }
-};
+  };
 
-document.addEventListener("DOMContentLoaded", () => {
-  const page = document.body.dataset.page;
-  const data = PAGE_DATA[page];
+  let qrRefreshCount = 0;
 
-  if (!data) return;
-
-  /* =================
-     index (상단 이름)
-  ================= */
-  if (page === "index") {
-    const userNameEl = document.querySelector(".topbar-user-name");
-    if (userNameEl) userNameEl.textContent = data.userName;
+  function setRealVh() {
+    document.documentElement.style.setProperty("--app-vh", `${window.innerHeight * 0.01}px`);
   }
 
-  /* =================
-     indexs (카드 전체)
-  ================= */
-  if (page === "indexs") {
-
-    // 메인 카드
-    document.getElementById("mainName").textContent = data.name;
-    document.getElementById("mainRegion").textContent = data.region;
-
-    // 프로필 이미지
-    document.getElementById("profileImage").src = data.profileImage;
-    document.getElementById("detailProfileImage").src = data.profileImage;
-
-    // 모달 렌더
+  function renderDetailInfo() {
     const mount = document.getElementById("detailInfoMount");
-    if (mount) {
-      mount.innerHTML = `
-        <div class="detail-fixed-name">${data.name}</div>
+    if (!mount) return;
 
-        <input type="checkbox" id="switch" hidden onchange="updateText()" />
+    mount.innerHTML = `
+      <div class="detail-fixed-name" id="detailName">${cardData.name}</div>
 
-        <label for="switch" class="switch_label detail-fixed-switch">
-          <span class="onf_btn"></span>
-        </label>
+      <input type="checkbox" id="switch" hidden />
 
-        <div class="detail-fixed-rrn">
-          ${data.rrnFront}-<span id="idNumber">*******</span>
-        </div>
+      <label for="switch" class="switch_label detail-fixed-switch">
+        <span class="onf_btn"></span>
+      </label>
 
-        <div class="detail-fixed-address">
-          ${data.region}
-          <span id="userLocation">ㅤ<br />ㅤ</span>
-        </div>
+      <div class="detail-fixed-rrn">
+        ${cardData.rrnFront}-<span id="idNumber">${cardData.rrnBackMasked}</span>
+      </div>
 
-        <div class="modal-bottom">
-          <h4>${data.issueDate}</h4>
-          <p>${data.issuer}</p>
-        </div>
-      `;
+      <div class="detail-fixed-address">
+        ${cardData.region}
+        <span id="userLocation">ㅤ<br />ㅤ</span>
+      </div>
+
+      <div class="modal-bottom">
+        <h4 id="issueDate">${cardData.issueDate}</h4>
+        <p id="issuerName">${cardData.issuer}</p>
+      </div>
+    `;
+  }
+
+  function applyCardData() {
+    const mainName = document.getElementById("mainName");
+    const mainRegion = document.getElementById("mainRegion");
+    const detailName = document.getElementById("detailName");
+    const issueDate = document.getElementById("issueDate");
+    const issuerName = document.getElementById("issuerName");
+    const profileImage = document.getElementById("profileImage");
+    const detailProfileImage = document.getElementById("detailProfileImage");
+
+    if (mainName) mainName.textContent = cardData.name;
+    if (mainRegion) mainRegion.textContent = cardData.region;
+    if (detailName) detailName.textContent = cardData.name;
+    if (issueDate) issueDate.textContent = cardData.issueDate;
+    if (issuerName) issuerName.textContent = cardData.issuer;
+    if (profileImage) profileImage.src = cardData.profileImage;
+    if (detailProfileImage) detailProfileImage.src = cardData.profileImage;
+  }
+
+  function updateText() {
+    const checkbox = document.getElementById("switch");
+    const idNumber = document.getElementById("idNumber");
+    const userLocation = document.getElementById("userLocation");
+
+    if (!checkbox || !idNumber || !userLocation) return;
+
+    if (checkbox.checked) {
+      idNumber.textContent = cardData.rrnBackFull;
+      userLocation.innerHTML = cardData.address;
+    } else {
+      idNumber.textContent = cardData.rrnBackMasked;
+      userLocation.innerHTML = "ㅤ<br>ㅤ";
+    }
+  }
+
+  function updateTime() {
+    const now = new Date();
+    const formattedTime =
+      `${now.getFullYear()}년${String(now.getMonth() + 1).padStart(2, "0")}월${String(now.getDate()).padStart(2, "0")}일 ` +
+      `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}:${String(now.getSeconds()).padStart(2, "0")}`;
+
+    const timeEl = document.getElementById("current-time");
+    if (timeEl) timeEl.textContent = formattedTime;
+  }
+
+  function updateQrCode() {
+    const now = new Date();
+    const token = Math.floor(now.getTime() / 30000);
+
+    const qrValue = `user=${cardData.name}|region=${cardData.region.replace(/\s/g, "")}|token=${token}`;
+    const qrImg = document.getElementById("QR_img");
+    const qrOverlay = document.querySelector(".qr-overlay");
+
+    if (!qrImg) return;
+
+    qrImg.src =
+      `https://api.qrserver.com/v1/create-qr-code/?size=250x250&ecc=H&color=000000&bgcolor=ffffff&data=${encodeURIComponent(qrValue)}`;
+
+    qrRefreshCount += 1;
+
+    if (qrRefreshCount >= 5) {
+      if (qrOverlay) qrOverlay.style.display = "block";
+      qrImg.style.opacity = "0.2";
+    } else {
+      if (qrOverlay) qrOverlay.style.display = "none";
+      qrImg.style.opacity = "1";
+    }
+  }
+
+  function resetQr() {
+    qrRefreshCount = 0;
+    updateQrCode();
+  }
+
+  renderDetailInfo();
+  applyCardData();
+  updateText();
+  updateTime();
+  updateQrCode();
+  setRealVh();
+
+  window.addEventListener("resize", setRealVh);
+  window.addEventListener("orientationchange", setRealVh);
+
+  const openBtn = document.querySelector(".js-click-modal");
+  const closeBtn = document.querySelector(".js-close-detail");
+  const mainBox = document.querySelector(".box_main");
+  const modal = document.querySelector(".modal");
+  const progress = document.getElementById("jb");
+  const timeText = document.querySelector(".progressbar_time");
+  const qrOverlay = document.querySelector(".qr-overlay");
+
+  if (qrOverlay) {
+    qrOverlay.style.display = "none";
+    qrOverlay.addEventListener("click", resetQr);
+  }
+
+  document.addEventListener("change", (e) => {
+    if (e.target && e.target.id === "switch") {
+      updateText();
+    }
+  });
+
+  openBtn?.addEventListener("click", () => {
+    if (mainBox) mainBox.style.display = "none";
+    if (modal) {
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    if (mainBox) mainBox.style.display = "flex";
+    if (modal) {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
     }
 
-    // toggle 기능
-    window.updateText = function () {
-      const checkbox = document.getElementById("switch");
-      const idNumber = document.getElementById("idNumber");
-      const userLocation = document.getElementById("userLocation");
+    const checkbox = document.getElementById("switch");
+    if (checkbox) checkbox.checked = false;
+    updateText();
+  });
 
-      if (!checkbox || !idNumber || !userLocation) return;
+  let count = 30;
+  if (progress) progress.value = count;
+  if (timeText) timeText.textContent = `${count}초`;
 
-      if (checkbox.checked) {
-        idNumber.innerHTML = data.rrnBackFull;
-        userLocation.innerHTML = data.address;
-      } else {
-        idNumber.innerHTML = "*******";
-        userLocation.innerHTML = "ㅤ<br>ㅤ";
-      }
-    };
-  }
+  setInterval(() => {
+    count -= 1;
+
+    if (count < 0) {
+      count = 30;
+      updateQrCode();
+    }
+
+    if (progress) progress.value = count;
+    if (timeText) timeText.textContent = `${count}초`;
+  }, 1000);
+
+  setInterval(updateTime, 1000);
 });
