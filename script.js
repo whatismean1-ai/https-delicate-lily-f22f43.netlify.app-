@@ -795,11 +795,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardData = PAGE_CARD_DATA[page];
   if (!cardData) return;
 
-  if (page === "index") {
-    const userNameEl = document.querySelector(".topbar-user-name");
-    if (userNameEl) userNameEl.textContent = cardData.userName;
-    return;
+if (page === "index") {
+  // 🔥 메인홈에서 사용할 기준 페이지 선택 (여기만 바꾸면 됨)
+  const homeTarget = PAGE_CARD_DATA.indexsa;
+
+  const userNameEl = document.querySelector(".topbar-user-name");
+  if (userNameEl && homeTarget) {
+    userNameEl.textContent = `${homeTarget.name}님`;
   }
+
+  return;
+}
 
   let qrRefreshCount = 0;
 
@@ -811,30 +817,34 @@ document.addEventListener("DOMContentLoaded", () => {
     const mount = document.getElementById("detailInfoMount");
     if (!mount) return;
 
-    mount.innerHTML = `
-      <div class="detail-fixed-name" id="detailName">${cardData.name}</div>
+function renderDetailInfo() {
+  const mount = document.getElementById("detailInfoMount");
+  if (!mount) return;
 
-      <input type="checkbox" id="switch" hidden />
+  mount.innerHTML = `
+    <div class="detail-fixed-name" id="detailName">${cardData.name}</div>
 
-      <label for="switch" class="switch_label detail-fixed-switch">
-        <span class="onf_btn"></span>
-      </label>
+    <input type="checkbox" id="switch" hidden />
 
-      <div class="detail-fixed-rrn">
-        ${cardData.rrnFront}-<span id="idNumber">${cardData.rrnBackMasked}</span>
-      </div>
+    <label for="switch" class="switch_label detail-fixed-switch">
+      <span class="onf_btn"></span>
+    </label>
 
-      <div class="detail-fixed-address">
-        ${cardData.region}
-        <span id="userLocation">ㅤ<br>ㅤ</span>
-      </div>
+    <div class="detail-fixed-rrn">
+      ${cardData.rrnFront}-<span id="idNumber">${cardData.rrnBackMasked}</span>
+    </div>
 
-      <div class="modal-bottom">
-        <h4 id="issueDate">${cardData.issueDate}</h4>
-        <p id="issuerName">${cardData.issuer}</p>
-      </div>
-    `;
-  }
+    <!-- 🔥 여기 핵심 -->
+    <div class="detail-fixed-address">
+      <span id="fullRegion">${cardData.region}</span><span id="userLocation"></span>
+    </div>
+
+    <div class="modal-bottom">
+      <h4 id="issueDate">${cardData.issueDate}</h4>
+      <p id="issuerName">${cardData.issuer}</p>
+    </div>
+  `;
+}
 
   function applyCardData() {
     const mainName = document.getElementById("mainName");
@@ -854,21 +864,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (detailProfileImage) detailProfileImage.src = cardData.profileImage;
   }
 
-  function updateText() {
-    const checkbox = document.getElementById("switch");
-    const idNumber = document.getElementById("idNumber");
-    const userLocation = document.getElementById("userLocation");
+function updateText() {
+  const checkbox = document.getElementById("switch");
+  const idNumber = document.getElementById("idNumber");
+  const userLocation = document.getElementById("userLocation");
 
-    if (!checkbox || !idNumber || !userLocation) return;
+  if (!checkbox || !idNumber || !userLocation) return;
 
-    if (checkbox.checked) {
-      idNumber.textContent = cardData.rrnBackFull;
-      userLocation.innerHTML = cardData.address;
-    } else {
-      idNumber.textContent = cardData.rrnBackMasked;
-      userLocation.innerHTML = "ㅤ<br>ㅤ";
-    }
+  if (checkbox.checked) {
+    idNumber.textContent = cardData.rrnBackFull;
+    userLocation.textContent = " " + cardData.address; // 🔥 한줄 연결
+  } else {
+    idNumber.textContent = cardData.rrnBackMasked;
+    userLocation.textContent = ""; // 🔥 줄 삭제
   }
+}
 
   function updateTime() {
     const now = new Date();
