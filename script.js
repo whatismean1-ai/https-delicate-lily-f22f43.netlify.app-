@@ -824,32 +824,34 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.style.setProperty("--app-vh", `${window.innerHeight * 0.01}px`);
   }
 
-  function renderDetailInfo() {
-    const mount = document.getElementById("detailInfoMount");
-    if (!mount) return;
+function renderDetailInfo() {
+  const mount = document.getElementById("detailInfoMount");
+  if (!mount) return;
 
-    mount.innerHTML = `
-      <div class="detail-fixed-name" id="detailName">${cardData.name}</div>
+  mount.innerHTML = `
+    <div class="detail-fixed-name" id="detailName">${cardData.name}</div>
 
-      <input type="checkbox" id="switch" hidden />
+    <input type="checkbox" id="switch" hidden />
 
-      <label for="switch" class="switch_label detail-fixed-switch">
-        <span class="onf_btn"></span>
-      </label>
+    <label for="switch" class="switch_label detail-fixed-switch">
+      <span class="onf_btn"></span>
+    </label>
 
-<div class="detail-fixed-rrn">
-  ${cardData.rrnFront}-<span id="idNumber">${cardData.rrnBackMasked}</span>
-</div>
+    <div class="detail-fixed-rrn">
+      ${cardData.rrnFront}-<span id="idNumber">${cardData.rrnBackMasked}</span>
+    </div>
 
-<div class="detail-fixed-address">
-  <div id="fullRegion">${cardData.region}</div>
-  <div id="userLocation"></div>
-</div>
+    <div class="detail-fixed-address">
+      <div id="fullRegion">${cardData.region}</div>
+      <div id="userLocation"></div>
+    </div>
 
-<div class="modal-bottom">
-  <h4 id="issueDate">${cardData.issueDate}</h4>
-  <p id="issuerName">${cardData.issuer}</p>
-</div>
+    <div class="modal-bottom">
+      <h4 id="issueDate">${cardData.issueDate}</h4>
+      <p id="issuerName">${cardData.issuer}</p>
+    </div>
+  `;
+}
 
   function applyCardData() {
     const mainName = document.getElementById("mainName");
