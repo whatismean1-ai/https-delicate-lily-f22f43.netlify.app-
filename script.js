@@ -621,3 +621,98 @@ if(closeBtn){
     window.location.href = 'index.html';
   });
 }
+
+/* ================================
+   PAGE DATA (🔥 핵심)
+================================ */
+
+const PAGE_DATA = {
+  index: {
+    userName: "김종혁님"
+  },
+
+  indexs: {
+    name: "홍성환",
+    region: "광주광역시 광산구",
+    rrnFront: "890928",
+    rrnBackFull: "1144311",
+    address: "수등로123번길 22 (신가동, 아름마을휴먼시아2단지아파트) 205동 701호",
+    issueDate: "2021.05.10",
+    issuer: "광주광역시 광산구청장",
+    profileImage: "https://i.postimg.cc/kGszy40D/photo-2026-04-04-00-34-29.jpg"
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  const page = document.body.dataset.page;
+  const data = PAGE_DATA[page];
+
+  if (!data) return;
+
+  /* =================
+     index (상단 이름)
+  ================= */
+  if (page === "index") {
+    const userNameEl = document.querySelector(".topbar-user-name");
+    if (userNameEl) userNameEl.textContent = data.userName;
+  }
+
+  /* =================
+     indexs (카드 전체)
+  ================= */
+  if (page === "indexs") {
+
+    // 메인 카드
+    document.getElementById("mainName").textContent = data.name;
+    document.getElementById("mainRegion").textContent = data.region;
+
+    // 프로필 이미지
+    document.getElementById("profileImage").src = data.profileImage;
+    document.getElementById("detailProfileImage").src = data.profileImage;
+
+    // 모달 렌더
+    const mount = document.getElementById("detailInfoMount");
+    if (mount) {
+      mount.innerHTML = `
+        <div class="detail-fixed-name">${data.name}</div>
+
+        <input type="checkbox" id="switch" hidden onchange="updateText()" />
+
+        <label for="switch" class="switch_label detail-fixed-switch">
+          <span class="onf_btn"></span>
+        </label>
+
+        <div class="detail-fixed-rrn">
+          ${data.rrnFront}-<span id="idNumber">*******</span>
+        </div>
+
+        <div class="detail-fixed-address">
+          ${data.region}
+          <span id="userLocation">ㅤ<br />ㅤ</span>
+        </div>
+
+        <div class="modal-bottom">
+          <h4>${data.issueDate}</h4>
+          <p>${data.issuer}</p>
+        </div>
+      `;
+    }
+
+    // toggle 기능
+    window.updateText = function () {
+      const checkbox = document.getElementById("switch");
+      const idNumber = document.getElementById("idNumber");
+      const userLocation = document.getElementById("userLocation");
+
+      if (!checkbox || !idNumber || !userLocation) return;
+
+      if (checkbox.checked) {
+        idNumber.innerHTML = data.rrnBackFull;
+        userLocation.innerHTML = data.address;
+      } else {
+        idNumber.innerHTML = "*******";
+        userLocation.innerHTML = "ㅤ<br>ㅤ";
+      }
+    };
+  }
+});
