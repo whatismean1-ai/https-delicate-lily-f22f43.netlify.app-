@@ -180,11 +180,11 @@ body {
   width: 132px;
   height: 165px;
   object-fit: cover;
+  object-position: center; /* 🔥 이거 추가 */
   display: block;
   margin-bottom: 15px;
   flex: 0 0 auto;
 }
-
 .right-top-icon {
   position: absolute;
   top: 16px;
