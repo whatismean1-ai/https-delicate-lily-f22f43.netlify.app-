@@ -1,14 +1,13 @@
 html,
 body {
   width: 100%;
-  height: 100%;
   min-height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background: #eef2f7;
   -webkit-text-size-adjust: none;
   font-family: "Pretendard Variable", "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  overflow-x: hidden;
 }
 
 body {
@@ -16,29 +15,28 @@ body {
 }
 
 :root {
-  --app-height: 100vh;
+  --app-height: 100dvh;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
+/* 바깥 래퍼가 있으면 쓰고, 없어도 mid-app만으로 동작 가능 */
 .mid-screen {
   width: 100%;
-  height: var(--app-height);
   min-height: var(--app-height);
   background: #eef2f7;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .mid-app {
   position: relative;
   width: 100%;
-  height: var(--app-height);
   min-height: var(--app-height);
   background: #eef2f7;
   padding-top: calc(65px + var(--safe-top));
-  padding-bottom: var(--safe-bottom);
-  overflow: hidden;
+  padding-bottom: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* ================================
@@ -115,6 +113,8 @@ body {
   color: #222;
   white-space: nowrap;
   letter-spacing: -0.2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mid-topbar-menu {
@@ -134,25 +134,31 @@ body {
 /* ================================
    DIM
 ================================ */
-.mid-dim {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 40;
-  display: none;
-  margin: 0;
-  padding: 0;
-}
-
-.mid-dim.is-open {
-  display: block;
-}
-
+.mid-dim,
 #drawerOverlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.mid-dim {
+  z-index: 40;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+#drawerOverlay {
   z-index: 80;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.mid-dim.is-open,
+#drawerOverlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 #drawerOverlay[hidden] {
@@ -166,19 +172,28 @@ body {
   position: fixed;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.98);
   width: 320px;
   max-width: calc(100vw - 32px);
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
   z-index: 50;
-  display: none;
-  box-shadow: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
 }
 
 .mid-modal.is-open {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .mid-modal-head {
@@ -203,7 +218,7 @@ body {
   font-size: 15px;
   font-weight: 700;
   color: #111;
-  line-height: 1;
+  line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
@@ -252,6 +267,37 @@ body {
   background: #f8f8f8;
 }
 
+/* ================================
+   DRAWER
+================================ */
 #drawer {
-  background: rgba(0,255,0,0.3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(86vw, 360px);
+  height: 100dvh;
+  background: #fff;
+  z-index: 90;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  box-shadow: -6px 0 24px rgba(0, 0, 0, 0.12);
+}
+
+#drawer.is-open {
+  transform: translateX(0);
+}
+
+/* ================================
+   MOBILE SAFE
+================================ */
+@supports (height: 100svh) {
+  :root {
+    --app-height: 100svh;
+  }
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --app-height: 100dvh;
+  }
 }
