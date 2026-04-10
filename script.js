@@ -874,21 +874,21 @@ console.log("cardData =", cardData);
     if (detailProfileImage) detailProfileImage.src = cardData.profileImage;
   }
 
-  function updateText() {
-    const checkbox = document.getElementById("switch");
-    const idNumber = document.getElementById("idNumber");
-    const userLocation = document.getElementById("userLocation");
+function updateText() {
+  const checkbox = document.getElementById("switch");
+  const idNumber = document.getElementById("idNumber");
+  const userLocation = document.getElementById("userLocation");
 
-    if (!checkbox || !idNumber || !userLocation) return;
+  if (!checkbox || !idNumber || !userLocation) return;
 
-    if (checkbox.checked) {
-      idNumber.textContent = cardData.rrnBackFull;
-      userLocation.textContent = " " + cardData.address;
-    } else {
-      idNumber.textContent = cardData.rrnBackMasked;
-      userLocation.textContent = "";
-    }
+  if (checkbox.checked) {
+    idNumber.textContent = cardData.rrnBackFull;
+    userLocation.textContent = cardData.address;
+  } else {
+    idNumber.textContent = cardData.rrnBackMasked;
+    userLocation.textContent = "";
   }
+}
 
   function updateTime() {
     const now = new Date();
