@@ -12,75 +12,79 @@
 </head>
 <body>
   <div id="drawerOverlay" hidden></div>
-<aside id="drawer" aria-hidden="true"></aside>
-    <div class="mid-app" aria-label="주민등록증 모바일 확인서비스">
+  <aside id="drawer" aria-hidden="true"></aside>
 
-      <div class="mid-topbar-wrap">
-        <header class="mid-topbar">
-          <a class="mid-topbar-back" href="./mobile-id.html" aria-label="뒤로">
-            <span class="mid-topbar-back-arrow" aria-hidden="true">◀</span>
-            <span class="mid-topbar-back-text">정부24</span>
-          </a>
+  <div class="mid-app" aria-label="주민등록증 모바일 확인서비스">
 
-          <div class="mid-topbar-title-group" aria-label="주민등록증 모바일 확인서비스">
-            <img
-              class="mid-topbar-logo"
-              src="./assets/ico-korean-flag.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <span class="mid-topbar-title">주민등록증 모바일 확인서비스</span>
-          </div>
+    <div class="mid-topbar-wrap">
+      <header class="mid-topbar">
+        <a class="mid-topbar-back" href="./mobile-id.html" aria-label="뒤로">
+          <span class="mid-topbar-back-arrow" aria-hidden="true">◀</span>
+          <span class="mid-topbar-back-text">정부24</span>
+        </a>
 
-          <a class="mid-topbar-menu" href="./menu.html" aria-label="전체메뉴">
-            <img
-              class="mid-topbar-menu-icon"
-              src="./assets/ico-allmenu.svg"
-              alt=""
-              aria-hidden="true"
-            />
-          </a>
-        </header>
-      </div>
-
-      <div class="mid-dim" id="midModalDim"></div>
-
-      <div
-        class="mid-modal"
-        id="midWarningModal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="midModalTitle"
-      >
-        <div class="mid-modal-head">
+        <div class="mid-topbar-title-group" aria-label="주민등록증 모바일 확인서비스">
           <img
-            class="mid-modal-head-icon"
+            class="mid-topbar-logo"
             src="./assets/ico-korean-flag.svg"
             alt=""
             aria-hidden="true"
           />
-          <h2 class="mid-modal-title" id="midModalTitle">주민등록사항 조작 및 부정 사용 금지</h2>
+          <span class="mid-topbar-title">주민등록증 모바일 확인서비스</span>
         </div>
 
-        <div class="mid-modal-body">
-          <p class="mid-modal-text">
-            정보통신기기에 제공된 주민등록사항을<br />
-            조작하거나 부정하게 사용시
-            <span class="mid-modal-point">3년 이하의</span><br />
-            <span class="mid-modal-point">징역</span>
-            또는
-            <span class="mid-modal-point">3천만원 이하의 벌금</span>
-            에 처해 질수<br />
-            있습니다.
-          </p>
+        <a class="mid-topbar-menu" href="./menu.html" aria-label="전체메뉴">
+          <img
+            class="mid-topbar-menu-icon"
+            src="./assets/ico-allmenu.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </a>
+      </header>
+    </div>
 
-          <p class="mid-modal-law">※ 주민등록법 제37조</p>
-        </div>
+    <div class="mid-dim" id="midModalDim"></div>
 
-        <button type="button" class="mid-modal-confirm" id="midModalConfirm">확인</button>
+    <div
+      class="mid-modal"
+      id="midWarningModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="midModalTitle"
+    >
+      <div class="mid-modal-head">
+        <img
+          class="mid-modal-head-icon"
+          src="./assets/ico-korean-flag.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <h2 class="mid-modal-title" id="midModalTitle">
+          주민등록사항 조작 및 부정 사용 금지
+        </h2>
       </div>
 
+      <div class="mid-modal-body">
+        <p class="mid-modal-text">
+          정보통신기기에 제공된 주민등록사항을<br />
+          조작하거나 부정하게 사용시
+          <span class="mid-modal-point">3년 이하의</span><br />
+          <span class="mid-modal-point">징역</span>
+          또는
+          <span class="mid-modal-point">3천만원 이하의 벌금</span>
+          에 처해 질수<br />
+          있습니다.
+        </p>
+
+        <p class="mid-modal-law">※ 주민등록법 제37조</p>
+      </div>
+
+      <button type="button" class="mid-modal-confirm" id="midModalConfirm">
+        확인
+      </button>
     </div>
+
   </div>
 
   <script>
@@ -98,8 +102,7 @@
         });
       }
     });
-<script>
-  console.log("JS 작동됨");
-</script>
+  </script>
+
 </body>
 </html>
