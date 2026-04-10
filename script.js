@@ -632,7 +632,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (page === "index") {
     const userNameEl = document.querySelector(".topbar-user-name");
-    if (userNameEl) userNameEl.textContent = "김종혁님";
+    if (userNameEl) userNameEl.textContent = "홍성환님";
     return;
   }
 
