@@ -504,20 +504,23 @@ progress::-moz-progress-bar {
   font-weight: 400;
   line-height: 1.45;
   color: #2c2c2c;
+  word-break: keep-all;
 }
 
+#fullRegion,
 #userLocation {
-  display: inline;   /* 핵심 */
-  margin-left: 4px;
-  font-size: 17px;
-  line-height: 1.4;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-#fullRegion {
   display: inline;
-  white-space: nowrap;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+#userLocation::before {
+  content: " ";
 }
 
 .detail-fixed-address span {
