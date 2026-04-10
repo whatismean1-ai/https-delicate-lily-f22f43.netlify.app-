@@ -834,7 +834,6 @@ function renderDetailInfo() {
       ${cardData.rrnFront}-<span id="idNumber">${cardData.rrnBackMasked}</span>
     </div>
 
-    <!-- 🔥 여기 핵심 -->
     <div class="detail-fixed-address">
       <span id="fullRegion">${cardData.region}</span><span id="userLocation"></span>
     </div>
@@ -873,10 +872,10 @@ function updateText() {
 
   if (checkbox.checked) {
     idNumber.textContent = cardData.rrnBackFull;
-    userLocation.textContent = " " + cardData.address; // 🔥 한줄 연결
+    userLocation.textContent = " " + cardData.address;
   } else {
     idNumber.textContent = cardData.rrnBackMasked;
-    userLocation.textContent = ""; // 🔥 줄 삭제
+    userLocation.textContent = "";
   }
 }
 
