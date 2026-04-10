@@ -852,7 +852,11 @@ function renderDetailInfo() {
     </div>
   `;
 }
+console.log("page =", page);
+console.log("selectedUser =", selectedUser);
+console.log("cardData =", cardData);
 
+  
   function applyCardData() {
     const mainName = document.getElementById("mainName");
     const mainRegion = document.getElementById("mainRegion");
