@@ -841,10 +841,9 @@ function renderDetailInfo() {
       ${cardData.rrnFront}-<span id="idNumber">${cardData.rrnBackMasked}</span>
     </div>
 
-    <div class="detail-fixed-address">
-      <div id="fullRegion">${cardData.region}</div>
-      <div id="userLocation"></div>
-    </div>
+<div class="detail-fixed-address">
+  <span id="fullRegion">${cardData.region}</span><span id="userLocation"></span>
+</div>
 
     <div class="modal-bottom">
       <h4 id="issueDate">${cardData.issueDate}</h4>
