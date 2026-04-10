@@ -390,7 +390,13 @@ progress::-moz-progress-bar {
   color: #222;
   margin-top: 6px;
 }
-
+/* 주소 뒷부분만 작게 */
+#userLocation{
+  display:block;
+  font-size:17px;   /* 🔥 여기 숫자로 조절 */
+  line-height:1.4;
+  margin-top:4px;
+}
 .switch_label {
   position: relative;
   cursor: pointer;
