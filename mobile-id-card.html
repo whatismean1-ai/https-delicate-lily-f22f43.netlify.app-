@@ -87,23 +87,6 @@
 
   </div>
 
-  <script>
-    window.addEventListener("load", () => {
-      const dim = document.getElementById("midModalDim");
-      const modal = document.getElementById("midWarningModal");
-      const confirmBtn = document.getElementById("midModalConfirm");
-
-      if (dim) dim.classList.add("is-open");
-      if (modal) modal.classList.add("is-open");
-
-      if (confirmBtn) {
-        confirmBtn.addEventListener("click", () => {
-          if (dim) dim.classList.remove("is-open");
-          if (modal) modal.classList.remove("is-open");
-          window.location.href = "./index.html";
-        });
-      }
-    });
-  </script>
+  <script src="./script.js"></script>
 </body>
 </html>
