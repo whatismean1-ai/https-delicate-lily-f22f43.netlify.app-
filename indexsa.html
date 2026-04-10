@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="정부24" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <title>정부24</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+  />
+  <link rel="stylesheet" href="mains.css" />
+</head>
+<body data-page="indexsa">
+  <div class="jumin on act">
+    <div class="top-space"></div>
+
+    <div class="header-top">
+      <a href="./index.html" class="header-back">◀정부24</a>
+
+      <h1 class="logo">
+        <img src="./assets/ico-korean-flag.svg" alt="" />
+        주민등록증 모바일 확인서비스
+      </h1>
+
+      <p class="mo-menu">☰</p>
+    </div>
+
+    <div id="wrap">
+      <div class="card-shell box_main">
+        <img
+          id="profileImage"
+          class="profile-image"
+          src="https://i.postimg.cc/kGszy40D/photo-2026-04-04-00-34-29.jpg"
+          alt="profile"
+        />
+
+        <img
+          src="./assets/ico-cap.png"
+          class="right-top-icon"
+          alt="cap icon"
+        />
+
+        <div class="cont">
+          <div class="left-info">
+            <h1 id="mainName">홍성환</h1>
+            <h3 id="mainRegion">광주광역시 광산구</h3>
+          </div>
+
+          <div class="QR_Code">
+            <img id="QR_img" class="qr-bg" alt="QR 코드" />
+            <div class="qr-overlay" aria-hidden="true">↻</div>
+          </div>
+        </div>
+
+        <progress value="30" max="30" id="jb"></progress>
+
+        <div class="time-row">
+          <p class="progressbar_text">남은시간</p>
+          <p class="progressbar_time">시간초과</p>
+        </div>
+
+        <p class="QR_text">QR코드를 리더기에 스캔하세요</p>
+        <p id="current-time"></p>
+
+        <div class="box_footer">
+          <p class="js-click-modal">상세정보 표시</p>
+        </div>
+      </div>
+
+      <div class="modal" aria-hidden="true">
+        <div class="card-shell detail_box">
+          <img
+            id="detailProfileImage"
+            class="profile-image"
+            src="https://i.postimg.cc/kGszy40D/photo-2026-04-04-00-34-29.jpg"
+            alt="profile"
+          />
+
+          <div id="detailInfoMount"></div>
+        </div>
+
+        <button type="button" class="back js-close-detail" aria-label="닫기">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="29" fill="currentColor" viewBox="0 0 18 14">
+            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+<div id="footer">
+  <div class="ticker">
+    <div class="ticker-track">
+      주민등록증 이미지 위·변조 및 부정 사용 금지 (위반시 3년 이하의 징역 또는 3천만원 이하의 벌금)
+      ㅤㅤ주민등록증 이미지 위·변조 및 부정 사용 금지 (위반시 3년 이하의 징역 또는 3천만원 이하의 벌금)
+      ㅤㅤ주민등록증 이미지 위·변조 및 부정 사용 금지 (위반시 3년 이하의 징역 또는 3천만원 이하의 벌금)
+         주민등록증 이미지 위·변조 및 부정 사용 금지 (위반시 3년 이하의 징역 또는 3천만원 이하의 벌금)
+         주민등록증 이미지 위·변조 및 부정 사용 금지 (위반시 3년 이하의 징역 또는 3천만원 이하의 벌금)
+         주민등록증 이미지 위·변조 및 부정 사용 금지 (위반시 3년 이하의 징역 또는 3천만원 이하의 벌금)
+    </div>
+  </div>
+</div>
+
+    <div class="bottom-space"></div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
