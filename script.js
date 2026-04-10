@@ -205,17 +205,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ----------------
-     MID MODAL
-  ---------------- */
-  const midModalConfirmBtn = document.querySelector(".mid-modal-confirm");
-  const midModal = document.querySelector(".mid-modal");
-  const midModalDim = document.querySelector(".mid-modal-dim");
+/* ----------------
+   MID MODAL
+---------------- */
+const midModalConfirmBtn = document.querySelector(".mid-modal-confirm");
+const midModal = document.querySelector(".mid-modal");
+const midModalDim = document.querySelector(".mid-dim");
 
-  midModalConfirmBtn?.addEventListener("click", () => {
-    midModal?.remove();
-    midModalDim?.remove();
-  });
+midModalConfirmBtn?.addEventListener("click", () => {
+  midModal?.classList.remove("is-open");
+  midModalDim?.classList.remove("is-open");
+});
 
   /* ----------------
      MID TIMER
