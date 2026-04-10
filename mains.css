@@ -443,7 +443,8 @@ progress::-moz-progress-bar {
   z-index: 60;
   color: inherit;
   margin-top: 14px;
-  margin-left: calc((min(calc(100% - 35px), calc(var(--card-max-h) * 340 / 560)) - 44px) / -2);
+  margin-right: auto;
+  margin-left: 18px;
 }
 
 .back svg {
