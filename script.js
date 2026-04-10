@@ -1002,20 +1002,27 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------------------------------
      1) 파일 순서 라우팅
   --------------------------------- */
-  const routeMap = {
-    "start.html": "indexs.html",
-    "starta.html": "indexsa.html",
-    "startb.html": "indexsb.html",
-    "index.html": "menu.html",
-    "menu.html": "mobile-id-card.html",
-    "mobile-id-card.html": "indexsl.html"
-  };
+const routeMap = {
+  "index.html": "menu.html",
+  "menu.html": "mobile-id-card.html"
+};
 
-  function goNextPage(currentFile) {
-    const nextFile = routeMap[currentFile];
-    if (!nextFile) return;
-    window.location.href = nextFile;
+function getSelectedUserPage() {
+  return (localStorage.getItem("selectedUser") || "indexs") + ".html";
+}
+
+function goNextPage(currentFile) {
+  // 마지막 페이지 분기 (여기 핵심)
+  if (currentFile === "mobile-id-card.html") {
+    window.location.href = getSelectedUserPage();
+    return;
   }
+
+  const nextFile = routeMap[currentFile];
+  if (!nextFile) return;
+
+  window.location.href = nextFile;
+}
 
   /* ---------------------------------
      2) 클릭 막는 레이어 해제
