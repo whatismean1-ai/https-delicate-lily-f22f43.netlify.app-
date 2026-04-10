@@ -629,6 +629,7 @@ if (closeBtn) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const page = document.body.dataset.page;
+  const selectedUser = localStorage.getItem("selectedUser") || "indexsa";
 
   const PAGE_CARD_DATA = {
     index: {
@@ -792,20 +793,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  const cardData = PAGE_CARD_DATA[page];
+  const directPages = [
+    "indexsa", "indexsb", "indexsc", "indexsd", "indexse",
+    "indexsf", "indexsg", "indexsh", "indexsi", "indexsj",
+    "indexsk", "indexsl"
+  ];
+
+  const cardData =
+    page === "index"
+      ? PAGE_CARD_DATA[selectedUser]
+      : page === "indexs"
+      ? PAGE_CARD_DATA[selectedUser]
+      : directPages.includes(page)
+      ? PAGE_CARD_DATA[page]
+      : PAGE_CARD_DATA[selectedUser];
+
   if (!cardData) return;
 
-if (page === "index") {
-  // 🔥 메인홈에서 사용할 기준 페이지 선택 (여기만 바꾸면 됨)
-  const homeTarget = PAGE_CARD_DATA.indexsa;
-
-  const userNameEl = document.querySelector(".topbar-user-name");
-  if (userNameEl && homeTarget) {
-    userNameEl.textContent = `${homeTarget.name}님`;
+  if (page === "index") {
+    const userNameEl = document.querySelector(".topbar-user-name");
+    if (userNameEl) {
+      userNameEl.textContent = `${cardData.name}님`;
+    }
+    return;
   }
-
-  return;
-}
 
   let qrRefreshCount = 0;
 
@@ -817,33 +828,29 @@ if (page === "index") {
     const mount = document.getElementById("detailInfoMount");
     if (!mount) return;
 
-function renderDetailInfo() {
-  const mount = document.getElementById("detailInfoMount");
-  if (!mount) return;
+    mount.innerHTML = `
+      <div class="detail-fixed-name" id="detailName">${cardData.name}</div>
 
-  mount.innerHTML = `
-    <div class="detail-fixed-name" id="detailName">${cardData.name}</div>
+      <input type="checkbox" id="switch" hidden />
 
-    <input type="checkbox" id="switch" hidden />
+      <label for="switch" class="switch_label detail-fixed-switch">
+        <span class="onf_btn"></span>
+      </label>
 
-    <label for="switch" class="switch_label detail-fixed-switch">
-      <span class="onf_btn"></span>
-    </label>
+      <div class="detail-fixed-rrn">
+        ${cardData.rrnFront}-<span id="idNumber">${cardData.rrnBackMasked}</span>
+      </div>
 
-    <div class="detail-fixed-rrn">
-      ${cardData.rrnFront}-<span id="idNumber">${cardData.rrnBackMasked}</span>
-    </div>
+      <div class="detail-fixed-address">
+        <span id="fullRegion">${cardData.region}</span><span id="userLocation"></span>
+      </div>
 
-    <div class="detail-fixed-address">
-      <span id="fullRegion">${cardData.region}</span><span id="userLocation"></span>
-    </div>
-
-    <div class="modal-bottom">
-      <h4 id="issueDate">${cardData.issueDate}</h4>
-      <p id="issuerName">${cardData.issuer}</p>
-    </div>
-  `;
-}
+      <div class="modal-bottom">
+        <h4 id="issueDate">${cardData.issueDate}</h4>
+        <p id="issuerName">${cardData.issuer}</p>
+      </div>
+    `;
+  }
 
   function applyCardData() {
     const mainName = document.getElementById("mainName");
@@ -863,21 +870,21 @@ function renderDetailInfo() {
     if (detailProfileImage) detailProfileImage.src = cardData.profileImage;
   }
 
-function updateText() {
-  const checkbox = document.getElementById("switch");
-  const idNumber = document.getElementById("idNumber");
-  const userLocation = document.getElementById("userLocation");
+  function updateText() {
+    const checkbox = document.getElementById("switch");
+    const idNumber = document.getElementById("idNumber");
+    const userLocation = document.getElementById("userLocation");
 
-  if (!checkbox || !idNumber || !userLocation) return;
+    if (!checkbox || !idNumber || !userLocation) return;
 
-  if (checkbox.checked) {
-    idNumber.textContent = cardData.rrnBackFull;
-    userLocation.textContent = " " + cardData.address;
-  } else {
-    idNumber.textContent = cardData.rrnBackMasked;
-    userLocation.textContent = "";
+    if (checkbox.checked) {
+      idNumber.textContent = cardData.rrnBackFull;
+      userLocation.textContent = " " + cardData.address;
+    } else {
+      idNumber.textContent = cardData.rrnBackMasked;
+      userLocation.textContent = "";
+    }
   }
-}
 
   function updateTime() {
     const now = new Date();
