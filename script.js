@@ -630,25 +630,178 @@ if (closeBtn) {
 document.addEventListener("DOMContentLoaded", () => {
   const page = document.body.dataset.page;
 
-  if (page === "index") {
-    const userNameEl = document.querySelector(".topbar-user-name");
-    if (userNameEl) userNameEl.textContent = "홍성환님";
-    return;
-  }
+  /* ----------------
+     index 메인 홈
+  ---------------- */
+const cardData = PAGE_CARD_DATA[page];
+if (!cardData) return;
 
-  if (page !== "indexs") return;
+if (page === "index") {
+  const userNameEl = document.querySelector(".topbar-user-name");
+  if (userNameEl) userNameEl.textContent = cardData.userName;
+  return;
+}
 
-  const cardData = {
-    name: "홍성환",
-    rrnFront: "890928",
-    rrnBackMasked: "*******",
-    rrnBackFull: "1144311",
-    region: "광주광역시 광산구",
-    address: "수등로123번길 22 (신가동, 아름마을휴먼시아2단지아파트) 205동 701호",
-    issueDate: "2021.05.10",
-    issuer: "광주광역시 광산구청장",
-    profileImage: "https://i.postimg.cc/kGszy40D/photo-2026-04-04-00-34-29.jpg"
+  /* ----------------
+     주민등록증 카드 페이지 데이터
+  ---------------- */
+  const PAGE_CARD_DATA = {
+    indexsa: {
+      name: "김지형",
+      rrnFront: "050421",
+      rrnBackMasked: "*******",
+      rrnBackFull: "3561416",
+      region: "전라남도 장성군",
+      address: "장성읍 문화로 21-34, 203동 804호(영천 휴먼시아)",
+      issueDate: "2024.02.29",
+      issuer: "전라남도 장성군수",
+      profileImage: "./assets/bang.jpeg"
+    },
+
+    indexsb: {
+      name: "오대우",
+      rrnFront: "050611",
+      rrnBackMasked: "*******",
+      rrnBackFull: "3623437",
+      region: "전라남도 장성군",
+      address: "장성읍 대창1길 16-1",
+      issueDate: "2022.07.06",
+      issuer: "전라남도 장성군수",
+      profileImage: "./assets/bang.jpeg"
+    },
+
+    indexsc: {
+      name: "김현준",
+      rrnFront: "050318",
+      rrnBackMasked: "*******",
+      rrnBackFull: "3661211",
+      region: "광주광역시 북구",
+      address: "용두마을2길 12, 103동 1802호 (용두동, 첨단진아리채)",
+      issueDate: "2024.12.31",
+      issuer: "광주광역시 북구청장",
+      profileImage: "./assets/jong.jpeg"
+    },
+
+    indexsd: {
+      name: "최민기",
+      rrnFront: "050203",
+      rrnBackMasked: "*******",
+      rrnBackFull: "3144311",
+      region: "대구광역시 수성구",
+      address: "달구벌대로 77, 305동 1502호",
+      issueDate: "2024.01.20",
+      issuer: "대구광역시 수성구청장",
+      profileImage: "./assets/bang.jpeg"
+    },
+
+    indexs: {
+      name: "홍성환",
+      rrnFront: "890928",
+      rrnBackMasked: "*******",
+      rrnBackFull: "1144311",
+      region: "광주광역시 광산구",
+      address: "수등로123번길 22 (신가동, 아름마을휴먼시아2단지아파트) 205동 701호",
+      issueDate: "2021.05.10",
+      issuer: "광주광역시 광산구청장",
+      profileImage: "./assets/user1.jpg"
+    }
+    indexse: {
+      name: "장석두",
+      rrnFront: "890412",
+      rrnBackMasked: "*******",
+      rrnBackFull: "1559223",
+      region: "광주광역시 광산구",
+      address: "수등로123번길 22 (신가동, 아름마을휴먼시아2단지아파트) 205동 701호",
+      issueDate: "2021.05.10",
+      issuer: "광주광역시 광산구청장",
+      profileImage: "./assets/jong.jpeg"
+    }
+        indexsf: {
+      name: "정치영",
+      rrnFront: "890625    ",
+      rrnBackMasked: "*******",
+      rrnBackFull: "1559223",
+      region: "광주광역시 광산구",
+      address: "수등로123번길 22 (신가동, 아름마을휴먼시아2단지아파트) 205동 701호",
+      issueDate: "2021.05.10",
+      issuer: "광주광역시 광산구청장",
+      profileImage: "./assets/jong.jpeg"
+    }
+      indexsg: {
+      name: "최승준",
+      rrnFront: "050131",
+      rrnBackMasked: "*******",
+      rrnBackFull: "3158724",
+      region: "광주광역시 광산구",
+      address: "수등로123번길 22 (신가동, 아름마을휴먼시아2단지아파트) 205동 701호",
+      issueDate: "2021.05.10",
+      issuer: "광주광역시 광산구청장",
+      profileImage: "./assets/bang.jpeg"
+    }
+      indexsh: {
+      name: "정대영",
+      rrnFront: "830627",
+      rrnBackMasked: "*******",
+      rrnBackFull: "1560011",
+      region: "경기도 파주시",
+      address: "문산읍 방촌로 1660, 104동 409호",
+      issueDate: "2019.01.21",
+      issuer: "경기도 파주시청장",
+      profileImage: "./assets/jong.jpeg"
+    }
+      indexsi: {
+      name: "김병민",
+      rrnFront: "900107",
+      rrnBackMasked: "*******",
+      rrnBackFull: "1559223",
+      region: "광주광역시 광산구",
+      address: "수등로123번길 22 (신가동, 아름마을휴먼시아2단지아파트) 205동 701호",
+      issueDate: "2021.05.10",
+      issuer: "광주광역시 광산구청장",
+      profileImage: "./assets/jong.jpeg"
+    }
+      indexsj: {
+      name: "편수진",
+      rrnFront: "891215",
+      rrnBackMasked: "*******",
+      rrnBackFull: "2552312",
+      region: "경기도 구리시",
+      address: "산마루로46 갈매스타힐스 404동 1401호",
+      issueDate: "2021.05.10",
+      issuer: "경기도 구리시청장",
+      profileImage: "./assets/minji.png"
+    }
+      indexsk: {
+      name: "양연하",
+      rrnFront: "890717",
+      rrnBackMasked: "*******",
+      rrnBackFull: "2552616",
+      region: "광주광역시 북구",
+      address: "문화소통로 108번길 8-3, 초원빌라 4층",
+      issueDate: "2019.05.10",
+      issuer: "광주광역시 북구청장",
+      profileImage: "./assets/sun.jpeg"
+    }
+      indexsl: {
+      name: "박시원",
+      rrnFront: "890717",
+      rrnBackMasked: "*******",
+      rrnBackFull: "2552616",
+      region: "광주광역시 북구",
+      address: "문화소통로 108번길 8-3, 초원빌라 4층",
+      issueDate: "2019.05.10",
+      issuer: "광주광역시 북구청장",
+      profileImage: "./assets/bang.jpeg"
+    }
+  
   };
+
+
+
+
+
+  const cardData = PAGE_CARD_DATA[page];
+  if (!cardData) return;
 
   let qrRefreshCount = 0;
 
@@ -675,7 +828,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <div class="detail-fixed-address">
         ${cardData.region}
-        <span id="userLocation">ㅤ<br />ㅤ</span>
+        <span id="userLocation">ㅤ<br>ㅤ</span>
       </div>
 
       <div class="modal-bottom">
