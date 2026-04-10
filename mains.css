@@ -507,13 +507,17 @@ progress::-moz-progress-bar {
 }
 
 #userLocation {
-  display: block;
-  margin-top: 4px;
+  display: inline;   /* 핵심 */
+  margin-left: 4px;
   font-size: 17px;
   line-height: 1.4;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+#fullRegion {
+  display: inline;
+  white-space: nowrap;
 }
 
 .detail-fixed-address span {
