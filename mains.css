@@ -427,10 +427,10 @@ progress::-moz-progress-bar {
 }
 
 .back {
-  position: fixed !important;
-  left: calc((100vw - min(350px, calc(100vw - 35px), calc(var(--card-max-h) * 350 / 590))) / 2) !important;
-  bottom: 132px !important;
-  transform: none;
+  position: relative !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: none !important;
   width: 44px;
   height: 44px;
   display: none;
@@ -440,8 +440,10 @@ progress::-moz-progress-bar {
   border-radius: 50%;
   background-color: #fff;
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.22);
-  z-index: 999;
+  z-index: 60;
   color: inherit;
+  margin-top: 14px;
+  margin-left: calc((min(calc(100% - 35px), calc(var(--card-max-h) * 340 / 560)) - 44px) / -2);
 }
 
 .back svg {
