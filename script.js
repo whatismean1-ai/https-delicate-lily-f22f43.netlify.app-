@@ -212,9 +212,24 @@ const midModalConfirmBtn = document.querySelector(".mid-modal-confirm");
 const midModal = document.querySelector(".mid-modal");
 const midModalDim = document.querySelector(".mid-dim");
 
-midModalConfirmBtn?.addEventListener("click", () => {
+function openMidModal() {
+  midModal?.classList.add("is-open");
+  midModalDim?.classList.add("is-open");
+  lockBody(true);
+}
+
+function closeMidModal() {
   midModal?.classList.remove("is-open");
   midModalDim?.classList.remove("is-open");
+  lockBody(false);
+}
+
+window.addEventListener("load", () => {
+  openMidModal();
+});
+
+midModalConfirmBtn?.addEventListener("click", () => {
+  closeMidModal();
 });
 
   /* ----------------
