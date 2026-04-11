@@ -1015,7 +1015,10 @@ const routeMap = {
 };
 
 function getSelectedUserPage() {
-  return (localStorage.getItem("selectedUser") || "indexs") + ".html";
+  const params = new URLSearchParams(window.location.search);
+  const userFromQuery = params.get("u");
+  const selectedUser = userFromQuery || localStorage.getItem("selectedUser") || "indexs";
+  return selectedUser + ".html";
 }
 
 function goNextPage(currentFile) {
