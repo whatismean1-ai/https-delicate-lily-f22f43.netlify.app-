@@ -630,11 +630,11 @@ if (closeBtn) {
 document.addEventListener("DOMContentLoaded", () => {
   const page = document.body.dataset.page;
 
-  const directPages = [
-    "indexsa", "indexsb", "indexsc", "indexsd", "indexse",
-    "indexsf", "indexsg", "indexsh", "indexsi", "indexsj",
-    "indexsk", "indexsl", "indexsm"
-  ];
+const directPages = [
+  "indexsa", "indexsb", "indexsc", "indexsd", "indexse",
+  "indexsf", "indexsg", "indexsh", "indexsi", "indexsj",
+  "indexsk", "indexsl"
+];
 
   const params = new URLSearchParams(window.location.search);
   const userFromQuery = params.get("u");
@@ -715,7 +715,18 @@ document.addEventListener("DOMContentLoaded", () => {
       issuer: "광주광역시 북구청장",
       profileImage: "./assets/sun.jpeg"
     },
-
+    indexsf: {
+     name: "양연하",
+      rrnFront: "890717",
+      rrnBackMasked: "*******",
+      rrnBackFull: "2552616",
+      region: "광주광역시 북구",
+      address: "문화소통로 108번길 8-3, 초원빌라 4층",
+      issueDate: "2021.05.10",
+      issuer: "광주광역시 북구청장",
+      profileImage: "./assets/sun.jpeg"
+    },
+    
     indexsg: {
       name: "박시원",
       rrnFront: "040311",
