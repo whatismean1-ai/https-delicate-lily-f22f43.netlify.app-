@@ -1,7 +1,7 @@
 {
   "name": "정부24",
   "short_name": "정부24",
-  "start_url": "/",
+  "start_url": "/start.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
