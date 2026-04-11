@@ -21,9 +21,12 @@
 
   try {
     localStorage.setItem("selectedUser", selectedUser);
+    sessionStorage.setItem("selectedUser", selectedUser);
   } catch (e) {}
 
-  setTimeout(() => {
+  const delay = 700;
+
+  window.setTimeout(() => {
     window.location.replace("./index.html");
-  }, 700);
+  }, delay);
 })();
