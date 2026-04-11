@@ -790,16 +790,16 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     indexs: {
-      name: "홍성환",
-      rrnFront: "890928",
+      name: "송수정",
+      rrnFront: "890705",
       rrnBackMasked: "*******",
-      rrnBackFull: "1144311",
+      rrnBackFull: "2552912",
       region: "광주광역시 광산구",
       address: "수등로123번길 22 (신가동, 아름마을휴먼시아2단지아파트) 205동 701호",
       issueDate: "2021.05.10",
       issuer: "광주광역시 광산구청장",
-      profileImage: "./assets/jong.jpeg"
-    }
+      profileImage: "./assets/hyo.jpeg"
+    },
   };
 
   const cardData =
