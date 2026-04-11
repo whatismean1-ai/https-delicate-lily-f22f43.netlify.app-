@@ -1025,11 +1025,20 @@ const routeMap = {
   "menu.html": "mobile-id-card.html"
 };
 
-function getSelectedUserPage() {
+function goNextPage(currentFile) {
   const params = new URLSearchParams(window.location.search);
   const userFromQuery = params.get("u");
   const selectedUser = userFromQuery || localStorage.getItem("selectedUser") || "indexs";
-  return selectedUser + ".html";
+
+  if (currentFile === "mobile-id-card.html") {
+    window.location.href = `${selectedUser}.html`;
+    return;
+  }
+
+  const nextFile = routeMap[currentFile];
+  if (!nextFile) return;
+
+  window.location.href = `${nextFile}?u=${encodeURIComponent(selectedUser)}`;
 }
 
 function goNextPage(currentFile) {
