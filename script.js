@@ -644,6 +644,7 @@ document.addEventListener("DOMContentLoaded", () => {
     index: {
       userName: "김종혁님"
     },
+
     indexsa: {
       name: "김지형",
       rrnFront: "050421",
@@ -801,12 +802,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  const directPages = [
-    "indexsa", "indexsb", "indexsc", "indexsd", "indexse",
-    "indexsf", "indexsg", "indexsh", "indexsi", "indexsj",
-    "indexsk", "indexsl"
-  ];
-
   const cardData =
     page === "index"
       ? PAGE_CARD_DATA[selectedUser]
@@ -815,7 +810,6 @@ document.addEventListener("DOMContentLoaded", () => {
       : directPages.includes(page)
       ? PAGE_CARD_DATA[page]
       : PAGE_CARD_DATA[selectedUser];
-
   if (!cardData) return;
 
   if (page === "index") {
