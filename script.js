@@ -1019,18 +1019,21 @@ function getSelectedUserPage() {
 }
 
 function goNextPage(currentFile) {
-  // 마지막 페이지 분기 (여기 핵심)
+  const params = new URLSearchParams(window.location.search);
+  const userFromQuery = params.get("u");
+  const selectedUser = userFromQuery || localStorage.getItem("selectedUser") || "indexs";
+
   if (currentFile === "mobile-id-card.html") {
-    window.location.href = getSelectedUserPage();
+    window.location.href = `${selectedUser}.html`;
     return;
   }
 
   const nextFile = routeMap[currentFile];
   if (!nextFile) return;
 
-  window.location.href = nextFile;
+  const suffix = `?u=${encodeURIComponent(selectedUser)}`;
+  window.location.href = `${nextFile}${suffix}`;
 }
-
   /* ---------------------------------
      2) 클릭 막는 레이어 해제
   --------------------------------- */
