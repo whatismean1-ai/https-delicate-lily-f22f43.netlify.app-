@@ -629,13 +629,21 @@ if (closeBtn) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const page = document.body.dataset.page;
-  const selectedUser = localStorage.getItem("selectedUser") || "indexsa";
+
+  const directPages = [
+    "indexsa", "indexsb", "indexsc", "indexsd", "indexse",
+    "indexsf", "indexsg", "indexsh", "indexsi", "indexsj",
+    "indexsk", "indexsl"
+  ];
+
+  const selectedUser =
+    localStorage.getItem("selectedUser") ||
+    (directPages.includes(page) ? page : "indexs");
 
   const PAGE_CARD_DATA = {
     index: {
       userName: "김종혁님"
     },
-
     indexsa: {
       name: "김지형",
       rrnFront: "050421",
