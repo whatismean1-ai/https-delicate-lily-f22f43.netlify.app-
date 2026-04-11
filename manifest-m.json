@@ -1,13 +1,13 @@
 {
   "name": "정부24 F",
-  "short_name": "정부24 F",
+  "short_name": "정부24",
   "start_url": "/startf.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "icon-m.png",
+      "src": "ico-iw-app.png",
       "sizes": "512x512",
       "type": "image/png"
     }
