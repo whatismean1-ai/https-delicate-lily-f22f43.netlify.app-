@@ -121,6 +121,19 @@
     <div class="bottom-space"></div>
   </div>
 
-  <script src="../script.js"></script>
+<script src="/script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const profileImage = document.getElementById("profileImage");
+  const detailProfileImage = document.getElementById("detailProfileImage");
+
+  const fixedSrc = "/assets/jong.jpeg";
+
+  if (profileImage) profileImage.src = fixedSrc;
+  if (detailProfileImage) detailProfileImage.src = fixedSrc;
+});
+</script>
+  
 </body>
 </html>
