@@ -8,7 +8,7 @@
     "startc.html": "indexsc",
     "startd.html": "indexsd",
     "starte.html": "indexse",
-    "startf.html": "indexsm",
+    "startm.html": "indexsm",
     "startg.html": "indexsg",
     "starth.html": "indexsh",
     "starti.html": "indexsi",
