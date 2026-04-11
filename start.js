@@ -18,7 +18,10 @@
     "startm.html": "indexsm"
   };
 
-  const selectedUser = startUserMap[path] || "indexs";
+  const selectedUser =
+  startUserMap[path] ||
+  localStorage.getItem("selectedUser") ||
+  "indexs";
 
   try {
     localStorage.setItem("selectedUser", selectedUser);
