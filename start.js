@@ -14,23 +14,16 @@
     "starti.html": "indexsi",
     "startj.html": "indexsj",
     "startk.html": "indexsk",
-    "startl.html": "indexsl",
-    "startm.html": "indexsm"
+    "startl.html": "indexsl"
   };
 
-  const selectedUser =
-  startUserMap[path] ||
-  localStorage.getItem("selectedUser") ||
-  "indexs";
+  const selectedUser = startUserMap[path] || "indexs";
 
   try {
     localStorage.setItem("selectedUser", selectedUser);
-    sessionStorage.setItem("selectedUser", selectedUser);
   } catch (e) {}
 
-  const delay = 700;
-
-  window.setTimeout(() => {
+  setTimeout(() => {
     window.location.replace("./index.html");
-  }, delay);
+  }, 700);
 })();
