@@ -632,13 +632,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const directPages = [
     "indexsa", "indexsb", "indexsc", "indexsd", "indexse",
-    "indexsm", "indexsg", "indexsh", "indexsi", "indexsj",
-    "indexsk", "indexsl"
+    "indexsf", "indexsg", "indexsh", "indexsi", "indexsj",
+    "indexsk", "indexsl", "indexsm"
   ];
 
+  const params = new URLSearchParams(window.location.search);
+  const userFromQuery = params.get("u");
+
   const selectedUser =
+    userFromQuery ||
     localStorage.getItem("selectedUser") ||
     (directPages.includes(page) ? page : "indexs");
+
+  try {
+    if (userFromQuery) {
+      localStorage.setItem("selectedUser", userFromQuery);
+      sessionStorage.setItem("selectedUser", userFromQuery);
+    }
+  } catch (e) {}
 
   const PAGE_CARD_DATA = {
     index: {
