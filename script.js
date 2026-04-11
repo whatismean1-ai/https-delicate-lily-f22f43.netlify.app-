@@ -705,16 +705,16 @@ document.addEventListener("DOMContentLoaded", () => {
       profileImage: "./assets/sun.jpeg"
     },
 
-    indexsf: {
-      name: "송수정",
-      rrnFront: "890705",
+    indexsm: {
+     name: "양연하",
+      rrnFront: "890717",
       rrnBackMasked: "*******",
-      rrnBackFull: "2552912",
-      region: "광주광역시 광산구",
-      address: "수등로123번길 22 (신가동, 아름마을휴먼시아2단지아파트) 205동 701호",
+      rrnBackFull: "2552616",
+      region: "광주광역시 북구",
+      address: "문화소통로 108번길 8-3, 초원빌라 4층",
       issueDate: "2021.05.10",
-      issuer: "광주광역시 광산구청장",
-      profileImage: "./assets/hyo.jpeg"
+      issuer: "광주광역시 북구청장",
+      profileImage: "./assets/sun.jpeg"
     },
 
     indexsg: {
