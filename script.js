@@ -632,7 +632,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const directPages = [
     "indexsa", "indexsb", "indexsc", "indexsd", "indexse",
-    "indexsf", "indexsg", "indexsh", "indexsi", "indexsj",
+    "indexsm", "indexsg", "indexsh", "indexsi", "indexsj",
     "indexsk", "indexsl"
   ];
 
