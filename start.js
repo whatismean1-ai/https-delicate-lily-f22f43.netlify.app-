@@ -8,13 +8,14 @@
     "startc.html": "indexsc",
     "startd.html": "indexsd",
     "starte.html": "indexse",
-    "startm.html": "indexsm",
+    "startf.html": "indexsf",
     "startg.html": "indexsg",
     "starth.html": "indexsh",
     "starti.html": "indexsi",
     "startj.html": "indexsj",
     "startk.html": "indexsk",
-    "startl.html": "indexsl"
+    "startl.html": "indexsl",
+    "startm.html": "indexsm"
   };
 
   const selectedUser = startUserMap[path] || "indexs";
@@ -24,7 +25,7 @@
     sessionStorage.setItem("selectedUser", selectedUser);
   } catch (e) {}
 
-  const delay = 700; // 0.5~1초 사이
+  const delay = 700;
 
   window.setTimeout(() => {
     window.location.replace("./index.html");
