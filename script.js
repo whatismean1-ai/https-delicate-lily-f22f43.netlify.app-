@@ -644,12 +644,12 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.getItem("selectedUser") ||
     (directPages.includes(page) ? page : "indexs");
 
-  try {
-    if (userFromQuery) {
+  if (userFromQuery) {
+    try {
       localStorage.setItem("selectedUser", userFromQuery);
       sessionStorage.setItem("selectedUser", userFromQuery);
-    }
-  } catch (e) {}
+    } catch (e) {}
+  }
 
   const PAGE_CARD_DATA = {
     index: {
